@@ -7,7 +7,7 @@ export const CLS_PREFIX = `${COMPONENT_PREFIX.toLowerCase()}-`;
 export const SIZE = 'medium';
 export const configProvideInjectKey = Symbol('configProvideInjectKey');
 
-export function useGlobalConfig(key) {
+export function useGlobalConfig(key:string) {
   const config = inject(configProvideInjectKey, {});
   return key ? config[key] : config;
 }
@@ -17,4 +17,6 @@ export const getClsPrefix = (componentName = '') => {
   return `${prefix}${componentName}`;
 };
 
-export const getComponentPrefix = (options = {}) => options.componentPrefix || COMPONENT_PREFIX;
+export const getComponentPrefix = (options:{
+  componentPrefix?: string
+} = {}) => options.componentPrefix || COMPONENT_PREFIX;

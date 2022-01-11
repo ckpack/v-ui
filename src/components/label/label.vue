@@ -1,6 +1,6 @@
 <template>
   <div :class="prefix">
-    {{label}}
+    {{ label }}
   </div>
 </template>
 

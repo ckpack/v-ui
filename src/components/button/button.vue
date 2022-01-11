@@ -1,6 +1,6 @@
 <template>
   <button :class="prefix">
-    <slot></slot>
+    <slot />
   </button>
 </template>
 
@@ -8,6 +8,7 @@
 import { defineComponent } from 'vue';
 import { getClsPrefix } from '../../defaultConfig';
 
+console.log(name);
 export default defineComponent({
   name: 'Button',
   setup() {
