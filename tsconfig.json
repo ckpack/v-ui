@@ -1,6 +1,8 @@
 {
   "compilerOptions": {
-    "noImplicitAny":false,
+    "declaration": true,
+    "removeComments": true,
+    "noImplicitAny": false,
     "target": "esnext",
     "useDefineForClassFields": true,
     "module": "esnext",
@@ -10,12 +12,13 @@
     "sourceMap": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
+    "isolatedModules": true,
     "lib": ["ESNext", "DOM"],
     "baseUrl": "./src",
     "paths": {
       "@/*": ["src/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue", "vite.config.ts", ".eslintrc.cjs"],
   "exclude": ["node_modules"]
 }

@@ -6,9 +6,10 @@
   "scripts": {
     "build": "vite build",
     "tsc": "vue-tsc --noEmit",
+    "build:tsc": "vue-tsc --declaration --emitDeclarationOnly",
     "release": "standard-version",
     "prepare": "husky install",
-    "lint": "eslint --fix --ext js,ts,mjs,cjs,tsx,jsx,vue ./"
+    "lint": "eslint --fix --ext js,ts,mjs,cjs,tsx,jsx,vue ./src"
   },
   "author": "ckvv",
   "license": "ISC",
