@@ -1,0 +1,5 @@
+@use '../../styles/_variables' as *;
+
+.#{$cls-prefix}label {
+  background-color: $red;
+}

@@ -1,0 +1,18 @@
+{
+  "name": "v-ui",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "vite build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.0.1",
+    "typescript": "^4.5.4",
+    "vue-tsc": "^0.30.2",
+    "vue": "^3.2.26",
+    "vite": "^2.7.10"
+  }
+}
