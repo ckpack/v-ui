@@ -1,10 +1,11 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
+import dtsPlugin from 'vite-plugin-dts';
 import externalPlugin from './scripts/vite-plugin-external';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [externalPlugin(), vue()],
+  plugins: [ dtsPlugin(), externalPlugin(), vue()],
   build: {
     target: 'esnext',
     outDir: 'es',
