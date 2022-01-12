@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm run build:es && npm run build:dist",
+    "prebuild": "pnpm tsc && pnpm lint",
+    "build": "pnpm build:es && pnpm build:dist",
     "build:es": "node scripts/vite.es.js",
     "build:dist": "node scripts/vite.dist.js",
     "tsc": "vue-tsc --noEmit",
@@ -31,7 +32,8 @@
     "vite": "^2.7.10",
     "vite-plugin-dts": "^0.9.9",
     "vitepress": "^0.21.4",
-    "vue": "^3.2.26"
+    "vue": "^3.2.26",
+    "vue-tsc": "^0.30.2"
   },
   "peerDependencies": {
     "vue": "^3.2.x"

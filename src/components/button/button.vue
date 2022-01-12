@@ -8,7 +8,6 @@
 import { defineComponent } from 'vue';
 import { getClsPrefix } from '../../defaultConfig';
 
-console.log(name);
 export default defineComponent({
   name: 'Button',
   setup() {
