@@ -21,11 +21,11 @@
   ],
   "scripts": {
     "prepare": "husky install",
+    "check": "npm run tsc && npm run lint",
     "tsc": "vue-tsc --noEmit",
     "lint": "eslint --fix --ext js,ts,mjs,cjs,tsx,jsx,vue ./",
     "release": "standard-version",
     "dev": "vite -c ./dev/vite.config.js",
-    "prebuild": "npm run tsc && npm run lint",
     "build": "npm run build:es && npm run build:dist && npm run build:style",
     "build:es": "node scripts/vite.es.js",
     "build:dist": "node scripts/vite.dist.js",
