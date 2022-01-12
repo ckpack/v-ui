@@ -1,19 +1,39 @@
 {
   "name": "v-ui",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Quickly create a component library for Vue 3",
+  "type": "module",
+  "main": "dist/index.cjs.js",
+  "module": "es/index.js",
+  "types": "es/index.d.ts",
+  "repository": "https://github.com/ckpack/v-ui",
+  "homepage": "https://ckpack.github.io/v-ui",
+  "keywords": [
+    "vue",
+    "v-ui",
+    "vue-ui",
+    "vite"
+  ],
+  "files": [
+    "src/*",
+    "es/*",
+    "dist/*"
+  ],
   "scripts": {
+    "prepare": "husky install",
+    "tsc": "vue-tsc --noEmit",
+    "lint": "eslint --fix --ext js,ts,mjs,cjs,tsx,jsx,vue ./",
+    "release": "standard-version",
+    "dev": "vite -c ./dev/vite.config.js",
     "prebuild": "pnpm tsc && pnpm lint",
-    "build": "pnpm build:es && pnpm build:dist",
+    "build": "pnpm build:es && pnpm build:dist && pnpm build:style",
     "build:es": "node scripts/vite.es.js",
     "build:dist": "node scripts/vite.dist.js",
-    "tsc": "vue-tsc --noEmit",
-    "release": "standard-version",
-    "prepare": "husky install",
-    "lint": "eslint --fix --ext js,ts,mjs,cjs,tsx,jsx,vue ./src"
+    "build:style": "sass --no-source-map --style=compressed ./src:es && sass --no-source-map --style=compressed ./src/styles/index.scss:dist/index.css",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:serve": "vitepress serve docs"
   },
-  "type": "module",
   "author": "ckvv",
   "license": "ISC",
   "devDependencies": {
@@ -31,15 +51,16 @@
     "typescript": "^4.5.4",
     "vite": "^2.7.10",
     "vite-plugin-dts": "^0.9.9",
-    "vitepress": "^0.21.4",
+    "vitepress": "^0.20.10",
     "vue": "^3.2.26",
-    "vue-tsc": "^0.30.2"
+    "vue-tsc": "^0.30.2",
+    "@types/node": "^17.0.8"
   },
   "peerDependencies": {
     "vue": "^3.2.x"
   },
   "engines": {
-    "node": ">=14"
+    "node": ">=16"
   },
   "lint-staged": {
     "*.{js,ts,mjs,cjs,tsx,jsx,vue}": [

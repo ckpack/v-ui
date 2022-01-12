@@ -1,6 +1,7 @@
 import { build } from 'vite';
 import vue from '@vitejs/plugin-vue';
 
+const name = 'VUI';
 const external = ['vue'];
 const globals = {
   vue: 'Vue',
@@ -23,7 +24,7 @@ build({
       external,
     },
     lib: {
-      name: 'ckvv',
+      name,
       formats: ['cjs', 'es', 'iife'],
       fileName: (format) => `index.${format}.js`,
     }
