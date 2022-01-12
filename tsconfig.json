@@ -14,12 +14,12 @@
     "esModuleInterop": true,
     "isolatedModules": true,
     "lib": ["ESNext", "DOM"],
-    "outDir": "es",
+    "rootDir": "./",
     "baseUrl": "./src",
     "paths": {
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src/**/*", "scripts/**/*",  "tvite.config.ts", ".eslintrc.cjs"],
+  "include": ["src/**/*", "scripts/**/*", ".eslintrc.cjs"],
   "exclude": ["node_modules"]
 }
