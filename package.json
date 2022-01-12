@@ -5,12 +5,15 @@
   "main": "index.js",
   "scripts": {
     "build": "vite build",
+    "build:es": "node scripts/vite.es.js",
+    "build:dist": "node scripts/vite.dist.js",
     "tsc": "vue-tsc --noEmit",
     "build:tsc": "vue-tsc --declaration --emitDeclarationOnly",
     "release": "standard-version",
     "prepare": "husky install",
     "lint": "eslint --fix --ext js,ts,mjs,cjs,tsx,jsx,vue ./src"
   },
+  "type": "module",
   "author": "ckvv",
   "license": "ISC",
   "devDependencies": {
@@ -42,5 +45,6 @@
     "*.{js,ts,mjs,cjs,tsx,jsx,vue}": [
       "eslint --fix"
     ]
-  }
+  },
+  "dependencies": {}
 }
