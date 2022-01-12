@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.3](https://github.com/ckpack/v-ui/compare/v1.1.2...v1.1.3) (2022-01-12)
+
+
+### Bug Fixes
+
+* fix tsconfig error ([66eeedd](https://github.com/ckpack/v-ui/commit/66eeedde11fcc60b1527072eebe5c3222258e9b0))
+* fxi tsc error ([2a70c36](https://github.com/ckpack/v-ui/commit/2a70c3656942f83aaae1f573879dc7b03eeba864))
+
 ### [1.1.2](https://github.com/ckpack/v-ui/compare/v1.1.1...v1.1.2) (2022-01-12)
 
 
