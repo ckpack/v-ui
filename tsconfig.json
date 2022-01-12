@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "outDir": "es",
     "declaration": true,
     "removeComments": true,
     "noImplicitAny": false,
