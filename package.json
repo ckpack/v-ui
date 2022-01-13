@@ -23,7 +23,7 @@
     "prepare": "husky install",
     "lint": "eslint --fix --ext js,ts,mjs,cjs,tsx,jsx,vue ./",
     "release": "standard-version",
-    "dev": "vite -c ./dev/vite.config.js",
+    "dev": "vite -c ./dev/vite.config.ts",
     "build": "npm run build:es && npm run build:dist && npm run build:style",
     "build:es": "node scripts/vite.es.js",
     "build:dist": "node scripts/vite.dist.js",

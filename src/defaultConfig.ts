@@ -8,7 +8,7 @@ export const SIZE = 'medium';
 export const configProvideInjectKey = Symbol('configProvideInjectKey');
 
 export function useGlobalConfig(key:string) {
-  const config = inject(configProvideInjectKey, {});
+  const config : { [key: string]: unknown} = inject(configProvideInjectKey, {} );
   return key ? config[key] : config;
 }
 

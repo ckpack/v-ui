@@ -8,7 +8,7 @@
     </ConfigProvider>
   </div>
 </template>
-<script>
+<script lang="ts">
 import { ConfigProvider, Button, Label } from '../src';
 
 export default {
