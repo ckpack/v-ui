@@ -12,6 +12,8 @@ const preserveModulesRoot = 'src';
 
 export default build({
   plugins: [dtsPlugin({
+    skipDiagnostics: false,
+    logDiagnostics: true,
     cleanVueFileName: true,
     beforeWriteFile(filePath, content){
       return {
