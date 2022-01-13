@@ -8,10 +8,10 @@ specifiers:
   '@vitejs/plugin-vue': ^2.0.1
   eslint: ^8.6.0
   eslint-config-airbnb-typescript: ^16.1.0
-  eslint-plugin-vue: ^8.2.0
+  eslint-plugin-vue: ^8.3.0
   husky: ^7.0.4
   lint-staged: ^12.1.7
-  sass: ^1.47.0
+  sass: ^1.48.0
   standard-version: ^9.3.2
   typescript: ^4.5.4
   vite: ^2.7.10
@@ -27,15 +27,15 @@ devDependencies:
   '@vitejs/plugin-vue': 2.0.1_vite@2.7.10+vue@3.2.26
   eslint: 8.6.0
   eslint-config-airbnb-typescript: 16.1.0_f8ae19d8f8272a3ef8b5ab7a06f9b019
-  eslint-plugin-vue: 8.2.0_eslint@8.6.0
+  eslint-plugin-vue: 8.3.0_eslint@8.6.0
   husky: 7.0.4
   lint-staged: 12.1.7
-  sass: 1.47.0
+  sass: 1.48.0
   standard-version: 9.3.2
   typescript: 4.5.4
-  vite: 2.7.10_sass@1.47.0
+  vite: 2.7.10_sass@1.48.0
   vite-plugin-dts: 0.9.9_vite@2.7.10
-  vitepress: 0.20.10_sass@1.47.0
+  vitepress: 0.20.10_sass@1.48.0
   vue: 3.2.26
 
 packages:
@@ -612,7 +612,7 @@ packages:
       vite: ^2.5.10
       vue: ^3.2.25
     dependencies:
-      vite: 2.7.10_sass@1.47.0
+      vite: 2.7.10_sass@1.48.0
       vue: 3.2.26
     dev: true
 
@@ -1610,8 +1610,8 @@ packages:
       - eslint-plugin-import
     dev: true
 
-  /eslint-plugin-vue/8.2.0_eslint@8.6.0:
-    resolution: {integrity: sha512-cLIdTuOAMXyHeQ4drYKcZfoyzdwdBpH279X8/N0DgmotEI9yFKb5O/cAgoie/CkQZCH/MOmh0xw/KEfS90zY2A==}
+  /eslint-plugin-vue/8.3.0_eslint@8.6.0:
+    resolution: {integrity: sha512-IIuLHw4vQxGlHcoP2dG6t/2OVdQf2qoyAzEGAxreU1afZOHGA7y3TWq8I+r3ZA6Wjs6xpeUWGHlT31QGr9Rb5g==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0
@@ -3039,8 +3039,8 @@ packages:
     resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}
     dev: true
 
-  /sass/1.47.0:
-    resolution: {integrity: sha512-GtXwvwgD7/6MLUZPnlA5/8cdRgC9SzT5kAnnJMRmEZQFRE3J56Foswig4NyyyQGsnmNvg6EUM/FP0Pe9Y2zywQ==}
+  /sass/1.48.0:
+    resolution: {integrity: sha512-hQi5g4DcfjcipotoHZ80l7GNJHGqQS5LwMBjVYB/TaT0vcSSpbgM8Ad7cgfsB2M0MinbkEQQPO9+sjjSiwxqmw==}
     engines: {node: '>=8.9.0'}
     hasBin: true
     dependencies:
@@ -3491,10 +3491,10 @@ packages:
       fast-glob: 3.2.10
       fs-extra: 10.0.0
       ts-morph: 13.0.2
-      vite: 2.7.10_sass@1.47.0
+      vite: 2.7.10_sass@1.48.0
     dev: true
 
-  /vite/2.7.10_sass@1.47.0:
+  /vite/2.7.10_sass@1.48.0:
     resolution: {integrity: sha512-KEY96ntXUid1/xJihJbgmLZx7QSC2D4Tui0FdS0Old5OokYzFclcofhtxtjDdGOk/fFpPbHv9yw88+rB93Tb8w==}
     engines: {node: '>=12.2.0'}
     hasBin: true
@@ -3514,12 +3514,12 @@ packages:
       postcss: 8.4.5
       resolve: 1.21.0
       rollup: 2.63.0
-      sass: 1.47.0
+      sass: 1.48.0
     optionalDependencies:
       fsevents: 2.3.2
     dev: true
 
-  /vitepress/0.20.10_sass@1.47.0:
+  /vitepress/0.20.10_sass@1.48.0:
     resolution: {integrity: sha512-dKgH6k1yxdEjIIxoXGI0vMg3lpBLvMarre/vvt4beuxd+rXOUB1a7DAtXDmgIXOMGQ7IcF+4zyd2132IedhjtQ==}
     engines: {node: '>=12.0.0'}
     hasBin: true
@@ -3528,7 +3528,7 @@ packages:
       '@docsearch/js': 3.0.0-alpha.42
       '@vitejs/plugin-vue': 2.0.1_vite@2.7.10+vue@3.2.26
       prismjs: 1.26.0
-      vite: 2.7.10_sass@1.47.0
+      vite: 2.7.10_sass@1.48.0
       vue: 3.2.26
     transitivePeerDependencies:
       - '@algolia/client-search'
