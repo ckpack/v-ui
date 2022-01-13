@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/ckpack/v-ui/compare/v1.1.5...v1.2.0) (2022-01-13)
+
+
+### Features
+
+* 不允许any ([831d7bb](https://github.com/ckpack/v-ui/commit/831d7bba01a157277b2e3cdbbacacdf694a626f7))
+* 添加eslint rule ([7ac1a84](https://github.com/ckpack/v-ui/commit/7ac1a840abb36bf451270d85834019f8949662b1))
+
 ### [1.1.5](https://github.com/ckpack/v-ui/compare/v1.1.4...v1.1.5) (2022-01-13)
 
 
