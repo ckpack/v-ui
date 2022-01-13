@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.5](https://github.com/ckpack/v-ui/compare/v1.1.4...v1.1.5) (2022-01-13)
+
+
+### Bug Fixes
+
+* 删除 vue-tsc ([77473cb](https://github.com/ckpack/v-ui/commit/77473cb168817232fddc72f02bbd3328b2600af6))
+* 更新依赖库版本 ([c9cc31b](https://github.com/ckpack/v-ui/commit/c9cc31b11bc36b1ae130321998f5a5a2bc3f2729))
+
 ### [1.1.4](https://github.com/ckpack/v-ui/compare/v1.1.3...v1.1.4) (2022-01-12)
 
 
