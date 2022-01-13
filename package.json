@@ -2,12 +2,15 @@
   "name": "@ckpack/v-ui",
   "version": "1.2.0",
   "description": "Quickly create a component library for Vue 3",
+  "sideEffects": false,
   "type": "module",
   "main": "dist/index.cjs.js",
   "module": "es/index.js",
   "types": "es/index.d.ts",
   "repository": "https://github.com/ckpack/v-ui",
   "homepage": "https://ckpack.github.io/v-ui",
+  "author": "ckvv",
+  "license": "ISC",
   "keywords": [
     "vue",
     "v-ui",
@@ -30,10 +33,10 @@
     "build:style": "sass --no-source-map --style=compressed ./src:es && sass --no-source-map --style=compressed ./src/styles/index.scss:dist/index.css",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:serve": "vitepress serve docs"
+    "docs:serve": "vitepress serve docs",
+    "gen": "node ./scripts/gen.js",
+    "postgen": "node ./scripts/gen-compoents.js"
   },
-  "author": "ckvv",
-  "license": "ISC",
   "devDependencies": {
     "@commitlint/cli": "^16.0.2",
     "@commitlint/config-conventional": "^16.0.0",
@@ -54,6 +57,7 @@
     "vitepress": "^0.20.10",
     "vue": "^3.2.26"
   },
+  "dependencies": {},
   "peerDependencies": {
     "vue": "^3.2.x"
   },
@@ -64,6 +68,5 @@
     "*.{js,ts,mjs,cjs,tsx,jsx,vue}": [
       "eslint --fix"
     ]
-  },
-  "dependencies": {}
+  }
 }

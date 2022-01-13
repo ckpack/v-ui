@@ -45,7 +45,7 @@ app.mount('#app');
   <title>VUI</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/v-ui/dist/index.css">
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.global.prod.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/v-ui/dist/index.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/v-ui/dist/index.iife.js"></script>
 </head>
 <body>
   <div id="app">
