@@ -27,6 +27,6 @@ build({
       name,
       formats: ['cjs', 'es', 'iife'],
       fileName: (format) => `index.${format}.js`,
-    }
+    },
   },
 });

@@ -15,12 +15,12 @@ export default build({
     skipDiagnostics: false,
     logDiagnostics: true,
     cleanVueFileName: true,
-    beforeWriteFile(filePath, content){
+    beforeWriteFile(filePath, content) {
       return {
         filePath: filePath.replace(`${rootPath}/${outDir}/${preserveModulesRoot}`, `${rootPath}/${outDir}`),
         content,
       };
-    }
+    },
   }), vue()],
   build: {
     target: 'esnext',
