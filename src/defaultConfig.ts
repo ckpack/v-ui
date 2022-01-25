@@ -1,14 +1,17 @@
-import { inject } from 'vue';
+import { inject, InjectionKey } from 'vue';
 
 export const NAME = 'VUI';
 // 自定义组件前缀
 export const COMPONENT_PREFIX = 'V';
 export const CLS_PREFIX = `${COMPONENT_PREFIX.toLowerCase()}-`;
 export const SIZE = 'medium';
-export const configProvideInjectKey = Symbol('configProvideInjectKey');
+export const configProvideInjectKey = Symbol('configProvideInjectKey') as InjectionKey<{
+  clsPrefix?:string,
+  [key:string]: unknown,
+}>;
 
 export function useGlobalConfig(key:string) {
-  const config : { [key: string]: unknown } = inject(configProvideInjectKey, {});
+  const config = inject(configProvideInjectKey, {});
   return key ? config[key] : config;
 }
 
