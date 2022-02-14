@@ -16,7 +16,6 @@ build({
     minify: true,
     brotliSize: false,
     rollupOptions: {
-      input: './src/index.ts',
       output: {
         exports: 'named',
         globals,
@@ -25,6 +24,7 @@ build({
     },
     lib: {
       name,
+      entry: './src',
       formats: ['cjs', 'es', 'iife'],
       fileName: (format) => `index.${format}.js`,
     },

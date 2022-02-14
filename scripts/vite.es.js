@@ -5,7 +5,7 @@ import vue from '@vitejs/plugin-vue';
 import dtsPlugin from 'vite-plugin-dts';
 
 const { dependencies } = JSON.parse(fs.readFileSync('./package.json'));
-const external = ['vue', Object.keys(dependencies ?? [])];
+const external = ['vue', ...Object.keys(dependencies ?? [])];
 const rootPath = path.resolve();
 const outDir = 'es';
 const preserveModulesRoot = 'src';
@@ -29,7 +29,6 @@ export default build({
     minify: false,
     brotliSize: false,
     rollupOptions: {
-      input: './src',
       output: {
         entryFileNames: '[name].js',
         preserveModules: true,
@@ -38,6 +37,7 @@ export default build({
       external,
     },
     lib: {
+      entry: './src',
       formats: ['es'],
     },
   },
