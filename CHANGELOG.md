@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.3.0](https://github.com/ckpack/v-ui/compare/v1.2.0...v1.3.0) (2022-02-16)
+
+
+### Features
+
+* add gen script ([970c247](https://github.com/ckpack/v-ui/commit/970c2473acab636f236e109146ea01962742e6ad))
+* update package ([e6342ab](https://github.com/ckpack/v-ui/commit/e6342ab366e6e03fe3a69d127f239ad57493dd98))
+* 更新依赖，优化provide type ([e735d9f](https://github.com/ckpack/v-ui/commit/e735d9f85058dbfea6e178580eeea5c212985170))
+* 更新依赖库 ([91febdf](https://github.com/ckpack/v-ui/commit/91febdfcc2a33bc3e8f0eb6d1faa32df659017e6))
+* 更新库依赖 ([91c96ab](https://github.com/ckpack/v-ui/commit/91c96ab885117fb5951fff4053ec5aba0e57708f))
+* 添加standard-version配置文件 ([003b5cb](https://github.com/ckpack/v-ui/commit/003b5cbd40f7d59d744d8cccb5d39a3f653162af))
+
+
+### Bug Fixes
+
+* update ignore ([5defc9b](https://github.com/ckpack/v-ui/commit/5defc9b734c80863465278c6d16a75a5d19039a1))
+
 ## [1.2.0](https://github.com/ckpack/v-ui/compare/v1.1.5...v1.2.0) (2022-01-13)
 
 
