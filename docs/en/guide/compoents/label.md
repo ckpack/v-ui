@@ -1,5 +1,4 @@
 # Label  
 
-Test Compoent
-
-<v-label label="Hello Wrold"></v-label>
+<<< @/demo/label/base.vue
+--demo This is a label

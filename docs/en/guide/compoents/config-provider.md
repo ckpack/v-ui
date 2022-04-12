@@ -4,7 +4,7 @@ Config Provider is used to provide global configuration options so that your con
 
 ## Example
 
-```html
+```vue
 <ConfigProvider cls-prefix="k-">
    <div id="app">
      <KButton></KButton>

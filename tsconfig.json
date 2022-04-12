@@ -23,6 +23,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src/**/*", "scripts/**/*", "dev/**/*", ".eslintrc.cjs", "commitlint.config.cjs"],
+  "include": ["src/**/*", "scripts/**/*", "dev/**/*", ".eslintrc.cjs", "commitlint.config.cjs", "docs/demo/**/*"],
   "exclude": ["node_modules"]
 }

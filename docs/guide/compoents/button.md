@@ -1,5 +1,4 @@
 # Button
 
-测试组件
-
-<v-button>Primary</v-button>
+<<< @/demo/button/base.vue
+--demo 这是一个按钮

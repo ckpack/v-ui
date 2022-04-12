@@ -1,7 +1,7 @@
 import { createApp } from 'vue';
 
 import Dev from './app.vue';
-import '../src/styles/index.scss';
+import 'v-ui/dist/index.css';
 
 const app = createApp(Dev);
 

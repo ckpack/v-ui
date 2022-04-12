@@ -1,5 +1,6 @@
 import { getNav, getSidebar } from "./bar.js";
 import { name, description, repository } from "../../package.json";
+import { mdPlugin } from "./mdPlugin.js";
 
 export default {
   title: name,
@@ -8,6 +9,11 @@ export default {
   locales: {
     '/': { lang: 'zh-CN' },
     '/en/': { lang: 'en-US' },
+  },
+  markdown: {
+    config: (md) => {
+      md.use(mdPlugin);
+    }
   },
   themeConfig: {
     repo: repository,
