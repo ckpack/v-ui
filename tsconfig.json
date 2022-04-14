@@ -1,28 +1,5 @@
 {
-  "compilerOptions": {
-    "outDir": "es",
-    "declaration": true,
-    "removeComments": true,
-    "noImplicitAny": true,
-    "target": "esnext",
-    "useDefineForClassFields": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "strict": true,
-    "jsx": "preserve",
-    "allowJs": false,
-    "sourceMap": true,
-    "resolveJsonModule": true,
-    "esModuleInterop": true,
-    "isolatedModules": true,
-    "skipLibCheck": true,
-    "lib": ["ESNext", "DOM"],
-    "rootDir": "./",
-    "baseUrl": "./src",
-    "paths": {
-      "@/*": ["./src/*"]
-    }
-  },
+  "extends": "@vue/tsconfig/tsconfig.node.json",
   "include": ["src/**/*", "scripts/**/*", "dev/**/*", ".eslintrc.cjs", "commitlint.config.cjs", "docs/demo/**/*"],
   "exclude": ["node_modules"]
 }

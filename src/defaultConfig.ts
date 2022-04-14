@@ -1,4 +1,5 @@
-import { inject, InjectionKey } from 'vue';
+import type { InjectionKey } from 'vue';
+import { inject } from 'vue';
 
 export const NAME = 'VUI';
 // 自定义组件前缀
