@@ -45,27 +45,29 @@
     "postgen": "node ./scripts/gen-compoents.mjs"
   },
   "devDependencies": {
-    "v-ui": "file:./",
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
     "@typescript-eslint/eslint-plugin": "^5.19.0",
     "@typescript-eslint/parser": "^5.19.0",
+    "@vitejs/plugin-vue": "^2.3.1",
     "eslint": "^8.13.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-plugin-vue": "^8.6.0",
     "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-vue": "^8.6.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.7",
     "sass": "^1.50.0",
     "standard-version": "^9.3.2",
     "typescript": "^4.6.3",
-    "vite": "^2.9.1",
-    "@vitejs/plugin-vue": "^2.3.1",
+    "v-ui": "file:./",
+    "vite": "^2.9.4",
     "vite-plugin-dts": "^1.0.5",
     "vitepress": "^0.22.3",
-    "vue": "^3.2.31"
+    "vue": "^3.2.32"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@ckpack/v-ui": "link:"
+  },
   "peerDependencies": {
     "vue": "^3.2.x"
   },
