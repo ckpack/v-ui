@@ -9,7 +9,7 @@
   </div>
 </template>
 <script lang="ts">
-import { ConfigProvider, Button, Label } from 'v-ui';
+import { ConfigProvider, Button, Label } from '@ckpack/v-ui';
 
 export default {
   name: 'App',

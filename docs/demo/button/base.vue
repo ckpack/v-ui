@@ -7,5 +7,5 @@
 </template>
 
 <script setup lang="ts">
-import { Button } from 'v-ui';
+import { Button } from '@ckpack/v-ui';
 </script>

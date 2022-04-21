@@ -5,8 +5,8 @@
 ```js
 import { createApp } from 'vue';
 import App from '@/App.vue';
-import VUI from 'v-ui';
-import 'v-ui/dist/index.scss';
+import VUI from '@ckpack/v-ui';
+import '@ckpack/v-ui/dist/index.scss';
 
 const app = createApp(App);
 
@@ -16,12 +16,12 @@ app.mount('#app');
 
 ## 按需加载
 
-默认支持`tree shaking`，无需任何插件，直接引入 `import { Button } from 'v-ui'` 就会有按需加载的效果。
+默认支持`tree shaking`，无需任何插件，直接引入 `import { Button } from '@ckpack/v-ui'` 就会有按需加载的效果。
 
 
 ```html
 <script>
-  import { Button as VButton } from 'v-ui';
+  import { Button as VButton } from '@ckpack/v-ui';
   export default {
     components: {
       VButton,
@@ -76,12 +76,12 @@ app.mount('#app');
 #### 全局引入样式
 
 ```js
-import 'v-ui/dist/index.css';
+import '@ckpack/v-ui/dist/index.css';
 ```
 
 #### 按需引入样式
 
 ```js
-import 'v-ui/es/components/button/index.css';
-import 'v-ui/es/components/label/index.css';
+import '@ckpack/v-ui/es/components/button/index.css';
+import '@ckpack/v-ui/es/components/label/index.css';
 ```

@@ -5,5 +5,5 @@
 </template>
 
 <script setup lang="ts">
-import { Label } from 'v-ui';
+import { Label } from '@ckpack/v-ui';
 </script>
