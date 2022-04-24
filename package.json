@@ -31,6 +31,7 @@
   ],
   "scripts": {
     "prepare": "husky install",
+    "link": "pnpm link ./ --save-dev",
     "lint": "eslint --fix --ext js,ts,mjs,cjs,tsx,jsx,vue ./",
     "release": "standard-version",
     "dev": "vite -c ./dev/vite.config.ts",
@@ -45,28 +46,27 @@
     "postgen": "node ./scripts/gen-compoents.mjs"
   },
   "devDependencies": {
+    "@ckpack/v-ui": "file:./",
     "@commitlint/cli": "^16.2.3",
     "@commitlint/config-conventional": "^16.2.1",
-    "@typescript-eslint/eslint-plugin": "^5.19.0",
-    "@typescript-eslint/parser": "^5.19.0",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
     "@vitejs/plugin-vue": "^2.3.1",
     "@vue/tsconfig": "^0.1.3",
-    "eslint": "^8.13.0",
+    "eslint": "^8.14.0",
     "eslint-config-airbnb-typescript": "^17.0.0",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-vue": "^8.6.0",
+    "eslint-plugin-vue": "^8.7.1",
     "husky": "^7.0.4",
-    "lint-staged": "^12.3.8",
-    "sass": "^1.50.0",
+    "lint-staged": "^12.4.0",
+    "sass": "^1.50.1",
     "standard-version": "^9.3.2",
     "typescript": "^4.6.3",
-    "@ckpack/v-ui": "file:./",
     "vite": "^2.9.5",
     "vite-plugin-dts": "^1.1.0",
     "vitepress": "^0.22.3",
     "vue": "^3.2.33"
   },
-  "dependencies": {},
   "peerDependencies": {
     "vue": "^3.2.x"
   },
