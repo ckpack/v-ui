@@ -1,8 +1,6 @@
 {
   "extends": "@vue/tsconfig/tsconfig.json",
   "compilerOptions": {
-    "lib":["ESNext", "DOM"],
-    "types": ["node"],
     "declaration": true,
   },
   "include": ["src/**/*", "scripts/**/*", "dev/**/*", ".eslintrc.cjs", "commitlint.config.cjs", "docs/demo/**/*"],
