@@ -4,6 +4,9 @@ module.exports = {
     node: true,
     'vue/setup-compiler-macros': true,
   },
+  globals: {
+    defineOptions: true,
+  },
   extends: [
     'plugin:vue/vue3-recommended',
     'airbnb-base',
@@ -28,6 +31,10 @@ module.exports = {
     'vue/require-default-prop': 0,
     'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
     'import/prefer-default-export': 0,
+    'import/first': 'off',
+    'import/order': 0,
+    'import/no-duplicates': 0,
     'no-param-reassign': 0,
+    'max-len': 0,
   },
 };

@@ -2,14 +2,14 @@
   <div id="app">
     <ConfigProvider>
       <!-- button -->
-      <Button>Test</Button>
+      <Button>Default</Button>
       <!-- label -->
       <Label label="Hello Wrold" />
     </ConfigProvider>
   </div>
 </template>
 <script lang="ts">
-import { ConfigProvider, Button, Label } from '@ckpack/v-ui';
+import { ConfigProvider, Button, Label } from '../src';
 
 export default {
   name: 'App',

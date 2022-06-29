@@ -1,24 +1,20 @@
 <template>
-  <div :class="prefix">
+  <div
+    :class="className"
+  >
     {{ label }}
   </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
+<script setup lang="ts">
 import { getClsPrefix } from '../../defaultConfig';
 
-export default defineComponent({
+defineOptions({
   name: 'Label',
-  props: {
-    label: [String, Number],
-  },
-  setup(props) {
-    const prefix = getClsPrefix('label');
-    return {
-      prefix,
-      text: props.label,
-    };
-  },
+});
+
+const className = getClsPrefix('Label');
+defineProps({
+  label: String,
 });
 </script>

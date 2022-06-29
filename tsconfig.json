@@ -2,7 +2,8 @@
   "extends": "@vue/tsconfig/tsconfig.json",
   "compilerOptions": {
     "declaration": true,
+    "types": ["unplugin-vue-define-options"]
   },
-  "include": ["src/**/*", "scripts/**/*", "dev/**/*", ".eslintrc.cjs", "commitlint.config.cjs", "docs/demo/**/*"],
+  "include": ["*.js", "unocss.config.ts", "src/**/*", "scripts/**/*", "dev/**/*", ".eslintrc.cjs", "commitlint.config.cjs", "docs/demo/**/*", "unocss.config.js"],
   "exclude": ["node_modules"]
 }

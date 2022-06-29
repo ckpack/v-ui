@@ -1,5 +1,7 @@
 import { build } from 'vite';
 import vue from '@vitejs/plugin-vue';
+import Unocss from 'unocss/vite';
+import DefineOptions from 'unplugin-vue-define-options/vite';
 
 const name = 'VUI';
 const external = ['vue'];
@@ -8,7 +10,9 @@ const globals = {
 };
 
 build({
-  plugins: [vue()],
+  plugins: [Unocss({
+    mode: 'vue-scoped',
+  }), vue(), DefineOptions()],
   build: {
     target: 'esnext',
     outDir: 'dist',
