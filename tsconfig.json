@@ -4,6 +4,6 @@
     "declaration": true,
     "types": ["unplugin-vue-define-options"]
   },
-  "include": ["*.js", "unocss.config.ts", "src/**/*", "scripts/**/*", "dev/**/*", ".eslintrc.cjs", "commitlint.config.cjs", "docs/demo/**/*", "unocss.config.js"],
+  "include": ["src/**/*", "scripts/**/*", "dev/**/*", "docs/**/*", "*.cjs", "*.ts", "*.js"],
   "exclude": ["node_modules"]
 }

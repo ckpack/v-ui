@@ -1,3 +1,29 @@
+<script setup>
+import { ref } from 'vue'
+
+const props = defineProps({
+  description: String,
+  code: String,
+  compoent: Object,
+})
+
+const description = decodeURIComponent(props.description)
+const code = decodeURIComponent(props.code)
+
+const isShowCode = ref(false)
+const copyTip = ref('Copy')
+const copyCode = () => {
+  copyTip.value = 'Copyed'
+  navigator.clipboard.writeText(decodeURIComponent(props.code))
+}
+
+const handlerMouseout = () => {
+  setTimeout(() => {
+    copyTip.value = 'Copy'
+  }, 250)
+}
+</script>
+
 <template>
   <div class="demo-block">
     <div class="description">
@@ -38,59 +64,38 @@
   </div>
 </template>
 
-<script setup>
-import { ref } from 'vue';
-
-const props = defineProps({
-  description: String,
-  code: String,
-  compoent: Object,
-});
-
-const description = decodeURIComponent(props.description);
-const code = decodeURIComponent(props.code);
-
-const isShowCode = ref(false);
-const copyTip = ref('Copy');
-const copyCode = () => {
-  copyTip.value = 'Copyed';
-  navigator.clipboard.writeText(decodeURIComponent(props.code));
-};
-
-const handlerMouseout = () => {
-  setTimeout(() => {
-    copyTip.value = 'Copy';
-  }, 250);
-};
-</script>
-
-<style scoped lang="scss">
+<style scoped>
 .demo-block {
-  border: 1px solid var(--c-divider-dark);
+  border: 1px solid var(--vp-c-divider-light);
   padding: 12px;
   word-wrap: break-word;
-  .description {
-    font-size: 1rem;
-    font-weight: bolder;
-    padding-bottom: 12px;
-  }
-  .preview {
-    padding: 12px 0;
-  }
-  .control {
-    display: flex;
-    flex-direction: row-reverse;
-    .control-btn {
-      cursor: pointer;
-      padding: 4px;
-      margin: 4px;
-      width: 4rem;
-      border: none;
-      border-radius: 1rem;
-      &:hover {
-        color: var(--c-brand);
-      }
-    }
-  }
+}
+
+.description {
+  font-size: 1rem;
+  font-weight: bolder;
+  padding-bottom: 12px;
+}
+.preview {
+  padding: 12px 0;
+}
+
+.control {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.control-btn {
+  cursor: pointer;
+  padding: 4px;
+  margin: 4px;
+  width: 4rem;
+  border: none;
+  border-radius: 1rem;
+  color: var(--vp-c-brand);
+}
+
+.control-btn:hover {
+  color: var(--vp-c-brand-dark);
 }
 </style>

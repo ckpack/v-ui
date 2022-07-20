@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import { Button } from '@ckpack/v-ui'
+</script>
+
 <template>
   <div>
     <Button>
@@ -5,7 +9,3 @@
     </Button>
   </div>
 </template>
-
-<script setup lang="ts">
-import { Button } from '@ckpack/v-ui';
-</script>

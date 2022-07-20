@@ -1,26 +1,30 @@
-import { getNav, getSidebar } from "./bar.js";
-import { name, description, repository } from "../../package.json";
-import { mdPlugin } from "./mdPlugin.js";
+import { description, name, repository } from '../../package.json'
+import { getNav, getSidebar } from './bar.js'
+import { mdPlugin } from './mdPlugin.js'
 
 export default {
   title: name,
-  description: description,
+  description,
   base: `/${name}/`,
   locales: {
     '/': { lang: 'zh-CN' },
     '/en/': { lang: 'en-US' },
   },
   markdown: {
-    config: (md) => {
-      md.use(mdPlugin);
-    }
+    config: (md: any) => {
+      md.use(mdPlugin)
+    },
   },
   themeConfig: {
     repo: repository,
-    docsDir: 'docs',
-    docsBranch: 'main',
-    editLinks: true,
-    editLinkText: 'Edit this page on GitHub',
+    editLink: {
+      pattern: 'https://github.com/ckpack/v-ui/edit/main/docs/:path',
+      text: 'Edit this page on GitHub',
+    },
+    // docsDir: 'docs',
+    // docsBranch: 'main',
+    // editLinks: true,
+    // editLinkText: 'Edit this page on GitHub',
     lastUpdated: 'Last Updated',
     locales: {
       '/': {
@@ -34,5 +38,5 @@ export default {
         sidebar: getSidebar('/en'),
       },
     },
-  }
-};
+  },
+}
