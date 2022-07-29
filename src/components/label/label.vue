@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { getClsPrefix } from '../../defaultConfig'
+import { useNamespace } from '@/hooks'
 
 defineProps({
   label: String,
@@ -9,14 +9,11 @@ defineOptions({
   name: 'Label',
 })
 
-const className = getClsPrefix('Label')
+const ns = useNamespace('label')
 </script>
 
 <template>
-  <div
-    class="text-green-700"
-    :class="className"
-  >
+  <span :class="ns.b()">
     {{ label }}
-  </div>
+  </span>
 </template>

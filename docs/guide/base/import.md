@@ -1,27 +1,29 @@
-## Complete introduction
+开箱即用地支持多种引入方式。
 
-Fully introduce the component library.
+## 完整引入
+
+完整引入组件库。
 
 ```js
-import {createApp} from'vue';
-import App from'@/App.vue';
-import VUI from'v-ui';
-import'v-ui/dist/index.scss';
+import { createApp } from 'vue'
+import VUI from '@ckpack/v-ui'
+import App from '@/App.vue'
+import '@ckpack/v-ui/dist/index.scss'
 
-const app = createApp(App);
+const app = createApp(App)
 
-app.use(VUI);
-app.mount('#app');
+app.use(VUI)
+app.mount('#app')
 ```
 
-## Load on demand
+## 按需加载
 
-By default, `tree shaking` is supported, no plug-in is needed. Directly importing `import {Button} from'v-ui'` will have the effect of loading on demand.
+默认支持`tree shaking`，无需任何插件，直接引入 `import { Button } from '@ckpack/v-ui'` 就会有按需加载的效果。
 
 
 ```html
 <script>
-  import {Button as VButton} from'v-ui';
+  import { Button as VButton } from '@ckpack/v-ui';
   export default {
     components: {
       VButton,
@@ -34,9 +36,9 @@ By default, `tree shaking` is supported, no plug-in is needed. Directly importin
 </template>
 ```
 
-## Browser Directly Introduce
+## 浏览器直接引入
 
-You can also import it directly through the browser's `script`, `style` tags.
+你也可以直接通过浏览器的`script`, `style`标签导入。
 
 ```html
 <!DOCTYPE html>
@@ -72,16 +74,16 @@ You can also import it directly through the browser's `script`, `style` tags.
 </html>
 ```
 
-## Style
-#### Globally introduce styles
+## 样式
+#### 全局引入样式
 
 ```js
-import'v-ui/dist/index.css';
+import '@ckpack/v-ui/dist/index.css'
 ```
 
-#### Introduce styles on demand
+#### 按需引入样式
 
 ```js
-import'v-ui/es/components/button/index.css';
-import'v-ui/es/components/label/index.css';
+import '@ckpack/v-ui/es/components/button/index.css'
+import '@ckpack/v-ui/es/components/label/index.css'
 ```

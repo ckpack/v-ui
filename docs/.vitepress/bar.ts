@@ -12,20 +12,26 @@ function getCompoents(lang: string) {
 }
 
 function getGuideSidebar(lang: string) {
-  return [{
-    text: 'Base',
-    items: [{
-      text: 'Install',
-      link: `${lang}/guide/base/install`,
-    }, {
-      text: 'Customize',
-      link: `${lang}/guide/base/customize`,
-    }],
-  },
-  {
-    text: 'Compoents',
-    items: getCompoents(lang),
-  },
+  return [
+    {
+      text: 'Base',
+      collapsible: true,
+      items: [{
+        text: 'Getting Start',
+        link: `${lang}/guide/getting-started`,
+      }, {
+        text: 'Import',
+        link: `${lang}/guide/base/import`,
+      }, {
+        text: 'Customize',
+        link: `${lang}/guide/base/customize`,
+      }],
+    },
+    {
+      text: 'Compoents',
+      collapsible: true,
+      items: getCompoents(lang),
+    },
   ]
 }
 
@@ -39,8 +45,8 @@ function getSidebar(lang = '') {
 function getNav(lang = '') {
   return [{
     text: 'Guide',
-    link: `${lang}/`,
-    activeMatch: `^${lang}/guide`,
+    link: `${lang}/guide/getting-started`,
+    activeMatch: `^${lang}/guide/`,
   }, {
     text: 'About',
     link: `${lang}/about`,

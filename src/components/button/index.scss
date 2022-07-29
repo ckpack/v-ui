@@ -1,0 +1,12 @@
+@use '../../styles/__variables.scss' as *;
+
+.#{$cls-prefix}button {
+  background-color: $warning;
+  padding: 0.25rem 1rem;
+  border: 1px solid $warning;
+  cursor: pointer;
+}
+
+.#{$cls-prefix}button-is-round {
+  border-radius: 20px;
+}

@@ -1,0 +1,5 @@
+@use '../../styles/_variables.scss' as *;
+
+.#{$cls-prefix}label {
+  background-color: $red;
+}

@@ -1,23 +1,19 @@
-<script lang="ts">
-import { Button, ConfigProvider, Label } from '@ckpack/v-ui'
-
-export default {
-  name: 'App',
-  components: {
-    ConfigProvider,
-    Button,
-    Label,
-  },
-}
+<script setup lang="ts">
+import { Button, ConfigProvider, Label } from '@ckpack/v-ui/src'
 </script>
 
 <template>
   <div id="app">
     <ConfigProvider>
-      <!-- button -->
+      <h4>Button</h4>
       <Button>Default</Button>
-      <!-- label -->
-      <Label label="Hello Wrold" />
+      <Button round>
+        Default
+      </Button>
+      <div>
+        <h4>Label</h4>
+        <Label label="Hello Wrold" />
+      </div>
     </ConfigProvider>
   </div>
 </template>

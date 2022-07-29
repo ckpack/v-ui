@@ -2,8 +2,14 @@
   "extends": "@vue/tsconfig/tsconfig.json",
   "compilerOptions": {
     "declaration": true,
-    "types": ["unplugin-vue-define-options"]
+    "types": ["unplugin-vue-define-options"],
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "baseUrl": "./"
   },
-  "include": ["src/**/*", "scripts/**/*", "dev/**/*", "docs/**/*", "*.cjs", "*.ts", "*.js"],
+  "include": ["src/**/*", "scripts/**/*", "dev/**/*", "docs/**/*", "*.cjs", "*.ts"],
   "exclude": ["node_modules"]
 }

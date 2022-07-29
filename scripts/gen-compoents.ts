@@ -1,8 +1,8 @@
-import fs from 'fs'
+import fs from 'node:fs'
 
 const basePath = process.cwd()
 
-function formatComponent(component) {
+function formatComponent(component: string) {
   return component.split('-').map(name => name.slice(0, 1).toUpperCase() + name.slice(1)).join('')
 }
 

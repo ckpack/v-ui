@@ -1,0 +1,13 @@
+:root {
+  --v-color-red: #F56C6C;
+  --v-color-green: #16BB83;
+  --v-color-warning: #E9A71D;
+  --v-color-primary: #0B8BF4;
+}
+
+$cls-prefix: v- !default;
+// color
+$red: var(--v-color-red) !default;
+$green: var(--v-color-green) !default;
+$warning: var(--v-color-warning) !default;
+$primary: var(--v-color-primary) !default;

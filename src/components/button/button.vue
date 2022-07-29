@@ -1,19 +1,19 @@
 <script setup lang="ts">
+import { useNamespace } from '@/hooks'
+
+const props = defineProps<{
+  round?: boolean
+}>()
+
 defineOptions({
   name: 'Button',
 })
+
+const ns = useNamespace('button')
 </script>
 
 <template>
-  <button
-    class="btn"
-  >
+  <button :class="[ns.b(), ns.is('round', round)]">
     <slot />
   </button>
 </template>
-
-<style>
-.btn {
-  @apply px-4 py-1 border rounded inline-block bg-green-700 text-white cursor-pointer hover:bg-teal-800 disabled:cursor-default disabled:bg-gray-600 disabled:opacity-50;
-}
-</style>

@@ -1,42 +1,31 @@
-import { description, name, repository } from '../../package.json'
+import { defineConfig } from 'vitepress'
+import { author, description, license, name, repository } from '../../package.json'
 import { getNav, getSidebar } from './bar.js'
 import { mdPlugin } from './mdPlugin.js'
 
-export default {
+export default defineConfig({
   title: name,
   description,
   base: `/${name}/`,
-  locales: {
-    '/': { lang: 'zh-CN' },
-    '/en/': { lang: 'en-US' },
-  },
+  lastUpdated: true,
   markdown: {
     config: (md: any) => {
       md.use(mdPlugin)
     },
   },
   themeConfig: {
-    repo: repository,
     editLink: {
-      pattern: 'https://github.com/ckpack/v-ui/edit/main/docs/:path',
+      pattern: `${repository}/edit/main/docs/:path`,
       text: 'Edit this page on GitHub',
     },
-    // docsDir: 'docs',
-    // docsBranch: 'main',
-    // editLinks: true,
-    // editLinkText: 'Edit this page on GitHub',
-    lastUpdated: 'Last Updated',
-    locales: {
-      '/': {
-        label: '中文',
-        nav: getNav(),
-        sidebar: getSidebar(),
-      },
-      '/en/': {
-        label: 'English',
-        nav: getNav('/en'),
-        sidebar: getSidebar('/en'),
-      },
+    socialLinks: [
+      { icon: 'github', link: repository },
+    ],
+    footer: {
+      message: `Released under the ${license} License.`,
+      copyright: `Copyright © 2022-present ${author}`,
     },
+    nav: getNav(),
+    sidebar: getSidebar() as any,
   },
-}
+})

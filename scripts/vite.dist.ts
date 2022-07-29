@@ -1,18 +1,10 @@
-import { build } from 'vite'
+import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import Unocss from 'unocss/vite'
 import DefineOptions from 'unplugin-vue-define-options/vite'
+import { alias, baseExternal, globals, name } from './vite-common'
 
-const name = 'VUI'
-const external = ['vue']
-const globals = {
-  vue: 'Vue',
-}
-
-build({
-  plugins: [Unocss({
-    mode: 'vue-scoped',
-  }), vue(), DefineOptions()],
+export default defineConfig({
+  plugins: [vue(), DefineOptions()],
   build: {
     target: 'esnext',
     outDir: 'dist',
@@ -23,13 +15,16 @@ build({
         exports: 'named',
         globals,
       },
-      external,
+      external: baseExternal,
     },
     lib: {
       name,
       entry: './src',
-      formats: ['cjs', 'es', 'iife'],
+      formats: ['es', 'cjs', 'iife'],
       fileName: format => `index.${format}.js`,
     },
+  },
+  resolve: {
+    alias,
   },
 })

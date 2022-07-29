@@ -1,5 +1,5 @@
 import type { InjectionKey } from 'vue'
-import { inject } from 'vue'
+// import { inject } from 'vue'
 
 export const NAME = 'VUI'
 // 自定义组件前缀
@@ -11,15 +11,15 @@ export const configProvideInjectKey = Symbol('configProvideInjectKey') as Inject
   [key: string]: unknown
 }>
 
-export function useGlobalConfig(key: string) {
-  const config = inject(configProvideInjectKey, {})
-  return key ? config[key] : config
-}
+// export function useGlobalConfig(key: string) {
+//   const config = inject(configProvideInjectKey, {})
+//   return key ? config[key] : config
+// }
 
-export const getClsPrefix = (componentName = '') => {
-  const prefix = useGlobalConfig('clsPrefix') || CLS_PREFIX
-  return `${prefix}${componentName}`
-}
+// export const getClsPrefix = (componentName = '') => {
+//   const prefix = useGlobalConfig('clsPrefix') || CLS_PREFIX
+//   return `${prefix}${componentName}`
+// }
 
 export const getComponentPrefix = (options: {
   componentPrefix?: string

@@ -1,26 +1,19 @@
-import fs from 'fs'
-import { build } from 'vite'
+import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import dtsPlugin from 'vite-plugin-dts'
-import Unocss from 'unocss/vite'
 import DefineOptions from 'unplugin-vue-define-options/vite'
+import { alias, external } from './vite-common'
 
-const { dependencies } = JSON.parse(`${fs.readFileSync('./package.json')}`)
-const external = ['vue', ...Object.keys(dependencies ?? [])]
-const outDir = 'es'
 const preserveModulesRoot = 'src'
-
-export default build({
-  plugins: [Unocss({
-    mode: 'vue-scoped',
-  }), dtsPlugin({
+export default defineConfig({
+  plugins: [dtsPlugin({
     skipDiagnostics: false,
     logDiagnostics: true,
     cleanVueFileName: true,
   }), vue(), DefineOptions()],
   build: {
     target: 'esnext',
-    outDir,
+    outDir: 'es',
     emptyOutDir: true,
     minify: false,
     rollupOptions: {
@@ -35,5 +28,8 @@ export default build({
       entry: './src',
       formats: ['es'],
     },
+  },
+  resolve: {
+    alias,
   },
 })
