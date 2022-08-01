@@ -1,0 +1,4 @@
+@use '@ckpack/v-ui/src/styles/vars.scss' with (
+  $brand-color: var( --v-yellow-color-6)
+);
+@use '@ckpack/v-ui/src/styles/index.scss'

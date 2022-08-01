@@ -1,9 +1,9 @@
-@use '../../styles/__variables.scss' as *;
+@use '../../styles/base.scss' as *;
 
 .#{$cls-prefix}button {
-  background-color: $warning;
+  background-color: $brand-color;
   padding: 0.25rem 1rem;
-  border: 1px solid $warning;
+  border: 1px solid $brand-color;
   cursor: pointer;
 }
 
