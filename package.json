@@ -39,7 +39,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "release": "standard-version",
     "dev": "vite -c ./dev/vite.config.ts",
-    "build": "pnpm run predev && pnpm run build:es && pnpm run build:dist",
+    "build": "pnpm run build:es && pnpm run build:dist",
     "build:es": "vite build  -c scripts/vite.es.ts",
     "build:dist": "vite build -c scripts/vite.dist.ts",
     "docs:dev": "vitepress dev docs",
