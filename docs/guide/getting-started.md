@@ -54,18 +54,18 @@ https://github.com/ckpack/v-ui/archive/refs/heads/main.zip
 修改文件`src/defaultConfig.js`
 
 ```js
-// 修改iife格式时的ouput, 如`BUI`
-export const NAME = "BUI";
+// 修改iife格式时的ouput, 如`TUI`
+export const NAME = "TUI";
 // 修改默认组件前缀， 如`B`
-export const COMPONENT_PREFIX = "B";
+export const COMPONENT_PREFIX = "T";
 ```
 
-默认组件类前缀是`v-`,你可以选择修改组件类前缀  
-修改文件`src/styles/__variables.scss`
+默认组件类前缀是`v`,你可以选择修改组件类前缀  
+修改文件`src/styles/config.scss`
 
 ```scss
-// 修改默认组件类前缀如`b-`
-$prefix: b- !default;
+// 修改默认组件类前缀如`t`
+$namespace: t !default;
 ```
 
 ## 开始创建组件

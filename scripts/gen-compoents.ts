@@ -8,8 +8,8 @@ function formatComponent(component: string) {
 
 function getCompoentsJS() {
   const components = fs.readdirSync(`${basePath}/src/components`)
-  return `${components.map(name => `import ${formatComponent(name)} from './components/${name}';`).join('\n')}
-\nexport {\n${components.map(name => `  ${formatComponent(name)},\n`).join('')}};\n`
+  return `${components.map(name => `import ${formatComponent(name)} from './components/${name}'`).join('\n')}
+\nexport {\n${components.map(name => `  ${formatComponent(name)},\n`).join('')}}\n`
 }
 
 function getCompoentsStyle() {

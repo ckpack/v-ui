@@ -62,18 +62,18 @@ The default component prefix is ​​`V`, you can choose to modify the componen
 Modify the file `src/defaultConfig.js`
 
 ```js
-// modify the ouput when iife format, such as `BUI`
-export const NAME = "BUI";
+// modify the ouput when iife format, such as `TUI`
+export const NAME = "TUI";
 // Modify the default component prefix, such as `B`
 export const COMPONENT_PREFIX = "B";
 ```
 
 The default component class prefix is ​​`v-`, you can choose to modify the component class prefix
-Modify the file `src/styles/__variables.scss`
+Modify the file `src/styles/config.scss`
 
 ```scss
-// Modify the default component class prefix such as `b-`
-$prefix: b- !default;
+// Modify the default component class prefix such as `t`
+$namespace: t !default;
 ```
 
 ## Start creating components

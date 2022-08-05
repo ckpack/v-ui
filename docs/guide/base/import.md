@@ -8,7 +8,7 @@
 import { createApp } from 'vue'
 import VUI from '@ckpack/v-ui'
 import App from '@/App.vue'
-import '@ckpack/v-ui/dist/index.scss'
+import '@ckpack/v-ui/es/styles/index.scss'
 
 const app = createApp(App)
 
@@ -20,15 +20,9 @@ app.mount('#app')
 
 默认支持`tree shaking`，无需任何插件，直接引入 `import { Button } from '@ckpack/v-ui'` 就会有按需加载的效果。
 
-
 ```html
-<script>
+<script setup>
   import { Button as VButton } from '@ckpack/v-ui';
-  export default {
-    components: {
-      VButton,
-    },
-  }
 </script>
 
 <template>
@@ -78,7 +72,7 @@ app.mount('#app')
 #### 全局引入样式
 
 ```js
-import '@ckpack/v-ui/dist/index.css'
+import '@ckpack/v-ui/es/styles/index.css'
 ```
 
 #### 按需引入样式

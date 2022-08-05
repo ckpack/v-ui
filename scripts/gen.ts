@@ -11,6 +11,8 @@ const basePath = process.cwd()
 const componentName = process.argv.slice(2).join(' ')
 const formatComponentName = formatComponent(componentName)
 
+console.log(`componentName:${componentName}`, process.argv)
+
 if (!/^[a-z]+(-[a-z]+){0,}$/.test(componentName)) {
   console.error(
     `component name is incorrect: ${componentName}\netc:\nbutton\nsome-button\nsome-button-group`,
@@ -27,36 +29,35 @@ fs.mkdirSync(`${basePath}/src/components/${componentName}`)
 fs.writeFileSync(
   `${basePath}/src/components/${componentName}/${componentName}.vue`,
   `<template>
-  <div :class="prefix">\n    ${componentName}\n  </div>
+  <div :class="ns.b()">\n    ${componentName}\n  </div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from 'vue';
-import { getClsPrefix } from '../../defaultConfig';
+<script setup lang="ts">
+import { useNamespace } from '@/hooks'
 
-export default defineComponent({
+defineProps({
+  label: String,
+})
+
+defineOptions({
   name: '${formatComponentName}',
-  setup() {
-    const prefix = getClsPrefix('${componentName}');
-    return {
-      prefix,
-    };
-  },
-});
+})
+
+const ns = useNamespace('${componentName}')
 </script>
 `,
 )
 fs.writeFileSync(
   `${basePath}/src/components/${componentName}/index.scss`,
-  `@use '../../styles/_variables' as *;
+  `@use "../../styles/base.scss" as *;
 
-.#{$prefix}${componentName} {}`,
+$prefix: '#{$namespace}-${componentName}'`,
 )
 fs.writeFileSync(
   `${basePath}/src/components/${componentName}/index.ts`,
-  `import ${formatComponentName} from './${componentName}.vue';
-import { withInstallComponent } from '../../utils/compoent';
+  `import ${formatComponentName} from './${componentName}.vue'
+import { withInstallComponent } from '../../utils/compoent'
 
-export default withInstallComponent(${formatComponentName});
+export default withInstallComponent(${formatComponentName})
 `,
 )

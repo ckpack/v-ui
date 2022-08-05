@@ -5,7 +5,7 @@ Config Provider 被用来提供全局的配置选项，让你的配置能够在�
 ## 用例
 
 ```vue
-<ConfigProvider cls-prefix="k-">
+<ConfigProvider cls-prefix="t-">
   <div id="app">
     <KButton></KButton>
   </div>

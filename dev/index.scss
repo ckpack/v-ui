@@ -1,3 +1,4 @@
-// @use '@ckpack/v-ui/src/styles/vars.scss' with (
-// );
+@use '@ckpack/v-ui/src/styles/base.scss' with (
+  $namespace: 'v',
+);
 @use '@ckpack/v-ui/src/styles/index.scss'

@@ -13,7 +13,7 @@ import App from "@/App.vue";
 
 const app = createApp(App);
 app.use(Button, {
-  componentPrefix: "K",
+  componentPrefix: "T",
 });
 
 app.mount("#app");
@@ -29,7 +29,7 @@ import App from "@/App.vue";
 const app = createApp(App);
 
 app.use(create([Button, Label]), {
-  componentPrefix: "K",
+  componentPrefix: "T",
 });
 app.mount("#app");
 ```
@@ -37,8 +37,8 @@ app.mount("#app");
 然后我们可以在其他地方就这样使用
 
 ```html
-<k-button @click="handlerClick">Test</k-button>
-<k-label></k-label>
+<t-button @click="handlerClick">Test</t-button>
+<t-label></t-label>
 ```
 
 ## 自定义类名前缀
@@ -53,8 +53,8 @@ import App from "@/App.vue";
 const app = createApp(App);
 
 app.use(Button, {
-  componentPrefix: "K",
-  clsPrefix: "k-",
+  componentPrefix: "T",
+  clsPrefix: "t",
 });
 app.mount("#app");
 ```
@@ -62,8 +62,8 @@ app.mount("#app");
 由于前缀变更，你需要直接引入并修改原始`scss`文件。
 
 ```scss
-@use "v-ui/src/style/_variables.scss" with (
-  $prefix: "k-"
+@use "v-ui/es/styles/config.scss" with (
+  $namespace: "t"
 );
-@use "v-ui/src/style/index.scss";
+@use "v-ui/es/styles/index.scss";
 ```
