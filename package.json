@@ -34,8 +34,8 @@
     "dist/*"
   ],
   "scripts": {
-    "prepare": "husky install",
-    "predev": "pnpm link ./",
+    "husky": "husky install",
+    "link": "pnpm link ./",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "release": "standard-version",
     "dev": "vite -c ./dev/vite.config.ts",
