@@ -9,12 +9,14 @@
 You can use this project to quickly create a component library based on vue 3.0. This is a super fast and super simple way to generate vue component library!
 
 ## [Documentation](https://ckpack.github.io/v-ui/)
+
 ## Features
 
-+ Quickly add new components via commands
-+ All components support on-demand loading by default
-+ Customizable component prefix to avoid component name and style conflicts
-+ Support component library document generation
+- Quickly add new components via commands
+- All components support on-demand loading by default
+- Customizable component prefix to avoid component name and style conflicts
+- Support component library document generation
+
 ## Script commands
 
 For detailed commands, refer to the `scripts` part of `package.json`
@@ -39,7 +41,6 @@ npm run release
 npm run docs:build
 ```
 
-
 ## download
 
 ```bash
@@ -52,34 +53,37 @@ https://github.com/ckpack/v-ui/archive/refs/heads/main.zip
 
 ## Global replacement variables
 
-+ `v-ui` is `you-project-name` such as `b-ui`
-+ `ckpack` is `you-github-username` such as `my-github-username`
+- `v-ui` is `you-project-name` such as `b-ui`
+- `ckpack` is `you-github-username` such as `my-github-username`
 
 ## Modify component prefix
 
 The default component prefix is ​​`V`, you can choose to modify the component prefix
 Modify the file `src/defaultConfig.js`
+
 ```js
 // modify the ouput when iife format, such as `BUI`
-export const NAME ='BUI';
+export const NAME = "BUI";
 // Modify the default component prefix, such as `B`
-export const COMPONENT_PREFIX ='B';
+export const COMPONENT_PREFIX = "B";
 ```
 
 The default component class prefix is ​​`v-`, you can choose to modify the component class prefix
 Modify the file `src/styles/__variables.scss`
+
 ```scss
 // Modify the default component class prefix such as `b-`
-$cls-prefix: b- !default;
+$prefix: b- !default;
 ```
 
 ## Start creating components
 
-Use `npm run gen component-name` to add new components. For example, execute the `npm run gen select` command, which will generate the `select` file directory under the `src/components/` directory, and edit the `select` under the folder. vue` file and `index.scss` file
+Use `npm run gen component-name` to add new components. For example, execute the `npm run gen select` command, which will generate the `select` file directory under the `src/components/` directory, and edit the `select` under the folder. vue`file and`index.scss` file
 
 #### Preview the newly generated components
 
 Introduce new components in the file `dev/app.vue`, execute `npm run dev` to preview the new components
+
 ```diff
 <template>
   <div id="app">
@@ -102,6 +106,7 @@ Add the document corresponding to the component name in the `docs/guide/compoent
 
 ```md
 <!-- docs/guide/compoents/select.md -->
+
 # Select
 
 Test component

@@ -1,89 +1,99 @@
+@use './config.scss' as *;
+@use './function.scss' as *;
+
+$colors: (
+  red-1: #fee2e2,
+  red-2: #fecaca,
+  red-3: #fca5a5,
+  red-4: #f87171,
+  red-5: #ef4444,
+  red-6: #dc2626,
+  red-7: #b91c1c,
+  red-8: #991b1b,
+  red-9: #7f1d1d,
+  yellow-1: #fef9c3,
+  yellow-2: #fef08a,
+  yellow-3: #fde047,
+  yellow-4: #facc15,
+  yellow-5: #eab308,
+  yellow-6: #ca8a04,
+  yellow-7: #a16207,
+  yellow-8: #854d0e,
+  yellow-9: #713f12,
+  green-1: #dcfce7,
+  green-2: #bbf7d0,
+  green-3: #86efac,
+  green-4: #4ade80,
+  green-5: #22c55e,
+  green-6: #16a34a,
+  green-7: #15803d,
+  green-8: #166534,
+  green-9: #14532d,
+  gray-1: #f3f4f6,
+  gray-2: #e5e7eb,
+  gray-3: #d1d5db,
+  gray-4: #9ca3af,
+  gray-5: #6b7280,
+  gray-6: #4b5563,
+  gray-7: #374151,
+  gray-8: #1f2937,
+  gray-9: #111827,
+  cyan-1: #cffafe,
+  cyan-2: #a5f3fc,
+  cyan-3: #67e8f9,
+  cyan-4: #22d3ee,
+  cyan-5: #06b6d4,
+  cyan-6: #0891b2,
+  cyan-7: #0e7490,
+  cyan-8: #155e75,
+  cyan-9: #164e63,
+) !default;
+
+
 :root {
-  // color
-  --v-red-color-1: #fee2e2;
-  --v-red-color-2: #fecaca;
-  --v-red-color-3: #fca5a5;
-  --v-red-color-4: #f87171;
-  --v-red-color-5: #ef4444;
-  --v-red-color-6: #dc2626;
-  --v-red-color-7: #b91c1c;
-  --v-red-color-8: #991b1b;
-  --v-red-color-9: #7f1d1d;
-  --v-yellow-color-1: #fef9c3;
-  --v-yellow-color-2: #fef08a;
-  --v-yellow-color-3: #fde047;
-  --v-yellow-color-4: #facc15;
-  --v-yellow-color-5: #eab308;
-  --v-yellow-color-6: #ca8a04;
-  --v-yellow-color-7: #a16207;
-  --v-yellow-color-8: #854d0e;
-  --v-yellow-color-9: #713f12;
-  --v-green-color-1: #dcfce7;
-  --v-green-color-2: #bbf7d0;
-  --v-green-color-3: #86efac;
-  --v-green-color-4: #4ade80;
-  --v-green-color-5: #22c55e;
-  --v-green-color-6: #16a34a;
-  --v-green-color-7: #15803d;
-  --v-green-color-8: #166534;
-  --v-green-color-9: #14532d;
-  --v-gray-color-1: #f3f4f6;
-  --v-gray-color-2: #e5e7eb;
-  --v-gray-color-3: #d1d5db;
-  --v-gray-color-4: #9ca3af;
-  --v-gray-color-5: #6b7280;
-  --v-gray-color-6: #4b5563;
-  --v-gray-color-7: #374151;
-  --v-gray-color-8: #1f2937;
-  --v-gray-color-9: #111827;
-  --v-cyan-color-1: #cffafe;
-  --v-cyan-color-2: #a5f3fc;
-  --v-cyan-color-3: #67e8f9;
-  --v-cyan-color-4: #22d3ee;
-  --v-cyan-color-5: #06b6d4;
-  --v-cyan-color-6: #0891b2;
-  --v-cyan-color-7: #0e7490;
-  --v-cyan-color-8: #155e75;
-  --v-cyan-color-9: #164e63;
+  @each $key, $value in $colors {
+    --#{$namespace}-color-#{$key}: #{$value};
+  }
 }
 
+
 // 品牌颜色及扩展
-$brand-color: var(--v-cyan-color-6) !default;
-$brand-color-hover: var(--v-cyan-color-5) !default;
-$brand-color-active: var(--v-cyan-color-7) !default;
-$brand-color-disabled: var(--v-cyan-color-4) !default;
-$brand-color-focus: var(--v-cyan-color-3) !default;
-$brand-color-light: var(--v-cyan-color-2) !default;
+$brand-color: getColorVar('cyan-6') !default;
+$brand-hover: getColorVar('cyan-5') !default;
+$brand-active: getColorVar('cyan-7') !default;
+$brand-disabled: getColorVar('cyan-4') !default;
+$brand-focus: getColorVar('cyan-3') !default;
+$brand-light: getColorVar('cyan-2') !default;
 // 警告色及扩展
-$warning-color: var(--v-yellow-color-6) !default;
-$warning-color-hover: var(--v-yellow-color-5) !default;
-$warning-color-active: var(--v-yellow-color-7) !default;
-$warning-color-disabled: var(--v-yellow-color-4) !default;
-$warning-color-focus: var(--v-yellow-color-3) !default;
-$warning-color-light: var(--v-yellow-color-2) !default;
+$warning-color: getColorVar('yellow-6') !default;
+$warning-hover: getColorVar('yellow-5') !default;
+$warning-active: getColorVar('yellow-7') !default;
+$warning-disabled: getColorVar('yellow-4') !default;
+$warning-focus: getColorVar('yellow-3') !default;
+$warning-light: getColorVar('yellow-2') !default;
 // 失败/错误色及扩展
-$error-color: var(--v-red-color-6) !default;
-$error-color-hover: var(--v-red-color-5) !default;
-$error-color-active: var(--v-red-color-7) !default;
-$error-color-disabled: var(--v-red-color-4) !default;
-$error-color-focus: var(--v-red-color-3) !default;
-$error-color-light: var(--v-red-color-2) !default;
+$error-color: getColorVar('red-6') !default;
+$error-hover: getColorVar('red-5') !default;
+$error-active: getColorVar('red-7') !default;
+$error-disabled: getColorVar('red-4') !default;
+$error-focus: getColorVar('red-3') !default;
+$error-light: getColorVar('red-2') !default;
 // 成功色及扩展
-$success-color: var(--v-green-color-6) !default;
-$success-color-hover: var(--v-green-color-5) !default;
-$success-color-active: var(--v-green-color-7) !default;
-$success-color-disabled: var(--v-green-color-4) !default;
-$success-color-focus: var(--v-green-color-3) !default;
-$success-color-light: var(--v-green-color-2) !default;
+$success-color: getColorVar('green-6') !default;
+$success-hover: getColorVar('green-5') !default;
+$success-active: getColorVar('green-7') !default;
+$success-disabled: getColorVar('green-4') !default;
+$success-focus: getColorVar('green-3') !default;
+$success-light: getColorVar('green-2') !default;
 
 // 遮罩
 $mask-active: rgba(0, 0, 0, 60%) !default; // 遮罩-弹出
 $mask-disabled: rgba(255, 255, 255, 40%) !default; // 遮罩-禁用
 
 // 文本颜色
-$text-color-brand: var(--v-cyan-color-6) !default;           // 文字-品牌
-$text-color-primary: var(--v-gray-color-9) !default;      // 文字-主要
-$text-color-secondary: var(--v-gray-color-6) !default;    // 文字-次要
-$text-color-disabled: var(--v-gray-color-4) !default;    // 文字-禁用
-$text-color-light: var(--v-gray-color-3) !default;    // 文字
-$text-color-lighter: var(--v-gray-color-1) !default;    // 文字
+$text-brand: getColorVar('cyan-6') !default; // 文字-品牌
+$text-primary: getColorVar('gray-9') !default; // 文字-主要
+$text-secondary: getColorVar('gray-6') !default; // 文字-次要
+$text-disabled: getColorVar('gray-4') !default; // 文字-禁用
+$text-light: getColorVar('gray-3') !default; // 文字
+$text-lighter: getColorVar('gray-1') !default; // 文字

@@ -1,13 +1,13 @@
 # v-ui
 
-你可以使用该项目快速创建基于vue 3.0的组件库。 这是生成 vue 组件库的超快、超简单的一种方式！
+你可以使用该项目快速创建基于 vue 3.0 的组件库。 这是生成 vue 组件库的超快、超简单的一种方式！
 
 ## 功能特点
 
-+ 通过命令快速添加新组件
-+ 所有组件默认支持按需加载
-+ 可自定义组件前缀，避免组件名称、样式冲突
-+ 支持组件库文档生成
+- 通过命令快速添加新组件
+- 所有组件默认支持按需加载
+- 可自定义组件前缀，避免组件名称、样式冲突
+- 支持组件库文档生成
 
 ## 脚本命令
 
@@ -45,8 +45,8 @@ https://github.com/ckpack/v-ui/archive/refs/heads/main.zip
 
 ## 全局替换变量
 
-+ `v-ui` 为 `you-project-name` 如 `b-ui`
-+ `ckpack` 为 `you-github-username` 如 `my-github-username`
+- `v-ui` 为 `you-project-name` 如 `b-ui`
+- `ckpack` 为 `you-github-username` 如 `my-github-username`
 
 ## 修改组件前缀
 
@@ -55,9 +55,9 @@ https://github.com/ckpack/v-ui/archive/refs/heads/main.zip
 
 ```js
 // 修改iife格式时的ouput, 如`BUI`
-export const NAME = 'BUI'
+export const NAME = "BUI";
 // 修改默认组件前缀， 如`B`
-export const COMPONENT_PREFIX = 'B'
+export const COMPONENT_PREFIX = "B";
 ```
 
 默认组件类前缀是`v-`,你可以选择修改组件类前缀  
@@ -65,7 +65,7 @@ export const COMPONENT_PREFIX = 'B'
 
 ```scss
 // 修改默认组件类前缀如`b-`
-$cls-prefix: b- !default;
+$prefix: b- !default;
 ```
 
 ## 开始创建组件
@@ -97,6 +97,7 @@ import {
 
 ```md
 <!-- docs/guide/compoents/select.md -->
+
 # Select
 
 测试组件

@@ -7,6 +7,7 @@
   "main": "es/index.js",
   "module": "es/index.js",
   "types": "es/index.d.ts",
+  "packageManager": "pnpm@7.8.0",
   "exports": {
     ".": {
       "import": "./es/index.js",
@@ -41,7 +42,7 @@
     "build": "npm run build:es && npm run build:dist",
     "build:es": "vite build  -c scripts/vite.es.ts && sass --no-source-map --style=compressed ./src:es",
     "build:dist": "vite build -c scripts/vite.dist.ts && sass --no-source-map --style=compressed ./src/styles/index.scss:dist/index.css",
-    "build:style": "sass --no-source-map --style=compressed ./src/styles/css-vars.scss:dist/css-vars.css",
+    "build:style": "sass --no-source-map --style=compressed ./src/styles/vars.scss:dist/vars.css",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
     "docs:serve": "vitepress serve docs",
@@ -49,7 +50,7 @@
     "postgen": "vite-node ./scripts/gen-compoents.ts"
   },
   "devDependencies": {
-    "vite-node": "^0.20.2",
+    "vite-node": "^0.20.3",
     "@antfu/eslint-config": "0.25.2",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
@@ -60,12 +61,12 @@
     "lint-staged": "^13.0.3",
     "standard-version": "^9.5.0",
     "typescript": "^4.7.4",
-    "unplugin-vue-define-options": "^0.6.2",
+    "unplugin-vue-define-options": "^0.7.3",
     "vite": "^3.0.4",
     "vite-plugin-dts": "^1.4.1",
     "vitepress": "^1.0.0-alpha.4",
     "vue": "^3.2.37",
-    "sass": "^1.54.0"
+    "sass": "^1.54.3"
   },
   "peerDependencies": {
     "vue": "^3.2.x"
