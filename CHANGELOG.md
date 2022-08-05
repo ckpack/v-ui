@@ -2,6 +2,36 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.4.0](https://github.com/ckpack/v-ui/compare/v1.3.0...v1.4.0) (2022-08-05)
+
+
+### Features
+
+* add @vue/tsconfig ([a3663ca](https://github.com/ckpack/v-ui/commit/a3663ca550f5ec7cfa0272f2b87caf95898a0c1c))
+* delete unocss ([cb70982](https://github.com/ckpack/v-ui/commit/cb70982606d9ba664dbb913d2bd43833a88b2430))
+* 优化颜色 ([4178ed8](https://github.com/ckpack/v-ui/commit/4178ed8feb0936296d966e76f4cb477a85045a45))
+* 提交 ([b29dc0d](https://github.com/ckpack/v-ui/commit/b29dc0db410c5e84ca8ea8f5ed559d49046b74f1))
+* 更新 ([567b24e](https://github.com/ckpack/v-ui/commit/567b24ead34cfbac759087b39278c5ae3b0a449b))
+* 更新依赖 ([872d496](https://github.com/ckpack/v-ui/commit/872d496f35e392fb9ee6b36b7a990a99afaca509))
+* 更新依赖 ([560ef87](https://github.com/ckpack/v-ui/commit/560ef87e88b6cafd0c88bc53e1c45f1a4c1ed52b))
+* 更新依赖 ([1d6ed92](https://github.com/ckpack/v-ui/commit/1d6ed9299dcfaf8685e3d25fba9a068e34c11315))
+* 更新依赖 ([aa460ef](https://github.com/ckpack/v-ui/commit/aa460ef5cacda40309d0c8ff7b838e128f7f106f))
+* 更新依赖库 ([95a6c70](https://github.com/ckpack/v-ui/commit/95a6c70d763e8e53a0c57fb2aab2f7f7734deea2))
+* 添加自定义的插件 ([e0ad500](https://github.com/ckpack/v-ui/commit/e0ad500bce9568eb13eb4589aa7af98ecbc51d9b))
+* 类型文件似乎正常了 ([7fc5c31](https://github.com/ckpack/v-ui/commit/7fc5c315e4eef16b51dd041583d213cee777ec34))
+
+
+### Bug Fixes
+
+* package name ([6190913](https://github.com/ckpack/v-ui/commit/6190913c27881a0b7679aa60d16eaa26afce0ebf))
+* 更新script ([467df7d](https://github.com/ckpack/v-ui/commit/467df7ddcf0955e60e80fb12312e32432ef3f4d1))
+* 更新依赖 ([fb66254](https://github.com/ckpack/v-ui/commit/fb662543e251b0f273f1b606cc94558e52ddd968))
+
+
+### Style
+
+* 测试样式 ([cedc4b4](https://github.com/ckpack/v-ui/commit/cedc4b4c0c0f32b3ce5ab6733371d24f8673526e))
+
 ## [1.3.0](https://github.com/ckpack/v-ui/compare/v1.2.0...v1.3.0) (2022-02-16)
 
 
