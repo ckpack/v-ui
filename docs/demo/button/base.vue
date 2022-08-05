@@ -7,5 +7,9 @@ import { Button } from '@ckpack/v-ui'
     <Button>
       Test
     </Button>
+
+    <Button round>
+      Test
+    </Button>
   </div>
 </template>
