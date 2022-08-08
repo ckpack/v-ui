@@ -23,7 +23,7 @@ jobs:
           cache: 'pnpm'
       - run: pnpm install
       - run: pnpm run build
-      - run: npm publish --access=public
+      - run: pnpm publish --access=public --no-git-checks
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
   build-docs:
@@ -38,6 +38,7 @@ jobs:
           node-version: 16
           cache: 'pnpm'
       - run: pnpm install
+      - run: pnpm run link
       - run: pnpm run build
       - run: pnpm run docs:build
       - name: deploy
