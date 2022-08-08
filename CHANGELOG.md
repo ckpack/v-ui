@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.4.4](https://github.com/ckpack/v-ui/compare/v1.4.3...v1.4.4) (2022-08-08)
+
+
+### Bug Fixes
+
+* github actions ([3324fad](https://github.com/ckpack/v-ui/commit/3324fadea0e23321cdd67b865d134e830c1b2b45))
+
 ### [1.4.3](https://github.com/ckpack/v-ui/compare/v1.4.2...v1.4.3) (2022-08-05)
 
 
