@@ -14,33 +14,28 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-      - name: Set node version to 16
-        uses: actions/setup-node@v2
+      - uses: actions/setup-node@v1
         with:
           node-version: 16
-          cache: 'pnpm'
-      - run: pnpm install
-      - run: pnpm run build
-      - run: pnpm publish --access=public --no-git-checks
+          registry-url: https://registry.npmjs.org/
+      - run: npm install
+      - run: npm run link:npm
+      - run: npm run build
+      - run: npm publish --access=public
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
   build-docs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Install pnpm
-        uses: pnpm/action-setup@v2
-      - name: Set node version to 16
-        uses: actions/setup-node@v2
+      - uses: actions/setup-node@v1
         with:
           node-version: 16
-          cache: 'pnpm'
-      - run: pnpm install
-      - run: pnpm run link
-      - run: pnpm run build
-      - run: pnpm run docs:build
+          registry-url: https://registry.npmjs.org/
+      - run: npm install
+      - run: npm run link:npm
+      - run: npm run build
+      - run: npm run docs:build
       - name: deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
