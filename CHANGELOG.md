@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.5.0](https://github.com/ckpack/v-ui/compare/v1.4.4...v1.5.0) (2022-08-11)
+
+
+### Features
+
+* 支持npm和pnpm构建过程 ([d99a1d9](https://github.com/ckpack/v-ui/commit/d99a1d9d2f8b02f0ca5c86683b777951910a297e))
+
 ### [1.4.4](https://github.com/ckpack/v-ui/compare/v1.4.3...v1.4.4) (2022-08-08)
 
 
