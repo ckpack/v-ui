@@ -6,7 +6,7 @@ import { mdPlugin } from './mdPlugin.js'
 export default defineConfig({
   title: name,
   description,
-  base: `/${name}/`,
+  base: `/${name.split('/').pop()}/`, // @ckpack/v-ui --> v-ui
   lastUpdated: true,
   markdown: {
     config: (md: any) => {
