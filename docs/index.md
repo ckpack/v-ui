@@ -2,7 +2,7 @@
 layout: home
 
 hero:
-  name: "@ckapck/vue-ui"
+  name: "@ckapck/v-ui"
   text: 快速创建Vue3.0组件库
   actions:
     - theme: brand
