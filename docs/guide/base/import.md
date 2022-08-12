@@ -37,16 +37,17 @@ app.mount('#app')
 ```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <title>VUI</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/v-ui/dist/index.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ckpack/v-ui/dist/index.css">
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.global.prod.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/v-ui/dist/index.iife.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@ckpack/v-ui/dist/index.iife.js"></script>
 </head>
+
 <body>
   <div id="app">
-    <v-button @click="handlerClick">Test</v-button>
-    <v-label :label="count"></v-label>
+    <v-button @click="handlerClick">Click Count: {{count}}</v-button>
   </div>
 </body>
 <script>
@@ -65,6 +66,7 @@ app.mount('#app')
   app.use(VUI);
   app.mount('#app')
 </script>
+
 </html>
 ```
 
