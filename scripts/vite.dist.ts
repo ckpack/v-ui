@@ -26,7 +26,6 @@ export default defineConfig({
       name,
       entry: './src',
       formats: ['es', 'cjs', 'iife'],
-      fileName: format => `index.${format}.js`,
     },
   },
   resolve: {

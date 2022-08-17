@@ -3,6 +3,7 @@
   "version": "1.5.1",
   "description": "Quickly create a component library for Vue 3",
   "sideEffects": false,
+  "type": "module",
   "main": "es/index.js",
   "module": "es/index.js",
   "types": "es/index.d.ts",
@@ -10,7 +11,7 @@
   "exports": {
     ".": {
       "import": "./es/index.js",
-      "require": "./dist/index.cjs.js"
+      "require": "./dist/v-ui.cjs"
     },
     "./dist/*": "./dist/*",
     "./es": "./es/index.js",
@@ -52,20 +53,20 @@
     "@antfu/eslint-config": "0.26.1",
     "@commitlint/cli": "^17.0.3",
     "@commitlint/config-conventional": "^17.0.3",
-    "@vitejs/plugin-vue": "^3.0.2",
+    "@vitejs/plugin-vue": "^3.0.3",
     "@vue/tsconfig": "^0.1.3",
-    "eslint": "^8.21.0",
+    "eslint": "^8.22.0",
     "fast-glob": "^3.2.11",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "sass": "^1.54.4",
     "standard-version": "^9.5.0",
     "typescript": "^4.7.4",
-    "unplugin-vue-define-options": "0.7.3",
-    "vite": "^3.0.6",
-    "vite-node": "^0.21.1",
+    "unplugin-vue-define-options": "0.10.0",
+    "vite": "^3.0.8",
+    "vite-node": "^0.22.0",
     "vite-plugin-dts": "^1.4.1",
-    "vitepress": "^1.0.0-alpha.4",
+    "vitepress": "^1.0.0-alpha.8",
     "vue": "^3.2.37"
   },
   "peerDependencies": {
