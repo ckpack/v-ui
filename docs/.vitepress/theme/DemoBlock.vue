@@ -1,9 +1,15 @@
-<script setup>
+<script setup lang="ts">
 import { ref } from 'vue';
 
 const props = defineProps({
-  description: String,
-  code: String,
+  description: {
+    type: String,
+    default: '',
+  },
+  code: {
+    type: String,
+    default: '',
+  },
   compoent: Object,
 });
 
@@ -52,7 +58,7 @@ const handlerMouseout = () => {
       </button>
     </div>
     <div
-      v-if="isShowCode"
+      v-show="isShowCode"
       class="code"
     >
       <slot name="code">
