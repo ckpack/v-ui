@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Button, ConfigProvider, Label } from '@ckpack/v-ui/src'
+import { Button, ConfigProvider, Label } from '@ckpack/v-ui/src';
 </script>
 
 <template>

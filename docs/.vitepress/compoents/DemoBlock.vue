@@ -1,27 +1,27 @@
 <script setup>
-import { ref } from 'vue'
+import { ref } from 'vue';
 
 const props = defineProps({
   description: String,
   code: String,
   compoent: Object,
-})
+});
 
-const description = decodeURIComponent(props.description)
-const code = decodeURIComponent(props.code)
+const description = decodeURIComponent(props.description);
+const code = decodeURIComponent(props.code);
 
-const isShowCode = ref(false)
-const copyTip = ref('Copy')
+const isShowCode = ref(false);
+const copyTip = ref('Copy');
 const copyCode = () => {
-  copyTip.value = 'Copyed'
-  navigator.clipboard.writeText(decodeURIComponent(props.code))
-}
+  copyTip.value = 'Copyed';
+  navigator.clipboard.writeText(decodeURIComponent(props.code));
+};
 
 const handlerMouseout = () => {
   setTimeout(() => {
-    copyTip.value = 'Copy'
-  }, 250)
-}
+    copyTip.value = 'Copy';
+  }, 250);
+};
 </script>
 
 <template>

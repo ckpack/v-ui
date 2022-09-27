@@ -1,30 +1,30 @@
-import fs from 'node:fs'
+import fs from 'node:fs';
 
 function formatComponent(component: string) {
   return component
     .split('-')
     .map(name => name.slice(0, 1).toUpperCase() + name.slice(1))
-    .join('')
+    .join('');
 }
 
-const basePath = process.cwd()
-const componentName = process.argv.slice(2).join(' ')
-const formatComponentName = formatComponent(componentName)
+const basePath = process.cwd();
+const componentName = process.argv.slice(2).join(' ');
+const formatComponentName = formatComponent(componentName);
 
-console.log(`componentName:${componentName}`, process.argv)
+console.log(`componentName:${componentName}`, process.argv);
 
 if (!/^[a-z]+(-[a-z]+){0,}$/.test(componentName)) {
   console.error(
     `component name is incorrect: ${componentName}\netc:\nbutton\nsome-button\nsome-button-group`,
-  )
-  process.exit(1)
+  );
+  process.exit(1);
 }
 if (fs.existsSync(`${basePath}/src/components/${componentName}`)) {
-  console.error(`component name is already exist: ${componentName}`)
-  process.exit(1)
+  console.error(`component name is already exist: ${componentName}`);
+  process.exit(1);
 }
 
-fs.mkdirSync(`${basePath}/src/components/${componentName}`)
+fs.mkdirSync(`${basePath}/src/components/${componentName}`);
 
 fs.writeFileSync(
   `${basePath}/src/components/${componentName}/${componentName}.vue`,
@@ -46,13 +46,13 @@ defineOptions({
 const ns = useNamespace('${componentName}')
 </script>
 `,
-)
+);
 fs.writeFileSync(
   `${basePath}/src/components/${componentName}/index.scss`,
   `@use "../../styles/base.scss" as *;
 
 $prefix: '#{$namespace}-${componentName}'`,
-)
+);
 fs.writeFileSync(
   `${basePath}/src/components/${componentName}/index.ts`,
   `import ${formatComponentName} from './${componentName}.vue'
@@ -60,4 +60,4 @@ import { withInstallComponent } from '../../utils/compoent'
 
 export default withInstallComponent(${formatComponentName})
 `,
-)
+);

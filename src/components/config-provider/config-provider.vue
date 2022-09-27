@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import { provide, reactive } from 'vue'
-import { CLS_PREFIX, configProvideInjectKey } from '@/defaultConfig'
+import { provide, reactive } from 'vue';
+import { CLS_PREFIX, configProvideInjectKey } from '@/defaultConfig';
 
 const props = defineProps({
   clsPrefix: {
     type: String,
     default: CLS_PREFIX,
   },
-})
-provide(configProvideInjectKey, reactive(props))
+});
+provide(configProvideInjectKey, reactive(props));
 </script>
 
 <template>

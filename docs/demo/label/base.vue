@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Label } from '@ckpack/v-ui'
+import { Label } from '@ckpack/v-ui';
 </script>
 
 <template>

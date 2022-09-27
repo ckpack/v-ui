@@ -1,11 +1,11 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import dtsPlugin from 'vite-plugin-dts'
-import DefineOptions from 'unplugin-vue-define-options/vite'
-import { alias, external } from './vite-common'
-import vitePluginSass from './vite-plugin-sass'
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import dtsPlugin from 'vite-plugin-dts';
+import DefineOptions from 'unplugin-vue-define-options/vite';
+import { alias, external } from './vite-common';
+import vitePluginSass from './vite-plugin-sass';
 
-const preserveModulesRoot = 'src'
+const preserveModulesRoot = 'src';
 export default defineConfig({
   plugins: [dtsPlugin({
     skipDiagnostics: false,
@@ -38,4 +38,4 @@ export default defineConfig({
   resolve: {
     alias,
   },
-})
+});

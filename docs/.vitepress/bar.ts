@@ -1,14 +1,14 @@
-import fs from 'node:fs'
-import path from 'node:path'
+import fs from 'node:fs';
+import path from 'node:path';
 
 function getCompoents(lang: string) {
   return fs.readdirSync(`${path.resolve()}/docs/guide/compoents`).filter(compoent => /^[a-zA-Z].+\.md$/.test(compoent)).map((compoent) => {
-    const name = compoent.split('.').shift()
+    const name = compoent.split('.').shift();
     return {
       text: name,
       link: `${lang}/guide/compoents/${name}`,
-    }
-  })
+    };
+  });
 }
 
 function getGuideSidebar(lang: string) {
@@ -32,14 +32,14 @@ function getGuideSidebar(lang: string) {
       collapsible: true,
       items: getCompoents(lang),
     },
-  ]
+  ];
 }
 
 function getSidebar(lang = '') {
   return {
     [`${lang}/guide/`]: getGuideSidebar(lang),
     [`${lang}/`]: getGuideSidebar(lang),
-  }
+  };
 }
 
 function getNav(lang = '') {
@@ -51,10 +51,10 @@ function getNav(lang = '') {
     text: 'About',
     link: `${lang}/about`,
     activeMatch: `^${lang}/about`,
-  }]
+  }];
 }
 
 export {
   getSidebar,
   getNav,
-}
+};

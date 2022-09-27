@@ -1,7 +1,7 @@
-import { defineConfig } from 'vitepress'
-import { author, description, license, name, repository } from '../../package.json'
-import { getNav, getSidebar } from './bar.js'
-import { mdPlugin } from './mdPlugin.js'
+import { defineConfig } from 'vitepress';
+import { author, description, license, name, repository } from '../../package.json';
+import { getNav, getSidebar } from './bar.js';
+import { mdPlugin } from './mdPlugin.js';
 
 export default defineConfig({
   title: name,
@@ -10,7 +10,7 @@ export default defineConfig({
   lastUpdated: true,
   markdown: {
     config: (md: any) => {
-      md.use(mdPlugin)
+      md.use(mdPlugin);
     },
   },
   themeConfig: {
@@ -28,4 +28,4 @@ export default defineConfig({
     nav: getNav(),
     sidebar: getSidebar() as any,
   },
-})
+});

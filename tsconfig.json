@@ -2,7 +2,7 @@
   "extends": "@vue/tsconfig/tsconfig.json",
   "compilerOptions": {
     "declaration": true,
-    "types": ["unplugin-vue-define-options"],
+    "types": ["unplugin-vue-define-options/macros-global"],
     "paths": {
       "@/*": [
         "src/*"

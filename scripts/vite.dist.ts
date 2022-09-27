@@ -1,8 +1,8 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import DefineOptions from 'unplugin-vue-define-options/vite'
-import { alias, baseExternal, globals, name } from './vite-common'
-import vitePluginSass from './vite-plugin-sass'
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import DefineOptions from 'unplugin-vue-define-options/vite';
+import { alias, baseExternal, globals, name } from './vite-common';
+import vitePluginSass from './vite-plugin-sass';
 
 export default defineConfig({
   plugins: [vue(), DefineOptions(), vitePluginSass({
@@ -31,4 +31,4 @@ export default defineConfig({
   resolve: {
     alias,
   },
-})
+});
