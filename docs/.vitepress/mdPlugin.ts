@@ -29,6 +29,7 @@ export const mdPlugin = (md: any) => {
     scriptSetup.contentStripped += `import ${compoentName} from '${src}';\n`;
     scriptSetup.content = `${scriptSetup.tagOpen}${scriptSetup.contentStripped}${scriptSetup.tagClose}`;
     env.sfcBlocks.scriptSetup = scriptSetup;
+    env.sfcBlocks.scripts = [scriptSetup];
     return `<${COMPOENT_PREFIX} description="${description}" code="${code}" :compoent="${compoentName}">
       <template #code>
         ${defaultFenceRender(tokens, idx, options, env, self)}

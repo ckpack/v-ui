@@ -1,6 +1,3 @@
-<script setup lang="ts">
-import { Button } from '@ckpack/v-ui';
-</script>
 # Button
 
 <<< @/demo/button/base.vue
