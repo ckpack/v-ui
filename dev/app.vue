@@ -1,19 +1,14 @@
 <script setup lang="ts">
-import { Button, ConfigProvider, Label } from '@ckpack/v-ui/src';
+import CaseComponents from './components';
 </script>
 
 <template>
   <div id="app">
     <ConfigProvider>
-      <h4>Button</h4>
-      <Button>Default</Button>
-      <Button round>
-        Default
-      </Button>
-      <div>
-        <h4>Label</h4>
-        <Label label="Hello Wrold" />
-      </div>
+      <template v-for="(caseComponent, name) in CaseComponents" :key="name">
+        <h4>{{ name }}</h4>
+        <component :is="caseComponent" />
+      </template>
     </ConfigProvider>
   </div>
 </template>
