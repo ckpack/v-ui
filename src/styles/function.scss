@@ -1,5 +1,36 @@
+@use 'sass:color';
+@use 'sass:map';
+@use 'sass:list';
+
 @use './config.scss' as *;
 
-@function getColorVar($color) {
-  @return var(--#{$namespace}-color-#{$color});
+@function joinVarName($list) {
+  $name: '--' + $namespace;
+  @each $item in $list {
+    @if $item != '' {
+      $name: $name + '-' + $item;
+    }
+  }
+  @return $name;
+}
+
+@function getColorVar($args...) {
+  @return var(#{joinVarName(list.join('color', $args))});
+}
+
+@function getCssVar($args...) {
+  @return var(#{joinVarName($args)});
+}
+
+@function getColorPalette($colors) {
+  $levels: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9;
+  $interval: 10%;
+  @each $name, $color in $colors {
+    @each $level in $levels {
+      $colors: map.deep-merge($colors, (
+        #{$name}-#{$level}: color.scale($color, $lightness: $interval * (5 - $level)),
+      ));
+    }
+  }
+  @return $colors;
 }

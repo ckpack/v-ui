@@ -2,3 +2,4 @@ node_modules/
 es/
 dist
 dev/dist
+*timestamp-*

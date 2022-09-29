@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useNamespace } from '@/hooks';
+import { useNamespace } from '../../hooks';
 
 defineProps({
   label: String,

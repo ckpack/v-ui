@@ -1,0 +1,45 @@
+@use "../../styles/base.scss" as *;
+
+$prefix: '#{$namespace}-button';
+
+$themes: ('default', 'primary', 'success', 'warning', 'error');
+
+@mixin button-theme($type) {
+  $_type: $type;
+  $_color: 'white';
+  @if $type == 'default' {
+    $_type: 'gray';
+    $_color: 'black';
+  }
+  &-theme-#{$type} {
+    background-color: getColorVar('#{$_type}-5');
+    border: 1px solid getColorVar('#{$_type}-5');
+    color: getColorVar('#{$_color}-5');
+    &:hover {
+      background-color: getColorVar('#{$_type}-6');
+      border: 1px solid getColorVar('#{$_type}-6');
+    }
+
+    &:active {
+      background-color: getColorVar('#{$_type}-7');
+      border: 1px solid getColorVar('#{$_type}-7');
+    }
+  }
+}
+
+
+.#{$prefix} {
+  padding: getCssVar('padding', 'md') calc(2 * getCssVar('padding', 'md'));
+  cursor: pointer;
+  line-height: 1;
+
+  border-radius: getCssVar('border-radius', 'default');
+
+  &-is-round {
+    border-radius: getCssVar('border-radius', 'round');
+  }
+
+  @each $theme in $themes {
+    @include button-theme(($theme));
+  }
+}

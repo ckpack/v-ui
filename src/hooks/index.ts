@@ -1,5 +1,5 @@
 import { inject, unref } from 'vue';
-import { CLS_PREFIX, configProvideInjectKey } from '@/defaultConfig';
+import { CLS_PREFIX, configProvideInjectKey } from '../defaultConfig';
 
 const statePrefix = 'is-';
 
@@ -19,10 +19,14 @@ export const useNamespace = (block: string) => {
   const is = (name: string, state?: boolean) => {
     return state ? `${b()}-${statePrefix}${name}` : '';
   };
+  const m = (type: string, modifier?: string) => {
+    return modifier ? `${b()}-${type}-${modifier}` : '';
+  };
 
   return {
     namespace,
     is,
     b,
+    m,
   };
 };

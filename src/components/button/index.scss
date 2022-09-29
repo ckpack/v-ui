@@ -1,14 +1,1 @@
-@use "../../styles/base.scss" as *;
-
-$prefix: '#{$namespace}-button';
-
-.#{$prefix} {
-  background-color: $brand-color;
-  padding: 0.25rem 1rem;
-  border: 1px solid $brand-color;
-  cursor: pointer;
-
-  &-is-round{
-    border-radius: 20px;
-  }
-}
+@forward  './button.scss';

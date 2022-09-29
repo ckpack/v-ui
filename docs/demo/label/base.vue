@@ -1,9 +1,5 @@
-<script setup lang="ts">
-import { Label } from '@ckpack/v-ui';
-</script>
-
 <template>
   <div>
-    <Label label="Hello Wrold" />
+    <v-label label="Hello Wrold" />
   </div>
 </template>

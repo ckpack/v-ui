@@ -1,7 +1,1 @@
-@use "../../styles/base.scss" as *;
-
-$prefix: '#{$namespace}-label';
-
-.#{$prefix} {
-  background-color: $brand-color;
-}
+@forward  './label.scss';

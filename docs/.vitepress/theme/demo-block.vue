@@ -98,10 +98,10 @@ const handlerMouseout = () => {
   width: 4rem;
   border: none;
   border-radius: 1rem;
-  color: var(--vp-c-brand);
+  color: var(--vp-c-primary);
 }
 
 .control-btn:hover {
-  color: var(--vp-c-brand-dark);
+  color: var(--vp-c-primary-dark);
 }
 </style>

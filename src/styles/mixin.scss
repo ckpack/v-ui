@@ -1,0 +1,9 @@
+@use 'sass:color';
+@use 'sass:map';
+@use 'sass:list';
+
+@use './function.scss' as *;
+
+@mixin cssVar($value, $args...) {
+  #{joinVarName($args)}: #{$value};
+}

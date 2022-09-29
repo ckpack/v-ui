@@ -1,99 +1,41 @@
-@use './config.scss' as *;
+@use 'sass:map';
 @use './function.scss' as *;
+@use './mixin.scss' as *;
 
-$colors: (
-  red-1: #fee2e2,
-  red-2: #fecaca,
-  red-3: #fca5a5,
-  red-4: #f87171,
-  red-5: #ef4444,
-  red-6: #dc2626,
-  red-7: #b91c1c,
-  red-8: #991b1b,
-  red-9: #7f1d1d,
-  yellow-1: #fef9c3,
-  yellow-2: #fef08a,
-  yellow-3: #fde047,
-  yellow-4: #facc15,
-  yellow-5: #eab308,
-  yellow-6: #ca8a04,
-  yellow-7: #a16207,
-  yellow-8: #854d0e,
-  yellow-9: #713f12,
-  green-1: #dcfce7,
-  green-2: #bbf7d0,
-  green-3: #86efac,
-  green-4: #4ade80,
-  green-5: #22c55e,
-  green-6: #16a34a,
-  green-7: #15803d,
-  green-8: #166534,
-  green-9: #14532d,
-  gray-1: #f3f4f6,
-  gray-2: #e5e7eb,
-  gray-3: #d1d5db,
-  gray-4: #9ca3af,
-  gray-5: #6b7280,
-  gray-6: #4b5563,
-  gray-7: #374151,
-  gray-8: #1f2937,
-  gray-9: #111827,
-  cyan-1: #cffafe,
-  cyan-2: #a5f3fc,
-  cyan-3: #67e8f9,
-  cyan-4: #22d3ee,
-  cyan-5: #06b6d4,
-  cyan-6: #0891b2,
-  cyan-7: #0e7490,
-  cyan-8: #155e75,
-  cyan-9: #164e63,
+$colors: () !default;
+$colors: getColorPalette(map.deep-merge((
+  'primary': #8b5cf6,
+  'black': #000000,
+  'white': #ffffff,
+  'gray': #d1d5db,
+  'warning': #f59e0b,
+  'error': #ef4444,
+  'success': #10b981,
+), $colors));
+
+$border-radius-sizes: (
+  'default': .25em,
+  'round': 999em,
 ) !default;
 
+$padding-sizes: (
+  'sm': 0.25em,
+  'md': .5em,
+  'lg': 0.75em,
+  'xl': 1em,
+  '2xl': 2em,
+) !default;
 
 :root {
-  @each $key, $value in $colors {
-    --#{$namespace}-color-#{$key}: #{$value};
+  @each $key,$value in $colors {
+    @include cssVar($value, 'color', $key);
+  }
+
+  @each $key,$value in $border-radius-sizes {
+    @include cssVar($value, 'border-radius', $key);
+  }
+
+  @each $key,$value in $padding-sizes {
+    @include cssVar($value, 'padding', $key);
   }
 }
-
-
-// 品牌颜色及扩展
-$brand-color: getColorVar('cyan-6') !default;
-$brand-hover: getColorVar('cyan-5') !default;
-$brand-active: getColorVar('cyan-7') !default;
-$brand-disabled: getColorVar('cyan-4') !default;
-$brand-focus: getColorVar('cyan-3') !default;
-$brand-light: getColorVar('cyan-2') !default;
-// 警告色及扩展
-$warning-color: getColorVar('yellow-6') !default;
-$warning-hover: getColorVar('yellow-5') !default;
-$warning-active: getColorVar('yellow-7') !default;
-$warning-disabled: getColorVar('yellow-4') !default;
-$warning-focus: getColorVar('yellow-3') !default;
-$warning-light: getColorVar('yellow-2') !default;
-// 失败/错误色及扩展
-$error-color: getColorVar('red-6') !default;
-$error-hover: getColorVar('red-5') !default;
-$error-active: getColorVar('red-7') !default;
-$error-disabled: getColorVar('red-4') !default;
-$error-focus: getColorVar('red-3') !default;
-$error-light: getColorVar('red-2') !default;
-// 成功色及扩展
-$success-color: getColorVar('green-6') !default;
-$success-hover: getColorVar('green-5') !default;
-$success-active: getColorVar('green-7') !default;
-$success-disabled: getColorVar('green-4') !default;
-$success-focus: getColorVar('green-3') !default;
-$success-light: getColorVar('green-2') !default;
-
-// 遮罩
-$mask-active: rgba(0, 0, 0, 60%) !default; // 遮罩-弹出
-$mask-disabled: rgba(255, 255, 255, 40%) !default; // 遮罩-禁用
-
-// 文本颜色
-$text-brand: getColorVar('cyan-6') !default; // 文字-品牌
-$text-primary: getColorVar('gray-9') !default; // 文字-主要
-$text-secondary: getColorVar('gray-6') !default; // 文字-次要
-$text-disabled: getColorVar('gray-4') !default; // 文字-禁用
-$text-light: getColorVar('gray-3') !default; // 文字
-$text-lighter: getColorVar('gray-1') !default; // 文字

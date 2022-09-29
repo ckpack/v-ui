@@ -1,9 +1,20 @@
 import { defineConfig } from 'vitepress';
+import DefineOptions from 'unplugin-vue-define-options/vite';
 import { author, description, license, name, repository } from '../../package.json';
+import { alias, rootPath } from '../../scripts/vite-common';
 import { getNav, getSidebar } from './bar.js';
 import { mdPlugin } from './mdPlugin.js';
 
 export default defineConfig({
+  vite: {
+    plugins: [DefineOptions()],
+    resolve: {
+      alias: {
+        ...alias,
+        '@ckpack/v-ui': `${rootPath}`,
+      },
+    },
+  },
   title: name,
   description,
   base: `/${name.split('/').pop()}/`, // @ckpack/v-ui --> v-ui

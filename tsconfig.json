@@ -1,6 +1,7 @@
 {
   "extends": "@vue/tsconfig/tsconfig.json",
   "compilerOptions": {
+    "module": "esnext",
     "declaration": true,
     "types": ["unplugin-vue-define-options/macros-global"],
     "paths": {

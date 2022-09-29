@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 
 const DEMOBLOCKTAG = '--demo'; // 识别的标记
-export const COMPOENT_PREFIX = 'Demo__'; // 组件前缀避免名称冲突
+export const DEMO_COMPOENT_PREFIX = 'Demo__'; // 组件前缀避免名称冲突
 
 export const mdPlugin = (md: any) => {
   let compoentIndex = 0;
@@ -17,7 +17,7 @@ export const mdPlugin = (md: any) => {
     nextToken.children = [];
     const description = encodeURIComponent(nextToken.content.split(' ').slice(1).join(' '));
     const code = encodeURIComponent(fs.readFileSync(src).toString());
-    const compoentName = `${COMPOENT_PREFIX}${compoentIndex += 1}`;
+    const compoentName = `${DEMO_COMPOENT_PREFIX}${compoentIndex += 1}`;
 
     const scriptSetup = env.sfcBlocks.scriptSetup || {
       content: '<script setup lang="ts">\n</script>',
@@ -30,10 +30,10 @@ export const mdPlugin = (md: any) => {
     scriptSetup.content = `${scriptSetup.tagOpen}${scriptSetup.contentStripped}${scriptSetup.tagClose}`;
     env.sfcBlocks.scriptSetup = scriptSetup;
     env.sfcBlocks.scripts = [scriptSetup];
-    return `<${COMPOENT_PREFIX} description="${description}" code="${code}" :compoent="${compoentName}">
+    return `<${DEMO_COMPOENT_PREFIX} description="${description}" code="${code}" :compoent="${compoentName}">
       <template #code>
         ${defaultFenceRender(tokens, idx, options, env, self)}
       </template>
-    </${COMPOENT_PREFIX}>`;
+    </${DEMO_COMPOENT_PREFIX}>`;
   };
 };

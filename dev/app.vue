@@ -4,11 +4,11 @@ import CaseComponents from './components';
 
 <template>
   <div id="app">
-    <ConfigProvider>
+    <v-config-provider>
       <template v-for="(caseComponent, name) in CaseComponents" :key="name">
         <h4>{{ name }}</h4>
         <component :is="caseComponent" />
       </template>
-    </ConfigProvider>
+    </v-config-provider>
   </div>
 </template>

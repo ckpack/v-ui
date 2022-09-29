@@ -4,6 +4,7 @@ import create from './create';
 
 export default preset;
 export * from './components';
+export * as config from './defaultConfig';
 export {
   preset as install,
   create,

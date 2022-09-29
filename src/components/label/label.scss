@@ -1,0 +1,9 @@
+@use "../../styles/base.scss" as *;
+
+$prefix: '#{$namespace}-label';
+
+.#{$prefix} {
+  padding: 0.25rem 1rem;
+  background-color: getColorVar('gray-5');
+  color: getColorVar('black-5');
+}
