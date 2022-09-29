@@ -8,11 +8,11 @@
 
 ```js
 import { createApp } from "vue";
-import { Button } from "@ckpack/v-ui";
+import { VButton } from "@ckpack/v-ui";
 import App from "@/App.vue";
 
 const app = createApp(App);
-app.use(Button, {
+app.use(VButton, {
   componentPrefix: "T",
 });
 
@@ -23,12 +23,12 @@ app.mount("#app");
 
 ```js
 import { createApp } from "vue";
-import { Button, Label, create } from "@ckpack/v-ui";
+import { VButton, VLabel, create } from "@ckpack/v-ui";
 import App from "@/App.vue";
 
 const app = createApp(App);
 
-app.use(create([Button, Label]), {
+app.use(create([VButton, VLabel]), {
   componentPrefix: "T",
 });
 app.mount("#app");
@@ -47,12 +47,12 @@ app.mount("#app");
 
 ```js
 import { createApp } from "vue";
-import { Button, create } from "@ckpack/v-ui";
+import { V, create } from "@ckpack/v-ui";
 import App from "@/App.vue";
 
 const app = createApp(App);
 
-app.use(Button, {
+app.use(VButton, {
   componentPrefix: "T",
   clsPrefix: "t",
 });

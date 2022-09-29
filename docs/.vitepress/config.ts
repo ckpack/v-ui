@@ -2,7 +2,8 @@ import { defineConfig } from 'vitepress';
 import DefineOptions from 'unplugin-vue-define-options/vite';
 import { author, description, license, name, repository } from '../../package.json';
 import { alias, rootPath } from '../../scripts/vite-common';
-import { getNav, getSidebar } from './bar.js';
+import { getSidebar } from './bar.js';
+import { getNav } from './nav.js';
 import { mdPlugin } from './mdPlugin.js';
 
 export default defineConfig({

@@ -35,8 +35,6 @@
   ],
   "scripts": {
     "husky": "husky install",
-    "link:npm": "npm link ./ && npm link @ckpack/v-ui",
-    "link:pnpm": "pnpm link ./",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "release": "standard-version",
     "dev": "vite -c ./dev/vite.config.ts",

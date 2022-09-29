@@ -18,11 +18,11 @@ app.mount('#app')
 
 ## 按需加载
 
-默认支持`tree shaking`，无需任何插件，直接引入 `import { Button } from '@ckpack/v-ui'` 就会有按需加载的效果。
+默认支持`tree shaking`，无需任何插件，直接引入 `import { VButton } from '@ckpack/v-ui'` 就会有按需加载的效果。
 
 ```html
 <script setup>
-  import { Button as VButton } from '@ckpack/v-ui';
+  import { VButton as VButton } from '@ckpack/v-ui';
 </script>
 
 <template>

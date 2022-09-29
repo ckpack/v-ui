@@ -1,37 +1,4 @@
-# v-ui
-
-你可以使用该项目快速创建基于 vue 3.0 的组件库。 这是生成 vue 组件库的超快、超简单的一种方式！
-
-## 功能特点
-
-- 通过命令快速添加新组件
-- 所有组件默认支持按需加载
-- 可自定义组件前缀，避免组件名称、样式冲突
-- 支持组件库文档生成
-
-## 脚本命令
-
-详细命令参考`package.json`的`scripts`部分
-
-```bash
-# 安装依赖
-npm install
-
-# 添加新组件
-npm run gen component-name
-
-# 打包你的组件库
-npm run build
-
-# 检查代码规范
-npm run lint
-
-# 生成日志文件发布新版本
-npm run release
-
-# 生成文档相关命令
-npm run docs:build
-```
+你可以使用该项目快速创建自己的组件库
 
 ## 下载
 
@@ -68,11 +35,13 @@ export const COMPONENT_PREFIX = "T";
 $namespace: t !default;
 ```
 
-## 开始创建组件
+## 删除组件
+
+## 添加组件
 
 使用 `npm run gen component-name`添加新组件，如执行`npm run gen select`命令，该命令会在`src/components/`目录下生成`select`文件目录，编辑文件夹下的`select.vue`文件以及`index.scss`文件
 
-### 预览新生成的组件
+## 预览组件
 
 在文件`dev/app.vue`中引入新组件, 执行`npm run dev`预览新组件
 
@@ -91,7 +60,7 @@ import {
 </script>
 ```
 
-#### 添加新组件文档
+## 添加组件文档
 
 在`docs/guide/compoents`文件夹下添加对应组件名的文档，执行`npm run docs:dev`预览文档
 
