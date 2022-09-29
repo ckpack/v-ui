@@ -22,9 +22,9 @@ https://github.com/ckpack/v-ui/archive/refs/heads/main.zip
 
 ```js
 // 修改iife格式时的ouput, 如`TUI`
-export const NAME = "TUI";
+export const NAME = 'TUI';
 // 修改默认组件前缀， 如`B`
-export const COMPONENT_PREFIX = "T";
+export const COMPONENT_PREFIX = 'T';
 ```
 
 默认组件类前缀是`v`,你可以选择修改组件类前缀  
@@ -48,14 +48,14 @@ $namespace: t !default;
 ```diff
 <template>
   <div id="app">
-    <ConfigProvider>
-+      <Select></Select>
-    </ConfigProvider>
+    <v-config-provider>
++      <v-select></v-select>
+    </v-config-provider>
   </div>
 </template>
 <script setup>
 import {
-+  ConfigProvider, Select,
++  VConfigProvider, VSelect,
 } from '../src';
 </script>
 ```

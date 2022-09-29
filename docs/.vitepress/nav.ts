@@ -1,22 +1,59 @@
-import { rootPath } from '../../scripts/vite-common';
+import fs from 'node:fs';
+import path from 'node:path';
+import { $t } from './i18n';
 
-// export function getSidebar(lang = '') {
+function getCompoents(lang: string) {
+  return fs.readdirSync(`${path.resolve()}/docs/docs/compoents`).filter(compoent => /^[a-zA-Z].+\.md$/.test(compoent)).map((compoent) => {
+    const name = compoent.split('.').shift();
+    return {
+      text: name,
+      link: `${lang}/docs/compoents/${name}`,
+    };
+  });
+}
 
-// }
-
-export function getNav(lang = '') {
+export function getSidebar(lang = '') {
+  const t = $t(lang || 'zh');
   return [
     {
-      text: '指南',
-      link: `${lang}/guide/base/getting-started`,
-      activeMatch: `^${lang}/guide/`,
+      text: t('base'),
+      collapsible: true,
+      items: [{
+        text: t('getting-started'),
+        link: `${lang}/docs/base/getting-started`,
+      }, {
+        text: t('customize'),
+        link: `${lang}/docs/base/customize`,
+      }, {
+        text: t('themes'),
+        link: `${lang}/docs/base/themes`,
+      }, {
+        text: t('create-your-own'),
+        link: `${lang}/docs/base/create-your-own`,
+      }],
+    },
+    {
+      text: t('compoents'),
+      collapsible: true,
+      items: getCompoents(lang),
+    },
+  ];
+}
+
+export function getNav(lang = '') {
+  const t = $t(lang || 'zh');
+  return [
+    {
+      text: t('docs'),
+      link: `${lang}/docs/base/getting-started`,
+      activeMatch: `^${lang}/docs/`,
     }, {
-      text: '关于',
+      text: t('about'),
       link: `${lang}/about`,
       activeMatch: `^${lang}/about`,
     }, {
-      text: '更新日志',
-      link: `${rootPath}/CHANGELOG`,
+      text: t('changelog'),
+      link: `${path.resolve()}/CHANGELOG`,
       activeMatch: `^${lang}/CHANGELOG`,
     },
     {

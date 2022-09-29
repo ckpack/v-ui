@@ -19,7 +19,7 @@ const code = decodeURIComponent(props.code);
 const isShowCode = ref(false);
 const copyTip = ref('Copy');
 const copyCode = () => {
-  copyTip.value = 'Copyed';
+  copyTip.value = 'Copied';
   navigator.clipboard.writeText(decodeURIComponent(props.code));
 };
 
