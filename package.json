@@ -42,7 +42,7 @@
     "build:es": "vite build  -c scripts/vite.es.ts",
     "build:dist": "vite build -c scripts/vite.dist.ts",
     "docs:dev": "vitepress dev docs",
-    "docs:build": "vitepress build docs",
+    "docs:build": "cp CHANGELOG.md ./docs/ && vitepress build docs",
     "docs:serve": "vitepress serve docs",
     "gen": "vite-node ./scripts/gen.ts",
     "postgen": "vite-node ./scripts/gen-compoents.ts"

@@ -53,7 +53,7 @@ export function getNav(lang = '') {
       activeMatch: `^${lang}/about`,
     }, {
       text: t('changelog'),
-      link: `${path.resolve()}/CHANGELOG`,
+      link: `${lang}/CHANGELOG`,
       activeMatch: `^${lang}/CHANGELOG`,
     },
     {
