@@ -1,4 +1,5 @@
 const zh = {
+  'guide': '指南',
   'docs': '文档',
   'about': '关于',
   'changelog': '更新日志',
@@ -11,6 +12,7 @@ const zh = {
 };
 
 const en: typeof zh = {
+  'guide': 'Guide',
   'docs': 'Docs',
   'about': 'About',
   'changelog': 'Changelog',

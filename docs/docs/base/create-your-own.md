@@ -12,8 +12,8 @@ https://github.com/ckpack/v-ui/archive/refs/heads/main.zip
 
 ## 全局替换变量
 
-- `v-ui` 为 `you-project-name` 如 `b-ui`
-- `ckpack` 为 `you-github-username` 如 `my-github-username`
+- 替换`v-ui`为你的组件库名称 如 `t-ui`
+- 替换`ckpack`为你的Github名称 如 `my-github-username`
 
 ## 修改组件前缀
 
@@ -27,8 +27,7 @@ export const NAME = 'TUI';
 export const COMPONENT_PREFIX = 'T';
 ```
 
-默认组件类前缀是`v`,你可以选择修改组件类前缀  
-修改文件`src/styles/config.scss`
+此时默认组件CSS类前缀仍是`v`,你可以选择修改SCSS配置文件`src/styles/config.scss`
 
 ```scss
 // 修改默认组件类前缀如`t`
@@ -43,21 +42,14 @@ $namespace: t !default;
 
 ## 预览组件
 
-在文件`dev/app.vue`中引入新组件, 执行`npm run dev`预览新组件
+在文件`dev/components`中添加新组件的用例, 执行`npm run dev`即可预览新组件
 
-```diff
+```vue
 <template>
-  <div id="app">
-    <v-config-provider>
-+      <v-select></v-select>
-    </v-config-provider>
-  </div>
+  <v-button theme="primary">
+    Primary
+  </v-button>
 </template>
-<script setup>
-import {
-+  VConfigProvider, VSelect,
-} from '../src';
-</script>
 ```
 
 ## 添加组件文档
@@ -65,11 +57,10 @@ import {
 在`docs/guide/compoents`文件夹下添加对应组件名的文档，执行`npm run docs:dev`预览文档
 
 ```md
-<!-- docs/guide/compoents/select.md -->
+<!-- docs/guide/compoents/button.md -->
 
-# Select
+# Button
 
-测试组件
-
-<v-select></v-select>
+<<< @/demo/button/theme.vue
+--demo theme 按钮
 ```

@@ -57,7 +57,7 @@ export function getNav(lang = '') {
       activeMatch: `^${lang}/CHANGELOG`,
     },
     {
-      text: 'Language',
+      text: '中/En',
       items: [
         {
           text: '中文',

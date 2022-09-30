@@ -5,15 +5,15 @@
 完整引入组件库。
 
 ```js
-import { createApp } from 'vue'
-import VUI from '@ckpack/v-ui'
-import App from '@/App.vue'
-import '@ckpack/v-ui/es/styles/index.scss'
+import { createApp } from 'vue';
+import VUI from '@ckpack/v-ui';
+import App from '@/App.vue';
+import '@ckpack/v-ui/es/styles/index.scss';
 
-const app = createApp(App)
+const app = createApp(App);
 
-app.use(VUI)
-app.mount('#app')
+app.use(VUI);
+app.mount('#app');
 ```
 
 ## 按需加载
@@ -22,7 +22,7 @@ app.mount('#app')
 
 ```html
 <script setup>
-  import { VButton as VButton } from '@ckpack/v-ui';
+  import { VButton } from '@ckpack/v-ui';
 </script>
 
 <template>
@@ -47,7 +47,8 @@ app.mount('#app')
 
 <body>
   <div id="app">
-    <v-button @click="handlerClick">Click Count: {{count}}</v-button>
+    {{ count }}
+    <v-button @click="handlerClick">Click</v-button>
   </div>
 </body>
 <script>
@@ -74,12 +75,12 @@ app.mount('#app')
 #### 全局引入样式
 
 ```js
-import '@ckpack/v-ui/es/styles/index.css'
+import '@ckpack/v-ui/es/styles/index.css';
 ```
 
 #### 按需引入样式
 
 ```js
-import '@ckpack/v-ui/es/components/button/index.css'
-import '@ckpack/v-ui/es/components/label/index.css'
+import '@ckpack/v-ui/es/components/button/index.css';
+import '@ckpack/v-ui/es/components/label/index.css';
 ```

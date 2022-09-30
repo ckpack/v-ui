@@ -1,4 +1,4 @@
-<h1 align="center">v-ui</h1>
+<h1 align="center">@ckpakc/v-ui</h1>
 
 <h4 align="center">
   <a href="https://ckpack.github.io/v-ui/">中文</a>
@@ -25,20 +25,24 @@ For detailed commands, refer to the `scripts` part of `package.json`
 # Installation dependencies
 npm install
 
-# Add new component
-npm run gen component-name
-
-# Package your component library
-npm run build
-
 # Check the code specification
 npm run lint
 
 # Generate log file to release new version
 npm run release
 
+# Add new component
+npm run gen component-name
+
+# Package your component library
+npm run build
+npm run build:es
+npm run build:dist
+
 # Generate documentation related commands
+npm run docs:dev
 npm run docs:build
+npm run docs:serve
 ```
 
 ## download
