@@ -12,7 +12,7 @@ function getCompoents(lang: string) {
   });
 }
 
-export function getSidebar(lang = '') {
+export function getSidebarDocs(lang = '') {
   const t = $t(lang || 'zh');
   return [
     {
