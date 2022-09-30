@@ -8,7 +8,7 @@ hero:
   actions:
     - theme: brand
       text: Document
-      link: /en/docs/base/getting-started
+      link: /en/guide/base/getting-started
     - theme: alt
       text: View on GitHub
       link: https://github.com/ckpack/v-ui

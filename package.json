@@ -7,7 +7,7 @@
   "main": "es/index.js",
   "module": "es/index.js",
   "types": "es/index.d.ts",
-  "packageManager": "pnpm@7.8.0",
+  "packageManager": "pnpm@7.10.0",
   "exports": {
     ".": {
       "import": "./es/index.js",
@@ -35,7 +35,7 @@
   ],
   "scripts": {
     "husky": "husky install",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.md --fix --ignore-path .gitignore",
     "release": "standard-version",
     "dev": "vite -c ./dev/vite.config.ts",
     "build": "npm run build:es && npm run build:dist",
@@ -59,7 +59,7 @@
     "lint-staged": "^13.0.3",
     "sass": "^1.55.0",
     "standard-version": "^9.5.0",
-    "typescript": "^4.8.3",
+    "typescript": "^4.8.4",
     "unplugin-vue-define-options": "0.11.2",
     "vite": "^3.1.4",
     "vite-node": "^0.23.4",

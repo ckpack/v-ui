@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress';
 import DefineOptions from 'unplugin-vue-define-options/vite';
 import { author, description, license, name, repository } from '../../package.json';
 import { alias, rootPath } from '../../scripts/vite-common';
-import { getNav, getSidebarDocs } from './nav.js';
+import { getNav, getSidebarCompoents, getSidebarGuide } from './nav.js';
 import { mdPlugin } from './mdPlugin.js';
 
 export default defineConfig({
@@ -38,8 +38,10 @@ export default defineConfig({
     },
     nav: getNav(),
     sidebar: {
-      '/docs/': getSidebarDocs(),
-      '/en/docs/': getSidebarDocs('en'),
+      '/guide/': getSidebarGuide(),
+      '/compoents': getSidebarCompoents(),
+      'en/guide/': getSidebarGuide('en'),
+      'en/compoents': getSidebarCompoents('en'),
     },
   },
 });

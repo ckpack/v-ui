@@ -2,5 +2,5 @@
 
 测试组件
 
-<<< @/demo/label/base.vue
+<<< @/_demos/label/base.vue
 --demo 这是一个标签

@@ -67,9 +67,9 @@ Modify the file `src/defaultConfig.js`
 
 ```js
 // modify the ouput when iife format, such as `TUI`
-export const NAME = "TUI";
+export const NAME = 'TUI';
 // Modify the default component prefix, such as `B`
-export const COMPONENT_PREFIX = "B";
+export const COMPONENT_PREFIX = 'B';
 ```
 
 The default component class prefix is ​​`v-`, you can choose to modify the component class prefix

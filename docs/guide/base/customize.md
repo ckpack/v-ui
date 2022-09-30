@@ -7,31 +7,31 @@
 在全局引入时我们可以通过自定义组件前缀来解决组件名称冲突的问题。
 
 ```js
-import { createApp } from "vue";
-import { VButton } from "@ckpack/v-ui";
-import App from "@/App.vue";
+import { createApp } from 'vue';
+import { VButton } from '@ckpack/v-ui';
+import App from '@/App.vue';
 
 const app = createApp(App);
 app.use(VButton, {
-  componentPrefix: "T",
+  componentPrefix: 'T',
 });
 
-app.mount("#app");
+app.mount('#app');
 ```
 
 在引入的组件较多时可以使用更方便的`create`函数来创建应用。
 
 ```js
-import { createApp } from "vue";
-import { VButton, VLabel, create } from "@ckpack/v-ui";
-import App from "@/App.vue";
+import { createApp } from 'vue';
+import { VButton, VLabel, create } from '@ckpack/v-ui';
+import App from '@/App.vue';
 
 const app = createApp(App);
 
 app.use(create([VButton, VLabel]), {
-  componentPrefix: "T",
+  componentPrefix: 'T',
 });
-app.mount("#app");
+app.mount('#app');
 ```
 
 然后我们可以在其他地方就这样使用
@@ -46,17 +46,17 @@ app.mount("#app");
 我们可以通过自定义`class`前缀来解决项目样式冲突的问题。
 
 ```js
-import { createApp } from "vue";
-import { V, create } from "@ckpack/v-ui";
-import App from "@/App.vue";
+import { createApp } from 'vue';
+import { V, create } from '@ckpack/v-ui';
+import App from '@/App.vue';
 
 const app = createApp(App);
 
 app.use(VButton, {
-  componentPrefix: "T",
-  clsPrefix: "t",
+  componentPrefix: 'T',
+  clsPrefix: 't',
 });
-app.mount("#app");
+app.mount('#app');
 ```
 
 由于前缀变更，你需要直接引入并修改原始`scss`文件。

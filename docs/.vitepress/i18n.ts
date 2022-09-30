@@ -4,11 +4,15 @@ const zh = {
   'about': '关于',
   'changelog': '更新日志',
   'base': '基础',
+  'config': '配置',
   'getting-started': '快速开始',
   'customize': '自定义',
   'themes': '主题',
-  'create-your-own': '创建组件库',
+  'custom-develop': '定制开发',
   'compoents': '组件',
+  'base-compoents': '基础组件',
+  'config-compoents': '配置组件',
+  'develop': '开发',
 };
 
 const en: typeof zh = {
@@ -17,11 +21,15 @@ const en: typeof zh = {
   'about': 'About',
   'changelog': 'Changelog',
   'base': 'Base',
+  'config': 'Config',
   'getting-started': 'Getting started',
   'customize': 'customize',
   'themes': 'themes',
-  'create-your-own': 'Create your own',
+  'custom-develop': 'Custom develop',
   'compoents': 'Compoents',
+  'base-compoents': 'Base compoents',
+  'config-compoents': 'Config compoents',
+  'develop': 'Develop',
 };
 
 const locale = {

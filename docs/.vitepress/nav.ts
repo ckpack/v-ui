@@ -1,56 +1,16 @@
-import fs from 'node:fs';
-import path from 'node:path';
 import { $t } from './i18n';
-
-function getCompoents(lang: string) {
-  return fs.readdirSync(`${path.resolve()}/docs/docs/compoents`).filter(compoent => /^[a-zA-Z].+\.md$/.test(compoent)).map((compoent) => {
-    const name = compoent.split('.').shift();
-    return {
-      text: name,
-      link: `${lang}/docs/compoents/${name}`,
-    };
-  });
-}
-
-export function getSidebarDocs(lang = '') {
-  const t = $t(lang || 'zh');
-  return [
-    {
-      text: t('base'),
-      collapsible: true,
-      items: [{
-        text: t('getting-started'),
-        link: `${lang}/docs/base/getting-started`,
-      }, {
-        text: t('customize'),
-        link: `${lang}/docs/base/customize`,
-      }, {
-        text: t('themes'),
-        link: `${lang}/docs/base/themes`,
-      }, {
-        text: t('create-your-own'),
-        link: `${lang}/docs/base/create-your-own`,
-      }],
-    },
-    {
-      text: t('compoents'),
-      collapsible: true,
-      items: getCompoents(lang),
-    },
-  ];
-}
 
 export function getNav(lang = '') {
   const t = $t(lang || 'zh');
   return [
     {
-      text: t('docs'),
-      link: `${lang}/docs/base/getting-started`,
-      activeMatch: `^${lang}/docs/`,
+      text: t('guide'),
+      link: `${lang}/guide/base/getting-started`,
+      activeMatch: `^${lang}/guide`,
     }, {
-      text: t('about'),
-      link: `${lang}/about`,
-      activeMatch: `^${lang}/about`,
+      text: t('compoents'),
+      link: `${lang}/compoents/button`,
+      activeMatch: `^${lang}/compoents`,
     }, {
       text: t('changelog'),
       link: `${lang}/CHANGELOG`,
@@ -68,6 +28,54 @@ export function getNav(lang = '') {
           link: '/en/',
         },
       ],
+    },
+  ];
+}
+
+export function getSidebarCompoents(lang = '') {
+  const t = $t(lang || 'zh');
+  const compoents = {
+    base: ['button', 'label'],
+    config: ['config-provider'],
+  } as const;
+
+  return Object.keys(compoents).map((key) => {
+    return {
+      text: t(`${key}-compoents` as any),
+      collapsible: true,
+      items: compoents[key].map((name: string) => ({
+        text: name,
+        link: `${lang}/compoents/${name}`,
+      })),
+    };
+  });
+}
+
+export function getSidebarGuide(lang = '') {
+  const t = $t(lang || 'zh');
+  return [
+    {
+      text: t('base'),
+      collapsible: true,
+      items: [{
+        text: t('getting-started'),
+        link: `${lang}/guide/base/getting-started`,
+      }, {
+        text: t('customize'),
+        link: `${lang}/guide/base/customize`,
+      }, {
+        text: t('themes'),
+        link: `${lang}/guide/base/themes`,
+      }],
+    },
+    {
+      items: [{
+        text: t('custom-develop'),
+        link: `${lang}/guide/custom-develop`,
+      }, {
+        text: t('about'),
+        link: `${lang}/guide/about`,
+      }],
     },
   ];
 }
