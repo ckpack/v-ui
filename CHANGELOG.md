@@ -2,6 +2,44 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.6.0](https://github.com/ckpack/v-ui/compare/v1.5.1...v1.6.0) (2022-09-30)
+
+
+### Features
+
+* cp changelog ([e206801](https://github.com/ckpack/v-ui/commit/e2068019b41527ff6d54f04400a9543faf94358f))
+* 优化demo组件 ([0440778](https://github.com/ckpack/v-ui/commit/044077890e5d65fbed2adf021c2b1e2aa447ad05))
+* 优化多语言 ([db762bf](https://github.com/ckpack/v-ui/commit/db762bf2b8e59d9b0eab52314ccd414244f631fc))
+* 优化架构 ([2ed2525](https://github.com/ckpack/v-ui/commit/2ed252590a7c4400b31d6eb8f378ca4618b92003))
+* 拆分 github actions ([0a321f6](https://github.com/ckpack/v-ui/commit/0a321f6409ec7555b02439087d6d6cc7845953dc))
+* 拆分用例 ([beb8ad8](https://github.com/ckpack/v-ui/commit/beb8ad8ccd1e8618999ed1017b85698ddc30db02))
+* 更新依赖 ([2a7a4f6](https://github.com/ckpack/v-ui/commit/2a7a4f6f26d3fe20da0a1a610604a82ba587df71))
+* 更新依赖库 ([7df0326](https://github.com/ckpack/v-ui/commit/7df03267c82bb59736bfec979a4ff76d9b16332e))
+
+
+### Bug Fixes
+
+* md plugin error ([393c85f](https://github.com/ckpack/v-ui/commit/393c85f7cb512274fd30974c95097c615bb8dc73))
+
+
+### Style
+
+* 暂存 ([4c2edda](https://github.com/ckpack/v-ui/commit/4c2eddacd47f9409ed8503b618a5a8e857a17b0a))
+
+
+### Docs
+
+* add en ([734b4c6](https://github.com/ckpack/v-ui/commit/734b4c69e89ab8a0a0b112213a383f23e6b9f001))
+* update ([d2629e9](https://github.com/ckpack/v-ui/commit/d2629e9624c3ff6c4ff8a05edc037571abb18d1d))
+* update doc ([dba5d51](https://github.com/ckpack/v-ui/commit/dba5d51c782b3feefd90bce279765490fc6aa61d))
+* update doc ([321c06e](https://github.com/ckpack/v-ui/commit/321c06e7f061a0cab5a4a4f9590e7bb0a5460485))
+* 更新文档 ([5bcc225](https://github.com/ckpack/v-ui/commit/5bcc225350a26e3a54c25dad7b9365fdeeb39709))
+
+
+### Test
+
+* vite-plugin-dts ([01eb89a](https://github.com/ckpack/v-ui/commit/01eb89a3876aa30b2bed32c9fba2a7db11094d01))
+
 ### [1.5.1](https://github.com/ckpack/v-ui/compare/v1.5.0...v1.5.1) (2022-08-11)
 
 
