@@ -16,7 +16,7 @@ specifiers:
   unplugin-vue-define-options: 0.11.2
   vite: ^3.1.4
   vite-node: ^0.23.4
-  vite-plugin-dts: ^1.6.2
+  vite-plugin-dts: 1.6.3
   vitepress: 1.0.0-alpha.17
   vue: ^3.2.40
 
@@ -36,7 +36,7 @@ devDependencies:
   unplugin-vue-define-options: 0.11.2
   vite: 3.1.4_sass@1.55.0
   vite-node: 0.23.4_sass@1.55.0
-  vite-plugin-dts: 1.6.2_vite@3.1.4
+  vite-plugin-dts: 1.6.3_vite@3.1.4
   vitepress: 1.0.0-alpha.17_sass@1.55.0
   vue: 3.2.40
 
@@ -4626,8 +4626,8 @@ packages:
       - terser
     dev: true
 
-  /vite-plugin-dts/1.6.2_vite@3.1.4:
-    resolution: {integrity: sha512-NeZW/a3xyasuvakh2gQ8Hl8ijOwKF3kX+xLCUSli9LIBJtgbJaGCZ6gAI1G+VG81lDL84qurvUgqvKWsa840gg==}
+  /vite-plugin-dts/1.6.3_vite@3.1.4:
+    resolution: {integrity: sha512-ILaydppGjoDtIgYG0ofIwGDRvjoJBKgNzijTiiKtNZM14Gb8ophUEl/ls0GkRUQXjoBTX+o3tawMiBImUDnOaw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: '>=2.9.0'
