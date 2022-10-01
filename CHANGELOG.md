@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.7.0](https://github.com/ckpack/v-ui/compare/v1.6.0...v1.7.0) (2022-10-01)
+
+
+### Features
+
+* update path ([a605977](https://github.com/ckpack/v-ui/commit/a605977d30a54d5df03f38ad55d343473d150cf0))
+
+
+### Bug Fixes
+
+* 修复 vite-plugin-dts 版本 ([a6f3572](https://github.com/ckpack/v-ui/commit/a6f3572d7d60196db902c00c2bb238c61d7acac1))
+
 ## [1.6.0](https://github.com/ckpack/v-ui/compare/v1.5.1...v1.6.0) (2022-09-30)
 
 
