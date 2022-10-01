@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { useNamespace } from '../../hooks';
 import type { buttonThemes } from './button';
+import { useNamespace } from '@/hooks';
 
 const props = withDefaults(defineProps<{
   round?: boolean

@@ -1,5 +1,5 @@
 import { inject, unref } from 'vue';
-import { CLS_PREFIX, configProvideInjectKey } from '../defaultConfig';
+import { CLS_PREFIX, configProvideInjectKey } from '@/defaultConfig';
 
 const statePrefix = 'is-';
 

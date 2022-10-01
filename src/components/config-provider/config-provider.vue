@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { provide, reactive } from 'vue';
-import { CLS_PREFIX, configProvideInjectKey } from '../../defaultConfig';
+import { CLS_PREFIX, configProvideInjectKey } from '@/defaultConfig';
 
 const props = defineProps({
   clsPrefix: {

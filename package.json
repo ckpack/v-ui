@@ -41,11 +41,11 @@
     "build": "npm run build:es && npm run build:dist",
     "build:es": "vite build  -c scripts/vite.es.ts",
     "build:dist": "vite build -c scripts/vite.dist.ts",
-    "docs:dev": "vitepress dev docs",
+    "docs:dev": "cp CHANGELOG.md ./docs/ && vitepress dev docs",
     "docs:build": "cp CHANGELOG.md ./docs/ && vitepress build docs",
-    "docs:serve": "vitepress serve docs",
-    "gen": "vite-node ./scripts/gen.ts",
-    "postgen": "vite-node ./scripts/gen-compoents.ts"
+    "docs:serve": "cp CHANGELOG.md ./docs/ && vitepress serve docs",
+    "gen": "tsx  ./scripts/gen.ts",
+    "postgen": "tsx  ./scripts/gen-compoents.ts"
   },
   "devDependencies": {
     "@antfu/eslint-config": "0.27.0",
@@ -62,8 +62,8 @@
     "typescript": "^4.8.4",
     "unplugin-vue-define-options": "0.11.2",
     "vite": "^3.1.4",
-    "vite-node": "^0.23.4",
-    "vite-plugin-dts": "1.6.1",
+    "tsx": "^3.9.0",
+    "vite-plugin-dts": "1.6.4",
     "vitepress": "1.0.0-alpha.17",
     "vue": "^3.2.40"
   },

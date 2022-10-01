@@ -1,7 +1,6 @@
 import DefaultTheme from 'vitepress/theme';
 import '@ckpack/v-ui/src/styles/index.scss';
 import * as VUI from '@ckpack/v-ui/src';
-
 import { DEMO_COMPOENT_PREFIX } from '../mdPlugin';
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
