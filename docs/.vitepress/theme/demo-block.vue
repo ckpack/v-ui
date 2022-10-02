@@ -84,6 +84,7 @@ const handlerMouseout = () => {
 }
 .preview {
   padding: 12px 0;
+  overflow: auto;
 }
 
 .control {

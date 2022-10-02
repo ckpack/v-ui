@@ -1,6 +1,6 @@
 <template>
   <v-space direction="column">
-    <v-space>
+    <v-space wrap>
       <v-button>
         Default
       </v-button>
@@ -17,7 +17,7 @@
         Warning
       </v-button>
     </v-space>
-    <v-space>
+    <v-space wrap>
       <v-button round>
         Default
       </v-button>

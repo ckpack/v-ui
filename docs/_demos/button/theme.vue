@@ -1,5 +1,5 @@
 <template>
-  <v-space>
+  <v-space wrap>
     <v-button>Default</v-button>
     <v-button theme="primary">
       Primary
