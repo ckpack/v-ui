@@ -1,0 +1,7 @@
+@use "../../styles/base.scss" as *;
+
+$prefix: '#{$namespace}-space';
+
+.#{$prefix} {
+  display: flex;
+}

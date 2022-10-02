@@ -1,9 +1,9 @@
 import Button from '@/components/button';
 import ConfigProvider from '@/components/config-provider';
-import Label from '@/components/label';
+import Space from '@/components/space';
 
 export {
   Button as VButton,
   ConfigProvider as VConfigProvider,
-  Label as VLabel,
+  Space as VSpace,
 };

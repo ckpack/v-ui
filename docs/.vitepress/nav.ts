@@ -35,7 +35,7 @@ export function getNav(lang = '') {
 export function getSidebarCompoents(lang = '') {
   const t = $t(lang || 'zh');
   const compoents = {
-    base: ['button', 'label'],
+    base: ['button', 'space'],
     config: ['config-provider'],
   } as const;
 

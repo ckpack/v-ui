@@ -46,9 +46,12 @@ const ns = useNamespace('${componentName}');
 
 fs.writeFileSync(
 `${basePath}/src/components/${componentName}/index.scss`,
-`@use "../../styles/base.scss" as *;
-
-$prefix: '#{$namespace}-${componentName}';\n`);
+`@forward  './${componentName}.scss';\n`);
+fs.writeFileSync(
+  `${basePath}/src/components/${componentName}/${componentName}.scss`,
+  `@use "../../styles/base.scss" as *;
+  
+  $prefix: '#{$namespace}-${componentName}';\n`);
 
 fs.writeFileSync(
 `${basePath}/src/components/${componentName}/index.ts`,
