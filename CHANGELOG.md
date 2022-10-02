@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.8.0](https://github.com/ckpack/v-ui/compare/v1.7.0...v1.8.0) (2022-10-02)
+
+
+### Features
+
+* 添加space 组件 ([632e56a](https://github.com/ckpack/v-ui/commit/632e56a8dd2004ea5b314c2e69b821f6e25e3fd0))
+
 ## [1.7.0](https://github.com/ckpack/v-ui/compare/v1.6.0...v1.7.0) (2022-10-01)
 
 
