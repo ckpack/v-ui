@@ -12,8 +12,6 @@ export const external = [...baseExternal, ...Object.keys(dependencies ?? [])];
 
 export const rootPath = fileURLToPath(new URL('../', import.meta.url));
 
-console.log(rootPath);
-
 export const alias = {
   '@': fileURLToPath(new URL('../src', import.meta.url)),
 };

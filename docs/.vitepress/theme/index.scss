@@ -5,3 +5,6 @@
   --vp-c-brand-dark: var(--v-color-primary-6);
   --vp-c-brand-darker: var(--v-color-primary-7);
 }
+.vp-doc div[class*='language-'] {
+  margin: 0;
+}

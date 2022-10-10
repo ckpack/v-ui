@@ -1,8 +1,7 @@
-import '@vue/runtime-core'
-
-export {}
-
 // GlobalComponents for Volar
-declare module '@vue/runtime-core' {
-  export type GlobalComponents = typeof import('./src/components')
+// Read more: https://github.com/vuejs/core/pull/3399
+
+export declare module '@vue/runtime-core' {
+  export type GlobalComponents = typeof import('./src')['components']
 }
+

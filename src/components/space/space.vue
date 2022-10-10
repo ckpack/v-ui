@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type StyleValue, computed, toRefs, useSlots } from 'vue';
+import { type StyleValue, computed, useSlots } from 'vue';
 import { useNamespace } from '@/hooks';
 import { isBoolean } from '@/utils';
 
