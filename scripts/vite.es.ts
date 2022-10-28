@@ -11,7 +11,7 @@ export default defineConfig({
     skipDiagnostics: false,
     logDiagnostics: true,
     cleanVueFileName: true,
-    exclude: ['node_modules', 'global.d.ts'],
+    exclude: ['node_modules', 'types.d.ts'],
   }), vue(), DefineOptions(), vitePluginSass({
     outdir: './es',
     isCpScss: true,
