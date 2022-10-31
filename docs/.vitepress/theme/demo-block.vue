@@ -70,7 +70,7 @@ const handlerMouseout = () => {
   </div>
 </template>
 
-<style scoped>
+<style>
 .demo-block {
   border: 1px solid var(--vp-c-divider-light);
   padding: 12px;

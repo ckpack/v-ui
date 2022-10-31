@@ -4,6 +4,7 @@ import { useNamespace } from '@/hooks';
 
 const props = withDefaults(defineProps<{
   round?: boolean
+  disabled?: boolean
   theme?: typeof buttonThemes[number]
 }>(), {
   theme: 'default',
@@ -14,10 +15,17 @@ defineOptions({
 });
 
 const ns = useNamespace('button');
+
+const buttonClass = [
+  ns.b(),
+  ns.is('round', props.round),
+  ns.is('disabled', props.disabled),
+  ns.m('theme', props.theme),
+];
 </script>
 
 <template>
-  <button :class="[ns.b(), ns.is('round', round), ns.m('theme', theme)]">
+  <button :class="buttonClass" :disabled="props.disabled">
     <slot />
   </button>
 </template>

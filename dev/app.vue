@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import CaseComponents from './components';
+import CaseComponents from './components-demos';
 </script>
 
 <template>

@@ -11,6 +11,7 @@ $themes: ('default', 'primary', 'success', 'warning', 'error');
     $_type: 'gray';
     $_color: 'black';
   }
+
   &-theme-#{$type} {
     background-color: getColorVar('#{$_type}-5');
     border: 1px solid getColorVar('#{$_type}-5');
@@ -32,11 +33,14 @@ $themes: ('default', 'primary', 'success', 'warning', 'error');
   padding: getCssVar('padding', 'md') calc(2 * getCssVar('padding', 'md'));
   cursor: pointer;
   line-height: 1;
-
   border-radius: getCssVar('border-radius', 'default');
 
   &-is-round {
     border-radius: getCssVar('border-radius', 'round');
+  }
+
+  &-is-disabled {
+    cursor: not-allowed;
   }
 
   @each $theme in $themes {
