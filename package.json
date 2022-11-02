@@ -48,6 +48,9 @@
     "gen": "tsx ./scripts/gen.ts",
     "postgen": "tsx ./scripts/gen-compoents.ts"
   },
+  "dependencies": {
+    "@emotion/css": "^11.10.5"
+  },
   "devDependencies": {
     "@antfu/eslint-config": "0.29.2",
     "@commitlint/cli": "^17.2.0",

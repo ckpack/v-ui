@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { buttonThemes } from './button';
-import { useNamespace } from '@/hooks';
-
+import { button } from './button-class';
+// import { useNamespace } from '@/hooks';
 const props = withDefaults(defineProps<{
   round?: boolean
   disabled?: boolean
@@ -14,18 +14,19 @@ defineOptions({
   name: 'Button',
 });
 
-const ns = useNamespace('button');
+// const ns = useNamespace('button');
 
-const buttonClass = [
-  ns.b(),
-  ns.is('round', props.round),
-  ns.is('disabled', props.disabled),
-  ns.m('theme', props.theme),
-];
+// const buttonClass = [
+//   ns.b(),
+//   ns.is('round', props.round),
+//   ns.is('disabled', props.disabled),
+//   ns.m('theme', props.theme),
+// ];
 </script>
 
 <template>
-  <button :class="buttonClass" :disabled="props.disabled">
+  {{ button }}
+  <button :class="button" :disabled="props.disabled">
     <slot />
   </button>
 </template>
