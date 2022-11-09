@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { type StyleValue, computed, useSlots } from 'vue';
-import { useNamespace } from '@/hooks';
+import { useSpace, v } from './space-class';
 import { isBoolean } from '@/utils';
+import { componentSizes } from '@/constants';
 
 const props = withDefaults(defineProps<{
   alignItems?: 'stretch' | 'center' | 'start' | 'end' | 'normal'
@@ -12,25 +13,19 @@ const props = withDefaults(defineProps<{
 }>(), {
   alignItems: 'normal',
   direction: 'row',
-  size: 'default',
+  size: 'medium',
   wrap: false,
   fill: false,
 });
 
-const SIZE_MAP: Record<string, any> = {
-  small: '.6rem',
-  default: '1rem',
-  large: '2rem',
-};
-
 defineOptions({
   name: 'Space',
+  inheritAttrs: false,
 });
 
-const ns = useNamespace('space');
+const slots: any = useSlots();
 
-const slots = useSlots();
-const defaultSlots = slots.default ? slots.default() : [];
+const { space } = useSpace();
 
 const spaceStyle = computed(() => {
   const { size, wrap, direction, alignItems, fill } = props;
@@ -38,16 +33,14 @@ const spaceStyle = computed(() => {
     'align-items': alignItems,
     'flex-direction': direction,
     'flex-wrap': isBoolean(wrap) ? wrap && 'wrap' : wrap,
-    'gap': SIZE_MAP[size] || size,
+    'gap': componentSizes.includes(size as any) ? v('gap', size) : size,
     'width': fill ? '100%' : '',
   } as StyleValue;
 });
 </script>
 
 <template>
-  <div :class="ns.b()" :style="spaceStyle">
-    <template v-for="(c, key) in defaultSlots" :key="c.key || key">
-      <component :is="c" />
-    </template>
+  <div :class="space" :style="spaceStyle">
+    <component :is="() => slots.default()" />
   </div>
 </template>

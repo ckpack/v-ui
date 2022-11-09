@@ -12,5 +12,7 @@ provide(configProvideInjectKey, reactive(props));
 </script>
 
 <template>
-  <slot />
+  <div class="test">
+    <slot />
+  </div>
 </template>

@@ -1,6 +1,5 @@
 import DefaultTheme from 'vitepress/theme';
-import './index.scss';
-import '@ckpack/v-ui/src/styles/index.scss';
+import './index.css';
 import * as VUI from '@ckpack/v-ui/src';
 import { DEMO_COMPOENT_PREFIX } from '../mdPlugin';
 

@@ -4,7 +4,6 @@ export const buttonThemes = [
   'success',
   'error',
   'warning',
-  'info',
 ] as const;
 
 export type ButtonThemes = typeof buttonThemes;

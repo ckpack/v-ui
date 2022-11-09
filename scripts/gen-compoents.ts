@@ -13,10 +13,4 @@ function getCompoentsJS() {
 \nexport {\n${components.map(name => `  ${formatComponent(name)} as ${COMPONENT_PREFIX}${formatComponent(name)},\n`).join('')}};\n`;
 }
 
-function getCompoentsStyle() {
-  const components = fs.readdirSync(`${basePath}/src/components`);
-  return `${components.map(name => `@use '../components/${name}/index.scss' as ${name};`).join('\n')}`;
-}
-
 fs.writeFileSync(`${basePath}/src/components.ts`, getCompoentsJS());
-fs.writeFileSync(`${basePath}/src/styles/index.scss`, getCompoentsStyle());
