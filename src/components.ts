@@ -1,4 +1,4 @@
-import Button from '@/components/button';
+import Button from '@/components/button/style';
 import ConfigProvider from '@/components/config-provider';
 import Space from '@/components/space';
 

@@ -1,7 +1,8 @@
 import { css } from '@emotion/css';
+import { computed } from 'vue';
 import { useNamespace } from '@/themes';
 
-export const { iv, v } = useNamespace('space');
+export const { b, iv, v } = useNamespace('space');
 
 iv({
   'gap-small': '.6rem',
@@ -9,10 +10,15 @@ iv({
   'gap-large': '2rem',
 });
 
+const base = css({
+  display: 'flex',
+});
+
 export const useSpace = () => {
-  const space = css({
-    display: 'flex',
-  });
+  const space = computed(() => [
+    base,
+    b(),
+  ]);
   return {
     space,
   };

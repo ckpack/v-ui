@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { buttonThemes } from './button';
-import { useButton } from './button-class';
+import { useButton } from './style';
 
 const props = withDefaults(defineProps<{
   round?: boolean

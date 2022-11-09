@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { type StyleValue, computed, useSlots } from 'vue';
-import { useSpace, v } from './space-class';
+import { useSpace, v } from './style';
 import { isBoolean } from '@/utils';
 import { componentSizes } from '@/constants';
 
@@ -32,7 +32,7 @@ const spaceStyle = computed(() => {
   return {
     'align-items': alignItems,
     'flex-direction': direction,
-    'flex-wrap': isBoolean(wrap) ? wrap && 'wrap' : wrap,
+    'flex-wrap': isBoolean(wrap) ? (wrap ? 'wrap' : 'nowrap') : wrap,
     'gap': componentSizes.includes(size as any) ? v('gap', size) : size,
     'width': fill ? '100%' : '',
   } as StyleValue;
