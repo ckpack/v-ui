@@ -61,7 +61,7 @@ const getButtonThemeStyle = (theme: typeof buttonThemes[number]) => {
   });
 };
 
-const base = css({
+const hashId = css({
   [`&.${b()}`]: {
     padding: '0.5rem 1rem',
     lineHeight: 1,
@@ -81,7 +81,7 @@ const base = css({
 export const useButton = ({ props }: any) => {
   const button = computed(() => {
     return [
-      base,
+      hashId,
       b(),
       is('round', props.round),
       is('disabled', props.disabled),

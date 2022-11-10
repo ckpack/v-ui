@@ -6,4 +6,6 @@ export const COMPONENT_PREFIX = 'V';
 export const CLS_PREFIX = COMPONENT_PREFIX.toLowerCase();
 export const CSS_VAR_PREFIX = COMPONENT_PREFIX.toLowerCase();
 export const SIZE = 'medium';
-export const configProvideInjectKey = Symbol('configProvideInjectKey') as InjectionKey<{}>;
+export const configProvideInjectKey = Symbol('configProvideInjectKey') as InjectionKey<{
+  size?: string
+}>;

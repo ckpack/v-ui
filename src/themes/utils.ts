@@ -1,7 +1,7 @@
 import { injectGlobal } from '@emotion/css';
 import { CLS_PREFIX as _CLS_PREFIX, CSS_VAR_PREFIX as _CSS_VAR_PREFIX } from '@/defaultConfig';
 
-export const useNamespace = (block: string) => {
+export const useNamespace = (block = '') => {
   const __VUI__: any = Object.assign({ CLS_PREFIX: _CLS_PREFIX, CSS_VAR_PREFIX: _CSS_VAR_PREFIX }, (globalThis as any)?.__VUI__);
 
   const { CLS_PREFIX, CSS_VAR_PREFIX } = __VUI__;

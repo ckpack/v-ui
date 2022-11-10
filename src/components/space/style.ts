@@ -10,13 +10,13 @@ iv({
   'gap-large': '2rem',
 });
 
-const base = css({
+const hashId = css({
   display: 'flex',
 });
 
 export const useSpace = () => {
   const space = computed(() => [
-    base,
+    hashId,
     b(),
   ]);
   return {

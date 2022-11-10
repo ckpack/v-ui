@@ -1,18 +1,23 @@
 <script setup lang="ts">
-import { provide, reactive } from 'vue';
-import { CLS_PREFIX, configProvideInjectKey } from '@/defaultConfig';
+import { provide, reactive, useCssVars } from 'vue';
+import { configProvideInjectKey } from '@/defaultConfig';
 
 const props = withDefaults(defineProps<{
-  clsPrefix?: string
+  size?: string
+  themes?: Record<string, string>
 }>(), {
-  clsPrefix: CLS_PREFIX,
+  themes: () => ({}),
+});
+
+defineOptions({
+  name: 'ConfigProvider',
 });
 
 provide(configProvideInjectKey, reactive(props));
+
+useCssVars(() => props.themes);
 </script>
 
 <template>
-  <div class="test">
-    <slot />
-  </div>
+  <slot />
 </template>
