@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { type StyleValue, computed, useSlots } from 'vue';
-import { useSpace, v } from './style';
+// import { useSpace, v } from './style';
 import { isBoolean } from '@/utils';
 import { componentSizes } from '@/constants';
 
@@ -25,22 +25,22 @@ defineOptions({
 
 const slots: any = useSlots();
 
-const { space } = useSpace();
+// const { space } = useSpace();
 
-const spaceStyle = computed(() => {
-  const { size, wrap, direction, alignItems, fill } = props;
-  return {
-    'align-items': alignItems,
-    'flex-direction': direction,
-    'flex-wrap': isBoolean(wrap) ? (wrap ? 'wrap' : 'nowrap') : wrap,
-    'gap': componentSizes.includes(size as any) ? v('gap', size) : size,
-    'width': fill ? '100%' : '',
-  } as StyleValue;
-});
+// const spaceStyle = computed(() => {
+//   const { size, wrap, direction, alignItems, fill } = props;
+//   return {
+//     'align-items': alignItems,
+//     'flex-direction': direction,
+//     'flex-wrap': isBoolean(wrap) ? (wrap ? 'wrap' : 'nowrap') : wrap,
+//     'gap': componentSizes.includes(size as any) ? v('gap', size) : size,
+//     'width': fill ? '100%' : '',
+//   } as StyleValue;
+// });
 </script>
 
 <template>
-  <div :class="space" :style="spaceStyle">
+  <div>
     <component :is="() => slots.default()" />
   </div>
 </template>

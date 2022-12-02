@@ -7,7 +7,7 @@
   "main": "es/index.js",
   "module": "es/index.js",
   "types": "es/index.d.ts",
-  "packageManager": "pnpm@7.10.0",
+  "packageManager": "pnpm@7.17.1",
   "exports": {
     ".": {
       "import": "./es/index.js",
@@ -54,7 +54,7 @@
     "@emotion/css": "^11.10.5"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "0.31.0",
+    "@antfu/eslint-config": "0.33.1",
     "@commitlint/cli": "^17.3.0",
     "@commitlint/config-conventional": "^17.3.0",
     "@vitejs/plugin-vue": "^3.2.0",

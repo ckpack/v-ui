@@ -1,23 +1,27 @@
 <script setup lang="ts">
-import { provide, reactive, useCssVars } from 'vue';
-import { configProvideInjectKey } from '@/defaultConfig';
+import { inject, provide } from 'vue';
+import defaultConfig, { configInjectionKey } from '@/defaultConfig';
+import ThemeProvider from '@/components/theme-provider';
+import { filterUndefinedKey } from '@/utils';
 
 const props = withDefaults(defineProps<{
   size?: string
-  themes?: Record<string, string>
-}>(), {
-  themes: () => ({}),
-});
+  namespace?: string
+  token?: any
+  themes?: Record<symbol, any>
+  locale?: any
+}>(), {});
 
 defineOptions({
   name: 'ConfigProvider',
 });
 
-provide(configProvideInjectKey, reactive(props));
-
-useCssVars(() => props.themes);
+const provideConfig = { ...defaultConfig, ...filterUndefinedKey(inject(configInjectionKey)), ...filterUndefinedKey(props) };
+provide(configInjectionKey, provideConfig);
 </script>
 
 <template>
-  <slot />
+  <ThemeProvider :themes="provideConfig.themes">
+    <slot />
+  </ThemeProvider>
 </template>

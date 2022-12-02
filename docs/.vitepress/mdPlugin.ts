@@ -10,8 +10,7 @@ export const mdPlugin = (md: any) => {
   md.renderer.rules.fence = function (tokens, idx, options, env, self) {
     const token = tokens[idx];
     const nextToken = tokens[idx + 2];
-    if (token.type !== 'fence' || !token.src || !nextToken || !nextToken.content.includes(DEMOBLOCKTAG))
-      return defaultFenceRender(tokens, idx, options, env, self);
+    if (token.type !== 'fence' || !token.src || !nextToken || !nextToken.content.includes(DEMOBLOCKTAG)) { return defaultFenceRender(tokens, idx, options, env, self); }
     const src = token.src.replace(/\\/g, '/');
     nextToken.hidden = true;
     nextToken.children = [];

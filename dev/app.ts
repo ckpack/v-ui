@@ -1,6 +1,6 @@
 import { createApp } from 'vue';
-import * as VUI from '../';
 import Dev from './app.vue';
+import VUI from '@/index';
 
 const app = createApp(Dev);
 app.use(VUI);
