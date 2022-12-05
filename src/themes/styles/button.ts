@@ -1,85 +1,89 @@
 import { type CSSInterpolation, css } from '@emotion/css';
 import type { InjectionKey } from 'vue';
-import { buttonThemes } from '@/components/button/button';
-import { useColors, useNamespace } from '@/themes';
+import type { Config } from '@/defaultConfig';
+import { useNamespace } from '@/themes';
 
-export const buttonStyle = () => {
-  const ns = useNamespace('button');
-  const colors = useColors();
-  ns.iv({
-    'border-radius': '0.25em',
-    'border-radius-round': '999em',
-    'line-height': '32px',
-  });
-
-  const getButtonDisabledStyle = () => {
-    return {
-      'cursor': 'not-allowed',
-      'backgroundColor': ns.v('color-gray-3'),
-      'border': `1px solid ${ns.v('color-gray-3')}`,
-      'color': `${colors.gray[6]}`,
-      '&:hover': {
-        backgroundColor: colors.gray[3],
-        border: `1px solid ${colors.gray[3]}`,
-      },
-      '&:active': {
-        backgroundColor: colors.gray[3],
-        border: `1px solid ${colors.gray[3]}`,
-      },
-    } as CSSInterpolation;
-  };
-
-  const getButtonStyle = ({ baseColor, fontColor }: { baseColor: string[]; fontColor: string[] }) => {
-    return {
-      'backgroundColor': baseColor[5],
-      'border': `1px solid ${baseColor[5]}`,
-      'color': `${fontColor[5]}`,
-      '&:hover': {
-        backgroundColor: baseColor[4],
-        border: `1px solid ${baseColor[4]}`,
-      },
-      '&:active': {
-        backgroundColor: baseColor[6],
-        border: `1px solid ${baseColor[6]}`,
-      },
-    } as CSSInterpolation;
-  };
-
-  const getButtonThemeStyle = (theme: typeof buttonThemes[number]) => {
-    const { fontColor, baseColor } = theme !== 'default'
-      ? {
-          fontColor: colors.white,
-          baseColor: colors[theme],
-        }
-      : {
-          fontColor: colors.black,
-          baseColor: colors.gray,
-        };
-    return getButtonStyle({
-      baseColor,
-      fontColor,
-    });
-  };
+export const buttonStyle = (config?: Config) => {
+  const ns = useNamespace('button', config);
 
   const base = ns.b();
   const round = ns.is('round');
   const disabled = ns.is('disabled');
+
   const hashId = css({
     [`&.${base}`]: {
-      padding: '0 1rem',
-      lineHeight: ns.v('line-height'),
-      borderRadius: ns.v('border-radius'),
-      cursor: 'pointer',
+      'lineHeight': ns.vb('control-height'),
+      'borderRadius': ns.vb('border-radius'),
+      'padding': `0 ${ns.vb('padding')}`,
+      'backgroundColor': ns.vv('bg-color'),
+      'border': ns.vv('border'),
+      'color': ns.vv('text-color'),
+      'cursor': 'pointer',
+      '&:hover': {
+        backgroundColor: ns.vv('bg-color', 'hover'),
+        border: ns.vv('border', 'hover'),
+        color: ns.vv('text-color', 'hover'),
+      },
+      '&:active': {
+        backgroundColor: ns.vv('bg-color', 'active'),
+        border: ns.vv('border', 'active'),
+        color: ns.vv('text-color', 'active'),
+      },
     },
-    [`&.${round}`]: {
-      borderRadius: ns.v('border-radius', 'round'),
+    [`&.${ns.m('theme', 'default')}`]: {
+      [ns.v('bg-color')]: ns.vb('color-gray'),
+      [ns.v('bg-color', 'hover')]: ns.vb('color-gray', 'hover'),
+      [ns.v('bg-color', 'active')]: ns.vb('color-gray', 'active'),
+      [ns.v('border-color')]: ns.vb('color-gray'),
+      [ns.v('border-color', 'hover')]: ns.vb('color-gray', 'hover'),
+      [ns.v('border-color', 'active')]: ns.vb('color-gray', 'active'),
+      [ns.v('text-color')]: ns.vb('color-black'),
+      [ns.v('text-color', 'hover')]: ns.vb('color-black', 'hover'),
+      [ns.v('text-color', 'active')]: ns.vb('color-black', 'active'),
+      [`&.${disabled}`]: {
+        [ns.v('bg-color')]: ns.vb('color', 'gray', 'disabled'),
+        [ns.v('bg-color', 'hover')]: ns.vb('color', 'gray', 'disabled'),
+        [ns.v('bg-color', 'active')]: ns.vb('color', 'gray', 'disabled'),
+        [ns.v('border-color')]: ns.vb('color', 'gray', 'disabled'),
+        [ns.v('border-color', 'hover')]: ns.vb('color', 'gray', 'disabled'),
+        [ns.v('border-color', 'active')]: ns.vb('color', 'gray', 'disabled'),
+        [ns.v('text-color')]: ns.vb('color', 'text', 'disabled'),
+        [ns.v('text-color', 'hover')]: ns.vb('color', 'text', 'disabled'),
+        [ns.v('text-color', 'active')]: ns.vb('color', 'text', 'disabled'),
+      },
     },
-    ...buttonThemes.reduce((pre: any, cur: any) => {
-      pre[`&.${ns.m('theme', cur)}`] = getButtonThemeStyle(cur);
+    ...['primary', 'success', 'error', 'warning'].reduce((pre: any, cur: any) => {
+      pre[`&.${ns.m('theme', cur)}`] = {
+        [ns.v('bg-color')]: ns.vb('color', cur),
+        [ns.v('bg-color', 'hover')]: ns.vb('color', cur, 'hover'),
+        [ns.v('bg-color', 'active')]: ns.vb('color', cur, 'active'),
+        [ns.v('border-color')]: ns.vb('color', cur),
+        [ns.v('border-color', 'hover')]: ns.vb('color', cur, 'hover'),
+        [ns.v('border-color', 'active')]: ns.vb('color', cur, 'active'),
+        [ns.v('text-color')]: ns.vb('color-white'),
+        [ns.v('text-color', 'hover')]: ns.vb('color-white', 'hover'),
+        [ns.v('text-color', 'active')]: ns.vb('color-white', 'active'),
+        [`&.${disabled}`]: {
+          [ns.v('bg-color')]: ns.vb('color', cur, 'disabled'),
+          [ns.v('bg-color', 'hover')]: ns.vb('color', cur, 'disabled'),
+          [ns.v('bg-color', 'active')]: ns.vb('color', cur, 'disabled'),
+          [ns.v('border-color')]: ns.vb('color', cur, 'disabled'),
+          [ns.v('border-color', 'hover')]: ns.vb('color', cur, 'disabled'),
+          [ns.v('border-color', 'active')]: ns.vb('color', cur, 'disabled'),
+          [ns.v('text-color')]: ns.vb('color-white', 'disabled'),
+          [ns.v('text-color', 'hover')]: ns.vb('color-white', 'disabled'),
+          [ns.v('text-color', 'active')]: ns.vb('color-white', 'disabled'),
+        },
+      };
       return pre;
     }, {}),
-    [`&.${disabled}`]: getButtonDisabledStyle(),
-  });
+    [`&.${round}`]: {
+      borderRadius: ns.vb('border-radius', 'round'),
+    },
+    [`&.${disabled}`]: {
+      cursor: 'not-allowed',
+    },
+  } as CSSInterpolation);
 
   return {
     ns,

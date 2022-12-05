@@ -1,15 +1,15 @@
 import { buttonInjectionKey, buttonStyle } from './styles/button';
 import { baseInjectionKey, baseStyle } from './styles/base';
+import { spaceInjectionKey, spaceStyle } from './styles/space';
 
 export const themes = {
-  [buttonInjectionKey as symbol]: buttonStyle,
   [baseInjectionKey as symbol]: baseStyle,
+  [buttonInjectionKey as symbol]: buttonStyle,
+  [spaceInjectionKey as symbol]: spaceStyle,
 };
 
-export * as colors from './colors';
-export * from './config';
 export * from './styles/button';
 export * from './styles/base';
-export * from './hooks/useColors';
+export * from './styles/space';
 export * from './hooks/useNamespace';
 export * from './hooks/useThemes';

@@ -6,12 +6,51 @@ export const NAME = 'VUI';
 export const config = {
   size: 'medium',
   namespace: 'v',
-  token: {},
+  token: {
+    'control-height': '32px',
+    'border-radius': {
+      '': '6px',
+      'sm': '4px',
+      'lg': '8px',
+      'round': '90px',
+    },
+    'font-size': {
+      '': '14px',
+      'sm': '12px',
+      'lg': '16px',
+    },
+    'line-type': 'solid',
+    'line-width': '1px',
+    'color': {
+      text: '#b5b5b5',
+      white: '#ffffff',
+      black: '#000000',
+      gray: '#dcdcdc',
+      bg: '#ffffff',
+      primary: '#8b5cf6',
+      info: '#dcdcdc',
+      warning: '#f59e0b',
+      success: '#10b981',
+      error: '#ef4444',
+    },
+    'margin': {
+      '': '16px',
+      'lg': '24px',
+      'sm': '12px',
+    },
+    'padding': {
+      '': '16px',
+      'lg': '24px',
+      'sm': '12px',
+    },
+  },
   themes: {},
   locale: {},
 };
 
-export const configInjectionKey = Symbol('configInjectionKey') as InjectionKey<Partial<typeof config>>;
+export type Config = typeof config;
+
+export const configInjectionKey = Symbol('configInjectionKey') as InjectionKey<Partial<Config>>;
 
 export default config;
 

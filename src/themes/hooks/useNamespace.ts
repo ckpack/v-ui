@@ -1,8 +1,11 @@
-import { inject, useCssVars } from 'vue';
-import defaultConfig, { configInjectionKey } from '@/defaultConfig';
+import { getCurrentInstance, inject } from 'vue';
+import { useCssVars } from './useCssVars';
+import defaultConfig, { type Config, configInjectionKey } from '@/defaultConfig';
 
-export const useNamespace = (block = '') => {
-  const { namespace } = inject(configInjectionKey) || defaultConfig;
+export const useNamespace = (block = '', config?: Config) => {
+  console.log(block);
+  const _config = { ...defaultConfig, ...config };
+  const { namespace } = getCurrentInstance() ? inject(configInjectionKey, _config) : _config;
 
   const b = () => `${namespace}${block ? `-${block}` : ''}`;
   const is = (name: string, state = true) => {
@@ -13,9 +16,10 @@ export const useNamespace = (block = '') => {
     return modifier ? `${b()}-${type}-${modifier}` : '';
   };
 
+  const v = (...args: (string | number)[]) => `--${b()}-${args.join('-')}`;
+  const vv = (...args: (string | number)[]) => `var(--${b()}-${args.join('-')})`;
+  const vb = (...args: (string | number)[]) => `var(--${namespace}-${args.join('-')})`;
   const vn = (...args: (string | number)[]) => `${b()}-${args.join('-')}`;
-  const vp = (...args: (string | number)[]) => `--${b()}-${args.join('-')}`;
-  const v = (...args: (string | number)[]) => `var(--${b()}-${args.join('-')})`;
 
   const iv = (vars: Record<string, string>) => {
     useCssVars(() => {
@@ -30,8 +34,9 @@ export const useNamespace = (block = '') => {
     b,
     is,
     m,
-    vp,
+    vv,
     vn,
+    vb,
     v,
     iv,
   };

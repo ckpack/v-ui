@@ -5,11 +5,13 @@ import { themes } from '@/index';
 
 <template>
   <div id="app">
-    <VConfigProvider :themes="themes">
-      <template v-for="(caseComponent, name) in CaseComponents" :key="name">
-        <h4>{{ name }}</h4>
-        <component :is="caseComponent" />
-      </template>
+    <VConfigProvider namespace="v" :themes="themes">
+      <div class="content">
+        <template v-for="(caseComponent, name) in CaseComponents" :key="name">
+          <h4>{{ name }}</h4>
+          <component :is="caseComponent" />
+        </template>
+      </div>
     </VConfigProvider>
   </div>
 </template>
