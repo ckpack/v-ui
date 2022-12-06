@@ -13,7 +13,7 @@ import App from '@/App.vue';
 
 const app = createApp(App);
 app.use(VButton, {
-  componentPrefix: 'T',
+  namespace: 't',
 });
 
 app.mount('#app');
@@ -29,7 +29,7 @@ import App from '@/App.vue';
 const app = createApp(App);
 
 app.use(create([VButton, VLabel]), {
-  componentPrefix: 'T',
+  namespace: 't',
 });
 app.mount('#app');
 ```
@@ -53,8 +53,7 @@ import App from '@/App.vue';
 const app = createApp(App);
 
 app.use(VButton, {
-  componentPrefix: 'T',
-  clsPrefix: 't',
+  namespace: 't',
 });
 app.mount('#app');
 ```

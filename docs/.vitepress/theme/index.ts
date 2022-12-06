@@ -1,12 +1,12 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import DefaultTheme from 'vitepress/theme';
-import './index.scss';
-import '@ckpack/v-ui/src/styles/index.scss';
-import * as VUI from '@ckpack/v-ui/src';
+import './index.css';
 import { DEMO_COMPOENT_PREFIX } from '../mdPlugin';
 
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
 import DemoBlock from './demo-block.vue';
+// @ts-expect-error
+import VUI from '@/index';
 
 export default {
   ...DefaultTheme,

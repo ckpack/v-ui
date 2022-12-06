@@ -45,15 +45,6 @@ const ns = useNamespace('${componentName}');
 </template>\n`);
 
 fs.writeFileSync(
-`${basePath}/src/components/${componentName}/index.scss`,
-`@forward  './${componentName}.scss';\n`);
-fs.writeFileSync(
-  `${basePath}/src/components/${componentName}/${componentName}.scss`,
-  `@use "../../styles/base.scss" as *;
-  
-  $prefix: '#{$namespace}-${componentName}';\n`);
-
-fs.writeFileSync(
 `${basePath}/src/components/${componentName}/index.ts`,
 `import ${formatComponentName} from './${componentName}.vue';
 import { withInstallComponent } from '@/utils';

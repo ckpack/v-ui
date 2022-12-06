@@ -2,14 +2,9 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import DefineOptions from 'unplugin-vue-define-options/vite';
 import { alias, baseExternal, globals, name } from './vite-common';
-import vitePluginSass from './vite-plugin-sass';
 
 export default defineConfig({
-  plugins: [vue(), DefineOptions(), vitePluginSass({
-    outdir: './dist',
-    handlerOutDir: (val: string) => `${val}`.replace('src/styles', ''),
-    globSync: ['src/styles/index.scss'],
-  })],
+  plugins: [vue(), DefineOptions()],
   build: {
     target: 'esnext',
     outDir: 'dist',

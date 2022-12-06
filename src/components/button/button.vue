@@ -1,6 +1,7 @@
 <script setup lang="ts">
+import { computed, inject } from 'vue';
 import type { buttonThemes } from './button';
-import { useNamespace } from '@/hooks';
+import { buttonInjectionKey, buttonStyle } from '@/themes';
 
 const props = withDefaults(defineProps<{
   round?: boolean
@@ -14,18 +15,21 @@ defineOptions({
   name: 'Button',
 });
 
-const ns = useNamespace('button');
+const { hashId, ns } = inject(buttonInjectionKey, () => buttonStyle(), true);
 
-const buttonClass = [
-  ns.b(),
-  ns.is('round', props.round),
-  ns.is('disabled', props.disabled),
-  ns.m('theme', props.theme),
-];
+const buttonClass = computed(() => {
+  return [
+    hashId,
+    ns.b(),
+    ns.is('round', props.round),
+    ns.is('disabled', props.disabled),
+    ns.m('theme', props.theme),
+  ];
+});
 </script>
 
 <template>
-  <button :class="buttonClass" :disabled="props.disabled">
+  <button :class="buttonClass">
     <slot />
   </button>
 </template>
