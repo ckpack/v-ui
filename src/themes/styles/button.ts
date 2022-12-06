@@ -6,18 +6,36 @@ import { useNamespace } from '@/hooks';
 export const buttonStyle = (config?: Config) => {
   const ns = useNamespace('button', config);
 
-  const base = ns.b();
-  const round = ns.is('round');
+  const getButtonStyle = ({ bgColor, bdColor, textColor }: { bgColor: string; bdColor: string; textColor: string }) => {
+    return {
+      [ns.v('bg-color')]: ns.vb('color', bgColor),
+      [ns.v('bg-color', 'hover')]: ns.vb('color', bgColor, 'hover'),
+      [ns.v('bg-color', 'active')]: ns.vb('color', bgColor, 'active'),
+      [ns.v('bg-color', 'disabled')]: ns.vb('color', bgColor, 'disabled'),
+      [ns.v('border-color')]: ns.vb('color', bdColor),
+      [ns.v('border-color', 'hover')]: ns.vb('color', bdColor, 'hover'),
+      [ns.v('border-color', 'active')]: ns.vb('color', bdColor, 'active'),
+      [ns.v('border-color', 'disabled')]: ns.vb('color', bdColor, 'disabled'),
+      [ns.v('text-color')]: ns.vb('color', textColor),
+      [ns.v('text-color', 'hover')]: ns.vb('color', textColor, 'hover'),
+      [ns.v('text-color', 'active')]: ns.vb('color', textColor, 'active'),
+      [ns.v('text-color', 'disabled')]: ns.vb('color', textColor, 'disabled'),
+    };
+  };
+
   const disabled = ns.is('disabled');
 
   const hashId = css({
-    [`&.${base}`]: {
+    [`&.${ns.b()}`]: {
+      [ns.v('border-width')]: ns.vb('border-width'),
+      [ns.v('border-style')]: ns.vb('border-style'),
       [ns.v('control-height')]: ns.vb('control-height'),
       [ns.v('border-radius')]: ns.vb('border-radius'),
       [ns.v('padding')]: ns.vb('padding'),
-      [ns.v('border')]: `${ns.vb('border-width')} ${ns.vb('border-style')} ${ns.vv('border-color')}`,
-      [ns.v('border', 'hover')]: `${ns.vb('border-width')} ${ns.vb('border-style')} ${ns.vv('border-color', 'hover')}`,
-      [ns.v('border', 'active')]: `${ns.vb('border-width')} ${ns.vb('border-style')} ${ns.vv('border-color', 'active')}`,
+      [ns.v('border')]: `${ns.vv('border-width')} ${ns.vv('border-style')} ${ns.vv('border-color')}`,
+      [ns.v('border', 'hover')]: `${ns.vv('border-width')} ${ns.vv('border-style')} ${ns.vv('border-color', 'hover')}`,
+      [ns.v('border', 'active')]: `${ns.vv('border-width')} ${ns.vv('border-style')} ${ns.vv('border-color', 'active')}`,
+      [ns.v('border', 'disabled')]: `${ns.vv('border-width')} ${ns.vv('border-style')} ${ns.vv('border-color', 'disabled')}`,
       'boxSizing': 'border-box',
       'lineHeight': ns.vv('control-height'),
       'borderRadius': ns.vv('border-radius'),
@@ -36,59 +54,48 @@ export const buttonStyle = (config?: Config) => {
         border: ns.vv('border', 'active'),
         color: ns.vv('text-color', 'active'),
       },
-    },
-    [`&.${ns.m('theme', 'default')}`]: {
-      [ns.v('bg-color')]: ns.vb('color', 'gray'),
-      [ns.v('bg-color', 'hover')]: ns.vb('color', 'gray', 'hover'),
-      [ns.v('bg-color', 'active')]: ns.vb('color', 'gray', 'active'),
-      [ns.v('border-color')]: ns.vb('color', 'gray'),
-      [ns.v('border-color', 'hover')]: ns.vb('color', 'gray', 'hover'),
-      [ns.v('border-color', 'active')]: ns.vb('color', 'gray', 'active'),
-      [ns.v('text-color')]: ns.vb('color', 'text'),
-      [ns.v('text-color', 'hover')]: ns.vb('color', 'text', 'hover'),
-      [ns.v('text-color', 'active')]: ns.vb('color', 'text', 'active'),
+      '&:focus': {
+        backgroundColor: ns.vv('bg-color', 'hover'),
+        border: ns.vv('border', 'hover'),
+        color: ns.vv('text-color', 'hover'),
+      },
       [`&.${disabled}`]: {
-        [ns.v('bg-color')]: ns.vb('color', 'gray', 'disabled'),
-        [ns.v('bg-color', 'hover')]: ns.vb('color', 'gray', 'disabled'),
-        [ns.v('bg-color', 'active')]: ns.vb('color', 'gray', 'disabled'),
-        [ns.v('border-color')]: ns.vb('color', 'gray', 'disabled'),
-        [ns.v('border-color', 'hover')]: ns.vb('color', 'gray', 'disabled'),
-        [ns.v('border-color', 'active')]: ns.vb('color', 'gray', 'disabled'),
-        [ns.v('text-color')]: ns.vb('color', 'text', 'disabled'),
-        [ns.v('text-color', 'hover')]: ns.vb('color', 'text', 'disabled'),
-        [ns.v('text-color', 'active')]: ns.vb('color', 'text', 'disabled'),
+        cursor: 'not-allowed',
+        backgroundColor: ns.vv('bg-color', 'disabled'),
+        border: ns.vv('border', 'disabled'),
+        color: ns.vv('text-color', 'disabled'),
       },
     },
-    ...['primary', 'success', 'error', 'warning'].reduce((pre: any, cur: any) => {
-      pre[`&.${ns.m('theme', cur)}`] = {
-        [ns.v('bg-color')]: ns.vb('color', cur),
-        [ns.v('bg-color', 'hover')]: ns.vb('color', cur, 'hover'),
-        [ns.v('bg-color', 'active')]: ns.vb('color', cur, 'active'),
-        [ns.v('border-color')]: ns.vb('color', cur),
-        [ns.v('border-color', 'hover')]: ns.vb('color', cur, 'hover'),
-        [ns.v('border-color', 'active')]: ns.vb('color', cur, 'active'),
-        [ns.v('text-color')]: ns.vb('color', 'white'),
-        [ns.v('text-color', 'hover')]: ns.vb('color', 'white', 'hover'),
-        [ns.v('text-color', 'active')]: ns.vb('color', 'white', 'active'),
-        [`&.${disabled}`]: {
-          [ns.v('bg-color')]: ns.vb('color', cur, 'disabled'),
-          [ns.v('bg-color', 'hover')]: ns.vb('color', cur, 'disabled'),
-          [ns.v('bg-color', 'active')]: ns.vb('color', cur, 'disabled'),
-          [ns.v('border-color')]: ns.vb('color', cur, 'disabled'),
-          [ns.v('border-color', 'hover')]: ns.vb('color', cur, 'disabled'),
-          [ns.v('border-color', 'active')]: ns.vb('color', cur, 'disabled'),
-          [ns.v('text-color')]: ns.vb('color', 'white', 'disabled'),
-          [ns.v('text-color', 'hover')]: ns.vb('color', 'white', 'disabled'),
-          [ns.v('text-color', 'active')]: ns.vb('color', 'white', 'disabled'),
-        },
-      };
+    ...['default', 'primary', 'success', 'error', 'warning'].reduce((pre: any, cur: any) => {
+      const color = cur === 'default' ? 'bg' : cur;
+      let textColor = cur === 'default' ? 'text' : 'white';
+
+      const themeStyle: CSSInterpolation = getButtonStyle({
+        bgColor: color,
+        bdColor: color,
+        textColor,
+      });
+
+      textColor = cur === 'default' ? 'text' : cur;
+      themeStyle[`&.${ns.is('text')}`] = getButtonStyle({
+        bgColor: 'white',
+        bdColor: 'white',
+        textColor,
+      });
+      themeStyle[`&.${ns.is('outlined')}`] = getButtonStyle({
+        bgColor: 'white',
+        bdColor: 'currentcolor',
+        textColor,
+      });
+
+      pre[`&.${ns.m('theme', cur)}`] = themeStyle;
       return pre;
     }, {}),
-    [`&.${round}`]: {
+    [`&.${ns.is('round')}`]: {
       borderRadius: ns.vb('border-radius', 'round'),
     },
-    [`&.${disabled}`]: {
-      cursor: 'not-allowed',
+    [`&.${ns.is('raised')}`]: {
+      boxShadow: ns.vb('box-shadow', 'raised'),
     },
   } as CSSInterpolation);
 

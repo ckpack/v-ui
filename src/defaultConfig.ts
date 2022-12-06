@@ -8,6 +8,9 @@ export const config = {
   namespace: 'v',
   token: {
     'control-height': '32px',
+    'box-shadow': {
+      raised: '0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%)',
+    },
     'font': {
       size: {
         '': '14px',
@@ -30,11 +33,11 @@ export const config = {
       },
     },
     'color': {
-      text: '#404040',
+      bg: '#d9d9d9',
+      text: '#262626',
       white: '#ffffff',
       black: '#000000',
-      gray: '#dcdcdc',
-      bg: '#ffffff',
+      gray: '#d9d9d9',
       primary: '#8b5cf6',
       info: '#dcdcdc',
       warning: '#f59e0b',
