@@ -7,6 +7,7 @@ export * from './components';
 export * as components from './components';
 export * from './defaultConfig';
 export * from './themes';
+export * from './hooks';
 export {
   preset as install,
   create,

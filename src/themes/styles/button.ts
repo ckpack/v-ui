@@ -1,7 +1,7 @@
 import { type CSSInterpolation, css } from '@emotion/css';
 import type { InjectionKey } from 'vue';
 import type { Config } from '@/defaultConfig';
-import { useNamespace } from '@/themes';
+import { useNamespace } from '@/hooks';
 
 export const buttonStyle = (config?: Config) => {
   const ns = useNamespace('button', config);
@@ -12,9 +12,16 @@ export const buttonStyle = (config?: Config) => {
 
   const hashId = css({
     [`&.${base}`]: {
-      'lineHeight': ns.vb('control-height'),
-      'borderRadius': ns.vb('border-radius'),
-      'padding': `0 ${ns.vb('padding')}`,
+      [ns.v('control-height')]: ns.vb('control-height'),
+      [ns.v('border-radius')]: ns.vb('border-radius'),
+      [ns.v('padding')]: ns.vb('padding'),
+      [ns.v('border')]: `${ns.vb('border-width')} ${ns.vb('border-style')} ${ns.vv('border-color')}`,
+      [ns.v('border', 'hover')]: `${ns.vb('border-width')} ${ns.vb('border-style')} ${ns.vv('border-color', 'hover')}`,
+      [ns.v('border', 'active')]: `${ns.vb('border-width')} ${ns.vb('border-style')} ${ns.vv('border-color', 'active')}`,
+      'boxSizing': 'border-box',
+      'lineHeight': ns.vv('control-height'),
+      'borderRadius': ns.vv('border-radius'),
+      'padding': `0 ${ns.vv('padding')}`,
       'backgroundColor': ns.vv('bg-color'),
       'border': ns.vv('border'),
       'color': ns.vv('text-color'),
@@ -31,15 +38,15 @@ export const buttonStyle = (config?: Config) => {
       },
     },
     [`&.${ns.m('theme', 'default')}`]: {
-      [ns.v('bg-color')]: ns.vb('color-gray'),
-      [ns.v('bg-color', 'hover')]: ns.vb('color-gray', 'hover'),
-      [ns.v('bg-color', 'active')]: ns.vb('color-gray', 'active'),
-      [ns.v('border-color')]: ns.vb('color-gray'),
-      [ns.v('border-color', 'hover')]: ns.vb('color-gray', 'hover'),
-      [ns.v('border-color', 'active')]: ns.vb('color-gray', 'active'),
-      [ns.v('text-color')]: ns.vb('color-black'),
-      [ns.v('text-color', 'hover')]: ns.vb('color-black', 'hover'),
-      [ns.v('text-color', 'active')]: ns.vb('color-black', 'active'),
+      [ns.v('bg-color')]: ns.vb('color', 'gray'),
+      [ns.v('bg-color', 'hover')]: ns.vb('color', 'gray', 'hover'),
+      [ns.v('bg-color', 'active')]: ns.vb('color', 'gray', 'active'),
+      [ns.v('border-color')]: ns.vb('color', 'gray'),
+      [ns.v('border-color', 'hover')]: ns.vb('color', 'gray', 'hover'),
+      [ns.v('border-color', 'active')]: ns.vb('color', 'gray', 'active'),
+      [ns.v('text-color')]: ns.vb('color', 'text'),
+      [ns.v('text-color', 'hover')]: ns.vb('color', 'text', 'hover'),
+      [ns.v('text-color', 'active')]: ns.vb('color', 'text', 'active'),
       [`&.${disabled}`]: {
         [ns.v('bg-color')]: ns.vb('color', 'gray', 'disabled'),
         [ns.v('bg-color', 'hover')]: ns.vb('color', 'gray', 'disabled'),
@@ -60,9 +67,9 @@ export const buttonStyle = (config?: Config) => {
         [ns.v('border-color')]: ns.vb('color', cur),
         [ns.v('border-color', 'hover')]: ns.vb('color', cur, 'hover'),
         [ns.v('border-color', 'active')]: ns.vb('color', cur, 'active'),
-        [ns.v('text-color')]: ns.vb('color-white'),
-        [ns.v('text-color', 'hover')]: ns.vb('color-white', 'hover'),
-        [ns.v('text-color', 'active')]: ns.vb('color-white', 'active'),
+        [ns.v('text-color')]: ns.vb('color', 'white'),
+        [ns.v('text-color', 'hover')]: ns.vb('color', 'white', 'hover'),
+        [ns.v('text-color', 'active')]: ns.vb('color', 'white', 'active'),
         [`&.${disabled}`]: {
           [ns.v('bg-color')]: ns.vb('color', cur, 'disabled'),
           [ns.v('bg-color', 'hover')]: ns.vb('color', cur, 'disabled'),
@@ -70,9 +77,9 @@ export const buttonStyle = (config?: Config) => {
           [ns.v('border-color')]: ns.vb('color', cur, 'disabled'),
           [ns.v('border-color', 'hover')]: ns.vb('color', cur, 'disabled'),
           [ns.v('border-color', 'active')]: ns.vb('color', cur, 'disabled'),
-          [ns.v('text-color')]: ns.vb('color-white', 'disabled'),
-          [ns.v('text-color', 'hover')]: ns.vb('color-white', 'disabled'),
-          [ns.v('text-color', 'active')]: ns.vb('color-white', 'disabled'),
+          [ns.v('text-color')]: ns.vb('color', 'white', 'disabled'),
+          [ns.v('text-color', 'hover')]: ns.vb('color', 'white', 'disabled'),
+          [ns.v('text-color', 'active')]: ns.vb('color', 'white', 'disabled'),
         },
       };
       return pre;

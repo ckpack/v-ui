@@ -3,7 +3,6 @@ import { useCssVars } from './useCssVars';
 import defaultConfig, { type Config, configInjectionKey } from '@/defaultConfig';
 
 export const useNamespace = (block = '', config?: Config) => {
-  console.log(block);
   const _config = { ...defaultConfig, ...config };
   const { namespace } = getCurrentInstance() ? inject(configInjectionKey, _config) : _config;
 

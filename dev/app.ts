@@ -4,5 +4,5 @@ import Dev from './app.vue';
 import { components, create } from '@/index';
 
 const app = createApp(Dev);
-app.use(create({ components, themes: {} }));
+app.use(create({ components }));
 app.mount('#app');

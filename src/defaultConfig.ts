@@ -8,21 +8,29 @@ export const config = {
   namespace: 'v',
   token: {
     'control-height': '32px',
-    'border-radius': {
-      '': '6px',
-      'sm': '4px',
-      'lg': '8px',
-      'round': '90px',
+    'font': {
+      size: {
+        '': '14px',
+        'sm': '12px',
+        'lg': '16px',
+      },
+      weight: {
+        '': 400,
+      },
+      family: 'system-ui',
     },
-    'font-size': {
-      '': '14px',
-      'sm': '12px',
-      'lg': '16px',
+    'border': {
+      width: '1px',
+      style: 'solid',
+      radius: {
+        '': '6px',
+        'sm': '4px',
+        'lg': '8px',
+        'round': '90px',
+      },
     },
-    'line-type': 'solid',
-    'line-width': '1px',
     'color': {
-      text: '#b5b5b5',
+      text: '#404040',
       white: '#ffffff',
       black: '#000000',
       gray: '#dcdcdc',

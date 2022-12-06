@@ -1,6 +1,6 @@
 import { css } from '@emotion/css';
 import type { InjectionKey } from 'vue';
-import { useNamespace } from '@/themes';
+import { useNamespace } from '@/hooks';
 import type { Config } from '@/defaultConfig';
 
 export const spaceStyle = (config?: Config) => {

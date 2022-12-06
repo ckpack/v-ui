@@ -1,5 +1,5 @@
 import type { InjectionKey } from 'vue';
-import { useNamespace } from '@/themes';
+import { useNamespace } from '@/hooks';
 import { flattenObj, generateColors } from '@/utils';
 import { type Config, config as defaultConfig } from '@/defaultConfig';
 
