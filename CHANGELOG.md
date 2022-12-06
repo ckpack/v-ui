@@ -2,6 +2,35 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.9.0](https://github.com/ckpack/v-ui/compare/v1.8.0...v1.9.0) (2022-12-06)
+
+
+### Features
+
+* css in js 替换sass ([9fb2871](https://github.com/ckpack/v-ui/commit/9fb28714ce1e00a7972ab1d45f732c3971935453))
+* refactor ([c9ac966](https://github.com/ckpack/v-ui/commit/c9ac966f1eec07f5ed4e666c2634c9e2b02809a1))
+* save ([d280432](https://github.com/ckpack/v-ui/commit/d280432749ad4999c197f655934f0b4bf1af39d4))
+* save ([b9dc637](https://github.com/ckpack/v-ui/commit/b9dc637d62b5a1fc579934a5d3c3a0f759b0e1d3))
+* update dependencie ([6ce1efb](https://github.com/ckpack/v-ui/commit/6ce1efb8ccbce6e1bd4c94f14a364b8a4279d9b1))
+* 尝试主题css变量 ([c136964](https://github.com/ckpack/v-ui/commit/c1369643c4f018409563065137a4358711edad45))
+* 更新依赖 ([820127e](https://github.com/ckpack/v-ui/commit/820127e56f5230ac2bfdb0526f33aa1e32434328))
+* 更新依赖 ([2d76e06](https://github.com/ckpack/v-ui/commit/2d76e069ac51964e7fc906192fadb1c672ee0733))
+* 更新依赖 ([ceed994](https://github.com/ckpack/v-ui/commit/ceed9942c643b8921ed6019306186bb6d66a840d))
+* 更新依赖 ([27ef7f5](https://github.com/ckpack/v-ui/commit/27ef7f5e0406ba926c657f946afd4746e8a31bba))
+* 统一预览文档组件 ([f740434](https://github.com/ckpack/v-ui/commit/f7404341f0913b7b5004792695cc2759d92355fb))
+* 重构 ([bda7140](https://github.com/ckpack/v-ui/commit/bda714042fcba7245a37cfab93b793175906a66e))
+* 重构 ([4d602e5](https://github.com/ckpack/v-ui/commit/4d602e5b90bd573df809a60a36e0edddf30b1e81))
+
+
+### Style
+
+* update ([70700da](https://github.com/ckpack/v-ui/commit/70700da7f85f5a1822d7d97b7fbc541178aa3572))
+
+
+### Test
+
+* save ([9335881](https://github.com/ckpack/v-ui/commit/93358818c5cf7e59dd6201453867a35d67a75823))
+
 ## [1.8.0](https://github.com/ckpack/v-ui/compare/v1.7.0...v1.8.0) (2022-10-02)
 
 
