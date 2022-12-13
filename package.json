@@ -54,10 +54,10 @@
     "@emotion/css": "^11.10.5"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "0.33.1",
+    "@antfu/eslint-config": "0.34.0",
     "@commitlint/cli": "^17.3.0",
     "@commitlint/config-conventional": "^17.3.0",
-    "@vitejs/plugin-vue": "^3.2.0",
+    "@vitejs/plugin-vue": "^4.0.0",
     "@vue/tsconfig": "^0.1.3",
     "eslint": "^8.29.0",
     "fast-glob": "^3.2.12",
@@ -65,11 +65,11 @@
     "lint-staged": "^13.1.0",
     "standard-version": "^9.5.0",
     "tsx": "^3.12.1",
-    "typescript": "^4.9.3",
+    "typescript": "^4.9.4",
     "unplugin-vue-define-options": "1.0.0",
-    "vite": "^3.2.5",
+    "vite": "^4.0.1",
     "vite-plugin-dts": "1.7.1",
-    "vitepress": "1.0.0-alpha.30",
+    "vitepress": "1.0.0-alpha.31",
     "vue": "^3.2.45"
   },
   "peerDependencies": {
