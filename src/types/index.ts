@@ -6,4 +6,3 @@ type prefixedValue<TObject extends object, TPrefixedKey extends string, TPrefix 
 export type addPrefixToObject<TObject extends object, TPrefix extends string> = {
   [K in addPrefix<keyof TObject, TPrefix>]: prefixedValue<TObject, K, TPrefix>
 };
-

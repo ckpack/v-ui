@@ -12,4 +12,3 @@ export const baseStyle = (config: Config) => {
 };
 
 export const baseInjectionKey = Symbol('buttonInjectionKey') as InjectionKey<ReturnType<typeof baseStyle>>;
-

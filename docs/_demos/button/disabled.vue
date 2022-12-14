@@ -19,4 +19,3 @@
     </v-space>
   </v-space>
 </template>
-

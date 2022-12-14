@@ -15,4 +15,3 @@ export const rootPath = fileURLToPath(new URL('../', import.meta.url));
 export const alias = {
   '@': fileURLToPath(new URL('../src', import.meta.url)),
 };
-

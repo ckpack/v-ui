@@ -54,11 +54,11 @@ export const buttonStyle = (config?: Config) => {
         border: ns.vv('border', 'active'),
         color: ns.vv('text-color', 'active'),
       },
-      '&:focus': {
-        backgroundColor: ns.vv('bg-color', 'hover'),
-        border: ns.vv('border', 'hover'),
-        color: ns.vv('text-color', 'hover'),
-      },
+      // '&:focus': {
+      //   backgroundColor: ns.vv('bg-color', 'hover'),
+      //   border: ns.vv('border', 'hover'),
+      //   color: ns.vv('text-color', 'hover'),
+      // },
       [`&.${disabled}`]: {
         cursor: 'not-allowed',
         backgroundColor: ns.vv('bg-color', 'disabled'),
@@ -78,13 +78,13 @@ export const buttonStyle = (config?: Config) => {
 
       textColor = cur === 'default' ? 'text' : cur;
       themeStyle[`&.${ns.is('text')}`] = getButtonStyle({
-        bgColor: 'white',
-        bdColor: 'white',
+        bgColor: 'transparent',
+        bdColor: 'transparent',
         textColor,
       });
       themeStyle[`&.${ns.is('outlined')}`] = getButtonStyle({
-        bgColor: 'white',
-        bdColor: 'currentcolor',
+        bgColor: 'transparent',
+        bdColor: textColor,
         textColor,
       });
 

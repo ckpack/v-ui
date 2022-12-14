@@ -64,4 +64,3 @@ export type Config = typeof config;
 export const configInjectionKey = Symbol('configInjectionKey') as InjectionKey<Partial<Config>>;
 
 export default config;
-

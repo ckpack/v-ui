@@ -5,4 +5,3 @@ export const useThemes = (themes: Record<symbol, any>) => {
     provide(key, themes[key]());
   });
 };
-
