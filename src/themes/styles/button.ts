@@ -37,7 +37,7 @@ export const buttonStyle = (config?: Config) => {
       [ns.v('border', 'active')]: `${ns.vv('border-width')} ${ns.vv('border-style')} ${ns.vv('border-color', 'active')}`,
       [ns.v('border', 'disabled')]: `${ns.vv('border-width')} ${ns.vv('border-style')} ${ns.vv('border-color', 'disabled')}`,
       'boxSizing': 'border-box',
-      'lineHeight': ns.vv('control-height'),
+      'height': ns.vv('control-height'),
       'borderRadius': ns.vv('border-radius'),
       'padding': `0 ${ns.vv('padding')}`,
       'backgroundColor': ns.vv('bg-color'),
