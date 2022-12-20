@@ -1,1 +1,0 @@
-import{_ as s,c as a,o as n,a as p}from"./app.1fd58a21.js";const i=JSON.parse('{"title":"通过 SCSS 变量","description":"","frontmatter":{},"headers":[],"relativePath":"guide/base/themes.md","lastUpdated":1671006314000}'),l={name:"guide/base/themes.md"},o=p("",7),e=[o];function c(r,t,D,y,C,F){return n(),a("div",null,e)}const d=s(l,[["render",c]]);export{i as __pageData,d as default};
