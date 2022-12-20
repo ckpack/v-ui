@@ -9,7 +9,7 @@
 --demo 使用 `outlined` 定义轮廓按钮（中强调）。由于轮廓的缘故，比文本按钮更强调。
 
 <<< @/_demos/button/theme.vue
---demo 通过 `theme` 定义主题颜色
+--demo 通过 `theme` 定义按钮主题颜色
 
 <<< @/_demos/button/round.vue
 --demo 使用 `round` 定义圆形按钮。

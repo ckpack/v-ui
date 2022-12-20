@@ -6,7 +6,7 @@ export const themes = {
   [baseInjectionKey as symbol]: baseStyle,
   [buttonInjectionKey as symbol]: buttonStyle,
   [spaceInjectionKey as symbol]: spaceStyle,
-};
+} as Record<symbol, any>;
 
 export * from './styles/button';
 export * from './styles/base';

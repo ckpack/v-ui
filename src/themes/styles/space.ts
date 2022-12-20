@@ -22,4 +22,4 @@ export const spaceStyle = (config?: Config) => {
   };
 };
 
-export const spaceInjectionKey = Symbol('buttonInjectionKey') as InjectionKey<ReturnType<typeof spaceStyle>>;
+export const spaceInjectionKey = Symbol('spaceInjectionKey') as InjectionKey<ReturnType<typeof spaceStyle>>;

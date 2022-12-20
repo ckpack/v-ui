@@ -1,6 +1,7 @@
 node_modules/
 es/
 dist
+cache
 dev/dist
 *timestamp-*
 docs/CHANGELOG.md

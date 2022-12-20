@@ -68,20 +68,20 @@ export const buttonStyle = (config?: Config) => {
     },
     ...['default', 'primary', 'success', 'error', 'warning'].reduce((pre: any, cur: any) => {
       const color = cur === 'default' ? 'bg' : cur;
-      let textColor = cur === 'default' ? 'text' : 'white';
 
       const themeStyle: CSSInterpolation = getButtonStyle({
         bgColor: color,
         bdColor: color,
-        textColor,
+        textColor: cur === 'default' ? 'text' : 'white',
       });
 
-      textColor = cur === 'default' ? 'text' : cur;
+      const textColor = cur === 'default' ? 'text' : cur;
       themeStyle[`&.${ns.is('text')}`] = getButtonStyle({
         bgColor: 'transparent',
         bdColor: 'transparent',
         textColor,
       });
+
       themeStyle[`&.${ns.is('outlined')}`] = getButtonStyle({
         bgColor: 'transparent',
         bdColor: textColor,

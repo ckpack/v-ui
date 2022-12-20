@@ -1,10 +1,9 @@
-import { getCurrentInstance, inject } from 'vue';
 import { useCssVars } from './useCssVars';
-import defaultConfig, { type Config, configInjectionKey } from '@/defaultConfig';
+import { useConfig } from '@/hooks';
+import type { Config } from '@/defaultConfig';
 
 export const useNamespace = (block = '', config?: Config) => {
-  const _config = { ...defaultConfig, ...config };
-  const { namespace } = getCurrentInstance() ? inject(configInjectionKey, _config) : _config;
+  const { namespace } = useConfig(config);
 
   const b = () => `${namespace}${block ? `-${block}` : ''}`;
   const is = (name: string, state = true) => {
