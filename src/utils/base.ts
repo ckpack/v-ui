@@ -38,7 +38,7 @@ export const flattenObj = (ob: Record<any, any> = {}) => {
   return result;
 };
 
-export function deepMerge(target: any, source: any): any {
+export function deepMerge<t = any>(target: any, source: any): t {
   target = !Array.isArray(target) ? { ...target } : [...target];
   if (!source) { return target; }
   ([...Object.getOwnPropertySymbols(source), ...Object.getOwnPropertyNames(source)]).forEach((x: any) => {

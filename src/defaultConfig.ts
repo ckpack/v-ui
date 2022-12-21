@@ -1,8 +1,6 @@
 import type { InjectionKey } from 'vue';
-import { themes } from '@/themes';
 
 export const NAME = 'VUI';
-// 自定义组件前缀
 
 export const size = 'medium';
 
@@ -62,8 +60,8 @@ export const config = {
   size,
   namespace,
   token,
-  themes,
   locale: {},
+  themes: {} as Record<symbol, any>,
 };
 export default config;
 
