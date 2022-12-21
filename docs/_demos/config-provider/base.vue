@@ -24,6 +24,17 @@ const token = {
       <v-button raised theme="primary">
         Button
       </v-button>
+      <v-config-provider
+        :token="{
+          color: {
+            primary: 'pink',
+          },
+        }"
+      >
+        <v-button theme="primary">
+          Button
+        </v-button>
+      </v-config-provider>
     </v-space>
   </v-config-provider>
 </template>
