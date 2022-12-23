@@ -1,1 +1,0 @@
-import{_ as s,c as a,o,a as n}from"./app.ff43fa72.js";const A=JSON.parse('{"title":"通过变量","description":"","frontmatter":{},"headers":[],"relativePath":"guide/base/token.md","lastUpdated":1671794745000}'),e={name:"guide/base/token.md"},p=n("",6),c=[p];function l(t,r,d,i,D,C){return o(),a("div",null,c)}const F=s(e,[["render",l]]);export{A as __pageData,F as default};
