@@ -1,23 +1,16 @@
-import type { App, Plugin } from 'vue';
+import { type App, type Plugin, unref } from 'vue';
 import { deepMerge } from '@/utils';
-import { useConfig } from '@/hooks';
-import { type Config, configInjectionKey } from '@/defaultConfig';
+import { useProvideConfig, useThemes } from '@/hooks';
+import type { Config } from '@/defaultConfig';
 
 function create({ components, themes }: { components?: any[] | Record<string, any>; themes?: Record<symbol, any> }) {
   return (app: App, config: Config) => {
-    const mergeConfig = useConfig(deepMerge(config, { themes }));
-    app.provide(configInjectionKey, mergeConfig);
-
-    const { themes: _themes } = mergeConfig;
-    if (_themes) {
-      Object.getOwnPropertySymbols(_themes).forEach((key) => {
-        app.provide(key, _themes[key](mergeConfig));
-      });
-    }
+    const _config = unref(useProvideConfig(deepMerge({ themes }, config), app, true));
+    useThemes(_config.themes, app);
 
     if (components) {
       (Array.isArray(components) ? components : Object.values(components)).forEach((compoent) => {
-        app.use(compoent as Plugin, mergeConfig);
+        app.use(compoent as Plugin, _config);
       });
     }
   };

@@ -1,10 +1,9 @@
 import { css } from '@emotion/css';
 import type { InjectionKey } from 'vue';
 import { useNamespace } from '@/hooks';
-import type { Config } from '@/defaultConfig';
 
-export const spaceStyle = (config?: Config) => {
-  const ns = useNamespace('space', config);
+export const spaceStyle = () => {
+  const ns = useNamespace('space');
 
   const base = ns.b();
   const hashId = css({
@@ -22,4 +21,4 @@ export const spaceStyle = (config?: Config) => {
   };
 };
 
-export const spaceInjectionKey = Symbol('spaceInjectionKey') as InjectionKey<ReturnType<typeof spaceStyle>>;
+export const spaceInjectionKey: InjectionKey<ReturnType<typeof spaceStyle>> = Symbol('spaceInjectionKey');

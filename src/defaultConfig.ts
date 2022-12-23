@@ -1,4 +1,4 @@
-import type { InjectionKey } from 'vue';
+import type { InjectionKey, Ref } from 'vue';
 
 export const NAME = 'VUI';
 
@@ -65,7 +65,7 @@ export const config = {
 };
 export default config;
 
-export const configInjectionKey = Symbol('configInjectionKey') as InjectionKey<Partial<Config>>;
+export const configInjectionKey: InjectionKey<Ref<Partial<Config>>> = Symbol('configInjectionKey');
 
 export type Config = typeof config;
 export type Token = typeof token;

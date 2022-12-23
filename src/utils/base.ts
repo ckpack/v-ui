@@ -1,3 +1,5 @@
+import { unref } from 'vue';
+
 export function typeOf(v: unknown): string {
   return Object.prototype.toString.call(v).slice(8, -1).toLowerCase();
 }
@@ -38,8 +40,11 @@ export const flattenObj = (ob: Record<any, any> = {}) => {
   return result;
 };
 
-export function deepMerge<t = any>(target: any, source: any): t {
+export function deepMerge<t = any>(target: any = {}, source: any): t {
+  target = unref(target);
+  source = unref(source);
   target = !Array.isArray(target) ? { ...target } : [...target];
+
   if (!source) { return target; }
   ([...Object.getOwnPropertySymbols(source), ...Object.getOwnPropertyNames(source)]).forEach((x: any) => {
     if (source[x] !== undefined) {

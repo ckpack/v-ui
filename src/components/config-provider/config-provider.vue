@@ -1,9 +1,8 @@
 <script setup lang="ts">
-import { inject, provide } from 'vue';
 import type { Token } from '@/defaultConfig';
-import defaultConfig, { configInjectionKey } from '@/defaultConfig';
+import { filterUndefinedKey } from '@/utils';
+import { useProvideConfig } from '@/hooks';
 import ThemeProvider from '@/components/theme-provider';
-import { deepMerge } from '@/utils';
 
 const props = withDefaults(defineProps<{
   size?: string
@@ -17,12 +16,11 @@ defineOptions({
   name: 'ConfigProvider',
 });
 
-const provideConfig = deepMerge(deepMerge(defaultConfig, inject(configInjectionKey)), { ...props });
-provide(configInjectionKey, provideConfig);
+useProvideConfig(filterUndefinedKey(props));
 </script>
 
 <template>
-  <ThemeProvider :themes="provideConfig.themes">
+  <ThemeProvider>
     <slot />
   </ThemeProvider>
 </template>

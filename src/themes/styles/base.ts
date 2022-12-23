@@ -1,13 +1,19 @@
-import type { InjectionKey } from 'vue';
-import { useConfig, useNamespace } from '@/hooks';
+import { type InjectionKey, unref } from 'vue';
+import { useConfig, useCssVars, useNamespace } from '@/hooks';
 import { flattenObj, generateColors } from '@/utils';
-import type { Config } from '@/defaultConfig';
 
-export const baseStyle = (config: Config) => {
-  const ns = useNamespace('', config);
-  const { token } = useConfig(config);
-  const cssVars = flattenObj({ ...token, color: generateColors(token.color) });
-  ns.iv(cssVars);
+export const baseStyle = () => {
+  const ns = useNamespace('');
+  const config = useConfig();
+
+  useCssVars(() => {
+    const _config = unref(config);
+    const cssVars = flattenObj({ ..._config.token, color: generateColors(_config.token.color) });
+    return Object.keys(cssVars).reduce((pre, cur) => {
+      pre[ns.vn(cur)] = cssVars[cur];
+      return pre;
+    }, {} as Record<string, string>);
+  });
 };
 
-export const baseInjectionKey = Symbol('baseInjectionKey') as InjectionKey<ReturnType<typeof baseStyle>>;
+export const baseInjectionKey: InjectionKey<ReturnType<typeof baseStyle>> = Symbol('baseInjectionKey');
