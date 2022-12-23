@@ -2,7 +2,7 @@ import { type InjectionKey, unref } from 'vue';
 import { useConfig, useCssVars, useNamespace } from '@/hooks';
 import { flattenObj, generateColors } from '@/utils';
 
-export const baseStyle = () => {
+export const baseTheme = () => {
   const ns = useNamespace('');
   const config = useConfig();
 
@@ -16,4 +16,4 @@ export const baseStyle = () => {
   });
 };
 
-export const baseInjectionKey: InjectionKey<ReturnType<typeof baseStyle>> = Symbol('baseInjectionKey');
+export const baseInjectionKey: InjectionKey<ReturnType<typeof baseTheme>> = Symbol('baseInjectionKey');

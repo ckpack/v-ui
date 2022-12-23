@@ -6,7 +6,7 @@ import ThemeProvider from '@/components/theme-provider';
 
 const props = withDefaults(defineProps<{
   size?: string
-  namespace?: string
+  prefixCls?: string
   token?: Token
   themes?: Record<symbol, any>
   locale?: any

@@ -8,11 +8,30 @@
 import { createApp } from 'vue';
 import VUI from '@ckpack/v-ui';
 import App from '@/App.vue';
-import '@ckpack/v-ui/es/styles/index.scss';
 
 const app = createApp(App);
 
-app.use(VUI);
+app.use(VUI, {
+  // ...可选配置参数
+});
+app.mount('#app');
+```
+
+或者使用`create`函数
+
+```js
+import { createApp } from 'vue';
+import { components, create, themes } from '@ckpack/v-ui';
+import App from '@/App.vue';
+
+const app = createApp(App);
+
+app.use(create({
+  components,
+  themes,
+}), {
+  // ...可选配置参数
+});
 app.mount('#app');
 ```
 
@@ -30,9 +49,51 @@ app.mount('#app');
 </template>
 ```
 
+::: tip
+注意按需引入默认是没有注入组件`themes`的，你可以通过`create`函数(全局)或`config-provider`组件(局部)按需注入组建的`themes`。
+
+### `create` 函数
+
+```js
+import { baseInjectionKey, baseTheme, buttonInjectionKey, buttonTheme /** 需要按需引入的themes */, create } from '@ckpack/v-ui';
+
+const app = createApp(App);
+app.use(create({
+  themes: {
+    [baseInjectionKey]: baseTheme,
+    [buttonInjectionKey]: buttonTheme,
+  }
+}));
+app.mount('#app');
+```
+
+### `config-provider` 组件
+
+```vue
+<script setup lang="ts">
+import { baseInjectionKey, baseTheme, buttonInjectionKey, buttonTheme /** 需要按需引入的themes */ } from '@ckpack/v-ui';
+
+const themes = {
+  [baseInjectionKey]: baseTheme,
+  [buttonInjectionKey]: buttonTheme,
+};
+</script>
+
+<template>
+  <v-config-provider
+    :themes="themes"
+  >
+    <v-button theme="primary">
+      Button
+    </v-button>
+  </v-config-provider>
+</template>
+```
+:::
+
 ## 浏览器直接引入
 
-你也可以直接通过浏览器的`script`, `style`标签导入。
+你也可以直接通过浏览器的`script`标签导入。
 
 ```html
 <!DOCTYPE html>
@@ -40,7 +101,6 @@ app.mount('#app');
 
 <head>
   <title>VUI</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@ckpack/v-ui/dist/index.css">
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.global.prod.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@ckpack/v-ui/dist/v-ui.iife.js"></script>
 </head>
@@ -69,18 +129,4 @@ app.mount('#app');
 </script>
 
 </html>
-```
-
-## 样式
-#### 全局引入样式
-
-```js
-import '@ckpack/v-ui/es/styles/index.css';
-```
-
-#### 按需引入样式
-
-```js
-import '@ckpack/v-ui/es/components/button/index.css';
-import '@ckpack/v-ui/es/components/label/index.css';
 ```

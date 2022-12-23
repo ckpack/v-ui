@@ -5,16 +5,41 @@
 ## 基础用法
 
 <<< @/_demos/config-provider/base.vue
---demo 最基础的用法，通过这个组件来给组件设置默认主题
+--demo 通过这个组件来给设置默认配置
 
-## config-provider 属性
+## 组件大小
 
-| 属性       | 说明       | 类型   | 可选值 | 默认值 |
-| :--------- | :--------- | :----- | :----- | :----- |
-| token | 组件token | Token | -      |      |
+设置组件默认默认大小
+## 组件命名空间
 
-## config-provider 插槽
+<<< @/_demos/config-provider/prefix-cls.vue
+--demo 通过修改`prefixCls`自定义组件`class`名、`CSS`变量名。(你可以打开调试窗口查看结果)。
+
+## 组件token
+
+设置组件默认`token`，通过修改 `token`，我们可以呈现出各种各样的样式（内部使用了`CSS`变量）。
+
+## 组件主题
+
+组件不负责生成样式，而是通过注入的主题，引入了各种样式。你可以按照自己的需要去修改默认的主题。
+## 设置语言环境
+
+设置组件默认语言环境
+
+## API
+
+### config-provider 属性
+
+属性名   | 说明      | 类型        | 默认值   |
+| ----- | ------- | --------- | ----- |
+| size  | 默认大小     | `string \| enum`  | medium
+| prefix-cls | 组件命名空间 | `string` | v
+| token | 组件token | `Token` | 默认token
+| themes | 组件主题 | `Themes` | -
+| locale | 语言环境 | `Locale` | -
+
+### config-provider 插槽
 
 | 插槽名 | 描述     |
 | :----- | :------- |
-| —      | 默认插槽 |
+| default | 默认插槽 |

@@ -36,7 +36,7 @@ export function getSidebarCompoents(lang = '') {
   const t = $t(lang || 'zh');
   const compoents = {
     base: ['button', 'space'],
-    config: ['config-provider'],
+    config: ['config-provider', 'theme-provider'],
   } as const;
 
   return Object.keys(compoents).map((key) => {
@@ -61,11 +61,14 @@ export function getSidebarGuide(lang = '') {
         text: t('getting-started'),
         link: `${lang}/guide/base/getting-started`,
       }, {
-        text: t('customize'),
-        link: `${lang}/guide/base/customize`,
-      }, {
         text: t('themes'),
         link: `${lang}/guide/base/themes`,
+      }, {
+        text: t('token'),
+        link: `${lang}/guide/base/token`,
+      }, {
+        text: t('conflict'),
+        link: `${lang}/guide/base/conflict`,
       }],
     },
     {

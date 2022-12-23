@@ -24,6 +24,7 @@ export default defineConfig({
     },
   },
   themeConfig: {
+    outline: 'deep',
     editLink: {
       pattern: `${repository}/edit/main/docs/:path`,
       text: 'Edit this page on GitHub',

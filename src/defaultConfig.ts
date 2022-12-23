@@ -4,7 +4,8 @@ export const NAME = 'VUI';
 
 export const size = 'medium';
 
-export const namespace = 'v';
+export const prefixComponent = 'v';
+export const prefixCls = prefixComponent;
 
 export const token = {
   'control-height': '32px',
@@ -58,7 +59,8 @@ export const token = {
 
 export const config = {
   size,
-  namespace,
+  prefixCls,
+  prefixComponent,
   token,
   locale: {},
   themes: {} as Record<symbol, any>,

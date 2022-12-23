@@ -6,9 +6,9 @@
 
 + 基于`Vite`、`Vue3.x`、`TypeScript` 等现代化工具开发
 + 所有组件默认即支持按需加载
-+ 通过`SCSS`、`CSS Variable` 主题切换如此方便
++ 组件的`UI`和`CSS`实现分离, 通过`CSS-IN-JS`搭配`CSS变量`切换样式
 + 提供丰富的文档和组件示例
-+ 可自定义组件前缀、CSS 可以前缀避免潜在的组件名称或者样式冲突
++ 可自定义组件前缀、`CSS`变量前缀、`CSS`类前缀，避免组件名称或样式冲突
 
 ## 相关链接
 
@@ -39,44 +39,10 @@ npm run docs:build
 npm run docs:serve
 ```
 
-## 目录结构
-
-主要目录文件[线上显示](https://github.com/ckpack/v-ui)
-
-```
-.github
-.husky
-dev 预览组建目录
-docs 文档目录
-  .vitepress
-  demo
-  demo
-  docs
-  en
-  about.md
-  index.md
-scripts
-src 组建源码目录
-  components
-  hooks
-  styles
-  types
-  utils
-  components.ts
-  create.ts
-  defaultConfig.ts
-  index.ts
-  preset.ts
-.eslintrc.cjs
-.npmrc
-.versionrc.json
-CHANGELOG.md
-commitlint.config.cjs
-global.d.ts
-package.json
-README.md
-tsconfig.json
-```
 ## 依赖库
 
-`@antfu/eslint-config`、 `@commitlint/cli`、 `@commitlint/config-conventional`、 `@vitejs/plugin-vue`、 `@vue/tsconfig`、 `eslint`、 `fast-glob`、 `husky`、 `lint-staged`、 `sass`、 `standard-version`、 `typescript`、 `unplugin-vue-define-options`、 `vite`、 `vite-node`、 `vite-plugin-dts`、 `vitepress`、 `vue`
+### dependencies
+`@ant-design/colors`、 `@emotion/css`
+### devDependencies
+
+`@antfu/eslint-config`、 `@commitlint/cli`、 `@commitlint/config-conventional`、 `@vitejs/plugin-vue`、 `@vue/tsconfig`、 `eslint`、 `fast-glob`、 `husky`、 `lint-staged`、 `standard-version`、 `tsx`、 `typescript`、 `unplugin-vue-define-options`、 `vite`、 `vite-plugin-dts`、 `vitepress`、 `vue`

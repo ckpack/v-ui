@@ -1,13 +1,13 @@
-import { buttonInjectionKey, buttonStyle } from './styles/button';
-import { baseInjectionKey, baseStyle } from './styles/base';
-import { spaceInjectionKey, spaceStyle } from './styles/space';
+import { buttonInjectionKey, buttonTheme } from './components/button';
+import { baseInjectionKey, baseTheme } from './components/base';
+import { spaceInjectionKey, spaceTheme } from './components/space';
 
 export const themes = {
-  [baseInjectionKey as symbol]: baseStyle,
-  [buttonInjectionKey as symbol]: buttonStyle,
-  [spaceInjectionKey as symbol]: spaceStyle,
+  [baseInjectionKey as symbol]: baseTheme,
+  [buttonInjectionKey as symbol]: buttonTheme,
+  [spaceInjectionKey as symbol]: spaceTheme,
 } as Record<symbol, any>;
 
-export * from './styles/button';
-export * from './styles/base';
-export * from './styles/space';
+export * from './components/button';
+export * from './components/base';
+export * from './components/space';

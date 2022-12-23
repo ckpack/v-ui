@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, inject } from 'vue';
 import type { buttonThemes } from './button';
-import { buttonInjectionKey, buttonStyle } from '@/themes';
+import { buttonInjectionKey } from '@/themes';
 
 const props = withDefaults(defineProps<{
   round?: boolean
@@ -21,9 +21,9 @@ defineOptions({
   name: 'Button',
 });
 
-const { hashId, ns } = inject(buttonInjectionKey, () => buttonStyle(), true);
-
-const buttonClass = computed(() => {
+const BI = inject(buttonInjectionKey);
+const buttonClass = BI && computed(() => {
+  const { hashId, ns } = BI;
   return [
     hashId,
     ns.b(),

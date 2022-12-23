@@ -2,7 +2,7 @@ import { type CSSInterpolation, css } from '@emotion/css';
 import type { InjectionKey } from 'vue';
 import { useNamespace } from '@/hooks';
 
-export const buttonStyle = () => {
+export const buttonTheme = () => {
   const ns = useNamespace('button');
 
   const getButtonStyle = ({ bgColor, bdColor, textColor }: { bgColor: string; bdColor: string; textColor: string }) => {
@@ -53,11 +53,6 @@ export const buttonStyle = () => {
         border: ns.vv('border', 'active'),
         color: ns.vv('text-color', 'active'),
       },
-      // '&:focus': {
-      //   backgroundColor: ns.vv('bg-color', 'hover'),
-      //   border: ns.vv('border', 'hover'),
-      //   color: ns.vv('text-color', 'hover'),
-      // },
       [`&.${disabled}`]: {
         cursor: 'not-allowed',
         backgroundColor: ns.vv('bg-color', 'disabled'),
@@ -104,4 +99,4 @@ export const buttonStyle = () => {
   };
 };
 
-export const buttonInjectionKey: InjectionKey<ReturnType<typeof buttonStyle>> = Symbol('buttonInjectionKey');
+export const buttonInjectionKey: InjectionKey<ReturnType<typeof buttonTheme>> = Symbol('buttonInjectionKey');

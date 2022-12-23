@@ -10,7 +10,7 @@ function formatComponent(component: string) {
 function getCompoentsJS() {
   const components = fs.readdirSync(`${basePath}/src/components`);
   return `${components.map(name => `import ${formatComponent(name)} from '@/components/${name}';`).join('\n')}
-\nexport {\n${components.map(name => `  ${formatComponent(name)} as ${defaultConfig.namespace}${formatComponent(name)},\n`).join('')}};\n`;
+\nexport {\n${components.map(name => `  ${formatComponent(name)} as ${defaultConfig.prefixCls}${formatComponent(name)},\n`).join('')}};\n`;
 }
 
 fs.writeFileSync(`${basePath}/src/components.ts`, getCompoentsJS());

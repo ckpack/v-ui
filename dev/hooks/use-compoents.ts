@@ -2,7 +2,7 @@ import type { Component, Ref } from 'vue';
 import { computed, ref, unref } from 'vue';
 import CaseComponents from '../components-demos';
 
-export const useCompoents = (name: string | Ref<string>) => {
+export const useCompoents = (name: string | Ref<string> = '') => {
   const _name = ref(name);
   const compoents = computed(() => {
     return Object.keys(CaseComponents)

@@ -2,7 +2,7 @@
 import { type StyleValue, computed, inject, useSlots } from 'vue';
 import { isBoolean } from '@/utils';
 import { componentSizes } from '@/constants';
-import { spaceInjectionKey, spaceStyle } from '@/themes';
+import { spaceInjectionKey } from '@/themes';
 
 const props = withDefaults(defineProps<{
   alignItems?: 'stretch' | 'center' | 'start' | 'end' | 'normal'
@@ -25,22 +25,30 @@ defineOptions({
 
 const slots: any = useSlots();
 
-const { hashId, ns } = inject(spaceInjectionKey, () => spaceStyle(), true);
+const SI = inject(spaceInjectionKey);
 
-const style = computed(() => {
+const spaceClass = SI && computed(() => {
+  const { hashId, ns } = SI;
+  return [
+    hashId,
+    ns.b(),
+  ];
+});
+
+const spaceTheme = computed(() => {
   const { size, wrap, direction, alignItems, fill } = props;
   return {
     'align-items': alignItems,
-    'flex-direction': direction,
+    'flex-direction': fill ? 'column' : direction,
     'flex-wrap': isBoolean(wrap) ? (wrap ? 'wrap' : 'nowrap') : wrap,
-    'gap': componentSizes.includes(size as any) ? ns.vv('gap', size) : size,
+    'gap': componentSizes.includes(size as any) ? SI?.ns.vv('gap', size) : size,
     'width': fill ? '100%' : '',
   } as StyleValue;
 });
 </script>
 
 <template>
-  <div :class="[hashId, ns.b()]" :style="style">
+  <div :class="spaceClass" :style="spaceTheme">
     <component :is="() => slots.default()" />
   </div>
 </template>
