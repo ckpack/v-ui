@@ -2,6 +2,31 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.10.0](https://github.com/ckpack/v-ui/compare/v1.9.1...v1.10.0) (2022-12-23)
+
+
+### Features
+
+* add config merge ([d566d4e](https://github.com/ckpack/v-ui/commit/d566d4e67234228ed614107bd2c9fbb7f9d6f203))
+* button style ([127c4de](https://github.com/ckpack/v-ui/commit/127c4dea6141efd7467f0544f6eae60fa346c688))
+* eslint ([853db89](https://github.com/ckpack/v-ui/commit/853db890f37d96f1f4bc1613766e6d0a2d01ce5b))
+* update dependencies ([c875967](https://github.com/ckpack/v-ui/commit/c8759670a71e6a815eff76d98237a53f115a25aa))
+* 优化config provide ([d52e6d7](https://github.com/ckpack/v-ui/commit/d52e6d7d2652fe59b47c0f405c255cd66c3784e5))
+* 更新依赖 ([b7181b2](https://github.com/ckpack/v-ui/commit/b7181b2a793e04509f74350d854f25b0ed113b20))
+* 更新依赖 ([e005cbf](https://github.com/ckpack/v-ui/commit/e005cbf8a7f11f9fadc263723c5959f799e07b39))
+* 重构文档 ([b946f46](https://github.com/ckpack/v-ui/commit/b946f46b19c3d2aa84042df77574c799bce3043e))
+
+
+### Bug Fixes
+
+* themes 加载 ([a381beb](https://github.com/ckpack/v-ui/commit/a381beb777eea9024b29d61eb53b3b8a30e07df3))
+* update useConfig ([4f06dfb](https://github.com/ckpack/v-ui/commit/4f06dfb62a96ced18295e1823937d680d003f219))
+
+
+### Style
+
+* btn height ([b4761d6](https://github.com/ckpack/v-ui/commit/b4761d617b62ddc3eaa0a8a3ecafbcc6421c4a1a))
+
 ## [1.9.0](https://github.com/ckpack/v-ui/compare/v1.8.0...v1.9.0) (2022-12-06)
 
 
