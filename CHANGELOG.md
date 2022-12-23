@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.1](https://github.com/ckpack/v-ui/compare/v1.10.0...v1.10.1) (2022-12-23)
+
+
+### Docs
+
+* 更新文档 ([4a9530c](https://github.com/ckpack/v-ui/commit/4a9530c4c8a4d660453f2b1de9758b23506a11fc))
+
 ## [1.10.0](https://github.com/ckpack/v-ui/compare/v1.9.1...v1.10.0) (2022-12-23)
 
 
