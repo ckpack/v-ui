@@ -1,4 +1,4 @@
-避免潜在的样式冲突以及组件名冲突
+你可以通过配置参数避免潜在的样式冲突以及组件名冲突。
 
 ## 自定义组件前缀
 
@@ -40,8 +40,8 @@ app.mount('#app');
 然后我们可以在其他地方就这样使用
 
 ```html
-<!-- <v-button @click="handlerClick">Test</v-button> -->
-<t-button @click="handlerClick">Test</t-button>
+<!-- <v-button>Test</v-button> -->
+<t-button>Test</t-button>
 ```
 
 ## 自定义类名前缀
@@ -83,3 +83,15 @@ app.mount('#app');
 ```
 
 ### 使用`config-provider`自定义类名前缀
+
+```vue
+<template>
+  <v-config-provider
+    prefix-cls="t"
+  >
+    <v-button theme="primary">
+      Button
+    </v-button>
+  </v-config-provider>
+</template>
+```

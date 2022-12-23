@@ -4,7 +4,7 @@ layout: home
 hero:
   name: "@ckapck/v-ui"
   text: A Vue3.x component library
-  tagline: Modernization, Completely tree-shaking, Themes switching, Easy to use
+  tagline: Modern, fully tree-shakable, theme switching, easy to use, and more than that
   actions:
     - theme: brand
       text: Document
@@ -16,10 +16,10 @@ hero:
 features:
   - title: Modernization
     details: 🚀 Based on Vite, VUE3.x, TypeScript and other modern tools development
-  - title: Completely tree shaking
+  - title: Separate UI from CSS
+    details: 🎨  The component's UI, state logic and CSS are separated, and the theme style is switched through Hooks, CSS-IN-JS and CSS variables
+  - title: Fully Customizable
+    details: 🔨 Define component prefixes, CSS variable prefixes, and CSS class prefixes through configuration to avoid component name or style conflicts
+  - title: Fully Shakeable Tree
     details: 💪 All components support on-demand loading by default
-  - title: Themes switching
-    details: 🎨 It's so convenient to switch themes with SASS + CSS Variable
-  - title: Easy to use
-    details: 📖 Provides rich documentation and component examples
 ---

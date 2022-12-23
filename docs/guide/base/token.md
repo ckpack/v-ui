@@ -1,13 +1,64 @@
-`@ckpack/v-ui`默认提供一套`token`，如果需要更改主题色，例如： 将主题颜色从紫色改为蓝色，
-你可以通过一下两种方法来快速的改变样式变量
+`token`是组件库的设计变量，`@ckpack/v-ui`提供一套默认`token`，你可以通过设置`token`来快速的改变组件样式, 例如： 将主题颜色从紫色改为蓝色，
 
-# 通过变量
+## 默认导入设置 `token`
 
-`@ckpack/v-ui`使用`CSS-IN-JS`编写而成，你可以通过简单的修改变量轻松修改配置, `@ckpack/v-ui`会根据你传入的`token`生成一系列CSS变量。[详情参考 config-provider组件](../../compoents/config-provider.md)
+```js
+import VUI from '@ckpack/v-ui';
 
-# 通过 CSS 变量
+const app = createApp(App);
+app.use(VUI, {
+  token: {
+    color: {
+      primary: 'blue',
+    }
+  }
+});
+app.mount('#app');
+```
 
-`@ckpack/v-ui`组件内部使用了CSS变量, 这意味着你也可以通过覆盖这些 CSS 变量也能达到修改主题色的目的。
+## `create` 函数设置 `token`
+
+```js
+import { create, themes } from '@ckpack/v-ui';
+
+const app = createApp(App);
+
+app.use(create({
+  themes,
+}), {
+  token: {
+    color: {
+      primary: 'blue',
+    }
+  }
+});
+app.mount('#app');
+```
+
+## `config-provider` 组件设置 `token`
+
+```vue
+<script setup lang="ts">
+const token = {
+  color: {
+    primary: 'blue',
+  }
+};
+</script>
+
+<template>
+  <v-config-provider
+    :token="token"
+  >
+    <v-button theme="primary">
+      Button
+    </v-button>
+  </v-config-provider>
+</template>
+```
+
+::: tip
+`@ckpack/v-ui`组件内部使用`token`生成一系列CSS变量, 这意味着你也可以通过覆盖这些 CSS 变量达到修改主题色的目的。
 
 ```CSS
 :root {
@@ -17,3 +68,4 @@
   --v-color-primary-active: #6842cf;
 }
 ```
+:::

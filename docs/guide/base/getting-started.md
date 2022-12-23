@@ -45,50 +45,13 @@ app.mount('#app');
 </script>
 
 <template>
-  <v-button @click="handlerClick">Test</v-button>
+  <v-button>Test</v-button>
 </template>
 ```
 
 ::: tip
-注意按需引入默认是没有注入组件`themes`的，你可以通过`create`函数(全局)或`config-provider`组件(局部)按需注入组建的`themes`。
-
-### `create` 函数
-
-```js
-import { baseInjectionKey, baseTheme, buttonInjectionKey, buttonTheme /** 需要按需引入的themes */, create } from '@ckpack/v-ui';
-
-const app = createApp(App);
-app.use(create({
-  themes: {
-    [baseInjectionKey]: baseTheme,
-    [buttonInjectionKey]: buttonTheme,
-  }
-}));
-app.mount('#app');
-```
-
-### `config-provider` 组件
-
-```vue
-<script setup lang="ts">
-import { baseInjectionKey, baseTheme, buttonInjectionKey, buttonTheme /** 需要按需引入的themes */ } from '@ckpack/v-ui';
-
-const themes = {
-  [baseInjectionKey]: baseTheme,
-  [buttonInjectionKey]: buttonTheme,
-};
-</script>
-
-<template>
-  <v-config-provider
-    :themes="themes"
-  >
-    <v-button theme="primary">
-      Button
-    </v-button>
-  </v-config-provider>
-</template>
-```
+组件的 `UI` 与 `CSS` 分离， 你需要通过 `create` 函数(全局)或 `config-provider` 组件(局部)按需注入组件所需的 `CSS`。
+[详情参考](./themes.md)
 :::
 
 ## 浏览器直接引入
