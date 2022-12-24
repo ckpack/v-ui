@@ -1,10 +1,13 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import DefineOptions from 'unplugin-vue-define-options/vite';
+import replace from '@rollup/plugin-replace';
 import { alias, baseExternal, globals, name } from './vite-common';
 
 export default defineConfig({
-  plugins: [vue(), DefineOptions()],
+  plugins: [vue(), DefineOptions(), replace({
+    'process.env.NODE_ENV': JSON.stringify('production'),
+  })],
   build: {
     target: 'esnext',
     outDir: 'dist',
