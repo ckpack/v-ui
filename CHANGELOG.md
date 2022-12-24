@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.10.2](https://github.com/ckpack/v-ui/compare/v1.10.1...v1.10.2) (2022-12-24)
+
+
+### Bug Fixes
+
+* 修复单文件输出错误 ([9ad6f7b](https://github.com/ckpack/v-ui/commit/9ad6f7b4f9f0a80cc8d31dc5912e1be28287e6ff))
+
 ### [1.10.1](https://github.com/ckpack/v-ui/compare/v1.10.0...v1.10.1) (2022-12-23)
 
 

@@ -1,6 +1,6 @@
 {
   "name": "@ckpack/v-ui",
-  "version": "1.10.1",
+  "version": "1.10.2",
   "description": "Quickly create a component library for Vue 3",
   "sideEffects": false,
   "type": "module",
