@@ -2,8 +2,11 @@
 import { computed, inject } from 'vue';
 import type { buttonThemes } from './button';
 import { buttonInjectionKey } from '@/themes';
+import { useSize } from '@/hooks';
+import type { ComponentSize } from '@/constants';
 
 const props = withDefaults(defineProps<{
+  size?: ComponentSize
   round?: boolean
   disabled?: boolean
   text?: boolean
@@ -33,6 +36,7 @@ const buttonClass = BI && computed(() => {
     ns.is('raised', props.raised),
     ns.is('disabled', props.disabled),
     ns.m('theme', props.theme),
+    ns.m('size', useSize(props.size).value),
   ];
 });
 </script>

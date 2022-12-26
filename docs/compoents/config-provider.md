@@ -9,7 +9,8 @@
 
 ## 组件大小
 
-设置组件默认默认大小
+<<< @/_demos/config-provider/size.vue
+--demo 通过修改`size`自定义组件默认大小。
 ## 组件命名空间
 
 <<< @/_demos/config-provider/prefix-cls.vue
@@ -17,11 +18,13 @@
 
 ## 组件token
 
-设置组件默认`token`，通过修改 `token`，我们可以呈现出各种各样的样式（内部使用了`CSS`变量）。
+<<< @/_demos/config-provider/token.vue
+--demo 设置组件默认`token`，通过修改 `token`，我们可以呈现出各种各样的样式（内部使用了`CSS`变量）。
 
 ## 组件主题
 
-组件不负责生成样式，而是通过注入的主题，引入了各种样式。你可以按照自己的需要去修改默认的主题。
+<<< @/_demos/config-provider/themes.vue
+--demo 组件不负责生成样式，而是通过注入的主题，引入了各种样式。你可以按照自己的需要去修改默认的主题。
 ## 设置语言环境
 
 设置组件默认语言环境

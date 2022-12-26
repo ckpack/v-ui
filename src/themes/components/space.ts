@@ -9,10 +9,14 @@ export const spaceTheme = () => {
   const hashId = css({
     [`&.${base}`]: {
       display: 'flex',
-      [ns.v('gap-medium')]: ns.vb('padding'),
-      [ns.v('gap-large')]: ns.vb('padding', 'lg'),
-      [ns.v('gap-small')]: ns.vb('padding', 'sm'),
+      gap: ns.vv('gap-size'),
     },
+    ...['small', 'medium', 'large'].reduce((pre: any, cur) => {
+      pre[`&.${ns.m('size', cur)}`] = {
+        [ns.v('gap-size')]: ns.vb('padding', cur),
+      };
+      return pre;
+    }, {}),
   });
 
   return {

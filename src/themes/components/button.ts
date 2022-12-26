@@ -37,8 +37,10 @@ export const buttonTheme = () => {
       [ns.v('border', 'disabled')]: `${ns.vv('border-width')} ${ns.vv('border-style')} ${ns.vv('border-color', 'disabled')}`,
       'boxSizing': 'border-box',
       'height': ns.vv('control-height'),
+      'lineHeight': `calc(${ns.vv('control-height')} - ${ns.vv('border-width')} * 2)`,
       'borderRadius': ns.vv('border-radius'),
       'padding': `0 ${ns.vv('padding')}`,
+      'fontSize': ns.vv('font-size'),
       'backgroundColor': ns.vv('bg-color'),
       'border': ns.vv('border'),
       'color': ns.vv('text-color'),
@@ -60,7 +62,7 @@ export const buttonTheme = () => {
         color: ns.vv('text-color', 'disabled'),
       },
     },
-    ...['default', 'primary', 'success', 'error', 'warning'].reduce((pre: any, cur: any) => {
+    ...['default', 'primary', 'success', 'error', 'warning'].reduce((pre: any, cur) => {
       const color = cur === 'default' ? 'bg' : cur;
 
       const themeStyle: CSSInterpolation = getButtonStyle({
@@ -91,6 +93,14 @@ export const buttonTheme = () => {
     [`&.${ns.is('raised')}`]: {
       boxShadow: ns.vb('box-shadow', 'raised'),
     },
+    ...['small', 'medium', 'large'].reduce((pre: any, cur) => {
+      pre[`&.${ns.m('size', cur)}`] = {
+        [ns.v('control-height')]: ns.vb('control-height', cur),
+        [ns.v('padding')]: ns.vb('padding', cur),
+        [ns.v('font-size')]: ns.vb('font-size', cur),
+      };
+      return pre;
+    }, {}),
   } as CSSInterpolation);
 
   return {

@@ -32,9 +32,9 @@
 
 属性名   | 说明      | 类型        | 默认值   |
 | ----- | ------- | --------- | ----- |
+| size | 间距大小 | `string \| enum` | medium
 | align-items  | 对齐方式      | `enum`  | normal
 | direction | 排列方向 | `enum` | row
-| size | 间距大小 | `string \| enum` | medium
 | wrap | 是否自动换行 | `boolean` | false
 | fill | 是否充满整行 | `boolean` | false
 

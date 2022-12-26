@@ -3,9 +3,10 @@ import type { Token } from '@/defaultConfig';
 import { filterUndefinedKey } from '@/utils';
 import { useProvideConfig } from '@/hooks';
 import ThemeProvider from '@/components/theme-provider';
+import type { ComponentSize } from '@/constants';
 
 const props = withDefaults(defineProps<{
-  size?: string
+  size?: ComponentSize
   prefixCls?: string
   token?: Token
   themes?: Record<symbol, any>

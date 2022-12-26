@@ -1,5 +1,6 @@
 import { unref } from 'vue';
 import { useConfig } from '@/hooks';
+import type { MaybeRef } from '@/types';
 
 export const useNamespace = (block = '') => {
   const { prefixCls } = unref(useConfig());
@@ -9,8 +10,8 @@ export const useNamespace = (block = '') => {
     return state ? `${b()}-is-${name}` : '';
   };
 
-  const m = (type: string, modifier?: string) => {
-    return modifier ? `${b()}-${type}-${modifier}` : '';
+  const m = (type: MaybeRef<string>, modifier?: MaybeRef<string>) => {
+    return unref(modifier) ? `${b()}-${unref(type)}-${unref(modifier)}` : '';
   };
 
   const v = (...args: (string | number)[]) => `--${b()}-${args.join('-')}`;

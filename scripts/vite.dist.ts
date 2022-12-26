@@ -7,6 +7,7 @@ import { alias, baseExternal, globals, name } from './vite-common';
 export default defineConfig({
   plugins: [vue(), DefineOptions(), replace({
     'process.env.NODE_ENV': JSON.stringify('production'),
+    'preventAssignment': true,
   })],
   build: {
     target: 'esnext',

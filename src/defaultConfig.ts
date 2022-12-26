@@ -1,22 +1,29 @@
 import type { InjectionKey, Ref } from 'vue';
+import type { ComponentSize } from '@/constants';
 
 export const NAME = 'VUI';
 
-export const size = 'medium';
+export const size = 'medium' as ComponentSize;
 
 export const prefixComponent = 'v';
 export const prefixCls = prefixComponent;
 
 export const token = {
-  'control-height': '32px',
+  'control-height': {
+    '': '32px',
+    'small': '24px',
+    'medium': '32px',
+    'large': '40px',
+  },
   'box-shadow': {
     raised: '0 2px 4px -1px rgb(0 0 0 / 20%), 0 4px 5px 0 rgb(0 0 0 / 14%), 0 1px 10px 0 rgb(0 0 0 / 12%)',
   },
   'font': {
     size: {
       '': '14px',
-      'sm': '12px',
-      'lg': '16px',
+      'small': '12px',
+      'medium': '14px',
+      'large': '16px',
     },
     weight: {
       '': 400,
@@ -28,8 +35,9 @@ export const token = {
     style: 'solid',
     radius: {
       '': '6px',
-      'sm': '4px',
-      'lg': '8px',
+      'small': '4px',
+      'medium': '6px',
+      'large': '8px',
       'round': '90px',
     },
   },
@@ -47,13 +55,15 @@ export const token = {
   },
   'margin': {
     '': '16px',
-    'lg': '24px',
-    'sm': '12px',
+    'small': '8px',
+    'medium': '16px',
+    'large': '24px',
   },
   'padding': {
     '': '16px',
-    'lg': '24px',
-    'sm': '12px',
+    'small': '8px',
+    'medium': '16px',
+    'large': '24px',
   },
 };
 

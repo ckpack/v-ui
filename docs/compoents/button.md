@@ -7,6 +7,10 @@
 <<< @/_demos/button/theme.vue
 --demo 通过 `theme` 定义按钮主题颜色
 
+## 调整尺寸
+<<< @/_demos/button/size.vue
+--demo 使用 `size` 调整按钮尺寸, 可使用`small`,`medium`,`large`三种值
+
 ## 文字按钮
 
 <<< @/_demos/button/text.vue
@@ -36,11 +40,13 @@
 属性名   | 说明      | 类型        | 默认值   |
 | ----- | ------- | --------- | ----- |
 | theme  | 主题色      | `enum`  | default   |
+| size | 按钮大小 | `enum` | medium
 | round | 是否为圆形按钮 | `boolean` | false
 | disabled | 是否为禁用状态 | `boolean` | false
 | text | 是否为文本按钮 | `boolean` | false
 | outlined | 是否为边框按钮 | `boolean` | false
 | raised | 是否为凸起按钮 | `boolean` | false
+
 ## button 插槽
 
 | 插槽名 | 描述     |
