@@ -22,8 +22,8 @@ export const mdPlugin = (md: any) => {
     const compoentName = `${DEMO_COMPOENT_PREFIX}${compoentIndex += 1}`;
 
     const scriptSetup = env.sfcBlocks.scriptSetup || {
-      content: '<script setup lang="ts">\n</script>',
-      tagOpen: '<script setup lang="ts">',
+      content: '<script setup>\n</script>',
+      tagOpen: '<script setup>',
       type: 'script',
       contentStripped: '',
       tagClose: '</script>',
