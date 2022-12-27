@@ -17,7 +17,6 @@ export const mdPlugin = (md: any) => {
 
     const description = nextToken.content.slice(DEMOBLOCKTAG.length);
     const code = fs.readFileSync(src).toString();
-    const encodeDescription = encodeURIComponent(description);
     const encodeCode = encodeURIComponent(code);
     const compoentName = `${DEMO_COMPOENT_PREFIX}${compoentIndex += 1}`;
 
@@ -33,10 +32,8 @@ export const mdPlugin = (md: any) => {
     env.sfcBlocks.scriptSetup = scriptSetup;
     env.sfcBlocks.scripts = [scriptSetup];
 
-    return `<${DEMO_COMPOENT_PREFIX} description="${encodeDescription}" code="${encodeCode}" :compoent="${compoentName}">
-      <template #description>
-        ${md.render(description)}
-      </template>
+    return `${md.render(description)}
+    <${DEMO_COMPOENT_PREFIX} code="${encodeCode}" :demo="${compoentName}">
       <template #code>
         ${defaultFenceRender(tokens, idx, options, env, self)}
       </template>

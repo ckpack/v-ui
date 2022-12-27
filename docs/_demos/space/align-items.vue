@@ -8,7 +8,7 @@ const alignItems = ['stretch', 'center', 'start', 'end', 'normal'];
       <v-button v-for="key in 4" :key="key" theme="primary">
         Button
       </v-button>
-      <div :style="{ height: '50px', border: '1px solid red', background: 'gray' }">
+      <div :style="{ height: '60px', border: '1px solid red', background: 'gray' }">
         {{ align }}
       </div>
     </v-space>

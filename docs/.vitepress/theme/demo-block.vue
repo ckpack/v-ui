@@ -14,7 +14,10 @@ const props = defineProps({
     type: String,
     default: '',
   },
-  compoent: Object,
+  demo: {
+    type: Object,
+    default: () => {},
+  },
 });
 
 const isShowCode = ref(false);
@@ -27,22 +30,25 @@ const openlink = (url: string) => window.open(url);
 
 <template>
   <div class="demo-block">
-    <div class="description">
+    <div v-if="description" class="description">
       <slot name="description" :description="description">
         {{ description }}
       </slot>
     </div>
-    <div class="preview">
-      <slot name="preview" :compoent="compoent">
-        <component :is="compoent" />
+    <div v-if="demo" class="preview">
+      <slot name="preview" :compoent="demo">
+        <component :is="demo" />
       </slot>
     </div>
     <div class="control">
       <button
         class="control-btn"
+        :style="{
+          color: isShowCode ? 'var(--vp-c-brand)' : 'var(--vp-c-text-2)',
+        }"
         @click="isShowCode = !isShowCode"
       >
-        {{ !isShowCode ? 'Code' : 'Hide' }}
+        {{ '</>' }}
       </button>
       <button
         v-if="editLink"
@@ -53,7 +59,7 @@ const openlink = (url: string) => window.open(url);
       </button>
     </div>
     <div
-      v-show="isShowCode"
+      v-show="isShowCode && code"
       class="code"
     >
       <slot name="code" :code="code">
@@ -68,18 +74,17 @@ const openlink = (url: string) => window.open(url);
 <style scoped>
 .demo-block {
   border: 1px solid var(--vp-c-divider-light);
-  padding: 12px;
-  word-wrap: break-word;
 }
 
 .demo-block .description {
   font-size: 1rem;
   font-weight: bolder;
-  padding-bottom: 12px;
 }
 
 .demo-block .preview {
   overflow: auto;
+  margin-top: 12px;
+  padding: 16px;
 }
 
 .demo-block .control {
@@ -87,10 +92,13 @@ const openlink = (url: string) => window.open(url);
   flex-direction: row-reverse;
 }
 
+.demo-block .code {
+  padding: 16px;
+}
+
 .demo-block .control-btn {
-  cursor: pointer;
-  padding: 4px;
-  width: 4rem;
+  height: 32px;
+  padding: 0 16px;
   border: none;
 }
 </style>
