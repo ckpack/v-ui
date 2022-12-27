@@ -14,6 +14,7 @@ const zh = {
   'base-compoents': '基础组件',
   'config-compoents': '配置组件',
   'develop': '开发',
+  'playground': '演练场',
 };
 
 const en: typeof zh = {
@@ -32,6 +33,7 @@ const en: typeof zh = {
   'base-compoents': 'Base compoents',
   'config-compoents': 'Config compoents',
   'develop': 'Develop',
+  'playground': 'Playground',
 };
 
 const locale = {

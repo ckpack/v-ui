@@ -1,5 +1,7 @@
 import { $t } from './i18n';
 
+const playgroundLink = 'https://sfc.vuejs.org/#eNp9kMtugzAQRX/F8iYbwHvkVn38QBdVVt5QmCRO4ofGA1WF+PcOmFYJlbqbx9W5M3eUzzFWQw+yljq1aCOJBNTHR+OtiwFJjGL/0hMFX4j9a/AHe3zDMNgOsBB0AgdJTOKAwYndU3uJTXtRQ9nbnfFaZSKzuCFw8doQcCeE3qBEnVEPRubCyEVnSK/u2Yv3Ea1r8IsF75BIq3WfsWrD5alWv86ykPmp0jWxOqfg+e1x8VkX7FuLZTLPOJe5N/JEFFOtVDq0c1jnVAU8Kq4q7D1ZBxUkV35g+EyADDay+GHcZnIPazvP0g6udsDKAykfnbqVq84mWqp7JPsq9hkASwTPXwL+d+ZG+ufUGTsZP8npGx3Vt+c=';
+
 export function getNav(lang = '') {
   const t = $t(lang || 'zh');
   return [
@@ -11,6 +13,9 @@ export function getNav(lang = '') {
       text: t('compoents'),
       link: `${lang}/compoents/button`,
       activeMatch: `^${lang}/compoents`,
+    }, {
+      text: t('playground'),
+      link: playgroundLink,
     }, {
       text: t('changelog'),
       link: `${lang}/CHANGELOG`,
