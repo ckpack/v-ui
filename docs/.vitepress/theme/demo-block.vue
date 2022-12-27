@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
 
 const props = defineProps({
   description: {
@@ -10,35 +10,30 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  editLink: {
+    type: String,
+    default: '',
+  },
   compoent: Object,
 });
 
-const description = decodeURIComponent(props.description);
-const code = decodeURIComponent(props.code);
-
 const isShowCode = ref(false);
-const copyTip = ref('Copy');
-const copyCode = () => {
-  copyTip.value = 'Copied';
-  navigator.clipboard.writeText(decodeURIComponent(props.code));
-};
 
-const handlerMouseout = () => {
-  setTimeout(() => {
-    copyTip.value = 'Copy';
-  }, 250);
-};
+const description = computed(() => decodeURIComponent(props.description));
+const code = computed(() => decodeURIComponent(props.code));
+
+const openlink = (url: string) => window.open(url);
 </script>
 
 <template>
   <div class="demo-block">
     <div class="description">
-      <slot name="description">
+      <slot name="description" :description="description">
         {{ description }}
       </slot>
     </div>
     <div class="preview">
-      <slot name="preview">
+      <slot name="preview" :compoent="compoent">
         <component :is="compoent" />
       </slot>
     </div>
@@ -47,21 +42,21 @@ const handlerMouseout = () => {
         class="control-btn"
         @click="isShowCode = !isShowCode"
       >
-        {{ !isShowCode ? 'Show' : 'Hide' }}
+        {{ !isShowCode ? 'Code' : 'Hide' }}
       </button>
       <button
+        v-if="editLink"
         class="control-btn"
-        @click="copyCode"
-        @mouseout="handlerMouseout"
+        @click="openlink(editLink)"
       >
-        {{ copyTip }}
+        Edit
       </button>
     </div>
     <div
       v-show="isShowCode"
       class="code"
     >
-      <slot name="code">
+      <slot name="code" :code="code">
         <pre>
           <code>{{ code }}</code>
         </pre>
@@ -70,39 +65,32 @@ const handlerMouseout = () => {
   </div>
 </template>
 
-<style>
+<style scoped>
 .demo-block {
   border: 1px solid var(--vp-c-divider-light);
   padding: 12px;
   word-wrap: break-word;
 }
 
-.description {
+.demo-block .description {
   font-size: 1rem;
   font-weight: bolder;
   padding-bottom: 12px;
 }
-.preview {
-  padding: 12px 0;
+
+.demo-block .preview {
   overflow: auto;
 }
 
-.control {
+.demo-block .control {
   display: flex;
   flex-direction: row-reverse;
 }
 
-.control-btn {
+.demo-block .control-btn {
   cursor: pointer;
   padding: 4px;
-  margin: 4px;
   width: 4rem;
   border: none;
-  border-radius: 1rem;
-  color: var(--vp-c-primary);
-}
-
-.control-btn:hover {
-  color: var(--vp-c-primary-dark);
 }
 </style>
