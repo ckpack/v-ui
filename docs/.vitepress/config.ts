@@ -20,7 +20,9 @@ export default defineConfig({
   lastUpdated: true,
   markdown: {
     config: (md: any) => {
-      md.use(mdDemoPlugin());
+      md.use(mdDemoPlugin({
+        editLink: `${repository}/edit/main`,
+      }));
     },
   },
   themeConfig: {

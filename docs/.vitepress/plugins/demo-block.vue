@@ -24,6 +24,7 @@ const isShowCode = ref(false);
 
 const description = computed(() => decodeURIComponent(props.description));
 const code = computed(() => decodeURIComponent(props.code));
+const editLink = computed(() => decodeURIComponent(props.editLink));
 
 const openlink = (url: string) => window.open(url);
 </script>
@@ -42,10 +43,9 @@ const openlink = (url: string) => window.open(url);
     </div>
     <div class="control">
       <button
-        class="control-btn"
-        :style="{
-          color: isShowCode ? 'var(--vp-c-brand)' : 'var(--vp-c-text-2)',
-        }"
+        class="control-btn" :class="[{
+          'control-btn-active': isShowCode,
+        }]"
         @click="isShowCode = !isShowCode"
       >
         {{ '</>' }}
@@ -97,8 +97,17 @@ const openlink = (url: string) => window.open(url);
 }
 
 .demo-block .control-btn {
+  color: var(--vp-c-text-2);
   height: 32px;
   padding: 0 16px;
   border: none;
+}
+
+.demo-block .control-btn:hover {
+  color: var(--vp-c-text-1);
+}
+
+.demo-block .control-btn-active {
+  color: var(--vp-c-brand) !important;
 }
 </style>

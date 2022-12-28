@@ -1,10 +1,23 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-export const mdDemoPlugin = (options?: { demoBlockTag?: string; demoCompoentPrefix?: string }) => {
-  const { demoBlockTag = '--demo', demoCompoentPrefix = 'DemoBlock' } = options || {};
-  const DEMOBLOCKTAG = demoBlockTag; // 识别的标记
-  const DEMO_COMPOENT_PREFIX = demoCompoentPrefix; // 组件前缀避免名称冲突
+const dirname = path.dirname(fileURLToPath(import.meta.url));
+
+export const mdDemoPlugin = (options?: {
+  demoBlockTag?: string
+  demoCompoentPrefix?: string
+  compoentPath?: string
+  base?: string
+  editLink?: string
+}) => {
+  const {
+    demoBlockTag = '--demo',
+    demoCompoentPrefix = 'DemoBlock',
+    compoentPath = path.resolve(dirname, 'demo-block.vue'),
+    base = path.resolve(),
+    editLink = '',
+  } = options || {};
   return (md: any) => {
     let compoentIndex = 0;
     // 设置fence代码块的解析规则
@@ -12,15 +25,20 @@ export const mdDemoPlugin = (options?: { demoBlockTag?: string; demoCompoentPref
     md.renderer.rules.fence = function (tokens, idx, options, env, self) {
       const token = tokens[idx];
       const nextToken = tokens[idx + 2];
-      if (token.type !== 'fence' || !token.src || !nextToken || !nextToken.content.startsWith(DEMOBLOCKTAG)) { return defaultFenceRender(tokens, idx, options, env, self); }
-      const src = token.src.replace(/\\/g, '/');
+
+      if (token.type !== 'fence' || !token.src || !nextToken || !nextToken.content.startsWith(demoBlockTag)) {
+        return defaultFenceRender(tokens, idx, options, env, self);
+      }
+
+      // 隐藏 nextToken
       nextToken.hidden = true;
       nextToken.children = [];
 
-      const description = nextToken.content.slice(DEMOBLOCKTAG.length);
-      const code = fs.readFileSync(src).toString();
+      const description = nextToken.content.slice(demoBlockTag.length);
+      const code = fs.readFileSync(token.src).toString();
       const encodeCode = encodeURIComponent(code);
-      const compoentName = `${DEMO_COMPOENT_PREFIX}${compoentIndex += 1}`;
+      const encodeEditLint = editLink && encodeURIComponent(token.src.replace(base, editLink));
+      const compoentName = `${demoCompoentPrefix}_${compoentIndex += 1}`;
 
       const scriptSetup = env.sfcBlocks.scriptSetup || {
         content: '<script setup>\n</script>',
@@ -29,20 +47,20 @@ export const mdDemoPlugin = (options?: { demoBlockTag?: string; demoCompoentPref
         contentStripped: '',
         tagClose: '</script>',
       };
-      if (!`${scriptSetup.contentStripped}`.includes(DEMO_COMPOENT_PREFIX)) {
-        scriptSetup.contentStripped += `import ${DEMO_COMPOENT_PREFIX} from '${path.resolve('docs/.vitepress/plugins/demo-block.vue')}';\n`;
+      if (!`${scriptSetup.contentStripped}`.includes(demoCompoentPrefix)) {
+        scriptSetup.contentStripped += `import ${demoCompoentPrefix} from '${compoentPath}';\n`;
       }
-      scriptSetup.contentStripped += `import ${compoentName} from '${src}';\n`;
+      scriptSetup.contentStripped += `import ${compoentName} from '${token.src}';\n`;
       scriptSetup.content = `${scriptSetup.tagOpen}${scriptSetup.contentStripped}${scriptSetup.tagClose}`;
       env.sfcBlocks.scriptSetup = scriptSetup;
       env.sfcBlocks.scripts = [scriptSetup];
 
       return `${md.render(description)}
-      <${DEMO_COMPOENT_PREFIX} code="${encodeCode}" :demo="${compoentName}">
+      <${demoCompoentPrefix} code="${encodeCode}" :demo="${compoentName}" edit-link="${encodeEditLint}">
         <template #code>
           ${defaultFenceRender(tokens, idx, options, env, self)}
         </template>
-      </${DEMO_COMPOENT_PREFIX}>`;
+      </${demoCompoentPrefix}>`;
     };
   };
 };
