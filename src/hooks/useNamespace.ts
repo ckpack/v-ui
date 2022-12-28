@@ -6,8 +6,8 @@ export const useNamespace = (block = '') => {
   const { prefixCls } = unref(useConfig());
 
   const b = () => `${prefixCls}${block ? `-${block}` : ''}`;
-  const is = (name: string, state = true) => {
-    return state ? `${b()}-is-${name}` : '';
+  const is = (name: MaybeRef<string>, state: MaybeRef<boolean> = true) => {
+    return unref(state) ? `${b()}-is-${unref(name)}` : '';
   };
 
   const m = (type: MaybeRef<string>, modifier?: MaybeRef<string>) => {

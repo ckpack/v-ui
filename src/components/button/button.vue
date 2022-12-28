@@ -36,7 +36,7 @@ const buttonClass = BI && computed(() => {
     ns.is('raised', props.raised),
     ns.is('disabled', props.disabled),
     ns.m('theme', props.theme),
-    ns.m('size', useSize(props.size).value),
+    ns.m('size', useSize(props.size)),
   ];
 });
 </script>
