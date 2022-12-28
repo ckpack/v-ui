@@ -9,7 +9,7 @@ const sizes = ['small', 'medium', 'large'];
       :key="size"
       :size="size"
     >
-      <v-space wrap>
+      <v-space>
         <v-button>Default</v-button>
         <v-button theme="primary">
           Primary

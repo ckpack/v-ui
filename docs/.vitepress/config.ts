@@ -3,7 +3,7 @@ import DefineOptions from 'unplugin-vue-define-options/vite';
 import { author, description, license, name, repository } from '../../package.json';
 import { alias } from '../../scripts/vite-common';
 import { getNav, getSidebarCompoents, getSidebarGuide } from './nav.js';
-import { mdPlugin } from './mdPlugin.js';
+import { mdDemoPlugin } from './plugins';
 
 export default defineConfig({
   vite: {
@@ -20,7 +20,7 @@ export default defineConfig({
   lastUpdated: true,
   markdown: {
     config: (md: any) => {
-      md.use(mdPlugin);
+      md.use(mdDemoPlugin());
     },
   },
   themeConfig: {
