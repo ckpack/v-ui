@@ -6,7 +6,7 @@ export const NAME = 'VUI';
 export const size = 'medium' as ComponentSize;
 
 export const prefixComponent = 'v';
-export const prefixCls = prefixComponent;
+export const prefixCls = 'v';
 
 export const token = {
   'control-height': {

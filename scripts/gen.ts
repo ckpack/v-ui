@@ -3,13 +3,14 @@ import fs from 'node:fs';
 function formatComponent(component: string) {
   return component
     .split('-')
-    .map(name => name.slice(0, 1).toUpperCase() + name.slice(1))
+    .map(name => `${name[0].toUpperCase()}${name.slice(1)}`)
     .join('');
 }
 
 const basePath = process.cwd();
 const componentName = process.argv.slice(2).join(' ');
 const formatComponentName = formatComponent(componentName);
+const componentVName = `${formatComponentName[0].toLocaleLowerCase()}${formatComponentName.slice(1)}`;
 
 if (!/^[a-z]+(-[a-z]+){0,}$/.test(componentName)) {
   console.error(
@@ -27,21 +28,28 @@ fs.mkdirSync(`${basePath}/src/components/${componentName}`);
 fs.writeFileSync(
 `${basePath}/src/components/${componentName}/${componentName}.vue`,
 `<script setup lang="ts">
-import { useNamespace } from '@/hooks';
+import { computed, inject } from 'vue';
+import { ${componentVName}InjectionKey } from '@/themes';
 
-defineProps({
-  label: String,
-});
+defineProps({});
 
 defineOptions({
   name: '${formatComponentName}',
 });
 
-const ns = useNamespace('${componentName}');
+const IV = inject(${componentVName}InjectionKey);
+
+const ${componentVName}Class = IV && computed(() => {
+  const { hashId, ns } = IV;
+  return [
+    hashId,
+    ns.b(),
+  ];
+});
 </script>
 
 <template>
-  <div :class="ns.b()">\n    ${componentName}\n  </div>
+  <div :class="${componentVName}Class">\n    ${componentName}\n  </div>
 </template>\n`);
 
 fs.writeFileSync(
@@ -50,3 +58,25 @@ fs.writeFileSync(
 import { withInstallComponent } from '@/utils';
 
 export default withInstallComponent(${formatComponentName});\n`);
+
+fs.writeFileSync(
+  `${basePath}/src/themes/components/${componentName}.ts`,
+  `import { css } from '@emotion/css';
+import type { InjectionKey } from 'vue';
+import { useNamespace } from '@/hooks';
+
+export const ${componentVName}Theme = () => {
+  const ns = useNamespace('${componentVName}');
+
+  const base = ns.b();
+  const hashId = css({
+    [\`&.\${base}\`]: {},
+  });
+
+  return {
+    ns,
+    hashId,
+  };
+};
+
+export const ${componentVName}InjectionKey: InjectionKey<ReturnType<typeof ${componentVName}Theme>> = Symbol('${componentVName}InjectionKey');\n`);

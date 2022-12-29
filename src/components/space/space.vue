@@ -25,10 +25,10 @@ defineOptions({
 
 const slots: any = useSlots();
 
-const SI = inject(spaceInjectionKey);
+const IV = inject(spaceInjectionKey);
 
-const spaceClass = SI && computed(() => {
-  const { hashId, ns } = SI;
+const spaceClass = IV && computed(() => {
+  const { hashId, ns } = IV;
 
   return [
     hashId,
@@ -37,8 +37,8 @@ const spaceClass = SI && computed(() => {
   ];
 });
 
-const spaceStyle = SI && computed(() => {
-  const { ns } = SI;
+const spaceStyle = IV && computed(() => {
+  const { ns } = IV;
   const { size, wrap, direction, alignItems, fill } = props;
   return {
     [ns.v('gap-size')]: componentSizes.includes(size as any) ? undefined : size,

@@ -24,9 +24,9 @@ defineOptions({
   name: 'Button',
 });
 
-const BI = inject(buttonInjectionKey);
-const buttonClass = BI && computed(() => {
-  const { hashId, ns } = BI;
+const IV = inject(buttonInjectionKey);
+const buttonClass = IV && computed(() => {
+  const { hashId, ns } = IV;
   return [
     hashId,
     ns.b(),
