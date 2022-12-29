@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.11.0](https://github.com/ckpack/v-ui/compare/v1.10.2...v1.11.0) (2022-12-29)
+
+
+### Features
+
+* 更新useNamespace ([9f9961a](https://github.com/ckpack/v-ui/commit/9f9961aaa0bf04078cc7007d5a900f6c0bdd4392))
+* 添加 size ([a350801](https://github.com/ckpack/v-ui/commit/a350801ba58e362f9aa1a0def705b2fe34b9fd69))
+* 添加图标组件 ([7164e2c](https://github.com/ckpack/v-ui/commit/7164e2c0a12acc8c3bd49a888893410fdad80773))
+
+
+### Bug Fixes
+
+* update scripts ([54aeb77](https://github.com/ckpack/v-ui/commit/54aeb77d93548a873cfc2112188d8f4fb2212e57))
+
+
+### Docs
+
+*  修复文档偶尔构建失败 ([8d4dd80](https://github.com/ckpack/v-ui/commit/8d4dd806a929d0ff1da839a27b15020c42bae369))
+* update getting-start ([72472ba](https://github.com/ckpack/v-ui/commit/72472ba60471563b66e423b1cb00c2f4bf993e3c))
+* update md plugin ([b5cdf10](https://github.com/ckpack/v-ui/commit/b5cdf10b8612824e6cc1da895ee277aecdd7f17e))
+* 优化 mdPlugin ([41257ef](https://github.com/ckpack/v-ui/commit/41257efb041a900484d4359ff6f5a251a52206d2))
+* 更新文档 ([83b9ef6](https://github.com/ckpack/v-ui/commit/83b9ef63aacd831e035c91eaa840efba10338a7f))
+* 更新文档 ([19a6ba0](https://github.com/ckpack/v-ui/commit/19a6ba0f62e03edb2b7ea7cd5cdcfaf1572466c3))
+* 添加演练场 ([f53ec1b](https://github.com/ckpack/v-ui/commit/f53ec1ba815528eb05f7bb5204291adc79eaf80e))
+* 添加编辑按钮 ([f7e6166](https://github.com/ckpack/v-ui/commit/f7e6166dde02a1091be50783adee7bfae7dfec66))
+
 ### [1.10.2](https://github.com/ckpack/v-ui/compare/v1.10.1...v1.10.2) (2022-12-24)
 
 
