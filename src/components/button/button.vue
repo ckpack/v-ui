@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import { computed, inject } from 'vue';
-import type { buttonThemes } from './button';
 import { buttonInjectionKey } from '@/themes';
 import { useSize } from '@/hooks';
-import type { ComponentSize } from '@/constants';
+import type { ComponentSize, ComponentTheme } from '@/constants';
 
 const props = withDefaults(defineProps<{
   size?: ComponentSize
@@ -12,7 +11,7 @@ const props = withDefaults(defineProps<{
   text?: boolean
   outlined?: boolean
   raised?: boolean
-  theme?: typeof buttonThemes[number]
+  theme?: ComponentTheme
 }>(), {
   theme: 'default',
   text: false,

@@ -40,7 +40,7 @@ export function getNav(lang = '') {
 export function getSidebarCompoents(lang = '') {
   const t = $t(lang || 'zh');
   const compoents = {
-    base: ['button', 'space'],
+    base: ['button', 'space', 'icon'],
     config: ['config-provider', 'theme-provider'],
   } as const;
 

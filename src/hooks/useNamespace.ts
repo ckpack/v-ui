@@ -10,8 +10,8 @@ export const useNamespace = (block = '') => {
     return unref(state) ? `${b()}-is-${unref(name)}` : '';
   };
 
-  const m = (type: MaybeRef<string>, modifier?: MaybeRef<string>) => {
-    return unref(modifier) ? `${b()}-${unref(type)}-${unref(modifier)}` : '';
+  const m = (type: MaybeRef<string>, modifier?: MaybeRef<string | undefined>) => {
+    return unref(modifier) ? `${b()}-${unref(type)}-${unref(modifier)}` : undefined;
   };
 
   const v = (...args: (string | number)[]) => `--${b()}-${args.join('-')}`;

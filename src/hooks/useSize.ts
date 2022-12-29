@@ -3,10 +3,13 @@ import { useConfig } from './useConfig';
 import type { MaybeRef } from '@/types';
 import { type ComponentSize, componentSizes } from '@/constants';
 
-export const useSize = (fallback?: MaybeRef<ComponentSize>) => {
-  const config = useConfig();
+export const useSize = (fallback?: MaybeRef< string | undefined>) => {
   return computed(() => {
-    const size = unref(fallback) || config.value.size;
-    return componentSizes.includes(size) ? size : 'medium';
+    const size = unref(fallback) || unref(useConfig()).size;
+    return componentSizes.includes(size as ComponentSize) ? size as ComponentSize : 'medium';
   });
+};
+
+export const useSizeValue = (fallback?: MaybeRef<string | undefined>) => {
+  return componentSizes.includes(unref(fallback) as any) ? undefined : unref(fallback);
 };
