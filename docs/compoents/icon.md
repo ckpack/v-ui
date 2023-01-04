@@ -1,6 +1,26 @@
-# Button
+# Icon
 
-这是一个图标
+这是一个图标组件, 你可以通过向其传递一个`svg`字符串使用。
+
+::: tip
+
+它的原理很简单，即设置svg初始样式。
+
++ 控制svg大小
+
+```css
+svg {
+  width: '1em';
+  height: '1em';
+}
+```
++ 控制svg颜色
+```css
+svg {
+  fill: 'currentcolor'; // 所以对于多色图标颜色相关属性将无效。
+}
+```
+:::
 
 
 ## 基础用法
@@ -36,6 +56,10 @@
 ## 图标悬停颜色
 <<< @/_demos/icon/hover-color.vue
 --demo 通过 `hover-color` 定义图标悬停颜色
+
+## 多色图标
+<<< @/_demos/icon/multi-color.vue
+--demo 你也可以使用多色图标但是这将导致颜色相关属性无效。
 
 ## API
 
