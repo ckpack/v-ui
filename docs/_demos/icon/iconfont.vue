@@ -1,9 +1,4 @@
 <script setup lang="ts">
-/*
-需要先在页面引入`Symbol`类型的相关图标代码如
-<script src="at.alicdn.com/t/font_2126466_0k1uy4dafct.js" />
-*/
-
 const svgs = [
   'icon-shanchu',
   'icon-home',

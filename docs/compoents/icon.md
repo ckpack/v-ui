@@ -74,14 +74,18 @@ svg {
 
 ## 其他
 
-### 使用iconfont
+### 使用 [iconfont](https://www.iconfont.cn/)
+
++ 页面引入`Symbol`类型的图标代码
+
+```html
+<script src="at.alicdn.com/t/font_2126466_0k1uy4dafct.js" />
+```
+
++ 传入引用图标的`Symbol`
 
 <<< @/_demos/icon/iconfont.vue
---demo 使用阿里的[iconfont](https://www.iconfont.cn/)
 
-<script>
-import('//at.alicdn.com/t/font_2126466_0k1uy4dafct.js');
-</script>
 
 
 
