@@ -1,21 +1,17 @@
 <script setup lang="ts">
 import { type StyleValue, computed, inject } from 'vue';
 import { iconInjectionKey } from '@/themes';
-import type { ComponentSize, ComponentTheme } from '@/constants';
-import { useSize, useSizeValue } from '@/hooks';
 
 const props = withDefaults(defineProps<{
-  size?: ComponentSize
-  theme?: ComponentTheme
-  disabled?: boolean
+  size?: string
   svg: string
   spin?: boolean
   rotate?: number
   color?: string
   hoverColor?: string
+  cursor?: string
 }>(), {
-  theme: 'default',
-  disabled: false,
+  color: 'inherit',
   rotate: 0,
 });
 
@@ -30,25 +26,30 @@ const iconClass = IV && computed(() => {
   return [
     hashId,
     ns.b(),
-    ns.is('disabled', props.disabled),
     ns.is('spin', props.spin),
-    ns.m('theme', props.theme),
-    ns.m('size', useSize(props.size)),
   ];
 });
 
 const iconStyle = IV && computed(() => {
   const { ns } = IV;
-  const { size, rotate, color, hoverColor } = props;
+  const { size, rotate, color, cursor, hoverColor } = props;
   return {
-    [ns.v('text-color')]: color,
-    [ns.v('text-color', 'hover')]: hoverColor || color,
-    [ns.v('font-size')]: useSizeValue(size),
+    [ns.v('color')]: color,
+    [ns.v('color', 'hover')]: hoverColor || color,
+    [ns.v('font-size')]: size,
+    [ns.v('cursor')]: cursor,
     transform: `rotate(${rotate}deg)`,
   } as StyleValue;
+});
+
+const svgHtml = computed(() => {
+  const svg = props.svg;
+  return svg.startsWith('<svg')
+    ? svg
+    : `<svg class="icon" aria-hidden="true"><use xlink:href="#${svg}"></use></svg>`;
 });
 </script>
 
 <template>
-  <div :class="iconClass" :style="iconStyle" v-html="svg" />
+  <i :class="iconClass" :style="iconStyle" v-html="svgHtml" />
 </template>

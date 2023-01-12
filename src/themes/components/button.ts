@@ -37,7 +37,6 @@ export const buttonTheme = () => {
       [ns.v('border', 'disabled')]: `${ns.vv('border-width')} ${ns.vv('border-style')} ${ns.vv('border-color', 'disabled')}`,
       'boxSizing': 'border-box',
       'height': ns.vv('control-height'),
-      'lineHeight': `calc(${ns.vv('control-height')} - ${ns.vv('border-width')} * 2)`,
       'borderRadius': ns.vv('border-radius'),
       'padding': `0 ${ns.vv('padding')}`,
       'fontSize': ns.vv('font-size'),
@@ -45,6 +44,9 @@ export const buttonTheme = () => {
       'border': ns.vv('border'),
       'color': ns.vv('text-color'),
       'cursor': 'pointer',
+      'display': 'inline-flex',
+      'justifyContent': 'center',
+      'alignItems': 'center',
       '&:hover': {
         backgroundColor: ns.vv('bg-color', 'hover'),
         border: ns.vv('border', 'hover'),

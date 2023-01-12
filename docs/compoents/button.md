@@ -7,10 +7,6 @@
 <<< @/_demos/button/theme.vue
 --demo 通过 `theme` 定义按钮主题颜色
 
-## 调整尺寸
-<<< @/_demos/button/size.vue
---demo 使用 `size` 调整按钮尺寸, 可使用`small`,`medium`,`large`三种值
-
 ## 文字按钮
 
 <<< @/_demos/button/text.vue
@@ -20,6 +16,11 @@
 
 <<< @/_demos/button/outlined.vue
 --demo 使用 `outlined` 定义轮廓按钮（中强调）。由于轮廓的缘故，比文本按钮更强调。
+
+
+## 调整尺寸
+<<< @/_demos/button/size.vue
+--demo 使用 `size` 调整按钮尺寸, 可使用`small`,`medium`,`large`三种值
 
 ## 圆形按钮
 <<< @/_demos/button/round.vue

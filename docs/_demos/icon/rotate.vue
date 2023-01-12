@@ -7,7 +7,7 @@ const rotates = [0, 45, 90, 180];
 <template>
   <v-space direction="column">
     <v-space wrap>
-      <v-icon v-for="rotate in rotates" :key="rotate" :rotate="rotate" :svg="svg" theme="primary" />
+      <v-icon v-for="rotate in rotates" :key="rotate" :rotate="rotate" :svg="svg" />
     </v-space>
   </v-space>
 </template>

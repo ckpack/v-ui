@@ -54,16 +54,16 @@ export const token = {
     error: '#ef4444',
   },
   'margin': {
-    '': '16px',
+    '': '14px',
     'small': '8px',
-    'medium': '16px',
-    'large': '24px',
+    'medium': '14px',
+    'large': '20px',
   },
   'padding': {
-    '': '16px',
+    '': '14px',
     'small': '8px',
-    'medium': '16px',
-    'large': '24px',
+    'medium': '14px',
+    'large': '20px',
   },
 };
 
