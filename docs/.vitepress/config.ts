@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress';
 import DefineOptions from 'unplugin-vue-define-options/vite';
 import { author, description, license, name, repository } from '../../package.json';
 import { alias } from '../../scripts/vite-common';
-import { getNav, getSidebarCompoents, getSidebarGuide } from './nav.js';
+import { getNav, getSidebar } from './nav.js';
 import { mdDemoPlugin } from './plugins';
 
 export default defineConfig({
@@ -27,23 +27,41 @@ export default defineConfig({
   },
   themeConfig: {
     outline: 'deep',
-    editLink: {
-      pattern: `${repository}/edit/main/docs/:path`,
-      text: 'Edit this page on GitHub',
-    },
     socialLinks: [
       { icon: 'github', link: repository },
     ],
-    footer: {
-      message: `Released under the ${license} License.`,
-      copyright: `Copyright © 2022-present ${author}`,
+  },
+  locales: {
+    root: {
+      label: '简体中文',
+      themeConfig: {
+        nav: getNav(),
+        sidebar: getSidebar(),
+        editLink: {
+          pattern: `${repository}/edit/main/docs/:path`,
+          text: '在 GitHub 上编辑此页面',
+        },
+        footer: {
+          message: `根据 ${license} 许可证发布.`,
+          copyright: `Copyright © 2022-present ${author}`,
+        },
+      },
     },
-    nav: getNav(),
-    sidebar: {
-      '/guide/': getSidebarGuide(),
-      '/compoents': getSidebarCompoents(),
-      'en/guide/': getSidebarGuide('en'),
-      'en/compoents': getSidebarCompoents('en'),
+    en: {
+      label: 'English',
+      link: '/en',
+      themeConfig: {
+        nav: getNav('en'),
+        sidebar: getSidebar('en'),
+        editLink: {
+          pattern: `${repository}/edit/main/docs/:path`,
+          text: 'Edit this page on GitHub',
+        },
+        footer: {
+          message: `Released under the ${license} License.`,
+          copyright: `Copyright © 2022-present ${author}`,
+        },
+      },
     },
   },
 });
