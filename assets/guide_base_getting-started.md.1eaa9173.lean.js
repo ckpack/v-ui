@@ -1,5 +1,0 @@
-import{_ as s,o as a,c as n,a as l,f as p}from"./app.b324fa17.js";const h=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[{"level":2,"title":"完整引入","slug":"完整引入","link":"#完整引入","children":[]},{"level":2,"title":"按需加载","slug":"按需加载","link":"#按需加载","children":[]},{"level":2,"title":"浏览器直接引入","slug":"浏览器直接引入","link":"#浏览器直接引入","children":[]}],"relativePath":"guide/base/getting-started.md","lastUpdated":1673519563000}'),o={name:"guide/base/getting-started.md"},e=l("",12),t=p("iframe",{height:"300",style:{width:"100%"},scrolling:"no",title:"@ckpack/v-ui",src:"https://codepen.io/chenkai0520/embed/wvxKYWj?default-tab=html%2Cresult",frameborder:"no",loading:"lazy",allowtransparency:"true",allowfullscreen:"true"},`
-  See the Pen <a href="https://codepen.io/chenkai0520/pen/wvxKYWj">
-  @ckpack/v-ui</a> by chenkai (<a href="https://codepen.io/chenkai0520">@chenkai0520</a>)
-  on <a href="https://codepen.io">CodePen</a>.
-`,-1),c=[e,t];function r(D,F,y,i,A,C){return a(),n("div",null,c)}const u=s(o,[["render",r]]);export{h as __pageData,u as default};
