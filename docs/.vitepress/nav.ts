@@ -12,7 +12,7 @@ export function getSidebarCompoents(lang = '') {
   return Object.keys(compoents).map((key) => {
     return {
       text: t(`${key}-compoents` as any),
-      collapsible: true,
+      collapsed: true,
       items: compoents[key].map((name: string) => ({
         text: name,
         link: `${lang}/compoents/${name}`,
@@ -26,7 +26,7 @@ export function getSidebarGuide(lang = '') {
   return [
     {
       text: t('base'),
-      collapsible: true,
+      collapsed: true,
       items: [{
         text: t('getting-started'),
         link: `${lang}/guide/base/getting-started`,
