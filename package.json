@@ -71,7 +71,7 @@
     "vite": "^4.0.4",
     "vite-plugin-dts": "1.7.2",
     "vitepress": "1.0.0-alpha.45",
-    "vue": "^3.2.45",
+    "vue": "^3.2.47",
     "@rollup/plugin-replace": "^5.0.2"
   },
   "peerDependencies": {
