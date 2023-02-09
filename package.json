@@ -55,7 +55,7 @@
     "@emotion/css": "^11.10.5"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "0.35.1",
+    "@antfu/eslint-config": "0.35.2",
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
     "@vitejs/plugin-vue": "^4.0.0",
@@ -63,7 +63,7 @@
     "eslint": "^8.33.0",
     "fast-glob": "^3.2.12",
     "husky": "^8.0.3",
-    "lint-staged": "^13.1.0",
+    "lint-staged": "^13.1.1",
     "standard-version": "^9.5.0",
     "tsx": "^3.12.3",
     "typescript": "5.0.0-beta",
