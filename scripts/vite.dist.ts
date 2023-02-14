@@ -1,14 +1,14 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import DefineOptions from 'unplugin-vue-define-options/vite';
-import replace from '@rollup/plugin-replace';
+import DefineOptions from 'unplugin-vue-define-options/dist/vite';
 import { alias, baseExternal, globals, name } from './vite-common';
 
 export default defineConfig({
-  plugins: [vue(), DefineOptions(), replace({
-    'process.env.NODE_ENV': JSON.stringify('production'),
+  plugins: [vue(), DefineOptions()],
+  define: {
+    'process.env.NODE_ENV': '"production"', // https://vitejs.dev/config/shared-options.html#define
     'preventAssignment': true,
-  })],
+  },
   build: {
     target: 'esnext',
     outDir: 'dist',
