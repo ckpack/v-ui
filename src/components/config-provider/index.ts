@@ -1,4 +1,5 @@
 import ConfigProvider from './config-provider.vue';
 import { withInstallComponent } from '@/utils';
 
-export default withInstallComponent(ConfigProvider);
+export const VConfigProvider = withInstallComponent(ConfigProvider);
+export default VConfigProvider;

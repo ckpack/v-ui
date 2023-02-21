@@ -40,7 +40,7 @@ export const flattenObj = (ob: Record<any, any> = {}) => {
   return result;
 };
 
-export function deepMerge<t = any>(target: any = {}, source: any): t {
+export const deepMerge = <t = any>(target: any = {}, source: any): t => {
   target = unref(target);
   source = unref(source);
   target = !Array.isArray(target) ? { ...target } : [...target];
@@ -57,4 +57,9 @@ export function deepMerge<t = any>(target: any = {}, source: any): t {
     }
   });
   return target;
+};
+
+export function toArray<T extends Object>(v?: T | T[]) {
+  if (Array.isArray(v)) { return v; }
+  return v ? [v] : [];
 }

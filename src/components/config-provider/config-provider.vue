@@ -5,13 +5,13 @@ import { useProvideConfig } from '@/hooks';
 import ThemeProvider from '@/components/theme-provider';
 import type { ComponentSize } from '@/constants';
 
-const props = withDefaults(defineProps<{
+const props = defineProps<{
   size?: ComponentSize
   prefixCls?: string
   token?: Token
   themes?: Record<symbol, any>
   locale?: any
-}>(), {});
+}>();
 
 defineOptions({
   name: 'ConfigProvider',

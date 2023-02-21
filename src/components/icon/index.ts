@@ -1,4 +1,5 @@
 import Icon from './icon.vue';
 import { withInstallComponent } from '@/utils';
 
-export default withInstallComponent(Icon);
+export const VIcon = withInstallComponent(Icon);
+export default VIcon;

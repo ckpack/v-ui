@@ -1,4 +1,5 @@
 import Button from './button.vue';
 import { withInstallComponent } from '@/utils';
 
-export default withInstallComponent(Button);
+export const VButton = withInstallComponent(Button);
+export default VButton;

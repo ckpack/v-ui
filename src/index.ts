@@ -3,8 +3,8 @@ import preset from '@/preset';
 import create from '@/create';
 
 export default preset;
-export * from './components';
-export * as components from './components';
+export * from '@/components/';
+export * as components from '@/components';
 export * from './defaultConfig';
 export * from './themes';
 export * from './hooks';

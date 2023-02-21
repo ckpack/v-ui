@@ -80,3 +80,7 @@ export const ${componentVName}Theme = () => {
 };
 
 export const ${componentVName}InjectionKey: InjectionKey<ReturnType<typeof ${componentVName}Theme>> = Symbol('${componentVName}InjectionKey');\n`);
+
+console.log(`You may need to modify the following files:
+src/components.ts
+src/themes/index.ts`);

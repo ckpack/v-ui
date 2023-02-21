@@ -12,12 +12,13 @@ const zh = {
   'custom-develop': '定制开发',
   'compoents': '组件',
   'base-compoents': '基础组件',
+  'form-compoents': '表单组件 🚧',
   'config-compoents': '配置组件',
   'develop': '开发',
   'playground': '演练场',
 };
 
-const en: typeof zh = {
+const en: Partial<typeof zh> = {
   'guide': 'Guide',
   'docs': 'Docs',
   'about': 'About',
@@ -31,6 +32,7 @@ const en: typeof zh = {
   'custom-develop': 'Custom develop',
   'compoents': 'Compoents',
   'base-compoents': 'Base compoents',
+  'form-compoents': 'Form compoents 🚧',
   'config-compoents': 'Config compoents',
   'develop': 'Develop',
   'playground': 'Playground',
