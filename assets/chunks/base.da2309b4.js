@@ -1,1 +1,0 @@
-import{_ as r,o as c,k as _,w as e,b as a,e as s,m as t}from"../app.9733f7ca.js";const m={};function p(d,l){const o=t("v-button"),n=t("v-theme-provider");return c(),_(n,null,{default:e(()=>[a(o,{theme:"primary"},{default:e(()=>[s(" Button ")]),_:1})]),_:1})}const f=r(m,[["render",p]]);export{f as D};
