@@ -1,29 +1,31 @@
 <script setup lang="ts">
-import { computed, inject } from 'vue';
+import { computed, inject, watch } from 'vue';
 import { inputInjectionKey } from '@/themes';
 import { formItemContextKey } from '@/tokens';
 
-defineProps<{
+const props = defineProps<{
   modelValue?: string | number
 }>();
 
 const emits = defineEmits(['update:modelValue', 'input', 'blur']);
-
 const formItemContext = inject(formItemContextKey);
+
+watch(() => props.modelValue, () => {
+  formItemContext?.validate('change');
+});
 
 defineOptions({
   name: 'Input',
 });
 
 const handlerInput = (event: Event) => {
-  formItemContext?.validate('change');
   emits('input', event);
   emits('update:modelValue', (event?.target as HTMLInputElement)?.value);
 };
 
 const handlerBlur = (event: Event) => {
-  formItemContext?.validate('blur');
   emits('blur', event);
+  formItemContext?.validate('blur');
 };
 
 const IV = inject(inputInjectionKey);
