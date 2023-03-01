@@ -7,7 +7,7 @@ export function getSidebarCompoents(lang = '') {
   const compoents = {
     base: ['button', 'space', 'icon'],
     config: ['config-provider', 'theme-provider'],
-    form: ['form'],
+    form: ['form', 'input'],
   } as const;
 
   return Object.keys(compoents).map((key) => {

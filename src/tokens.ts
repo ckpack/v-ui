@@ -1,11 +1,15 @@
 import type { InjectionKey, SetupContext } from 'vue';
-import type { RuleItem, ValidateError } from 'async-validator';
+import type { RuleItem, ValidateError, ValidateOption } from 'async-validator';
 import type { FormItemProps, FormProps } from '@/components/';
+
+export type trigger = 'blur' | 'change';
+
+export type Validate = (trigger?: trigger, options?: ValidateOption) => Promise<ValidateError[] | undefined>;
 
 export type Arrayable<T> = T | T[];
 
 export interface FormItemRule extends RuleItem {
-  trigger?: 'blur' | 'change'
+  trigger?: trigger
 }
 export type FormItemRules = Arrayable<FormItemRule>;
 export type FormRules = Record< string, FormItemRules>;
@@ -19,7 +23,7 @@ export type FormContext = FormProps & {
 };
 export type FormItemContext = FormItemProps & {
   validationErrors: undefined | ValidateError[]
-  validate: Function
+  validate: Validate
   clearValidate: Function
 };
 export const formContextKey: InjectionKey<FormContext> = Symbol('formContextKey');

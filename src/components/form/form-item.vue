@@ -2,7 +2,7 @@
 import { computed, inject, onMounted, onUnmounted, provide, reactive, ref, toRefs, unref } from 'vue';
 import Schema, { type ValidateError } from 'async-validator';
 import { formItemInjectionKey } from '@/themes';
-import type { FormItemContext, FormItemRules } from '@/tokens';
+import type { FormItemContext, FormItemRules, Validate, trigger } from '@/tokens';
 import { formContextKey, formItemContextKey } from '@/tokens';
 import { toArray } from '@/utils';
 
@@ -51,17 +51,28 @@ const itemRules = computed(() => {
   return rules;
 });
 
+const getFilteredRules = (trigger?: trigger) => {
+  const rules = itemRules.value;
+  return rules.filter((rule) => {
+    if (!rule.trigger || !trigger) { return true; }
+    if (Array.isArray(rule.trigger)) {
+      return rule.trigger.includes(trigger);
+    }
+    return rule.trigger === trigger;
+  });
+};
+
 const isRequired = computed(() => itemRules.value.some(rule => rule.required));
 
 const validationErrors = ref<undefined | ValidateError[]>();
 
-const validate = async (options = {}) => {
+const validate: Validate = async (trigger, options = {}) => {
   const { name } = props;
   if (!name) { return undefined; }
 
   const value = (formContext?.model || {})[name];
 
-  const validator = new Schema({ [name]: unref(itemRules) });
+  const validator = new Schema({ [name]: getFilteredRules(trigger) });
 
   try {
     await validator.validate({ [name]: value }, options);

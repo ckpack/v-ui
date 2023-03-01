@@ -6,10 +6,13 @@ const formRef = ref<FormInstance>();
 const form = reactive({
   msg: '',
   name: '',
+  email: '',
+  sex: '',
 });
 
 const rules = {
   msg: { type: 'string', required: true, min: 4, max: 6 },
+  email: { type: 'email' },
 };
 
 const validate = () => {
@@ -27,10 +30,16 @@ const handlerValidate = (...args: any[]) => console.log(args);
   {{ form }}
   <v-form ref="formRef" label-suffix=":" :model="form" :rules="rules as any" @validate="handlerValidate">
     <v-form-item name="msg" label="msg" help="4-6位">
-      <input v-model="form.msg">
+      <v-input v-model="form.msg" />
     </v-form-item>
     <v-form-item name="name" label="name" required>
-      <input v-model="form.name">
+      <v-input v-model="form.name" />
+    </v-form-item>
+    <v-form-item name="email" label="email">
+      <v-input v-model="form.email" />
+    </v-form-item>
+    <v-form-item label="sex">
+      <v-input v-model="form.sex" />
     </v-form-item>
 
     <v-button type="button" @click="validate">

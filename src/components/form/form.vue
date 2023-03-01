@@ -59,6 +59,7 @@ provide(formContextKey, reactive({
   addField,
   removeField,
   emit,
+  validateFieldsError,
 }));
 
 defineExpose({
@@ -79,7 +80,6 @@ const formClass = IV && computed(() => {
 </script>
 
 <template>
-  {{ validateFieldsError }}
   <form :class="formClass">
     <slot />
   </form>
