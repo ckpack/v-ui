@@ -14,12 +14,12 @@ specifiers:
   husky: ^8.0.3
   lint-staged: ^13.2.0
   standard-version: ^9.5.0
-  tsx: ^3.12.4
+  tsx: ^3.12.5
   typescript: 5.0.0-beta
   unplugin-vue-define-options: 1.2.4
   vite: ^4.1.4
   vite-plugin-dts: 2.1.0
-  vitepress: 1.0.0-alpha.53
+  vitepress: 1.0.0-alpha.59
   vue: ^3.2.47
 
 dependencies:
@@ -38,12 +38,12 @@ devDependencies:
   husky: 8.0.3
   lint-staged: 13.2.0
   standard-version: 9.5.0
-  tsx: 3.12.4
+  tsx: 3.12.5
   typescript: 5.0.0-beta
   unplugin-vue-define-options: 1.2.4_vue@3.2.47
   vite: 4.1.4
   vite-plugin-dts: 2.1.0_vite@4.1.4
-  vitepress: 1.0.0-alpha.53
+  vitepress: 1.0.0-alpha.59
   vue: 3.2.47
 
 packages:
@@ -5022,8 +5022,8 @@ packages:
       typescript: 5.0.0-beta
     dev: true
 
-  /tsx/3.12.4:
-    resolution: {integrity: sha512-IZ0Sqm2AwB3pgE+n/g63jLNoZZXinbXfdvNWB06wdwey+/7dlOurdS1Vb5pBGa7VO9nTjAOODbQgKCgHk7JsPA==}
+  /tsx/3.12.5:
+    resolution: {integrity: sha512-/TLj30xF1zcN9JkoFCyROtIQUi8cRQG+AFchsg5YkWou3+RXxTZS/ffWB3nCxyZPoBqF2+8ohs07N815dNb1wQ==}
     hasBin: true
     dependencies:
       '@esbuild-kit/cjs-loader': 2.4.2
@@ -5231,8 +5231,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitepress/1.0.0-alpha.53:
-    resolution: {integrity: sha512-p3ipalXkSuvl1nQnU0WqUwV0gIhEP4ofhxvnRUU/1pvyLzmuC1X6it1GxaZ9ukeij8xiGfIXI/FJx05nKYfWlA==}
+  /vitepress/1.0.0-alpha.59:
+    resolution: {integrity: sha512-kKs/srBf4n4uWalhD3jvMkyXbszq4sDW5rx2RdWwhUZJE9Fm9dmL6BRf0IfLnPpEJWIiM5loQf/8ndspm5g7tQ==}
     hasBin: true
     dependencies:
       '@docsearch/css': 3.3.3

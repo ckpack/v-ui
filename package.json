@@ -66,12 +66,12 @@
     "husky": "^8.0.3",
     "lint-staged": "^13.2.0",
     "standard-version": "^9.5.0",
-    "tsx": "^3.12.4",
+    "tsx": "^3.12.5",
     "typescript": "5.0.0-beta",
     "unplugin-vue-define-options": "1.2.4",
     "vite": "^4.1.4",
     "vite-plugin-dts": "2.1.0",
-    "vitepress": "1.0.0-alpha.53",
+    "vitepress": "1.0.0-alpha.59",
     "vue": "^3.2.47"
   },
   "peerDependencies": {
