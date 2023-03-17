@@ -83,3 +83,4 @@ export default config;
 export const configInjectionKey: InjectionKey<Ref<DeepPartial<Config>>> = Symbol('configInjectionKey');
 
 export type Config = typeof config;
+export type DeepPartialConfig = DeepPartial<typeof config>;
