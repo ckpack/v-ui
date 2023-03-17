@@ -32,7 +32,7 @@
     "src/*",
     "es/*",
     "dist/*",
-    "types.d.ts"
+    "components.d.ts"
   ],
   "scripts": {
     "husky": "husky install",

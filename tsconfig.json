@@ -12,6 +12,6 @@
     },
     "baseUrl": "./"
   },
-  "include": ["src/**/*", "scripts/**/*", "dev/**/*", "docs/**/*", "*.cjs", "*.ts"],
+  "include": ["src/**/*", "scripts/**/*", "dev/**/*", "docs/**/*", "components.d.ts"],
   "exclude": ["node_modules"]
 }
