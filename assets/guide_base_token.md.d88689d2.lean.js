@@ -1,0 +1,1 @@
+import{_ as s,o as n,c as a,N as p}from"./chunks/framework.060493b0.js";const i=JSON.parse('{"title":"","description":"","frontmatter":{},"headers":[],"relativePath":"guide/base/token.md","lastUpdated":1679031773000}'),l={name:"guide/base/token.md"},o=p("",8),e=[o];function t(c,r,D,F,y,C){return n(),a("div",null,e)}const d=s(l,[["render",t]]);export{i as __pageData,d as default};
