@@ -1,5 +1,6 @@
 import type { InjectionKey, Ref } from 'vue';
 import type { ComponentSize } from '@/constants';
+import type { DeepPartial } from '@/types';
 
 export const NAME = 'VUI';
 
@@ -67,6 +68,8 @@ export const token = {
   },
 };
 
+export type Token = DeepPartial<typeof token>;
+
 export const config = {
   size,
   prefixCls,
@@ -77,7 +80,6 @@ export const config = {
 };
 export default config;
 
-export const configInjectionKey: InjectionKey<Ref<Partial<Config>>> = Symbol('configInjectionKey');
+export const configInjectionKey: InjectionKey<Ref<DeepPartial<Config>>> = Symbol('configInjectionKey');
 
 export type Config = typeof config;
-export type Token = typeof token;

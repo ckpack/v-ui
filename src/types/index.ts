@@ -6,3 +6,7 @@ type prefixedValue<TObject extends object, TPrefixedKey extends string, TPrefix 
 export type addPrefixToObject<TObject extends object, TPrefix extends string> = {
   [K in addPrefix<keyof TObject, TPrefix>]: prefixedValue<TObject, K, TPrefix>
 };
+
+export type DeepPartial<T> = T extends object ? {
+  [P in keyof T]?: DeepPartial<T[P]>;
+} : T;
