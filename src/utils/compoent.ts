@@ -1,7 +1,7 @@
 import { prefixComponent } from '@/defaultConfig';
 import type { SFCWithInstall } from '@/types';
 
-export const withInstallComponent = <T extends { name: string }, E extends { name: string }>(main: T, extra: E[] = []): T => {
+export function withInstallComponent<T extends { name: string }, E extends { name: string }>(main: T, extra: E[] = []): T {
   (main as SFCWithInstall<T>).install = (app, options = {}) => {
     const ns = options.prefixComponent || prefixComponent;
     [main, ...extra].forEach((compoent) => {
@@ -9,9 +9,9 @@ export const withInstallComponent = <T extends { name: string }, E extends { nam
     });
   };
   return main;
-};
+}
 
-export const withNoopInstall = <T>(component: T) => {
+export function withNoopInstall<T>(component: T) {
   (component as SFCWithInstall<T>).install = () => undefined;
   return component as SFCWithInstall<T>;
-};
+}

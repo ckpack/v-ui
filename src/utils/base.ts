@@ -10,7 +10,7 @@ export const isNumber = (val: unknown) => typeof val === 'number';
 export const isString = (val: unknown) => typeof val === 'string';
 export const isObject = (val: unknown) => typeOf(val) === 'object';
 
-export const filterUndefinedKey = (obj: Record<string, any> | undefined = {}) => {
+export function filterUndefinedKey(obj: Record<string, any> | undefined = {}) {
   const res: Record<string, any> = {};
   for (const key in obj) {
     if (obj[key]) {
@@ -18,13 +18,13 @@ export const filterUndefinedKey = (obj: Record<string, any> | undefined = {}) =>
     }
   }
   return res;
-};
+}
 
-export const camelCaseToDashes = (str: string) => {
+export function camelCaseToDashes(str: string) {
   return str.replace(/([A-Z])/g, (x, y) => `-${y.toLowerCase()}`);
-};
+}
 
-export const flattenObj = (ob: Record<any, any> = {}) => {
+export function flattenObj(ob: Record<any, any> = {}) {
   const result: Record<string, any> = {};
   for (const i in ob) {
     if ((typeof ob[i]) === 'object' && !Array.isArray(ob[i])) {
@@ -38,9 +38,9 @@ export const flattenObj = (ob: Record<any, any> = {}) => {
     }
   }
   return result;
-};
+}
 
-export const deepMerge = <t = any>(target: any = {}, source: any): t => {
+export function deepMerge<t = any>(target: any = {}, source: any): t {
   target = unref(target);
   source = unref(source);
   target = !Array.isArray(target) ? { ...target } : [...target];
@@ -57,7 +57,7 @@ export const deepMerge = <t = any>(target: any = {}, source: any): t => {
     }
   });
   return target;
-};
+}
 
 export function toArray<T extends Object>(v?: T | T[]) {
   if (Array.isArray(v)) { return v; }

@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { Token } from '@/defaultConfig';
-import { filterUndefinedKey } from '@/utils';
 import { useProvideConfig } from '@/hooks';
 import ThemeProvider from '@/components/theme-provider';
 import type { ComponentSize } from '@/constants';
@@ -17,7 +16,7 @@ defineOptions({
   name: 'ConfigProvider',
 });
 
-useProvideConfig(filterUndefinedKey(props));
+useProvideConfig(props);
 </script>
 
 <template>

@@ -4,12 +4,12 @@ import defaultConfig, { type Config, configInjectionKey } from '@/defaultConfig'
 
 const globalConfig = ref(defaultConfig);
 
-export const useConfig = () => {
+export function useConfig() {
   const config = getCurrentInstance() ? inject(configInjectionKey, globalConfig) : globalConfig;
   return config as Ref<Config>;
-};
+}
 
-export const useProvideConfig = (config: any, app?: App, global = false) => {
+export function useProvideConfig(config: any, app?: App, global = false) {
   const oldConfig = useConfig();
   const context = computed(() => {
     return deepMerge(oldConfig, config);
@@ -20,4 +20,4 @@ export const useProvideConfig = (config: any, app?: App, global = false) => {
     globalConfig.value = context.value;
   }
   return context as Ref<Config>;
-};
+}

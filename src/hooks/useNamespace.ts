@@ -2,7 +2,7 @@ import { unref } from 'vue';
 import { useConfig } from '@/hooks';
 import type { MaybeRef } from '@/types';
 
-export const useNamespace = (block = '') => {
+export function useNamespace(block = '') {
   const { prefixCls } = unref(useConfig());
 
   const b = () => `${prefixCls}${block ? `-${block}` : ''}`;
@@ -28,4 +28,4 @@ export const useNamespace = (block = '') => {
     vb,
     v,
   };
-};
+}

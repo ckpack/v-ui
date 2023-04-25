@@ -19,9 +19,9 @@ defineOptions({
   name: 'Icon',
 });
 
-const IV = inject(iconInjectionKey);
+const IV = inject(iconInjectionKey)!;
 
-const iconClass = IV && computed(() => {
+const iconClass = computed(() => {
   const { hashId, ns } = IV;
   return [
     hashId,
@@ -30,7 +30,7 @@ const iconClass = IV && computed(() => {
   ];
 });
 
-const iconStyle = IV && computed(() => {
+const iconStyle = computed(() => {
   const { ns } = IV;
   const { size, rotate, color, cursor, hoverColor } = props;
   return {

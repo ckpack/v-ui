@@ -3,7 +3,7 @@ import type { InjectionKey } from 'vue';
 import { useNamespace } from '@/hooks';
 import { spinAnimation } from '@/themes/styles';
 
-export const iconTheme = () => {
+export function iconTheme() {
   const ns = useNamespace('icon');
 
   const hashId = css({
@@ -30,6 +30,6 @@ export const iconTheme = () => {
     ns,
     hashId,
   };
-};
+}
 
 export const iconInjectionKey: InjectionKey<ReturnType<typeof iconTheme>> = Symbol('iconInjectionKey');

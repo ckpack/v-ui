@@ -51,7 +51,7 @@ const itemRules = computed(() => {
   return rules;
 });
 
-const getFilteredRules = (trigger?: trigger) => {
+function getFilteredRules(trigger?: trigger) {
   const rules = itemRules.value;
   return rules.filter((rule) => {
     if (!rule.trigger || !trigger) { return true; }
@@ -60,7 +60,7 @@ const getFilteredRules = (trigger?: trigger) => {
     }
     return rule.trigger === trigger;
   });
-};
+}
 
 const isRequired = computed(() => itemRules.value.some(rule => rule.required));
 
@@ -78,7 +78,7 @@ const validate: Validate = async (trigger, options = {}) => {
     await validator.validate({ [name]: value }, options);
     validationErrors.value = undefined;
   }
-  catch ({ errors, fields }) {
+  catch ({ errors, fields }: any) {
     validationErrors.value = errors as ValidateError[];
   }
 
@@ -86,9 +86,9 @@ const validate: Validate = async (trigger, options = {}) => {
   return unref(validationErrors);
 };
 
-const clearValidate = () => {
+function clearValidate() {
   validationErrors.value = undefined;
-};
+}
 
 const context: FormItemContext = reactive({
   ...toRefs(props),
@@ -113,8 +113,8 @@ defineExpose({
   clearValidate,
 });
 
-const IV = inject(formItemInjectionKey);
-const formClass = IV && computed(() => {
+const IV = inject(formItemInjectionKey)!;
+const formClass = computed(() => {
   const { hashId, ns } = IV;
   return [
     hashId,

@@ -2,7 +2,7 @@ import { type CSSInterpolation, css } from '@emotion/css';
 import type { InjectionKey } from 'vue';
 import { useNamespace } from '@/hooks';
 
-export const buttonTheme = () => {
+export function buttonTheme() {
   const ns = useNamespace('button');
 
   const getButtonStyle = ({ bgColor, bdColor, textColor }: { bgColor: string; bdColor: string; textColor: string }) => {
@@ -109,6 +109,6 @@ export const buttonTheme = () => {
     ns,
     hashId,
   };
-};
+}
 
 export const buttonInjectionKey: InjectionKey<ReturnType<typeof buttonTheme>> = Symbol('buttonInjectionKey');

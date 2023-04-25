@@ -18,18 +18,18 @@ defineOptions({
   name: 'Input',
 });
 
-const handlerInput = (event: Event) => {
+function handlerInput(event: Event) {
   emits('input', event);
   emits('update:modelValue', (event?.target as HTMLInputElement)?.value);
-};
+}
 
-const handlerBlur = (event: Event) => {
+function handlerBlur(event: Event) {
   emits('blur', event);
   formItemContext?.validate('blur');
-};
+}
 
-const IV = inject(inputInjectionKey);
-const inputClass = IV && computed(() => {
+const IV = inject(inputInjectionKey)!;
+const inputClass = computed(() => {
   const { hashId, ns } = IV;
   return [
     hashId,

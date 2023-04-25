@@ -4,13 +4,13 @@ import { fileURLToPath } from 'node:url';
 
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 
-export const mdDemoPlugin = (options?: {
+export function mdDemoPlugin(options?: {
   demoBlockTag?: string
   demoCompoentPrefix?: string
   compoentPath?: string
   base?: string
   editLink?: string
-}) => {
+}) {
   const {
     demoBlockTag = '--demo',
     demoCompoentPrefix = 'DemoBlock',
@@ -63,4 +63,4 @@ export const mdDemoPlugin = (options?: {
       </${demoCompoentPrefix}>`;
     };
   };
-};
+}

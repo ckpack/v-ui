@@ -15,13 +15,13 @@ const rules = {
   email: { type: 'email' },
 };
 
-const validate = () => {
+function validate() {
   formRef.value?.validate();
-};
+}
 
-const clearValidate = () => {
+function clearValidate() {
   formRef.value?.clearValidate();
-};
+}
 
 const handlerValidate = (...args: any[]) => console.log(args);
 </script>

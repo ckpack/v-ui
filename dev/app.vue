@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useCompoents } from './hooks/use-compoents';
-const { compoents, name } = useCompoents('form');
+
+const { compoents, name } = useCompoents('config-provider-base');
 </script>
 
 <template>

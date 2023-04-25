@@ -1,7 +1,7 @@
 import { getCurrentInstance, useCssVars as vueUseCssVars } from 'vue';
 import { injectGlobal } from '@emotion/css';
 
-export const useCssVars = (getter: (ctx?: any) => Record<string, string>) => {
+export function useCssVars(getter: (ctx?: any) => Record<string, string>) {
   if (getCurrentInstance()) { vueUseCssVars(getter); }
   else {
     const vars = getter();
@@ -12,4 +12,4 @@ export const useCssVars = (getter: (ctx?: any) => Record<string, string>) => {
       }, {} as Record<string, string>),
     });
   }
-};
+}

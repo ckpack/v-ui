@@ -23,8 +23,8 @@ defineOptions({
   name: 'Button',
 });
 
-const IV = inject(buttonInjectionKey);
-const buttonClass = IV && computed(() => {
+const IV = inject(buttonInjectionKey)!;
+const buttonClass = computed(() => {
   const { hashId, ns } = IV;
   return [
     hashId,

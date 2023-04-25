@@ -2,7 +2,7 @@ import { css } from '@emotion/css';
 import type { InjectionKey } from 'vue';
 import { useNamespace } from '@/hooks';
 
-export const formTheme = () => {
+export function formTheme() {
   const ns = useNamespace('form');
 
   const base = ns.b();
@@ -14,6 +14,6 @@ export const formTheme = () => {
     ns,
     hashId,
   };
-};
+}
 
 export const formInjectionKey: InjectionKey<ReturnType<typeof formTheme>> = Symbol('formInjectionKey');

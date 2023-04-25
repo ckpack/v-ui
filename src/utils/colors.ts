@@ -1,6 +1,6 @@
 import { generate } from '@ant-design/colors';
 
-export const generateColors = (colors: any) => {
+export function generateColors(colors: any) {
   const res: any = {};
   for (const key in colors) {
     const color: string[] = Array.isArray(colors[key]) ? colors[key] : generate(colors[key]);
@@ -14,4 +14,4 @@ export const generateColors = (colors: any) => {
     }, res);
   }
   return res;
-};
+}

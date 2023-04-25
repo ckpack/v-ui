@@ -69,8 +69,8 @@ defineExpose({
   removeField,
 });
 
-const IV = inject(formInjectionKey);
-const formClass = IV && computed(() => {
+const IV = inject(formInjectionKey)!;
+const formClass = computed(() => {
   const { hashId, ns } = IV;
   return [
     hashId,

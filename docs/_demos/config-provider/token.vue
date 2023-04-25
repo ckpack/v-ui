@@ -7,9 +7,9 @@ const token = reactive({
   },
 });
 
-const changeColor = () => {
+function changeColor() {
   token.color.primary = token.color.primary === '#14C9C9' ? '#8b5cf6' : '#14C9C9';
-};
+}
 </script>
 
 <template>

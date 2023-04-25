@@ -24,9 +24,9 @@ defineOptions({
 
 const slots: any = useSlots();
 
-const IV = inject(spaceInjectionKey);
+const IV = inject(spaceInjectionKey)!;
 
-const spaceClass = IV && computed(() => {
+const spaceClass = computed(() => {
   const { hashId, ns } = IV;
 
   const { size } = props;
@@ -37,7 +37,7 @@ const spaceClass = IV && computed(() => {
   ];
 });
 
-const spaceStyle = IV && computed(() => {
+const spaceStyle = computed(() => {
   const { ns } = IV;
   const { size, wrap, direction, alignItems, fill } = props;
   return {
