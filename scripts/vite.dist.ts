@@ -1,10 +1,9 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import DefineOptions from 'unplugin-vue-define-options/dist/vite';
 import { alias, baseExternal, globals, name } from './vite-common';
 
 export default defineConfig({
-  plugins: [vue(), DefineOptions()],
+  plugins: [vue()],
   define: {
     'process.env.NODE_ENV': '"production"', // https://vitejs.dev/config/shared-options.html#define
     'preventAssignment': true,

@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import dtsPlugin from 'vite-plugin-dts';
-import DefineOptions from 'unplugin-vue-define-options/dist/vite';
 import { alias, external } from './vite-common';
 
 const preserveModulesRoot = 'src';
@@ -10,7 +9,7 @@ export default defineConfig({
     skipDiagnostics: false,
     cleanVueFileName: true,
     exclude: ['node_modules', 'types.d.ts'],
-  }), vue(), DefineOptions()],
+  }), vue()],
   build: {
     target: 'esnext',
     outDir: 'es',

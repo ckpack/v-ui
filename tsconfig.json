@@ -5,7 +5,6 @@
     "moduleResolution": "node",
     "module": "ESNext",
     "declaration": true,
-    "types": ["unplugin-vue-define-options/macros-global"],
     "paths": {
       "@/*": [
         "src/*"

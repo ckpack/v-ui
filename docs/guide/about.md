@@ -46,4 +46,4 @@ npm run docs:serve
 `@ant-design/colors`、 `@emotion/css`
 ### devDependencies
 
-`@antfu/eslint-config`、 `@commitlint/cli`、 `@commitlint/config-conventional`、 `@vitejs/plugin-vue`、 `@vue/tsconfig`、 `eslint`、 `fast-glob`、 `husky`、 `lint-staged`、 `standard-version`、 `tsx`、 `typescript`、 `unplugin-vue-define-options`、 `vite`、 `vite-plugin-dts`、 `vitepress`、 `vue`
+`@antfu/eslint-config`、 `@commitlint/cli`、 `@commitlint/config-conventional`、 `@vitejs/plugin-vue`、 `@vue/tsconfig`、 `eslint`、 `fast-glob`、 `husky`、 `lint-staged`、 `standard-version`、 `tsx`、 `typescript`、 `vite`、 `vite-plugin-dts`、 `vitepress`、 `vue`

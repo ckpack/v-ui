@@ -15,7 +15,7 @@ export function useProvideConfig(config: any, app?: App, global = false) {
     return deepMerge(oldConfig, config);
   });
 
-  (app?.provide || provide)(configInjectionKey, context);
+  (app?.provide as any || provide)(configInjectionKey, context);
   if (global || !globalConfig.value) {
     globalConfig.value = context.value;
   }

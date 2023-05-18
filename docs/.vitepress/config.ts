@@ -1,5 +1,4 @@
 import { defineConfig } from 'vitepress';
-import DefineOptions from 'unplugin-vue-define-options/vite';
 import { author, description, license, name, repository } from '../../package.json';
 import { alias } from '../../scripts/vite-common';
 import { getNav, getSidebar } from './nav.js';
@@ -7,7 +6,6 @@ import { mdDemoPlugin } from './plugins';
 
 export default defineConfig({
   vite: {
-    plugins: [DefineOptions()],
     resolve: {
       alias: {
         ...alias,
