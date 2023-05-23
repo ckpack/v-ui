@@ -1,18 +1,12 @@
 <script setup lang="ts">
 import { computed, inject } from 'vue';
+import type { ButtonProps } from './types';
+
+// import type { ButtonProps } from '@/components/button/types';
 import { buttonInjectionKey } from '@/themes';
 import { useSize } from '@/hooks';
-import type { ComponentSize, ComponentTheme } from '@/constants';
 
-const props = withDefaults(defineProps<{
-  size?: ComponentSize
-  round?: boolean
-  disabled?: boolean
-  text?: boolean
-  outlined?: boolean
-  raised?: boolean
-  theme?: ComponentTheme
-}>(), {
+const props = withDefaults(defineProps<ButtonProps>(), {
   theme: 'default',
   text: false,
   outlined: false,

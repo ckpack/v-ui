@@ -6,9 +6,7 @@ import { alias, external } from './vite-common';
 const preserveModulesRoot = 'src';
 export default defineConfig({
   plugins: [dtsPlugin({
-    skipDiagnostics: false,
-    cleanVueFileName: true,
-    exclude: ['node_modules', 'types.d.ts'],
+    exclude: ['node_modules', 'components.d.ts'],
   }), vue()],
   build: {
     target: 'esnext',
