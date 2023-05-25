@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { computed, inject } from 'vue';
-import type { ButtonProps } from './types';
 
-// import type { ButtonProps } from '@/components/button/types';
+// import type { ButtonProps } from './types';
+import type { ButtonProps } from '@/components/button/types';
 import { buttonInjectionKey } from '@/themes';
 import { useSize } from '@/hooks';
 

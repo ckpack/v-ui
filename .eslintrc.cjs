@@ -9,5 +9,7 @@ module.exports = {
     'semi': 'off',
     '@typescript-eslint/semi': ['error', 'always'],
     'vue/no-reserved-component-names': 0,
+    'antfu/no-cjs-exports': 0,
+    'antfu/no-ts-export-equal': 0,
   },
 };

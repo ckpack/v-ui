@@ -35,7 +35,7 @@
     "components.d.ts"
   ],
   "scripts": {
-    "husky": "husky install",
+    "postinstall": "npx simple-git-hooks",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.md --fix --ignore-path .gitignore",
     "release": "standard-version",
     "dev": "vite -c ./dev/vite.config.ts",
@@ -56,21 +56,19 @@
     "async-validator": "^4.2.5"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "0.38.6",
-    "@commitlint/cli": "^17.6.3",
-    "@commitlint/config-conventional": "^17.6.3",
+    "@antfu/eslint-config": "0.39.3",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vue/tsconfig": "^0.4.0",
-    "eslint": "^8.40.0",
+    "eslint": "^8.41.0",
     "fast-glob": "^3.2.12",
-    "husky": "^8.0.3",
+    "simple-git-hooks": "^2.8.1",
     "lint-staged": "^13.2.2",
     "standard-version": "^9.5.0",
     "tsx": "^3.12.7",
     "typescript": "5.0.4",
-    "vite": "^4.3.7",
+    "vite": "^4.3.8",
     "vite-plugin-dts": "2.3.0",
-    "vitepress": "1.0.0-alpha.75",
+    "vitepress": "1.0.0-beta.1",
     "vue": "^3.3.4"
   },
   "peerDependencies": {
@@ -78,6 +76,10 @@
   },
   "engines": {
     "node": ">=16"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged",
+    "commit-msg": "tsx scripts/verify-commit.ts"
   },
   "lint-staged": {
     "*.{js,ts,mjs,cjs,tsx,jsx,vue}": [
