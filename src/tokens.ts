@@ -6,7 +6,7 @@ export type trigger = 'blur' | 'change';
 
 export type Validate = (trigger?: trigger, options?: ValidateOption) => Promise<ValidateError[] | undefined>;
 
-export type Arrayable<T> = T | T[]
+export type Arrayable<T> = T | T[];
 
 export interface FormItemRule extends RuleItem {
   trigger?: trigger
