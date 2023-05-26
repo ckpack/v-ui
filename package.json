@@ -79,7 +79,7 @@
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged --allow-empty",
-    "commit-msg": "npm run build"
+    "commit-msg": "npx tsx scripts/verify-commit.ts"
   },
   "lint-staged": {
     "*.{js,ts,mjs,cjs,tsx,jsx,vue}": [
