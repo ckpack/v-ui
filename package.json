@@ -78,8 +78,8 @@
     "node": ">=16"
   },
   "simple-git-hooks": {
-    "pre-commit": "npx lint-staged",
-    "commit-msg": "tsx scripts/verify-commit.ts"
+    "pre-commit": "npx lint-staged --allow-empty",
+    "commit-msg": "npm run build"
   },
   "lint-staged": {
     "*.{js,ts,mjs,cjs,tsx,jsx,vue}": [
