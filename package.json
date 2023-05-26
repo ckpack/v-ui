@@ -78,7 +78,7 @@
     "node": ">=16"
   },
   "simple-git-hooks": {
-    "pre-commit": "npx lint-staged --allow-empty",
+    "pre-commit": "npx lint-staged",
     "commit-msg": "npx tsx scripts/verify-commit.ts"
   },
   "lint-staged": {
