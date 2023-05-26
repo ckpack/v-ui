@@ -35,7 +35,7 @@
     "components.d.ts"
   ],
   "scripts": {
-    "g": "npx simple-git-hooks",
+    "preinstall": "npx simple-git-hooks",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.md --fix --ignore-path .gitignore",
     "release": "standard-version",
     "dev": "vite -c ./dev/vite.config.ts",
