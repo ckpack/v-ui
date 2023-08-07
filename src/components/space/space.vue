@@ -4,6 +4,11 @@ import { isBoolean } from '@/utils';
 import { spaceInjectionKey } from '@/themes';
 import { useSize, useSizeValue } from '@/hooks';
 
+defineOptions({
+  name: 'Space',
+  inheritAttrs: false,
+});
+
 const props = withDefaults(defineProps<{
   alignItems?: 'stretch' | 'center' | 'start' | 'end' | 'normal'
   direction?: 'row' | 'column'
@@ -15,11 +20,6 @@ const props = withDefaults(defineProps<{
   direction: 'row',
   wrap: false,
   fill: false,
-});
-
-defineOptions({
-  name: 'Space',
-  inheritAttrs: false,
 });
 
 const slots: any = useSlots();

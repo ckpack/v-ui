@@ -1,5 +1,6 @@
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
+import process from 'node:process';
 
 const msgPath = path.resolve('.git/COMMIT_EDITMSG');
 const msg = readFileSync(msgPath, 'utf-8').trim();

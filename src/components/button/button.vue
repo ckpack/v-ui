@@ -6,15 +6,15 @@ import type { ButtonProps } from '@/components/button/types';
 import { buttonInjectionKey } from '@/themes';
 import { useSize } from '@/hooks';
 
+defineOptions({
+  name: 'Button',
+});
+
 const props = withDefaults(defineProps<ButtonProps>(), {
   theme: 'default',
   text: false,
   outlined: false,
   raised: false,
-});
-
-defineOptions({
-  name: 'Button',
 });
 
 const IV = inject(buttonInjectionKey)!;

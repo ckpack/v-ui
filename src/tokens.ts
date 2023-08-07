@@ -16,15 +16,15 @@ export type FormRules = Record< string, FormItemRules>;
 
 export type FormContext = FormProps & {
   emit: SetupContext<['validate']>['emit']
-  validate: Function
-  clearValidate: Function
+  validate: () => void
+  clearValidate: () => void
   addField: (field: FormItemContext) => void
   removeField: (field: FormItemContext) => void
 };
 export type FormItemContext = FormItemProps & {
   validationErrors: undefined | ValidateError[]
   validate: Validate
-  clearValidate: Function
+  clearValidate: () => void
 };
 export const formContextKey: InjectionKey<FormContext> = Symbol('formContextKey');
 export const formItemContextKey: InjectionKey<FormItemContext> = Symbol('formItemContextKey');

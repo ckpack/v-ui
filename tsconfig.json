@@ -2,8 +2,8 @@
   "extends": "@vue/tsconfig/tsconfig.json",
   "compilerOptions": {
     "ignoreDeprecations": "5.0",
-    "moduleResolution": "node",
     "module": "ESNext",
+    "moduleResolution": "Node16",
     "declaration": true,
     "paths": {
       "@/*": [

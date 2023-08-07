@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue';
+import ReplWrapper from './repl-wrapper.vue';
 
 const props = defineProps({
   description: {
@@ -14,19 +15,18 @@ const props = defineProps({
     type: String,
     default: '',
   },
-  demo: {
-    type: Object,
-    default: () => {},
-  },
 });
 
-const isShowCode = ref(false);
-
+const replWrapperRef = ref();
 const description = computed(() => decodeURIComponent(props.description));
 const code = computed(() => decodeURIComponent(props.code));
 const editLink = computed(() => decodeURIComponent(props.editLink));
 
 const openlink = (url: string) => window.open(url);
+
+function reset() {
+  replWrapperRef?.value.setAppFile(decodeURIComponent(props.code));
+}
 </script>
 
 <template>
@@ -36,19 +36,13 @@ const openlink = (url: string) => window.open(url);
         {{ description }}
       </slot>
     </div>
-    <div v-if="demo" class="preview">
-      <slot name="preview" :compoent="demo">
-        <component :is="demo" />
-      </slot>
-    </div>
     <div class="control">
       <button
-        class="control-btn" :class="[{
-          'control-btn-active': isShowCode,
-        }]"
-        @click="isShowCode = !isShowCode"
+        v-if="editLink"
+        class="control-btn"
+        @click="reset"
       >
-        {{ '</>' }}
+        Reset
       </button>
       <button
         v-if="editLink"
@@ -58,16 +52,9 @@ const openlink = (url: string) => window.open(url);
         Edit
       </button>
     </div>
-    <div
-      v-show="isShowCode && code"
-      class="code"
-    >
-      <slot name="code" :code="code">
-        <pre>
-          <code>{{ code }}</code>
-        </pre>
-      </slot>
-    </div>
+    <slot name="code">
+      <ReplWrapper ref="replWrapperRef" :code="code" />
+    </slot>
   </div>
 </template>
 
@@ -81,19 +68,12 @@ const openlink = (url: string) => window.open(url);
   font-weight: bolder;
 }
 
-.demo-block .preview {
-  overflow: auto;
-  margin-top: 12px;
-  padding: 16px;
-}
-
 .demo-block .control {
   display: flex;
   flex-direction: row-reverse;
-}
-
-.demo-block .code {
-  padding: 16px;
+  position: absolute;
+  z-index: 9999;
+  right: 0;
 }
 
 .demo-block .control-btn {

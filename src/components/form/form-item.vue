@@ -6,6 +6,10 @@ import type { FormItemContext, FormItemRules, Validate, trigger } from '@/tokens
 import { formContextKey, formItemContextKey } from '@/tokens';
 import { toArray } from '@/utils';
 
+defineOptions({
+  name: 'FormItem',
+});
+
 const props = withDefaults(defineProps<{
   label?: string
   for?: string
@@ -13,7 +17,7 @@ const props = withDefaults(defineProps<{
   help?: string
   status?: string
   rules?: FormItemRules
-  validator?: Function
+  validator?: () => void
   error?: string
   required?: boolean
   labelWidth?: string
@@ -24,10 +28,6 @@ const props = withDefaults(defineProps<{
   required: undefined,
   showErrorMessage: true,
   showRequireMark: true,
-});
-
-defineOptions({
-  name: 'FormItem',
 });
 
 const formContext = inject(formContextKey);

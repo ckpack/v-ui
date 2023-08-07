@@ -59,7 +59,7 @@ export function deepMerge<t = any>(target: any = {}, source: any): t {
   return target;
 }
 
-export function toArray<T extends Object>(v?: T | T[]) {
+export function toArray<T extends object>(v?: T | T[]) {
   if (Array.isArray(v)) { return v; }
   return v ? [v] : [];
 }

@@ -2,6 +2,10 @@
 import { type StyleValue, computed, inject } from 'vue';
 import { iconInjectionKey } from '@/themes';
 
+defineOptions({
+  name: 'Icon',
+});
+
 const props = withDefaults(defineProps<{
   size?: string
   svg: string
@@ -13,10 +17,6 @@ const props = withDefaults(defineProps<{
 }>(), {
   color: 'inherit',
   rotate: 0,
-});
-
-defineOptions({
-  name: 'Icon',
 });
 
 const IV = inject(iconInjectionKey)!;

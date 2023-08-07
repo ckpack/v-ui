@@ -30,14 +30,16 @@ export function mdDemoPlugin(options?: {
         return defaultFenceRender(tokens, idx, options, env, self);
       }
 
+      const [tokenSrc] = token.src;
+
       // 隐藏 nextToken
       nextToken.hidden = true;
       nextToken.children = [];
 
       const description = nextToken.content.slice(demoBlockTag.length);
-      const code = fs.readFileSync(token.src).toString();
+      const code = fs.readFileSync(tokenSrc).toString();
       const encodeCode = encodeURIComponent(code);
-      const encodeEditLint = editLink && encodeURIComponent(token.src.replace(base, editLink));
+      const encodeEditLint = editLink && encodeURIComponent(tokenSrc.replace(base, editLink));
       const compoentName = `${demoCompoentPrefix}_${compoentIndex += 1}`;
 
       const scriptSetup = env.sfcBlocks.scriptSetup || {
@@ -50,17 +52,13 @@ export function mdDemoPlugin(options?: {
       if (!`${scriptSetup.contentStripped}`.includes(demoCompoentPrefix)) {
         scriptSetup.contentStripped += `import ${demoCompoentPrefix} from '${compoentPath}';\n`;
       }
-      scriptSetup.contentStripped += `import ${compoentName} from '${token.src}';\n`;
+      scriptSetup.contentStripped += `import ${compoentName} from '${tokenSrc}';\n`;
       scriptSetup.content = `${scriptSetup.tagOpen}${scriptSetup.contentStripped}${scriptSetup.tagClose}`;
       env.sfcBlocks.scriptSetup = scriptSetup;
       env.sfcBlocks.scripts = [scriptSetup];
 
       return `${md.render(description)}
-      <${demoCompoentPrefix} code="${encodeCode}" :demo="${compoentName}" edit-link="${encodeEditLint}">
-        <template #code>
-          ${defaultFenceRender(tokens, idx, options, env, self)}
-        </template>
-      </${demoCompoentPrefix}>`;
+      <${demoCompoentPrefix} code="${encodeCode}" demo="${compoentName}" edit-link="${encodeEditLint}" />`;
     };
   };
 }

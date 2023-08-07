@@ -3,6 +3,10 @@ import { computed, inject, watch } from 'vue';
 import { inputInjectionKey } from '@/themes';
 import { formItemContextKey } from '@/tokens';
 
+defineOptions({
+  name: 'Input',
+});
+
 const props = defineProps<{
   modelValue?: string | number
 }>();
@@ -12,10 +16,6 @@ const formItemContext = inject(formItemContextKey);
 
 watch(() => props.modelValue, () => {
   formItemContext?.validate('change');
-});
-
-defineOptions({
-  name: 'Input',
 });
 
 function handlerInput(event: Event) {

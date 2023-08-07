@@ -4,6 +4,10 @@ import { useProvideConfig } from '@/hooks';
 import ThemeProvider from '@/components/theme-provider';
 import type { ComponentSize } from '@/constants';
 
+defineOptions({
+  name: 'ConfigProvider',
+});
+
 const props = defineProps<{
   size?: ComponentSize
   prefixCls?: string
@@ -11,10 +15,6 @@ const props = defineProps<{
   themes?: Record<symbol, any>
   locale?: any
 }>();
-
-defineOptions({
-  name: 'ConfigProvider',
-});
 
 useProvideConfig(props);
 </script>

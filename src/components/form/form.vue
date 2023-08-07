@@ -4,6 +4,10 @@ import { formInjectionKey } from '@/themes';
 import type { FormContext, FormItemContext, FormRules } from '@/tokens';
 import { formContextKey } from '@/tokens';
 
+defineOptions({
+  name: 'Form',
+});
+
 const props = withDefaults(defineProps<{
   labelSuffix?: string
   model?: Record<string, any>
@@ -13,10 +17,6 @@ const props = withDefaults(defineProps<{
 });
 
 const emit = defineEmits(['reset', 'validate']);
-
-defineOptions({
-  name: 'Form',
-});
 
 const fields = ref<FormItemContext[]>([]);
 

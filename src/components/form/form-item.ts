@@ -7,7 +7,7 @@ export interface FormItemProps {
   help?: string
   status?: string
   rules?: FormItemRules
-  validator?: Function
+  validator?: () => void
   error?: string
   required?: boolean
   labelWidth?: string
