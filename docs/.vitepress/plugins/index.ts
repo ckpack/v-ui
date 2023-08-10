@@ -57,8 +57,15 @@ export function mdDemoPlugin(options?: {
       env.sfcBlocks.scriptSetup = scriptSetup;
       env.sfcBlocks.scripts = [scriptSetup];
 
+      // return `${md.render(description)}
+      // <${demoCompoentPrefix} code="${encodeCode}" demo="${compoentName}" edit-link="${encodeEditLint}" />`;
+
       return `${md.render(description)}
-      <${demoCompoentPrefix} code="${encodeCode}" demo="${compoentName}" edit-link="${encodeEditLint}" />`;
+      <${demoCompoentPrefix} code="${encodeCode}" :demo="${compoentName}" edit-link="${encodeEditLint}">
+        <template #code>
+          ${defaultFenceRender(tokens, idx, options, env, self)}
+        </template>
+      </${demoCompoentPrefix}>`;
     };
   };
 }

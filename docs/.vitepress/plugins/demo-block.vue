@@ -1,6 +1,6 @@
-<script setup lang="ts">
+<script setup>
 import { computed, ref } from 'vue';
-import ReplWrapper from './repl-wrapper.vue';
+import { ReplStore } from '@vue/repl';
 
 const props = defineProps({
   description: {
@@ -15,18 +15,21 @@ const props = defineProps({
     type: String,
     default: '',
   },
+  demo: {
+    type: Object,
+    default: () => {},
+  },
 });
 
-const replWrapperRef = ref();
+const isShowCode = ref(false);
 const description = computed(() => decodeURIComponent(props.description));
 const code = computed(() => decodeURIComponent(props.code));
 const editLink = computed(() => decodeURIComponent(props.editLink));
 
-const openlink = (url: string) => window.open(url);
+const openlink = url => window.open(url);
 
-function reset() {
-  replWrapperRef?.value.setAppFile(decodeURIComponent(props.code));
-}
+const store = new ReplStore();
+store.setFiles({ 'src/App.vue': decodeURIComponent(code.value) });
 </script>
 
 <template>
@@ -36,31 +39,39 @@ function reset() {
         {{ description }}
       </slot>
     </div>
-    <div class="control">
-      <button
-        v-if="editLink"
-        class="control-btn"
-        @click="reset"
-      >
-        Reset
-      </button>
-      <button
-        v-if="editLink"
-        class="control-btn"
-        @click="openlink(editLink)"
-      >
-        Edit
-      </button>
+    <div v-if="demo" class="preview">
+      <slot name="preview" :compoent="demo">
+        <component :is="demo" />
+      </slot>
     </div>
-    <slot name="code">
-      <ReplWrapper ref="replWrapperRef" :code="code" />
-    </slot>
+    <button
+      class="control-btn" :style="{
+        color: isShowCode ? 'var(--vp-c-brand)' : 'var(--vp-c-text-2)',
+      }" @click="isShowCode = !isShowCode"
+    >
+      {{ '</>' }}
+    </button>
+    <button v-if="editLink" class="control-btn" @click="openlink(editLink)">
+      Edit
+    </button>
+    <button class="control-btn" @click="openlink(`/v-ui/play${store.serialize()}`)">
+      Playground
+    </button>
+
+    <div v-show="isShowCode && code">
+      <slot name="code">
+        <pre>
+          <code>{{ code }}</code>
+        </pre>
+      </slot>
+    </div>
   </div>
 </template>
 
 <style scoped>
 .demo-block {
   border: 1px solid var(--vp-c-divider-light);
+  text-align: right;
 }
 
 .demo-block .description {
