@@ -1,3 +1,6 @@
-/* .vp-doc div[class*='language-'] {
-  margin: 0;
-} */
+:root {
+  --vp-c-brand: #8b5cf6;
+  --vp-c-brand-light: #6842cf;
+  --vp-button-brand-bg: var(--vp-c-brand);
+  --vp-button-brand-hover-bg: var(--vp-c-brand-light);
+}
