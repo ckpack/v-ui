@@ -74,8 +74,8 @@ export function getNav(lang = '') {
       activeMatch: `^${lang}/compoents`,
     }, {
       text: t('playground'),
-      link: '/play',
-      activeMatch: '/play',
+      link: `${lang}/play`,
+      activeMatch: `^${lang}/play`,
     }, {
       text: t('changelog'),
       link: `${lang}/CHANGELOG`,
