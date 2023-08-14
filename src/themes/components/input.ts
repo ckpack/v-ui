@@ -25,6 +25,11 @@ export function inputTheme() {
     '& input': {
       width: '100%',
       height: '100%',
+      padding: 0,
+      margin: 0,
+      boxSizing: 'border-box',
+      border: 0,
+      outline: 0,
     },
     [`&.${ns.is('focus')}`]: {
       [ns.v('border-color')]: ns.vb('color', 'primary'),
