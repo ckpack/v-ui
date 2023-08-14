@@ -44,19 +44,21 @@ store.setFiles({ 'src/App.vue': decodeURIComponent(code.value) });
         <component :is="demo" />
       </slot>
     </div>
-    <button
-      class="control-btn" :style="{
-        color: isShowCode ? 'var(--vp-c-brand)' : 'var(--vp-c-text-2)',
-      }" @click="isShowCode = !isShowCode"
-    >
-      {{ '</>' }}
-    </button>
-    <button v-if="editLink" class="control-btn" @click="openlink(editLink)">
-      Edit
-    </button>
-    <button class="control-btn" @click="openlink(`/v-ui/play${store.serialize()}`)">
-      Playground
-    </button>
+    <div class="control-btn-wrapper">
+      <button
+        class="control-btn" :style="{
+          color: isShowCode ? 'var(--vp-c-brand)' : 'var(--vp-c-text-2)',
+        }" @click="isShowCode = !isShowCode"
+      >
+        {{ '</>' }}
+      </button>
+      <button v-if="editLink" class="control-btn" @click="openlink(editLink)">
+        Edit
+      </button>
+      <button class="control-btn" @click="openlink(`/v-ui/play${store.serialize()}`)">
+        Playground
+      </button>
+    </div>
 
     <div v-show="isShowCode && code">
       <slot name="code">
@@ -71,7 +73,6 @@ store.setFiles({ 'src/App.vue': decodeURIComponent(code.value) });
 <style scoped>
 .demo-block {
   border: 1px solid var(--vp-c-divider-light);
-  text-align: right;
 }
 
 .demo-block .description {
@@ -79,12 +80,8 @@ store.setFiles({ 'src/App.vue': decodeURIComponent(code.value) });
   font-weight: bolder;
 }
 
-.demo-block .control {
-  display: flex;
-  flex-direction: row-reverse;
-  position: absolute;
-  z-index: 9999;
-  right: 0;
+.demo-block .control-btn-wrapper {
+  text-align: right;
 }
 
 .demo-block .control-btn {

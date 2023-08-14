@@ -2,6 +2,77 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.12.1](https://github.com/ckpack/v-ui/compare/v1.12.0...v1.12.1) (2023-08-14)
+
+
+### Bug Fixes
+
+* input ([f759fde](https://github.com/ckpack/v-ui/commit/f759fdea520145543d97e3c516cf68527f4b5b5b))
+
+## [1.12.0](https://github.com/ckpack/v-ui/compare/v1.11.0...v1.12.0) (2023-08-14)
+
+
+### Features
+
+* delete unplugin-vue-define-options ([b1e9208](https://github.com/ckpack/v-ui/commit/b1e9208b6a001b987f831dbfc2cf6e224a5910ab))
+* input ([5caed19](https://github.com/ckpack/v-ui/commit/5caed192da9de60ee7f68ce7f018a355d91031a9))
+* type ([4fcd86f](https://github.com/ckpack/v-ui/commit/4fcd86fa2fdbd548b95371b31190a5a447102441))
+* type ([7ebe915](https://github.com/ckpack/v-ui/commit/7ebe91595525d7721d7862ebe10bd992bdcbbf9c))
+* type ([a413ac5](https://github.com/ckpack/v-ui/commit/a413ac5ef6cfdb7288d2a3aa288ae1787c2aad49))
+* update ([bde9409](https://github.com/ckpack/v-ui/commit/bde940946a3300778334e3dacb3c724f75e51555))
+* update ([b20ae5a](https://github.com/ckpack/v-ui/commit/b20ae5a9382c163955d8cc490a45d0dde7d7f41b))
+* update ([aef2ad9](https://github.com/ckpack/v-ui/commit/aef2ad9ca3052e01c8bb50ad94ed305afba26790))
+* update dev version ([d1474ac](https://github.com/ckpack/v-ui/commit/d1474ac01ba64016b1d411eabf1be9b4b49712d8))
+* update scripts ([d97ae89](https://github.com/ckpack/v-ui/commit/d97ae898aa5c22fed9b7e4ec30fd1835e03a9b08))
+* 优化事件触发顺序 ([0309508](https://github.com/ckpack/v-ui/commit/0309508e050e53302fd03ee0913f9aeec873d841))
+* 优化图标组件 ([c9b48bb](https://github.com/ckpack/v-ui/commit/c9b48bbb0116c183590f969b4d9f83e90966471e))
+* 优化类型 ([0fcf472](https://github.com/ckpack/v-ui/commit/0fcf4727d4bd6ab4cbf30e8f90f8bb30589bdf78))
+* 优化预览方案 ([4c46728](https://github.com/ckpack/v-ui/commit/4c46728e20fdbc9737acda94bd50a45bb76cdc50))
+* 使用vite自带的define替换@rollup/plugin-replace ([0e64e03](https://github.com/ckpack/v-ui/commit/0e64e03210d79436813fa8277c22c9f98f29d0e8))
+* 更新vite版本 ([71604f1](https://github.com/ckpack/v-ui/commit/71604f179def8c3a52e62c1034627f0cba76c416))
+* 更新依赖 ([b1f4cad](https://github.com/ckpack/v-ui/commit/b1f4cad216e427a71bcc5ecbcf282e019ff9ff12))
+* 更新依赖 ([95d94a0](https://github.com/ckpack/v-ui/commit/95d94a0d11e283716a9a4c6382d712e45a9da720))
+* 更新依赖 ([714741a](https://github.com/ckpack/v-ui/commit/714741ae60475fa7435b9387d6646179001f788f))
+* 更新依赖 ([a6d8f2e](https://github.com/ckpack/v-ui/commit/a6d8f2ece1b26428931a585c3d1a1d598b876ae8))
+* 更新依赖 ([e6d0575](https://github.com/ckpack/v-ui/commit/e6d0575412488898514b0d2ea272915580337727))
+* 更新依赖 ([a62c11b](https://github.com/ckpack/v-ui/commit/a62c11bda4f387f725dcd8969da5dd3895a837c9))
+* 更新依赖 ([58a3f69](https://github.com/ckpack/v-ui/commit/58a3f692f60d7778fef132a132231a99178e31f6))
+* 更新依赖 ([31dd50b](https://github.com/ckpack/v-ui/commit/31dd50b67c5c2f3ad24b3e73b6f554d761ea4580))
+* 更新依赖 ([2cf4782](https://github.com/ckpack/v-ui/commit/2cf47826a0e587c3aaaf8d75742cf9c1dbb165eb))
+* 更新依赖 ([64ce055](https://github.com/ckpack/v-ui/commit/64ce0557a969f8881aa0e4378466eccb9d14e0bc))
+* 更新依赖 ([4498d9b](https://github.com/ckpack/v-ui/commit/4498d9bec5e370b656e5fff4546a3e57b9cbf5ae))
+* 更新依赖 ([876e528](https://github.com/ckpack/v-ui/commit/876e528f196580153536e25a0770004199ace81d))
+* 更新依赖库 ([9c84973](https://github.com/ckpack/v-ui/commit/9c849730d4f0592b93e55302290902bd6fa55fef))
+* 更新依赖库 ([d4a74e4](https://github.com/ckpack/v-ui/commit/d4a74e42559af21d5c42e39823d9fedf618fadc1))
+* 更新依赖库 ([5705c12](https://github.com/ckpack/v-ui/commit/5705c1268a82469f3aff208956f45a2e7c2318cd))
+* 更新依赖库 ([109b835](https://github.com/ckpack/v-ui/commit/109b8356d09baf73847e4b25220c3da6c7f9414a))
+* 更新依赖库 ([f1c039a](https://github.com/ckpack/v-ui/commit/f1c039a358c0b8b73aeacbb91f761a6a7d03b4a7))
+* 更新依赖库 ([2669d22](https://github.com/ckpack/v-ui/commit/2669d22fdb14a601727bf3c65fc0ef8ffc7a5e96))
+* 更新依赖库 ([8ea8d2c](https://github.com/ckpack/v-ui/commit/8ea8d2c2139819a883b01a95592c1765a7974d35))
+* 更新版本 ([dc4b167](https://github.com/ckpack/v-ui/commit/dc4b1677ec691806b2a23e1d19ceafa21b758e26))
+* 测试导出类型 ([774b5f4](https://github.com/ckpack/v-ui/commit/774b5f479a82eef1123eb2dc99931d2acf0adcbb))
+* 添加input组件 ([c290ddc](https://github.com/ckpack/v-ui/commit/c290ddc245295ff1f54bfdb564f9a3e8690cb398))
+* 添加表单类组件 ([47af0f1](https://github.com/ckpack/v-ui/commit/47af0f1cb570b0e411428e22718dbfc983726644))
+
+
+### Test
+
+* test ([5dc0eb5](https://github.com/ckpack/v-ui/commit/5dc0eb5715bae068944913a113838c7fdac49c73))
+* test ([665ac32](https://github.com/ckpack/v-ui/commit/665ac32690df217573cca4213792af6ba1e4b50d))
+
+
+### Style
+
+* 更新主题 ([7701dc2](https://github.com/ckpack/v-ui/commit/7701dc23b0b429dc3bd7c7abd383537dc0718766))
+
+
+### Docs
+
+* update ([53efbb5](https://github.com/ckpack/v-ui/commit/53efbb54c8c82c9f6dd9bc0088525f4918768674))
+* update docs ([2cd21cc](https://github.com/ckpack/v-ui/commit/2cd21cc10061a00c318f8b70d5b8ce2fb6be50c7))
+* 文档添加多语言 ([df405db](https://github.com/ckpack/v-ui/commit/df405db77126ccbaa36e64a9f2cd35adffb24945))
+* 添加多色图标用例 ([bb753fd](https://github.com/ckpack/v-ui/commit/bb753fd3496994d81a6c2d4ed42cfb8e95a81eb7))
+
 ## [1.11.0](https://github.com/ckpack/v-ui/compare/v1.10.2...v1.11.0) (2022-12-29)
 
 
