@@ -37,7 +37,7 @@ watchEffect(() => history.replaceState({}, '', store.serialize()));
 // pre-set import map
 store.setImportMap({
   imports: {
-    '@ckpack/v-ui': 'https://cdn.jsdelivr.net/npm/@ckpack/v-ui/dist/v-ui.js',
+    '@ckpack/v-ui': 'https://cdn.jsdelivr.net/npm/@ckpack/v-ui@latest/dist/v-ui.js',
   },
 });
 
