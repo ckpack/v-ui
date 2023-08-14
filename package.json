@@ -56,19 +56,19 @@
     "async-validator": "^4.2.5"
   },
   "devDependencies": {
-    "@vue/repl": "^2.5.7",
-    "eslint": "^8.46.0",
+    "@vue/repl": "^2.5.8",
+    "eslint": "^8.47.0",
     "@antfu/eslint-config": "0.40.2",
     "tsx": "^3.12.7",
     "@types/node": "^18.x",
     "typescript": "5.1.6",
     "vite": "^4.4.9",
     "@vitejs/plugin-vue": "^4.2.3",
-    "vite-plugin-dts": "3.5.1",
+    "vite-plugin-dts": "3.5.2",
     "@vue/tsconfig": "^0.4.0",
     "fast-glob": "^3.3.1",
     "simple-git-hooks": "^2.9.0",
-    "lint-staged": "^13.2.3",
+    "lint-staged": "^14.0.0",
     "standard-version": "^9.5.0",
     "vitepress": "1.0.0-rc.4",
     "vue": "^3.3.4"
