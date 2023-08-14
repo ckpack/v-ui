@@ -50,7 +50,7 @@ const previewOptions = {
 </script>
 
 <template>
-  <Repl :store="store" :editor="CodeMirror" :show-compile-output="true" :preview-options="previewOptions" />
+  <Repl :store="store" :editor="CodeMirror" :clear-console="false" :show-compile-output="true" :preview-options="previewOptions" />
 </template>
 
 <style>

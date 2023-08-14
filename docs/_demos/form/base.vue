@@ -28,7 +28,7 @@ const handlerValidate = (...args: any[]) => console.log(args);
 
 <template>
   {{ form }}
-  <v-form ref="formRef" label-suffix=":" :model="form" :rules="rules as any" @validate="handlerValidate">
+  <v-form ref="formRef" label-suffix=":" :model="form" :rules="rules" @validate="handlerValidate">
     <v-form-item name="msg" label="msg" help="4-6位">
       <v-input v-model="form.msg" />
     </v-form-item>
