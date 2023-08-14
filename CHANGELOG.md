@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.12.1](https://github.com/ckpack/v-ui/compare/v1.12.0...v1.12.1) (2023-08-14)
+
+
+### Bug Fixes
+
+* input ([f759fde](https://github.com/ckpack/v-ui/commit/f759fdea520145543d97e3c516cf68527f4b5b5b))
+
 ## [1.12.0](https://github.com/ckpack/v-ui/compare/v1.11.0...v1.12.0) (2023-08-14)
 
 
