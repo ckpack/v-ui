@@ -5,3 +5,4 @@ cache
 dev/dist
 *timestamp-*
 docs/CHANGELOG.md
+docs/public/
