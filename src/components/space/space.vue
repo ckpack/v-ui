@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type StyleValue, computed, inject, useSlots } from 'vue';
+import { type StyleValue, computed, inject } from 'vue';
 import { isBoolean } from '@/utils';
 import { spaceInjectionKey } from '@/themes';
 import { useSize, useSizeValue } from '@/hooks';
@@ -21,8 +21,6 @@ const props = withDefaults(defineProps<{
   wrap: false,
   fill: false,
 });
-
-const slots: any = useSlots();
 
 const IV = inject(spaceInjectionKey)!;
 
@@ -52,6 +50,6 @@ const spaceStyle = computed(() => {
 
 <template>
   <div :class="spaceClass" :style="spaceStyle">
-    <component :is="() => slots.default()" />
+    <slot />
   </div>
 </template>
