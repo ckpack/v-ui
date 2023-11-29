@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.12.2](https://github.com/ckpack/v-ui/compare/v1.12.1...v1.12.2) (2023-11-29)
+
+
+### Features
+
+* public file ([eba0864](https://github.com/ckpack/v-ui/commit/eba0864c4d87f9be7be4c8268d9ac31fdb3a0971))
+* update eslint ([3f60329](https://github.com/ckpack/v-ui/commit/3f603298f63ea9c1b8f3c1c31f7edffb4c471722))
+* 更新依赖 ([ddd8d6b](https://github.com/ckpack/v-ui/commit/ddd8d6b8c23819117ce64dfaa63cb7cc3283f428))
+
+
+### Bug Fixes
+
+* lib url ([7566d78](https://github.com/ckpack/v-ui/commit/7566d7886c9cd4be19d4a7fddc7ec10d1461a40e))
+* slot ([c5aa301](https://github.com/ckpack/v-ui/commit/c5aa301c9f745266d2dd69ec48d960e387081672))
+* style updte ([d219abd](https://github.com/ckpack/v-ui/commit/d219abd29073243d4f99c1cafc52bf4c3e42cfdd))
+
 ### [1.12.1](https://github.com/ckpack/v-ui/compare/v1.12.0...v1.12.1) (2023-08-14)
 
 

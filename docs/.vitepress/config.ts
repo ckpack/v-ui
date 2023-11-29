@@ -25,6 +25,9 @@ export default defineConfig({
   },
   themeConfig: {
     outline: 'deep',
+    search: {
+      provider: 'local',
+    },
     socialLinks: [
       { icon: 'github', link: repository },
     ],
