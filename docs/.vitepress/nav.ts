@@ -68,15 +68,18 @@ export function getNav(lang = '') {
       text: t('guide'),
       link: `${lang}/guide/base/getting-started`,
       activeMatch: `^${lang}/guide`,
-    }, {
+    },
+    {
       text: t('compoents'),
       link: `${lang}/compoents/button`,
       activeMatch: `^${lang}/compoents`,
-    }, {
+    },
+    {
       text: t('playground'),
       link: `${lang}/play`,
       activeMatch: `^${lang}/play`,
-    }, {
+    },
+    {
       text: t('changelog'),
       link: `${lang}/CHANGELOG`,
       activeMatch: `^${lang}/CHANGELOG`,

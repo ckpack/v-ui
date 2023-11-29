@@ -5,7 +5,7 @@ import { useNamespace } from '@/hooks';
 export function buttonTheme() {
   const ns = useNamespace('button');
 
-  const getButtonStyle = ({ bgColor, bdColor, textColor }: { bgColor: string; bdColor: string; textColor: string }) => {
+  const getButtonStyle = ({ bgColor, bdColor, textColor }: { bgColor: string, bdColor: string, textColor: string }) => {
     return {
       [ns.v('bg-color')]: ns.vb('color', bgColor),
       [ns.v('bg-color', 'hover')]: ns.vb('color', bgColor, 'hover'),

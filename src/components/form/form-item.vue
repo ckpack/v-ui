@@ -54,7 +54,9 @@ const itemRules = computed(() => {
 function getFilteredRules(trigger?: trigger) {
   const rules = itemRules.value;
   return rules.filter((rule) => {
-    if (!rule.trigger || !trigger) { return true; }
+    if (!rule.trigger || !trigger) {
+      return true;
+    }
     if (Array.isArray(rule.trigger)) {
       return rule.trigger.includes(trigger);
     }
@@ -68,7 +70,9 @@ const validationErrors = ref<undefined | ValidateError[]>();
 
 const validate: Validate = async (trigger, options = {}) => {
   const { name } = props;
-  if (!name) { return undefined; }
+  if (!name) {
+    return undefined;
+  }
 
   const value = (formContext?.model || {})[name];
 
@@ -77,8 +81,7 @@ const validate: Validate = async (trigger, options = {}) => {
   try {
     await validator.validate({ [name]: value }, options);
     validationErrors.value = undefined;
-  }
-  catch ({ errors, fields }: any) {
+  } catch ({ errors, fields }: any) {
     validationErrors.value = errors as ValidateError[];
   }
 

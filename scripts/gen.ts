@@ -51,14 +51,16 @@ const ${componentVName}Class = IV && computed(() => {
 
 <template>
   <div :class="${componentVName}Class">\n    ${componentName}\n  </div>
-</template>\n`);
+</template>\n`,
+);
 
 fs.writeFileSync(
 `${basePath}/src/components/${componentName}/index.ts`,
 `import ${formatComponentName} from './${componentName}.vue';
 import { withInstallComponent } from '@/utils';
 
-export default withInstallComponent(${formatComponentName});\n`);
+export default withInstallComponent(${formatComponentName});\n`,
+);
 
 fs.writeFileSync(
   `${basePath}/src/themes/components/${componentName}.ts`,
@@ -80,7 +82,8 @@ export const ${componentVName}Theme = () => {
   };
 };
 
-export const ${componentVName}InjectionKey: InjectionKey<ReturnType<typeof ${componentVName}Theme>> = Symbol('${componentVName}InjectionKey');\n`);
+export const ${componentVName}InjectionKey: InjectionKey<ReturnType<typeof ${componentVName}Theme>> = Symbol('${componentVName}InjectionKey');\n`,
+);
 
 console.log(`You may need to modify the following files:
 src/components.ts

@@ -32,8 +32,7 @@ export function flattenObj(ob: Record<any, any> = {}) {
       for (const j in temp) {
         result[camelCaseToDashes(`${i}${j && `-${j}`}`)] = temp[j];
       }
-    }
-    else {
+    } else {
       result[camelCaseToDashes(i)] = ob[i];
     }
   }
@@ -45,13 +44,14 @@ export function deepMerge<t = any>(target: any = {}, source: any): t {
   source = unref(source);
   target = !Array.isArray(target) ? { ...target } : [...target];
 
-  if (!source) { return target; }
+  if (!source) {
+    return target;
+  }
   ([...Object.getOwnPropertySymbols(source), ...Object.getOwnPropertyNames(source)]).forEach((x: any) => {
     if (source[x] !== undefined) {
       if (['object'].includes(typeOf(source[x]))) {
         target[x] = deepMerge(target[x], source[x]);
-      }
-      else {
+      } else {
         target[x] = source[x];
       }
     }
@@ -60,6 +60,8 @@ export function deepMerge<t = any>(target: any = {}, source: any): t {
 }
 
 export function toArray<T extends object>(v?: T | T[]) {
-  if (Array.isArray(v)) { return v; }
+  if (Array.isArray(v)) {
+    return v;
+  }
   return v ? [v] : [];
 }

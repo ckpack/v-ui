@@ -2,15 +2,15 @@
   "extends": "@vue/tsconfig/tsconfig.json",
   "compilerOptions": {
     "ignoreDeprecations": "5.0",
+    "baseUrl": "./",
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "declaration": true,
     "paths": {
       "@/*": [
         "./src/*"
       ]
     },
-    "baseUrl": "./"
+    "declaration": true
   },
   "include": ["src/**/*", "scripts/**/*", "dev/**/*", "docs/**/*", "components.d.ts"],
   "exclude": ["node_modules"]

@@ -1,13 +1,19 @@
 {
   "name": "@ckpack/v-ui",
-  "version": "1.12.1",
-  "description": "Quickly create a component library for Vue 3",
-  "sideEffects": false,
   "type": "module",
-  "main": "es/index.js",
-  "module": "es/index.js",
-  "types": "es/index.d.ts",
+  "version": "1.12.1",
   "packageManager": "pnpm@7.17.1",
+  "description": "Quickly create a component library for Vue 3",
+  "author": "ckvv",
+  "license": "ISC",
+  "homepage": "https://ckpack.github.io/v-ui",
+  "repository": "https://github.com/ckpack/v-ui",
+  "keywords": [
+    "vue",
+    "v-ui",
+    "vue-ui"
+  ],
+  "sideEffects": false,
   "exports": {
     ".": {
       "import": "./es/index.js",
@@ -19,24 +25,21 @@
     "./src": "./src/index.ts",
     "./src/*": "./src/*"
   },
-  "repository": "https://github.com/ckpack/v-ui",
-  "homepage": "https://ckpack.github.io/v-ui",
-  "author": "ckvv",
-  "license": "ISC",
-  "keywords": [
-    "vue",
-    "v-ui",
-    "vue-ui"
-  ],
+  "main": "es/index.js",
+  "module": "es/index.js",
+  "types": "es/index.d.ts",
   "files": [
-    "src/*",
-    "es/*",
+    "components.d.ts",
     "dist/*",
-    "components.d.ts"
+    "es/*",
+    "src/*"
   ],
+  "engines": {
+    "node": ">=16"
+  },
   "scripts": {
     "preinstall": "npx simple-git-hooks",
-    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts,.md --fix --ignore-path .gitignore",
+    "lint": "eslint . --fix",
     "release": "standard-version",
     "dev": "vite -c ./dev/vite.config.ts",
     "dev:build": "vite build -c ./dev/vite.config.ts",
@@ -50,34 +53,31 @@
     "gen": "tsx ./scripts/gen.ts",
     "postgen": "tsx ./scripts/gen-compoents.ts"
   },
+  "peerDependencies": {
+    "vue": "^3.3.x"
+  },
   "dependencies": {
     "@ant-design/colors": "^7.0.0",
     "@emotion/css": "^11.11.2",
     "async-validator": "^4.2.5"
   },
   "devDependencies": {
-    "@vue/repl": "^2.8.1",
-    "eslint": "^8.54.0",
-    "@antfu/eslint-config": "0.40.2",
-    "tsx": "^4.6.0",
+    "@antfu/eslint-config": "2.1.1",
     "@types/node": "^20.x",
+    "@vitejs/plugin-vue": "^4.5.0",
+    "@vue/repl": "^2.8.1",
+    "@vue/tsconfig": "^0.4.0",
+    "eslint": "^8.54.0",
+    "fast-glob": "^3.3.2",
+    "lint-staged": "^15.1.0",
+    "simple-git-hooks": "^2.9.0",
+    "standard-version": "^9.5.0",
+    "tsx": "^4.6.0",
     "typescript": "5.3.2",
     "vite": "^5.0.3",
-    "@vitejs/plugin-vue": "^4.5.0",
     "vite-plugin-dts": "3.6.3",
-    "@vue/tsconfig": "^0.4.0",
-    "fast-glob": "^3.3.2",
-    "simple-git-hooks": "^2.9.0",
-    "lint-staged": "^15.1.0",
-    "standard-version": "^9.5.0",
     "vitepress": "1.0.0-rc.31",
     "vue": "^3.3.9"
-  },
-  "peerDependencies": {
-    "vue": "^3.3.x"
-  },
-  "engines": {
-    "node": ">=16"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged",

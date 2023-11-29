@@ -1,5 +1,5 @@
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-// @ts-expect-error
+// eslint-disable-next-line ts/ban-ts-comment
+// @ts-nocheck
 const modules = import.meta.glob('../docs/_demos/*/*.vue', { eager: true, import: 'default' });
 
 const Cases = Object.keys(modules).reduce((pre: any, cur) => {

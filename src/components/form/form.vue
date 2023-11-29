@@ -45,7 +45,9 @@ const clearValidate: FormContext['clearValidate'] = () => {
   }
 };
 
-const addField: FormContext['addField'] = (field) => { fields.value.push(field); };
+const addField: FormContext['addField'] = (field) => {
+  fields.value.push(field);
+};
 const removeField: FormContext['removeField'] = (field) => {
   if (field.name) {
     fields.value.splice(fields.value.indexOf(field), 1);

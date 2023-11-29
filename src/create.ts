@@ -3,7 +3,7 @@ import { deepMerge } from '@/utils';
 import { useProvideConfig, useThemes } from '@/hooks';
 import type { DeepPartialConfig } from '@/defaultConfig';
 
-function create({ components, themes }: { components?: any[] | Record<string, any>; themes?: Record<symbol, any> }) {
+function create({ components, themes }: { components?: any[] | Record<string, any>, themes?: Record<symbol, any> }) {
   return (app: App, config: DeepPartialConfig) => {
     const _config = unref(useProvideConfig(deepMerge({ themes }, config), app, true));
     useThemes(_config.themes, app);
