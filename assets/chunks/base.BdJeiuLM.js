@@ -1,0 +1,1 @@
+import{_ as r,L as e,o as c,f as _,w as t,Q as a,x as s}from"./framework.DK9xfvtr.js";const m={};function p(d,f){const o=e("v-button"),n=e("v-theme-provider");return c(),_(n,null,{default:t(()=>[a(o,{theme:"primary"},{default:t(()=>[s(" Button ")]),_:1})]),_:1})}const u=r(m,[["render",p]]);export{u as D};
