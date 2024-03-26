@@ -17,7 +17,6 @@
 <<< @/_demos/button/outlined.vue
 --demo 使用 `outlined` 定义轮廓按钮（中强调）。由于轮廓的缘故，比文本按钮更强调。
 
-
 ## 调整尺寸
 <<< @/_demos/button/size.vue
 --demo 使用 `size` 调整按钮尺寸, 可使用`small`,`medium`,`large`三种值
@@ -53,4 +52,3 @@
 | 插槽名 | 描述     |
 | :----- | :------- |
 | default | 默认插槽 |
-

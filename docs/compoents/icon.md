@@ -23,7 +23,6 @@ svg {
 ```
 :::
 
-
 ## 基础用法
 
 <<< @/_demos/icon/svg.vue
@@ -71,7 +70,6 @@ svg {
 | hover-color | 图标悬停颜色 | `string` | 继承颜色
 | cursor | 图标光标 | `string` | default
 
-
 ## 其他
 
 ### 使用 [iconfont](https://www.iconfont.cn/)
@@ -85,7 +83,3 @@ svg {
 + 传入引用图标的`Symbol`
 
 <<< @/_demos/icon/iconfont.vue
-
-
-
-

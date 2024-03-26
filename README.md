@@ -51,4 +51,3 @@ import { VButton } from '@ckpack/v-ui';
   </VButton>
 </template>
 ```
-

@@ -6,6 +6,9 @@ import { mdDemoPlugin } from './plugins';
 
 export default defineConfig({
   vite: {
+    ssr: {
+      noExternal: ['@vue/repl'],
+    },
     resolve: {
       alias: {
         ...alias,

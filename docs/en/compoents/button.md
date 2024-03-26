@@ -17,7 +17,6 @@ this is a button
 <<< @/_demos/button/outlined.vue
 --demo Use `outlined` to define outlined buttons (middle emphasis). More emphasis than text buttons because of the outline.
 
-
 ## Resize
 <<< @/_demos/button/size.vue
 --demo Use `size` to adjust the button size, you can use `small`, `medium`, `large` three values

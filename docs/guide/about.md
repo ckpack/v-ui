@@ -18,7 +18,6 @@
 + npm: https://www.npmjs.com/package/@ckpack/v-ui
 + CDN: https://cdn.jsdelivr.net/npm/@ckpack/v-ui@latest/
 
-
 ## 脚本命令
 
 ```shell

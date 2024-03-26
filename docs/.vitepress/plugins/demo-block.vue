@@ -1,6 +1,6 @@
 <script setup>
 import { computed, ref } from 'vue';
-import { ReplStore } from '@vue/repl';
+import { useStore } from '@vue/repl';
 
 const props = defineProps({
   description: {
@@ -28,7 +28,8 @@ const editLink = computed(() => decodeURIComponent(props.editLink));
 
 const openlink = url => window.open(url);
 
-const store = new ReplStore();
+const store = useStore();
+// const store = new ReplStore();
 store.setFiles({ 'src/App.vue': decodeURIComponent(code.value) });
 </script>
 

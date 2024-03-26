@@ -7,7 +7,6 @@
 <<< @/_demos/theme-provider/base.vue
 --demo 一般无需直接使用`theme-provider`， 使用`config-provider`即可配置。
 
-
 ## API
 
 ### theme-provider 属性

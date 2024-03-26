@@ -23,7 +23,6 @@ svg {
 ```
 :::
 
-
 ## Basic usage
 
 <<< @/_demos/icon/svg.vue
@@ -70,7 +69,6 @@ property name | description | type | default value |
 | color | icon color | `string` | inherited color
 | hover-color | icon hover color | `string` | inherited color
 | cursor | icon cursor | `string` | default
-
 
 ## other
 

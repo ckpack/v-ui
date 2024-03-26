@@ -7,7 +7,6 @@ The style of the component injected by `theme-provider`, because the same compon
 <<< @/_demos/theme-provider/base.vue
 --demo generally does not need to use `theme-provider` directly, use `config-provider` to configure.
 
-
 ## API
 
 ### theme-provider attribute

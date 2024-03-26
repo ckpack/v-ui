@@ -54,5 +54,3 @@ import { themes } from '@ckpack/v-ui';
   </v-config-provider>
 </template>
 ```
-
-
