@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import { computed, inject, onMounted, onUnmounted, provide, reactive, ref, toRefs, unref } from 'vue';
-import Schema, { type ValidateError } from 'async-validator';
+import type { FormItemContext, FormItemRules, trigger, Validate } from '@/tokens';
 import { formItemInjectionKey } from '@/themes';
-import type { FormItemContext, FormItemRules, Validate, trigger } from '@/tokens';
 import { formContextKey, formItemContextKey } from '@/tokens';
 import { toArray } from '@/utils';
+import Schema, { type ValidateError } from 'async-validator';
+import { computed, inject, onMounted, onUnmounted, provide, reactive, ref, toRefs, unref } from 'vue';
 
 defineOptions({
   name: 'FormItem',

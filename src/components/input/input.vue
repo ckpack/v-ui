@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { computed, inject, ref, watch } from 'vue';
 import { inputInjectionKey } from '@/themes';
 import { formItemContextKey } from '@/tokens';
+import { computed, inject, ref, watch } from 'vue';
 
 defineOptions({
   name: 'Input',

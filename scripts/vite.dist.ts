@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
+import { defineConfig } from 'vite';
 import { alias, baseExternal, globals, name } from './vite-common';
 
 export default defineConfig({

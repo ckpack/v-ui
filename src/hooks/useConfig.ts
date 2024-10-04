@@ -1,6 +1,6 @@
-import { type App, type Ref, computed, getCurrentInstance, inject, provide, ref } from 'vue';
-import { deepMerge } from '@/utils';
 import defaultConfig, { type Config, configInjectionKey } from '@/defaultConfig';
+import { deepMerge } from '@/utils';
+import { type App, computed, getCurrentInstance, inject, provide, type Ref, ref } from 'vue';
 
 const globalConfig = ref(defaultConfig);
 

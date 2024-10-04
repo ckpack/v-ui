@@ -1,6 +1,6 @@
-import { type InjectionKey, unref } from 'vue';
 import { useConfig, useCssVars, useNamespace } from '@/hooks';
 import { flattenObj, generateColors } from '@/utils';
+import { type InjectionKey, unref } from 'vue';
 
 export function baseTheme() {
   const ns = useNamespace('');

@@ -7,9 +7,9 @@ When importing globally, we can use `prefixComponent` to customize the component
 ### Custom component prefix when imported globally
 
 ```js
-import { createApp } from 'vue';
-import VUI from '@ckpack/v-ui';
 import App from '@/App.vue';
+import VUI from '@ckpack/v-ui';
+import { createApp } from 'vue';
 
 const app = createApp(App);
 
@@ -22,9 +22,9 @@ app.mount('#app');
 ### Introduce custom component prefix globally on demand
 
 ```js
-import { createApp } from 'vue';
-import { VButton, VSpace, create, themes } from '@ckpack/v-ui';
 import App from '@/App.vue';
+import { create, themes, VButton, VSpace } from '@ckpack/v-ui';
+import { createApp } from 'vue';
 
 const app = createApp(App);
 
@@ -50,9 +50,9 @@ Since `CSS` has no concept of scope, it may cause conflicts in component styles.
 
 ## Customize the class name prefix when importing globally
 ```js
-import { createApp } from 'vue';
-import VUI from '@ckpack/v-ui';
 import App from '@/App.vue';
+import VUI from '@ckpack/v-ui';
+import { createApp } from 'vue';
 
 const app = createApp(App);
 
@@ -66,9 +66,9 @@ app.mount('#app');
 ### Introduce custom class name prefix globally as needed
 
 ```js
-import { createApp } from 'vue';
-import { VButton, VSpace, create, themes } from '@ckpack/v-ui';
 import App from '@/App.vue';
+import { create, themes, VButton, VSpace } from '@ckpack/v-ui';
+import { createApp } from 'vue';
 
 const app = createApp(App);
 

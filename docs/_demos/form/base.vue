@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { reactive, ref } from 'vue';
 import type { FormInstance } from '@/index';
+import { reactive, ref } from 'vue';
 
 const formRef = ref<FormInstance>();
 const form = reactive({

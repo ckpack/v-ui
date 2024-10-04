@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import { type StyleValue, computed, inject } from 'vue';
 import { iconInjectionKey } from '@/themes';
+import { computed, inject, type StyleValue } from 'vue';
 
 defineOptions({
   name: 'Icon',

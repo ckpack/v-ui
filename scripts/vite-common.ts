@@ -1,5 +1,5 @@
 import fs from 'node:fs';
-import { URL, fileURLToPath } from 'node:url';
+import { fileURLToPath, URL } from 'node:url';
 
 const { dependencies } = JSON.parse(`${fs.readFileSync('./package.json')}`);
 

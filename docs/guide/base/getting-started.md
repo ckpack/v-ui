@@ -5,9 +5,9 @@
 完整引入组件库。
 
 ```js
-import { createApp } from 'vue';
-import VUI from '@ckpack/v-ui';
 import App from '@/App.vue';
+import VUI from '@ckpack/v-ui';
+import { createApp } from 'vue';
 
 const app = createApp(App);
 
@@ -20,9 +20,9 @@ app.mount('#app');
 或者使用`create`函数
 
 ```js
-import { createApp } from 'vue';
-import { components, create, themes } from '@ckpack/v-ui';
 import App from '@/App.vue';
+import { components, create, themes } from '@ckpack/v-ui';
+import { createApp } from 'vue';
 
 const app = createApp(App);
 

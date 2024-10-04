@@ -1,6 +1,6 @@
-import type { InjectionKey, Ref } from 'vue';
 import type { ComponentSize } from '@/constants';
 import type { DeepPartial } from '@/types';
+import type { InjectionKey, Ref } from 'vue';
 
 export const NAME = 'VUI';
 

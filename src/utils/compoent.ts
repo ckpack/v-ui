@@ -1,5 +1,5 @@
-import { prefixComponent } from '@/defaultConfig';
 import type { SFCWithInstall } from '@/types';
+import { prefixComponent } from '@/defaultConfig';
 
 export function withInstallComponent<T extends { name: string }, E extends { name: string }>(main: T, extra: E[] = []): T {
   (main as SFCWithInstall<T>).install = (app, options = {}) => {

@@ -1,7 +1,7 @@
-import DefaultTheme from 'vitepress/theme';
-import './index.css';
-
 import VUI from '@/index';
+import DefaultTheme from 'vitepress/theme';
+
+import './index.css';
 
 export default {
   ...DefaultTheme,

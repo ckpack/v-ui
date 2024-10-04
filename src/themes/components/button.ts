@@ -1,6 +1,6 @@
-import { type CSSInterpolation, css } from '@emotion/css';
 import type { InjectionKey } from 'vue';
 import { useNamespace } from '@/hooks';
+import { css, type CSSInterpolation } from '@emotion/css';
 
 export function buttonTheme() {
   const ns = useNamespace('button');

@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type { Token } from '@/defaultConfig';
-import { useProvideConfig } from '@/hooks';
-import ThemeProvider from '@/components/theme-provider';
 import type { ComponentSize } from '@/constants';
+import type { Token } from '@/defaultConfig';
+import ThemeProvider from '@/components/theme-provider';
+import { useProvideConfig } from '@/hooks';
 
 defineOptions({
   name: 'ConfigProvider',

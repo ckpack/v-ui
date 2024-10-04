@@ -1,7 +1,7 @@
-import { computed, unref } from 'vue';
-import { useConfig } from './useConfig';
 import type { MaybeRef } from '@/types';
 import { type ComponentSize, componentSizes } from '@/constants';
+import { computed, unref } from 'vue';
+import { useConfig } from './useConfig';
 
 export function useSize(fallback?: MaybeRef< string | undefined>) {
   return computed(() => {

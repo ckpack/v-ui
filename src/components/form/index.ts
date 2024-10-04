@@ -1,6 +1,6 @@
+import { withInstallComponent, withNoopInstall } from '@/utils';
 import Form from './form.vue';
 import FormItem from './form-item.vue';
-import { withInstallComponent, withNoopInstall } from '@/utils';
 
 export const VForm = withInstallComponent(Form, [FormItem]);
 export const VFormItem = withNoopInstall(FormItem);

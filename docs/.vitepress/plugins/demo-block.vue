@@ -1,6 +1,6 @@
 <script setup>
-import { computed, ref } from 'vue';
 import { useStore } from '@vue/repl';
+import { computed, ref } from 'vue';
 
 const props = defineProps({
   description: {

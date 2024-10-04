@@ -3,8 +3,8 @@ import { computed, inject } from 'vue';
 
 // import type { ButtonProps } from './types';
 import type { ButtonProps } from '@/components/button/types';
-import { buttonInjectionKey } from '@/themes';
 import { useSize } from '@/hooks';
+import { buttonInjectionKey } from '@/themes';
 
 defineOptions({
   name: 'Button',

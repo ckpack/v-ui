@@ -1,3 +1,4 @@
+/* eslint-disable regexp/no-unused-capturing-group */
 import fs from 'node:fs';
 import process from 'node:process';
 
@@ -13,7 +14,7 @@ const componentName = process.argv.slice(2).join(' ');
 const formatComponentName = formatComponent(componentName);
 const componentVName = `${formatComponentName[0].toLocaleLowerCase()}${formatComponentName.slice(1)}`;
 
-if (!/^[a-z]+(-[a-z]+){0,}$/.test(componentName)) {
+if (!/^[a-z]+(-[a-z]+)*$/.test(componentName)) {
   console.error(
     `component name is incorrect: ${componentName}\netc:\nbutton\nbutton-group`,
   );
@@ -27,8 +28,8 @@ if (fs.existsSync(`${basePath}/src/components/${componentName}`)) {
 fs.mkdirSync(`${basePath}/src/components/${componentName}`);
 
 fs.writeFileSync(
-`${basePath}/src/components/${componentName}/${componentName}.vue`,
-`<script setup lang="ts">
+  `${basePath}/src/components/${componentName}/${componentName}.vue`,
+  `<script setup lang="ts">
 import { computed, inject } from 'vue';
 import { ${componentVName}InjectionKey } from '@/themes';
 
@@ -55,8 +56,8 @@ const ${componentVName}Class = IV && computed(() => {
 );
 
 fs.writeFileSync(
-`${basePath}/src/components/${componentName}/index.ts`,
-`import ${formatComponentName} from './${componentName}.vue';
+  `${basePath}/src/components/${componentName}/index.ts`,
+  `import ${formatComponentName} from './${componentName}.vue';
 import { withInstallComponent } from '@/utils';
 
 export default withInstallComponent(${formatComponentName});\n`,

@@ -7,4 +7,4 @@ export {
   VInput,
   VSpace,
   VThemeProvider,
-} from '@/components/index';
+} from '@/components/index'

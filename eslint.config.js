@@ -15,7 +15,6 @@ export default await antfu({
     'style/brace-style': ['error', '1tbs'],
     'style/semi': 'off',
     'ts/consistent-type-imports': ['off'],
-    'ts/semi': ['error', 'always'],
   },
   ignores: ['./dist', './es'],
 });

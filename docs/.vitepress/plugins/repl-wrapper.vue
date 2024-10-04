@@ -1,8 +1,8 @@
 <script setup>
-import '@vue/repl/style.css';
-import { ref, watchEffect } from 'vue';
 import { Repl, useStore, useVueImportMap } from '@vue/repl';
 import CodeMirror from '@vue/repl/codemirror-editor';
+import { ref, watchEffect } from 'vue';
+import '@vue/repl/style.css';
 
 // import Monaco from '@vue/repl/monaco-editor';
 

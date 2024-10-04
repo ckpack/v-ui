@@ -7,6 +7,7 @@ const msg = readFileSync(msgPath, 'utf-8').trim();
 
 const types = ['feat', 'fix', 'docs', 'dx', 'style', 'refactor', 'perf', 'test', 'workflow', 'build', 'ci', 'chore', 'types', 'wip', 'release'];
 
+// eslint-disable-next-line regexp/no-unused-capturing-group
 const commitRE = new RegExp(`^(revert: )?(${types.join('|')})(\\(.+\\))?: .{1,50}`);
 
 if (!commitRE.test(msg)) {
