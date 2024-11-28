@@ -1,11 +1,11 @@
 import type { InjectionKey } from 'vue';
 import { useNamespace } from '@/hooks';
-import { css, type CSSInterpolation } from '@emotion/css';
+import { css } from '@emotion/css';
 
 export function buttonTheme() {
   const ns = useNamespace('button');
 
-  const getButtonStyle = ({ bgColor, bdColor, textColor }: { bgColor: string, bdColor: string, textColor: string }) => {
+  const getButtonStyle = ({ bgColor, bdColor, textColor }: { bgColor: string; bdColor: string; textColor: string }) => {
     return {
       [ns.v('bg-color')]: ns.vb('color', bgColor),
       [ns.v('bg-color', 'hover')]: ns.vb('color', bgColor, 'hover'),
@@ -19,7 +19,7 @@ export function buttonTheme() {
       [ns.v('text-color', 'hover')]: ns.vb('color', textColor, 'hover'),
       [ns.v('text-color', 'active')]: ns.vb('color', textColor, 'active'),
       [ns.v('text-color', 'disabled')]: ns.vb('color', textColor, 'disabled'),
-    };
+    } as Record<string, any>;
   };
 
   const disabled = ns.is('disabled');
@@ -67,13 +67,14 @@ export function buttonTheme() {
     ...['default', 'primary', 'success', 'error', 'warning'].reduce((pre: any, cur) => {
       const color = cur === 'default' ? 'bg' : cur;
 
-      const themeStyle: CSSInterpolation = getButtonStyle({
+      const themeStyle = getButtonStyle({
         bgColor: color,
         bdColor: color,
         textColor: cur === 'default' ? 'text' : 'white',
       });
 
       const textColor = cur === 'default' ? 'text' : cur;
+
       themeStyle[`&.${ns.is('text')}`] = getButtonStyle({
         bgColor: 'transparent',
         bdColor: 'transparent',
@@ -103,7 +104,7 @@ export function buttonTheme() {
       };
       return pre;
     }, {}),
-  } as CSSInterpolation);
+  });
 
   return {
     ns,

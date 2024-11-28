@@ -9,11 +9,11 @@ defineOptions({
 });
 
 const props = defineProps<{
-  size?: ComponentSize
-  prefixCls?: string
-  token?: Token
-  themes?: Record<symbol, any>
-  locale?: any
+  size?: ComponentSize;
+  prefixCls?: string;
+  token?: Token;
+  themes?: Record<symbol, any>;
+  locale?: any;
 }>();
 
 useProvideConfig(props);

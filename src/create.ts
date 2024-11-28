@@ -3,7 +3,7 @@ import { useProvideConfig, useThemes } from '@/hooks';
 import { deepMerge } from '@/utils';
 import { type App, type Plugin, unref } from 'vue';
 
-function create({ components, themes }: { components?: any[] | Record<string, any>, themes?: Record<symbol, any> }) {
+function create({ components, themes }: { components?: any[] | Record<string, any>; themes?: Record<symbol, any> }) {
   return (app: App, config: DeepPartialConfig) => {
     const _config = unref(useProvideConfig(deepMerge({ themes }, config), app, true));
     useThemes(_config.themes, app);

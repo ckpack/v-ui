@@ -11,18 +11,18 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<{
-  label?: string
-  for?: string
-  name?: string
-  help?: string
-  status?: string
-  rules?: FormItemRules
-  validator?: () => void
-  error?: string
-  required?: boolean
-  labelWidth?: string
-  showErrorMessage?: boolean
-  showRequireMark?: boolean
+  label?: string;
+  for?: string;
+  name?: string;
+  help?: string;
+  status?: string;
+  rules?: FormItemRules;
+  validator?: () => void;
+  error?: string;
+  required?: boolean;
+  labelWidth?: string;
+  showErrorMessage?: boolean;
+  showRequireMark?: boolean;
 }>(), {
   label: '',
   required: undefined,

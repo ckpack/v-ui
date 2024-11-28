@@ -16,5 +16,8 @@ export default await antfu({
     'style/semi': 'off',
     'ts/consistent-type-imports': ['off'],
   },
+  stylistic: {
+    semi: true,
+  },
   ignores: ['./dist', './es'],
 });

@@ -5,11 +5,11 @@ import { fileURLToPath } from 'node:url';
 const dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export function mdDemoPlugin(options?: {
-  demoBlockTag?: string
-  demoCompoentPrefix?: string
-  compoentPath?: string
-  base?: string
-  editLink?: string
+  demoBlockTag?: string;
+  demoCompoentPrefix?: string;
+  compoentPath?: string;
+  base?: string;
+  editLink?: string;
 }) {
   const {
     demoBlockTag = '--demo',

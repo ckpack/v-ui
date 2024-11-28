@@ -7,13 +7,13 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<{
-  size?: string
-  svg: string
-  spin?: boolean
-  rotate?: number
-  color?: string
-  hoverColor?: string
-  cursor?: string
+  size?: string;
+  svg: string;
+  spin?: boolean;
+  rotate?: number;
+  color?: string;
+  hoverColor?: string;
+  cursor?: string;
 }>(), {
   color: 'inherit',
   rotate: 0,

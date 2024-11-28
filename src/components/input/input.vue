@@ -8,7 +8,7 @@ defineOptions({
 });
 
 const props = defineProps<{
-  modelValue?: string | number
+  modelValue?: string | number;
 }>();
 
 const emits = defineEmits(['update:modelValue', 'input', 'blur', 'focus']);

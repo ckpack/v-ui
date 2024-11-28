@@ -9,22 +9,22 @@ export type Validate = (trigger?: trigger, options?: ValidateOption) => Promise<
 export type Arrayable<T> = T | T[];
 
 export interface FormItemRule extends RuleItem {
-  trigger?: trigger
+  trigger?: trigger;
 }
 export type FormItemRules = Arrayable<FormItemRule>;
 export type FormRules = Record< string, FormItemRules>;
 
 export type FormContext = FormProps & {
-  emit: SetupContext<['validate']>['emit']
-  validate: () => void
-  clearValidate: () => void
-  addField: (field: FormItemContext) => void
-  removeField: (field: FormItemContext) => void
+  emit: SetupContext<['validate']>['emit'];
+  validate: () => void;
+  clearValidate: () => void;
+  addField: (field: FormItemContext) => void;
+  removeField: (field: FormItemContext) => void;
 };
 export type FormItemContext = FormItemProps & {
-  validationErrors: undefined | ValidateError[]
-  validate: Validate
-  clearValidate: () => void
+  validationErrors: undefined | ValidateError[];
+  validate: Validate;
+  clearValidate: () => void;
 };
 export const formContextKey: InjectionKey<FormContext> = Symbol('formContextKey');
 export const formItemContextKey: InjectionKey<FormItemContext> = Symbol('formItemContextKey');

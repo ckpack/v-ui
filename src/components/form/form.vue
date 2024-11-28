@@ -9,9 +9,9 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<{
-  labelSuffix?: string
-  model?: Record<string, any>
-  rules?: FormRules
+  labelSuffix?: string;
+  model?: Record<string, any>;
+  rules?: FormRules;
 }>(), {
   labelSuffix: '',
 });

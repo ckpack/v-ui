@@ -1,13 +1,13 @@
-import type { Component, Ref } from 'vue';
-import { computed, ref, unref } from 'vue';
+import type { Component, MaybeRefOrGetter } from 'vue';
+import { computed, ref, toValue } from 'vue';
 import CaseComponents from '../components-demos';
 
-export function useCompoents(name: string | Ref<string> = '') {
+export function useCompoents(name: MaybeRefOrGetter<string> = '') {
   const _name = ref(name);
   const compoents = computed(() => {
     return Object.keys(CaseComponents)
       .filter((n: string) => n.toLowerCase()
-        .includes(unref(_name).toLowerCase()))
+        .includes(`${toValue(_name)}`.toLowerCase()))
       .reduce((pre, cur) => {
         pre[cur] = CaseComponents[cur];
         return pre;

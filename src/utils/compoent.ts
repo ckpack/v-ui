@@ -2,7 +2,7 @@ import type { SFCWithInstall } from '@/types';
 import { prefixComponent } from '@/defaultConfig';
 
 export function withInstallComponent<T extends { name: string }, E extends { name: string }>(main: T, extra: E[] = []): T {
-  (main as SFCWithInstall<T>).install = (app, options = {}) => {
+  (main as SFCWithInstall<T>).install = (app: any, options: any = {}) => {
     const ns = options.prefixComponent || prefixComponent;
     [main, ...extra].forEach((compoent) => {
       app.component(`${`${ns[0].toUpperCase()}${ns.slice(1)}`}${compoent.name}`, compoent);

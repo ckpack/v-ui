@@ -1,7 +1,7 @@
 import type { InjectionKey } from 'vue';
 import { useNamespace } from '@/hooks';
 import { spinAnimation } from '@/themes/styles';
-import { css, type CSSInterpolation } from '@emotion/css';
+import { css } from '@emotion/css';
 
 export function iconTheme() {
   const ns = useNamespace('icon');
@@ -24,7 +24,7 @@ export function iconTheme() {
     [`&.${ns.is('spin')}`]: {
       '& svg': spinAnimation,
     },
-  } as CSSInterpolation);
+  });
 
   return {
     ns,

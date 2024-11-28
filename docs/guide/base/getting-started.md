@@ -59,7 +59,4 @@ app.mount('#app');
 你也可以直接通过浏览器的`script`标签导入。
 
 <iframe height="300" style="width: 100%;" scrolling="no" title="@ckpack/v-ui" src="https://codepen.io/chenkai0520/embed/wvxKYWj?default-tab=html%2Cresult" frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true">
-  See the Pen <a href="https://codepen.io/chenkai0520/pen/wvxKYWj">
-  @ckpack/v-ui</a> by chenkai (<a href="https://codepen.io/chenkai0520">@chenkai0520</a>)
-  on <a href="https://codepen.io">CodePen</a>.
 </iframe>

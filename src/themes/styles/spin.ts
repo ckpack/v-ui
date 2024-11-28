@@ -1,4 +1,4 @@
-import { type CSSInterpolation, keyframes } from '@emotion/css';
+import { css, keyframes } from '@emotion/css';
 
 export const spinKeyframes = keyframes({
   from: {
@@ -9,7 +9,7 @@ export const spinKeyframes = keyframes({
   },
 });
 
-export const spinAnimation: CSSInterpolation = {
+export const spinAnimation = css({
   animationDuration: '1s',
   animationTimingFunction: 'linear',
   animationDelay: '0s',
@@ -18,4 +18,4 @@ export const spinAnimation: CSSInterpolation = {
   animationFillMode: 'none',
   animationPlayState: 'running',
   animationName: spinKeyframes,
-};
+});

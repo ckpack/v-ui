@@ -10,11 +10,11 @@ defineOptions({
 });
 
 const props = withDefaults(defineProps<{
-  alignItems?: 'stretch' | 'center' | 'start' | 'end' | 'normal'
-  direction?: 'row' | 'column'
-  size?: string
-  wrap?: boolean
-  fill?: boolean
+  alignItems?: 'stretch' | 'center' | 'start' | 'end' | 'normal';
+  direction?: 'row' | 'column';
+  size?: string;
+  wrap?: boolean;
+  fill?: boolean;
 }>(), {
   alignItems: 'normal',
   direction: 'row',
