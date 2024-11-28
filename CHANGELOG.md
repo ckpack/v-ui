@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.12.3](https://github.com/ckpack/v-ui/compare/v1.12.2...v1.12.3) (2024-11-28)
+
+
+### Features
+
+* update action node version ([fb38666](https://github.com/ckpack/v-ui/commit/fb386666bfee143b616f75e8260fa238fe71c457))
+* update version ([907edbc](https://github.com/ckpack/v-ui/commit/907edbc817b73edb5eeaf38f765cca4a2d4963f6))
+* 更新依赖 ([8efa013](https://github.com/ckpack/v-ui/commit/8efa013d9d3e4f13eeb22d5b48478c7cd85f6aab))
+* 更新依赖 ([a1a23ac](https://github.com/ckpack/v-ui/commit/a1a23ac7d0a0809d3867ed58d8d72d307ec73372))
+
+
+### Bug Fixes
+
+* update ([59d1ad0](https://github.com/ckpack/v-ui/commit/59d1ad0ae959b0569ebe673feb6be47b13168076))
+
+
+### Docs
+
+* 添加本地搜索 ([6f89e18](https://github.com/ckpack/v-ui/commit/6f89e185808169e4f523285a375216c68dd56e0f))
+
 ### [1.12.2](https://github.com/ckpack/v-ui/compare/v1.12.1...v1.12.2) (2023-11-29)
 
 
