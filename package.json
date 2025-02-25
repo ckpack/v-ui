@@ -68,7 +68,6 @@
     "@vue/repl": "^4.5.1",
     "@vue/tsconfig": "^0.7.0",
     "eslint": "^9.21.0",
-    "fast-glob": "^3.3.3",
     "lint-staged": "^15.4.3",
     "simple-git-hooks": "^2.11.1",
     "standard-version": "^9.5.0",
