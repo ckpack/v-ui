@@ -1,0 +1,1 @@
+import{_,K as t,f as s,o as c,w as o,N as a,x as m}from"./framework.L6i-1Xai.js";const p={};function d(f,e){const n=t("v-button"),r=t("v-theme-provider");return c(),s(r,null,{default:o(()=>[a(n,{theme:"primary"},{default:o(()=>e[0]||(e[0]=[m(" Button ")])),_:1})]),_:1})}const u=_(p,[["render",d]]);export{u as D};
