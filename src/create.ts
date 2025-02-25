@@ -1,7 +1,8 @@
 import type { DeepPartialConfig } from '@/defaultConfig';
+import type { App, Plugin } from 'vue';
 import { useProvideConfig, useThemes } from '@/hooks';
 import { deepMerge } from '@/utils';
-import { type App, type Plugin, unref } from 'vue';
+import { unref } from 'vue';
 
 function create({ components, themes }: { components?: any[] | Record<string, any>; themes?: Record<symbol, any> }) {
   return (app: App, config: DeepPartialConfig) => {

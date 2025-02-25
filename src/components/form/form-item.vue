@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import type { FormItemContext, FormItemRules, trigger, Validate } from '@/tokens';
+import type { ValidateError } from 'async-validator';
 import { formItemInjectionKey } from '@/themes';
 import { formContextKey, formItemContextKey } from '@/tokens';
 import { toArray } from '@/utils';
-import Schema, { type ValidateError } from 'async-validator';
+import Schema from 'async-validator';
 import { computed, inject, onMounted, onUnmounted, provide, reactive, ref, toRefs, unref } from 'vue';
 
 defineOptions({
@@ -44,8 +45,8 @@ const itemRules = computed(() => {
   if (required !== undefined) {
     return rules.length
       ? rules.map((rule) => {
-        return { ...rule, required };
-      })
+          return { ...rule, required };
+        })
       : [{ required }];
   }
   return rules;

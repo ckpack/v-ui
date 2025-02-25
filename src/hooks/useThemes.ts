@@ -1,4 +1,5 @@
-import { type App, provide, unref } from 'vue';
+import type { App } from 'vue';
+import { provide, unref } from 'vue';
 import { useConfig } from './useConfig'
 
 export function useThemes(themes?: Record<symbol, any>, app?: App) {

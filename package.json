@@ -57,26 +57,26 @@
     "vue": "^3.3.x"
   },
   "dependencies": {
-    "@ant-design/colors": "^7.1.0",
+    "@ant-design/colors": "^7.2.0",
     "@emotion/css": "^11.13.5",
     "async-validator": "^4.2.5"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "3.11.0",
+    "@antfu/eslint-config": "4.3.0",
     "@types/node": "^22.x",
     "@vitejs/plugin-vue": "^5.2.1",
-    "@vue/repl": "^4.4.2",
-    "@vue/tsconfig": "^0.6.0",
-    "eslint": "^9.15.0",
-    "fast-glob": "^3.3.2",
-    "lint-staged": "^15.2.2",
+    "@vue/repl": "^4.5.1",
+    "@vue/tsconfig": "^0.7.0",
+    "eslint": "^9.21.0",
+    "fast-glob": "^3.3.3",
+    "lint-staged": "^15.4.3",
     "simple-git-hooks": "^2.11.1",
     "standard-version": "^9.5.0",
-    "tsx": "^4.19.2",
-    "typescript": "5.7.2",
-    "vite": "^6.0.1",
-    "vite-plugin-dts": "4.3.0",
-    "vitepress": "1.5.0",
+    "tsx": "^4.19.3",
+    "typescript": "5.7.3",
+    "vite": "^6.2.0",
+    "vite-plugin-dts": "4.5.0",
+    "vitepress": "1.6.3",
     "vue": "^3.5.13"
   },
   "simple-git-hooks": {

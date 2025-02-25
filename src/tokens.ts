@@ -12,7 +12,7 @@ export interface FormItemRule extends RuleItem {
   trigger?: trigger;
 }
 export type FormItemRules = Arrayable<FormItemRule>;
-export type FormRules = Record< string, FormItemRules>;
+export type FormRules = Record<string, FormItemRules>;
 
 export type FormContext = FormProps & {
   emit: SetupContext<['validate']>['emit'];
