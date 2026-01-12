@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import type { FormContext, FormItemContext, FormRules } from '@/tokens';
+import { computed, inject, provide, reactive, ref, toRefs, unref } from 'vue';
 import { formInjectionKey } from '@/themes';
 import { formContextKey } from '@/tokens';
-import { computed, inject, provide, reactive, ref, toRefs, unref } from 'vue';
 
 defineOptions({
   name: 'Form',

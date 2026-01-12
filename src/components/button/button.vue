@@ -2,9 +2,9 @@
 // import type { ButtonProps } from './types';
 import type { ButtonProps } from '@/components/button/types';
 
+import { computed, inject } from 'vue';
 import { useSize } from '@/hooks';
 import { buttonInjectionKey } from '@/themes';
-import { computed, inject } from 'vue';
 
 defineOptions({
   name: 'Button',

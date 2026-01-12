@@ -1,6 +1,6 @@
 import type { MaybeRef } from '@/types';
-import { useConfig } from '@/hooks';
 import { unref } from 'vue';
+import { useConfig } from '@/hooks';
 
 export function useNamespace(block = '') {
   const { prefixCls } = unref(useConfig());

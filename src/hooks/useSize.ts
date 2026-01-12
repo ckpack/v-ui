@@ -1,7 +1,7 @@
 import type { ComponentSize } from '@/constants';
 import type { MaybeRef } from '@/types';
-import { componentSizes } from '@/constants';
 import { computed, unref } from 'vue';
+import { componentSizes } from '@/constants';
 import { useConfig } from './useConfig';
 
 export function useSize(fallback?: MaybeRef<string | undefined>) {

@@ -1,7 +1,7 @@
 import type { InjectionKey } from 'vue';
+import { css } from '@emotion/css';
 import { useNamespace } from '@/hooks';
 import { spinAnimation } from '@/themes/styles';
-import { css } from '@emotion/css';
 
 export function iconTheme() {
   const ns = useNamespace('icon');

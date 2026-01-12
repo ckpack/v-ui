@@ -1,7 +1,7 @@
 import type { InjectionKey } from 'vue';
+import { unref } from 'vue';
 import { useConfig, useCssVars, useNamespace } from '@/hooks';
 import { flattenObj, generateColors } from '@/utils';
-import { unref } from 'vue';
 
 export function baseTheme() {
   const ns = useNamespace('');

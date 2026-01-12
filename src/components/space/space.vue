@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import type { StyleValue } from 'vue';
+import { computed, inject } from 'vue';
 import { useSize, useSizeValue } from '@/hooks';
 import { spaceInjectionKey } from '@/themes';
 import { isBoolean } from '@/utils';
-import { computed, inject } from 'vue';
 
 defineOptions({
   name: 'Space',

@@ -1,5 +1,5 @@
-import VUI from '@/index';
 import DefaultTheme from 'vitepress/theme';
+import VUI from '@/index';
 
 import './index.css';
 

@@ -7,9 +7,9 @@
 ### 全局引入时自定义组件前缀
 
 ```js
-import App from '@/App.vue';
 import VUI from '@ckpack/v-ui';
 import { createApp } from 'vue';
+import App from '@/App.vue';
 
 const app = createApp(App);
 
@@ -22,9 +22,9 @@ app.mount('#app');
 ### 全局按需引入自定义组件前缀
 
 ```js
-import App from '@/App.vue';
 import { create, themes, VButton, VSpace } from '@ckpack/v-ui';
 import { createApp } from 'vue';
+import App from '@/App.vue';
 
 const app = createApp(App);
 
@@ -50,9 +50,9 @@ app.mount('#app');
 
 ## 全局引入时自定义类名前缀
 ```js
-import App from '@/App.vue';
 import VUI from '@ckpack/v-ui';
 import { createApp } from 'vue';
+import App from '@/App.vue';
 
 const app = createApp(App);
 
@@ -66,9 +66,9 @@ app.mount('#app');
 ### 全局按需引入自定义类名前缀
 
 ```js
-import App from '@/App.vue';
 import { create, themes, VButton, VSpace } from '@ckpack/v-ui';
 import { createApp } from 'vue';
+import App from '@/App.vue';
 
 const app = createApp(App);
 

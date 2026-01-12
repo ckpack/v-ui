@@ -5,9 +5,9 @@ Multiple import methods are supported out of the box.
 Completely import the component library.
 
 ```js
-import App from '@/App.vue';
 import VUI from '@ckpack/v-ui';
 import { createApp } from 'vue';
+import App from '@/App.vue';
 
 const app = createApp(App);
 
@@ -20,9 +20,9 @@ app.mount('#app');
 or use the `create` function
 
 ```js
-import App from '@/App.vue';
 import { components, create, themes } from '@ckpack/v-ui';
 import { createApp } from 'vue';
+import App from '@/App.vue';
 
 const app = createApp(App);
 

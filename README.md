@@ -26,9 +26,9 @@
 Completely import the component library.
 
 ```js
-import App from '@/App.vue';
 import VUI from '@ckpack/v-ui';
 import { createApp } from 'vue';
+import App from '@/App.vue';
 
 const app = createApp(App);
 

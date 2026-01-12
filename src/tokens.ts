@@ -1,6 +1,6 @@
-import type { FormItemProps, FormProps } from '@/components/';
 import type { RuleItem, ValidateError, ValidateOption } from 'async-validator';
 import type { InjectionKey, SetupContext } from 'vue';
+import type { FormItemProps, FormProps } from '@/components/';
 
 export type trigger = 'blur' | 'change';
 
