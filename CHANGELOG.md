@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.12.5](https://github.com/ckpack/v-ui/compare/v1.12.4...v1.12.5) (2026-01-12)
+
+
+### Features
+
+* update github actions and node versions ([acad751](https://github.com/ckpack/v-ui/commit/acad751b341aa077a819580acfee788a576b83a9))
+
 ### [1.12.4](https://github.com/ckpack/v-ui/compare/v1.12.3...v1.12.4) (2026-01-12)
 
 
