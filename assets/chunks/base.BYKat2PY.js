@@ -1,0 +1,1 @@
+import{_,I as t,b as s,o as a,w as o,J as c,a as m}from"./framework.BNAHZg1b.js";const p={};function d(l,e){const n=t("v-button"),r=t("v-theme-provider");return a(),s(r,null,{default:o(()=>[c(n,{theme:"primary"},{default:o(()=>[...e[0]||(e[0]=[m(" Button ",-1)])]),_:1})]),_:1})}const f=_(p,[["render",d]]);export{f as D};
