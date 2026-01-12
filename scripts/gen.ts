@@ -5,14 +5,14 @@ import process from 'node:process';
 function formatComponent(component: string) {
   return component
     .split('-')
-    .map(name => `${name[0].toUpperCase()}${name.slice(1)}`)
+    .map(name => `${`${name[0]}`.toUpperCase()}${name.slice(1)}`)
     .join('');
 }
 
 const basePath = process.cwd();
 const componentName = process.argv.slice(2).join(' ');
 const formatComponentName = formatComponent(componentName);
-const componentVName = `${formatComponentName[0].toLocaleLowerCase()}${formatComponentName.slice(1)}`;
+const componentVName = `${`${formatComponentName[0]}`.toLocaleLowerCase()}${formatComponentName.slice(1)}`;
 
 if (!/^[a-z]+(-[a-z]+)*$/.test(componentName)) {
   console.error(

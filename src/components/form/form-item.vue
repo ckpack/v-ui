@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import type { FormItemContext, FormItemRules, trigger, Validate } from '@/tokens';
 import type { ValidateError } from 'async-validator';
+import type { FormItemContext, FormItemRules, trigger, Validate } from '@/tokens';
+import Schema from 'async-validator';
+import { computed, inject, onMounted, onUnmounted, provide, reactive, ref, toRefs, unref } from 'vue';
 import { formItemInjectionKey } from '@/themes';
 import { formContextKey, formItemContextKey } from '@/tokens';
 import { toArray } from '@/utils';
-import Schema from 'async-validator';
-import { computed, inject, onMounted, onUnmounted, provide, reactive, ref, toRefs, unref } from 'vue';
 
 defineOptions({
   name: 'FormItem',
@@ -139,7 +139,7 @@ const formClass = computed(() => {
     </slot>
     <slot name="error">
       <div v-if="showErrorMessage && validationErrors" style="color: red">
-        {{ error || validationErrors[0].message }}
+        {{ error || validationErrors[0]?.message }}
       </div>
     </slot>
   </div>
