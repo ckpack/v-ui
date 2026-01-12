@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.12.4](https://github.com/ckpack/v-ui/compare/v1.12.3...v1.12.4) (2026-01-12)
+
+
+### Features
+
+* update deps and configs ([63cb2f9](https://github.com/ckpack/v-ui/commit/63cb2f9b2604ecaf1ff1b0fb4f36cb7289ab4870))
+* 删除不需要的依赖 ([d9e2500](https://github.com/ckpack/v-ui/commit/d9e2500b9773affb685e3db623cf936cf4011a35))
+* 更新 vitepress 到测试版本 ([eed4f11](https://github.com/ckpack/v-ui/commit/eed4f11d4f55b169e9f168aab4b391b60d48f35a))
+* 更新依赖 ([e7321aa](https://github.com/ckpack/v-ui/commit/e7321aa4c21974c0266d0983fdc77a7e6aa45567))
+* 更新依赖库 ([6d4797b](https://github.com/ckpack/v-ui/commit/6d4797bf33e3496df946910dfd16c84ad924794b))
+
+
+### Style
+
+* eslint ([cad5f5a](https://github.com/ckpack/v-ui/commit/cad5f5adc4b126cb725aee3f31e53b64d40bceb3))
+
 ### [1.12.3](https://github.com/ckpack/v-ui/compare/v1.12.2...v1.12.3) (2024-11-28)
 
 
